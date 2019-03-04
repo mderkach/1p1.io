@@ -51,6 +51,8 @@
     "webpack-merge": "^4.2.1"
   },
   "dependencies": {
-    "bootstrap": "^4.3.1"
+    "bootstrap": "^4.3.1",
+    "bootstrap.native": "^2.0.25",
+    "bootstrap.native-loader": "^1.0.7"
   }
 }
