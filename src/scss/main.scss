@@ -1,31 +1,7 @@
-@import "utils/libs";
 @import "utils/vars";
+@import "utils/libs";
 @import "utils/mixins";
 @import "utils/fonts";
 
-html {
-  line-height: $mainLineHeight;
-	font-size: $mainFontSize;
-	color: $mainFontColor;
-  height: 100%;
-  @media screen and (max-width: $desktopWidth) {
-		font-size: 16px;
-  }
-  @media screen and (max-width: $tableWidth) {
-		font-size: 15px;
-  }
-  @media screen and (max-width: $phoneWidth) {
-		font-size: 14px;
-  }
-}
-
-body {
-  font-family: $mainFont;
-	font-family: $mainFontSize;
-  font-weight: $mainFontWeight;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  margin: 0;
-  padding: 0;
-}
-
+@import "../templates/components/header/header.scss";
+@import "../templates/components/screen/screnn__landing.scss";
