@@ -1,4 +1,3 @@
-{% set page_title = "1p1.io" %}
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -6,7 +5,7 @@
 
 	<meta charset="utf-8">
 	<!-- <base href="/"> -->
-
+	{% set page_title = "1p1.io" %}
 	<title>{{ page_title }}</title>
 	<meta name="description" content="">
 
@@ -15,8 +14,8 @@
 
 	<!-- Template Basic Images Start -->
 	<meta property="og:image" content="path/to/image.jpg">
-	<link rel="icon" href="">
-	<link rel="apple-touch-icon" sizes="180x180" href="">
+	<link rel="icon" href="#">
+	<link rel="apple-touch-icon" sizes="180x180" href="#">
 	<!-- Template Basic Images End -->
 
 	<!-- Custom Browsers Color Start -->
@@ -30,6 +29,34 @@
 		{% include "./templates/components/screen/screen__landing.twig" %}
 		{% include "./templates/components/slider/slider-bg.twig" %}
 	</main>
+	<div class="numeric-info">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="numeric-info__item">
+					<div class="numeric-info__item-header">
+						<img src="/assets/img/icon-chevron-right-blue.svg" alt="" class="img-responsive numeric-info__item-img">
+						<p class="numeric-info__item-number">150</p>
+					</div>
+					<p class="numeric-info__item-descr">Товаров доступно</p>
+				</div>
+				<div class="numeric-info__item">
+					<div class="numeric-info__item-header">
+						<img src="/assets/img/icon-chevron-right-blue.svg" alt="" class="img-responsive numeric-info__item-img">
+						<p class="numeric-info__item-number">39</p>
+						<img src="/assets/img/icon-heart.svg" alt="" class="img-responsive">
+					</div>
+					<p class="numeric-info__item-descr">Программ различных фондов</p>
+				</div>
+				<div class="numeric-info__item">
+					<div class="numeric-info__item-header">
+						<img src="/assets/img/icon-chevron-right-blue.svg" alt="" class="img-responsive numeric-info__item-img">
+						<p class="numeric-info__item-number">20</p>
+					</div>
+					<p class="numeric-info__item-descr">Фондов присоединились</p>
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
 
 </html>
