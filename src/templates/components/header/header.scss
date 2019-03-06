@@ -1,5 +1,5 @@
 header {
-  padding: 20px 20px 22px 20px;
+  padding: 20px 30px;
 }
 
 .navbar {
@@ -24,12 +24,22 @@ header {
       flex-direction: row;
       justify-content: space-between;
       width: 100%;
+
+      > [class^='nav-menu'] {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+
+        &[class*='--right']{
+          justify-content: flex-end;
+        }
+      }
     }
 
     &-item {
-      font-family: 'MuseoThin';
       font-size: 13px;
-      font-weight: 500;
+      font-weight: 300;
       font-style: normal;
       font-stretch: normal;
       line-height: normal;
@@ -44,6 +54,13 @@ header {
       &:nth-last-child(1) {
         margin-right: 0;
       }
+
+      &:hover {
+        color: #fff;
+        text-decoration: none;
+        cursor: pointer;
+      }
     }
   }
 }
+
