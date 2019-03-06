@@ -53,6 +53,7 @@
   "dependencies": {
     "bootstrap": "^4.3.1",
     "bootstrap.native": "^2.0.25",
-    "bootstrap.native-loader": "^1.0.7"
+    "bootstrap.native-loader": "^1.0.7",
+    "swiper": "^4.5.0"
   }
 }

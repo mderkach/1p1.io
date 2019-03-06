@@ -1,12 +1,15 @@
+// core
 @import "utils/vars";
 @import "utils/libs";
 @import "utils/mixins";
 @import "utils/fonts";
 @import "utils/typography";
-@import "../templates/components/buttons/buttons.scss";
-@import "../templates/components/header/header.scss";
-@import "../templates/components/screen/screnn__landing.scss";
-
+// components
+@import "../templates/components/buttons/buttons";
+@import "../templates/components/slider/slider-bg";
+@import "../templates/components/header/header";
+@import "../templates/components/screen/screnn__landing";
+// comon
 ::placeholder {
   color: #666
 }
@@ -61,4 +64,8 @@ body {
 b,
 strong {
   font-weight: bold;
+}
+
+main {
+  position: relative;
 }
