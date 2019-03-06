@@ -6,7 +6,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const PATHS = {
   src: path.join(__dirname, '../src'),
   dist: path.join(__dirname, '../dist'),
-  assets: 'assets/'
+  assets: 'assets/',
 }
 
 module.exports = {
@@ -20,7 +20,7 @@ module.exports = {
   output: {
     filename: `${PATHS.assets}js/[name].js`,
     path: PATHS.dist,
-    publicPath: '/'
+    publicPath: './'
   },
   module: {
     rules: [{
@@ -33,6 +33,17 @@ module.exports = {
       options: {
         name: '[name].[ext]'
       }
+    },
+    {
+      test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+      use: [{
+        loader: 'file-loader',
+        options: {
+          name: 'fonts/[name].[ext]',
+          mimetype: 'application/font-woff',
+          publicPath: '../'
+        }
+      }]
     }, {
       test: /\.scss$/,
       use: [
@@ -83,7 +94,7 @@ module.exports = {
     }),
     new CopyWebpackPlugin([
       { from: `${PATHS.src}/img`, to: `${PATHS.assets}img` },
-      { from: `${PATHS.src}/fonts`, to: '/fonts'},
+      { from: `${PATHS.src}/fonts`, to: `${PATHS.assets}fonts` },
     ])
   ],
 }
