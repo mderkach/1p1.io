@@ -25,38 +25,18 @@
 
 <body>
 	<main>
-		{% include "./templates/components/header/header.twig" %}
-		{% include "./templates/components/screen/screen__landing.twig" %}
-		{% include "./templates/components/slider/slider-bg.twig" %}
+		{% block header %}
+			{% include "./templates/components/header/header.twig" %}
+		{% endblock %}
+		{% block mainScreen %}
+			{% include "./templates/components/screen/screen__landing.twig" %}
+			{% include "./templates/components/slider/slider-bg.twig" %}
+		{% endblock %}
 	</main>
-	<div class="numeric-info">
-		<div class="container">
-			<div class="row justify-content-center">
-				<div class="numeric-info__item">
-					<div class="numeric-info__item-header">
-						<img src="/assets/img/icon-chevron-right-blue.svg" alt="" class="img-responsive numeric-info__item-img">
-						<p class="numeric-info__item-number">150</p>
-					</div>
-					<p class="numeric-info__item-descr">Товаров доступно</p>
-				</div>
-				<div class="numeric-info__item">
-					<div class="numeric-info__item-header">
-						<img src="/assets/img/icon-chevron-right-blue.svg" alt="" class="img-responsive numeric-info__item-img">
-						<p class="numeric-info__item-number">39</p>
-						<img src="/assets/img/icon-heart.svg" alt="" class="img-responsive">
-					</div>
-					<p class="numeric-info__item-descr">Программ различных фондов</p>
-				</div>
-				<div class="numeric-info__item">
-					<div class="numeric-info__item-header">
-						<img src="/assets/img/icon-chevron-right-blue.svg" alt="" class="img-responsive numeric-info__item-img">
-						<p class="numeric-info__item-number">20</p>
-					</div>
-					<p class="numeric-info__item-descr">Фондов присоединились</p>
-				</div>
-			</div>
-		</div>
-	</div>
+	{% include "./templates/components/bullets/bullets-numeric.twig" %}
+	{% block categories %}
+	{% include "./templates/components/categories/categories-landing.twig" %}
+	{% endblock %}
 </body>
 
 </html>
