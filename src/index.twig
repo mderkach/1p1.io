@@ -35,7 +35,10 @@
 	</main>
 	{% include "./templates/components/bullets/bullets-numeric.twig" %}
 	{% block categories %}
-	{% include "./templates/components/categories/categories-landing.twig" %}
+		{% include "./templates/components/categories/categories-landing.twig" %}
+	{% endblock %}
+	{% block sliderReviews %}
+		{% include "./templates/components/slider/slider-reviews-landing.twig" %}
 	{% endblock %}
 </body>
 
