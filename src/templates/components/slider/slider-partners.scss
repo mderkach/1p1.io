@@ -1,0 +1,21 @@
+.slider__partners {
+  padding: 75px 0;
+  border-bottom: 1px solid rgba(217,228,234,.5);
+  &-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+  &-wrapper{
+  }
+  &-slide{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+
+    &:hover {
+      cursor: grabbing;
+    }
+  }
+}
