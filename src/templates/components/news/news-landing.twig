@@ -1,17 +1,19 @@
 <section class="news__landing">
-  <div class="container">
+  <div class="container relative">
     <div class="row">
-        {% for i in 0..2 %}
+      {% for i in 0..2 %}
       <a href="#" class="news__landing-card">
         <img src="/assets/img/main-image-2.jpg" class="news__landing-img" alt="...">
         <div class="news__landing-card-body">
           <h4 class="news__title">Наталья Водянова <br>о проекте One+One</h4>
           {# Обрезание текста после третьей линии НЕ БУДЕТ работать в Firefox, обрезайте текст на сервере (news-landing.scss:47) #}
-          <p class="news__excerpt">Национальная акция «Подари детям заботу», сбор денежных средств сотрудниками московского офиса и Осенний праздник к…</p>
+          <p class="news__excerpt">Национальная акция «Подари детям заботу», сбор денежных средств сотрудниками
+            московского офиса и Осенний праздник к…</p>
           <p class="news__date">12 октября 2017</p>
         </div>
       </a>
       {% endfor %}
     </div>
+    <a href="#" class="btn btn__news-more">Еще <img src="/assets/img/icon-chevron-right-white.svg" alt="" class="img-responsive"></a>
   </div>
 </section>

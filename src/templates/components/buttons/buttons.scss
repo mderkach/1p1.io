@@ -114,4 +114,19 @@
       }
     }
   }
+  &__news {
+    &-more {
+      @extend .btn-xlg;
+      position: absolute;
+      top: 50%;
+      right: -30px;
+      display: flex;
+      justify-content: space-between;
+      padding-right: 30px;
+      padding-left: 45px;
+      width: 100%;
+      max-width: 126px;
+
+    }
+  }
 }

@@ -6,6 +6,7 @@
       @extend .card;
       @include make-col(4);
       max-width: 380px;
+      height: 100%;
       margin-left: $gap;
       margin-right: $gap;
       border-radius: 0;
@@ -28,7 +29,8 @@
     }
     &-img {
       width: 100%;
-      height: auto;
+      height: 330px;
+      object-fit: cover;
     }
   }
   &__title {

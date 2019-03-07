@@ -8,7 +8,6 @@ var sliderRviewLanding = new Swiper('.slider-reviews-landing__container', {
   autoplay: {
     delay: 10000,
     speed: 600,
-    disableOnInteraction: false,
   },
   pagination: {
     el: '.review__dots',
