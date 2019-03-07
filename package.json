@@ -4,7 +4,7 @@
   "description": "blockchain marketplace network frontend",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --watch --open --config ./build/webpack.dev.conf.js",
+    "dev": "webpack-dev-server --watch --config ./build/webpack.dev.conf.js",
     "build": "webpack --config ./build/webpack.build.conf.js"
   },
   "browserslist": [
