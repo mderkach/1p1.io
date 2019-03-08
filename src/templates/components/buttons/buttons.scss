@@ -80,10 +80,6 @@
     max-width: 235px;
     font-size: 18px;
     font-weight: 500;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: normal;
-    letter-spacing: normal;
     border: none;
     background: transparent;
     margin: 0 auto 60px auto;
@@ -114,7 +110,7 @@
     &-more {
       @extend .btn-xlg;
       position: absolute;
-      top: 50%;
+      top: 150px;
       right: -30px;
       display: flex;
       justify-content: space-between;

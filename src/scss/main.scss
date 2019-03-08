@@ -15,6 +15,7 @@
 @import "../templates/components/categories/categories-landing";
 @import "../templates/components/news/news-landing";
 @import "../templates/components/blockchain/blockchain";
+@import "../templates/components/footer/footer.scss";
 // comon
 ::placeholder {
   color: #666
@@ -83,3 +84,7 @@ main {
   position: relative;
 }
 
+.inline-inputs {
+  display: flex;
+  flex-direction: row;
+}
