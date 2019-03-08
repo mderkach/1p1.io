@@ -1,0 +1,41 @@
+.blockchain {
+  padding: 50px 0;
+  &__info {
+    &-wrapper {
+      @include make-col(6);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      padding-left: $gap;
+      padding-right: $gap;
+      &:nth-child(1) {
+        align-items: flex-end;
+      }
+    }
+    &-title {
+      font-size: 22px;
+      font-weight: 500;
+      line-height: 1.45;
+      margin-bottom: 6px;
+    }
+    &-more {
+      display: flex;
+      width: 100%;
+      max-width: 145px;
+      justify-content: space-between;
+      font-weight: 300;
+      line-height: 1.5;
+      color: #4b5769;
+
+      &:hover {
+        color: #4b5769;
+        text-decoration: none;
+        cursor: pointer;
+      }
+    }
+    &-logo {
+      margin-left: 45px;
+    }
+  }
+}
