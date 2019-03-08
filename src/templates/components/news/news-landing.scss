@@ -9,30 +9,19 @@
       height: 100%;
       border-radius: 0;
       border: none;
-      max-height: 100%;
-
       &--wrapper {
         margin-left: $gap;
         margin-right: $gap;
         &:nth-child(1) {
+          max-height: 615px;
           margin-left: 0;
-
-          & .news__landing-card {
-            height: 615px;
-          }
         }
-
         &:nth-child(2) {
-          & .news__landing-card {
-            height: 635px;
-          }
+          height: 635px;
         }
         &:nth-last-child(1) {
+          height: 665px;
           margin-right: 0;
-
-          & .news__landing-card {
-            height: 665px;
-          }
         }
         &:hover {
           cursor: pointer;
