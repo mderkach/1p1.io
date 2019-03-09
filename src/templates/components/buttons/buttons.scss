@@ -90,6 +90,18 @@
     
     span {
       margin-right: 25px;
+      @include mq-down(sm) {
+        margin-right: 0;
+        order: 2;
+        margin-top: 1rem;
+      }
+    }
+
+    @include mq-down(sm) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
 
     &__img {

@@ -4,11 +4,12 @@
   }
   
   &__h1 {
-    font-size: 34px;
+    font-size: rem(34);
     font-weight: 500;
-    font-style: normal;
-    font-stretch: normal;
     line-height: 1.24;
-    letter-spacing: normal;
+
+    @include mq-down(sm) {
+      font-size: rem(30);
+    }
   }
 }

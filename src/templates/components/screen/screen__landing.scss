@@ -5,9 +5,13 @@
   flex-direction: row;
   flex-wrap: wrap;
   align-items: flex-start;
+
+  @include mq-down (sm) {
+    display: none;
+  }
   &__descr {
     color: #fff;
-    font-size: 25px;
+    font-size: rem(25);
     font-weight: 500;
     font-style: normal;
     font-stretch: normal;
@@ -36,6 +40,15 @@
 }
 
 .search-form {
+  @include make-col(8);
+  @include make-col-offset(2);
+
+  @include mq-down(sm) {
+    @include make-col(12);
+    @include make-col-offset(0);
+    padding-left: $gap;
+    padding-right: $gap;
+  }
   .inline-inputs {
     @extend .inline-inputs;
     justify-content: center;
@@ -51,7 +64,7 @@
     border-top-right-radius: 0;
     background-color: #ffffff;
     border: none;
-    font-size: 21px;
+    font-size: rem(21);
     font-weight: 500;
     font-style: normal;
     font-stretch: normal;
@@ -59,6 +72,10 @@
     letter-spacing: normal;
     &::placeholder {
       color: #c0d1dd;
+    }
+
+    @include mq-down (sm) {
+      font-size: rem(18);
     }
   }
   &_submit {

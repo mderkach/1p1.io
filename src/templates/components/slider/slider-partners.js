@@ -12,6 +12,9 @@ var sliderPartners = new Swiper('.slider__partners-container', {
   breakpoints: {
     992: {
       slidesPerView: 4,
+    },
+    360: {
+      slidesPerView: 1,
     }
   }
 });
