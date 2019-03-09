@@ -34,6 +34,11 @@ footer {}
       @include mq-down(lg) {
         @include make-col(6);
       }
+
+      @include mq-down(md) {
+        @include make-col(12);
+        padding-right: $gap;
+      }
       
       &-item {
         font-size: rem(11);
@@ -113,6 +118,12 @@ footer {}
 
     @include mq-down (lg){
       @include make-col(6);
+    }
+
+    @include mq-down(md) {
+      @include make-col(12);
+      padding-left: $gap;
+      margin-bottom: 20px;
     }
   }
 }
