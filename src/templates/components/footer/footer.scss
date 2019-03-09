@@ -7,6 +7,10 @@ footer {}
     &-wrapper {
       @include make-row();
     }
+
+    @include mq-down (lg) {
+      display: none;
+    }
   }
   &-lower {
     border-top: 1px solid rgba(217, 228, 234, .5);
@@ -26,6 +30,11 @@ footer {}
       @include mq-down(xl){
         padding-left: $gap;
       }
+
+      @include mq-down(lg) {
+        @include make-col(6);
+      }
+      
       &-item {
         font-size: rem(11);
         font-weight: 500;
@@ -100,6 +109,10 @@ footer {}
       font-weight: 500;
       color: rgba(87, 87, 87, .5);
       margin-bottom: 0;
+    }
+
+    @include mq-down (lg){
+      @include make-col(6);
     }
   }
 }

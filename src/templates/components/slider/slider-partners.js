@@ -9,4 +9,9 @@ var sliderPartners = new Swiper('.slider__partners-container', {
     speed: 800,
     disableOnInteraction: false,
   },
+  breakpoints: {
+    992: {
+      slidesPerView: 4,
+    }
+  }
 });

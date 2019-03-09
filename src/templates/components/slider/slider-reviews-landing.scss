@@ -1,5 +1,10 @@
 .slider-reviews-landing {
   padding: 90px 0 115px;
+
+  @include mq-down(lg) {
+    padding: 50px 0 75px;
+  }
+
   &__container {
     width: 100%;
     overflow: hidden;
@@ -7,6 +12,10 @@
   &__item {
     @include make-col(12);
     display: flex;
+
+    @include mq-down(lg){
+      flex-direction: column;
+    }
 
     &:hover {
       cursor: grabbing;
@@ -25,6 +34,13 @@
       @include mq-down(xl){
         @include make-col-offset(0);
       }
+
+      @include mq-down(lg){
+        @include make-col(12);
+        padding-left: $gap;
+        padding-right: $gap;
+        margin-bottom: 30px;
+      }
     }
     &__item {
       display: flex;
@@ -42,14 +58,14 @@
     &__name {
       max-width: 215px;
       margin-bottom: 14px;
-      font-size: 34px;
+      font-size: rem(34);
       font-weight: 500;
       line-height: 1.24;
       color: #000;
     }
     &__role {
       margin-bottom: 0;
-      font-size: 16px;
+      font-size: rem(16);
       font-weight: 500;
       line-height: 1.5;
     }
@@ -58,13 +74,28 @@
     max-width: 480px;
     color: #000;
     margin-bottom: 0;
-    font-size: 18px;
+    font-size: rem(18);
     font-weight: 500;
     line-height: 1.5;
     margin-bottom: 70px;
+
+    @include mq-down(lg){
+      max-width: 100%;
+
+      br {
+        display: none;
+      }
+    }
+
     &-wrapper {
       padding: 0 50px;
       @include make-col(6);
+
+      @include mq-down(lg){
+        @include make-col(12);
+        padding-left: $gap;
+        padding-right: $gap;
+      }
     }
   }
   &-bullet {

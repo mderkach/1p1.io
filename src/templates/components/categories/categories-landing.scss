@@ -23,8 +23,13 @@
           }
         }
 
-        @include mq-between(lg, xl) {
+        @include mq-between(lg,xl) {
           max-width: 470px;
+        }
+
+        @include mq-down(lg){
+          @include make-col(12);
+          max-width: 100%;
         }
       }
       &:hover {
@@ -38,6 +43,10 @@
         @include mq-between(lg, xl) {
          height: 540px;
         }
+
+        @include mq-down(lg){
+          height: auto;
+        }
       }
       &-wide {
         display: block;
@@ -48,6 +57,11 @@
 
         @include mq-between(lg, xl) {
           max-height: 260px;
+        }
+
+        @include mq-down(lg){
+          height: auto;
+          max-height: 100%;
         }
       }
       &-small {
@@ -60,6 +74,13 @@
         @include mq-between(lg, xl) {
           max-height: 260px;
           max-width: 225px;
+        }
+
+        @include mq-down(lg){
+          width: 100%;
+          max-width: 350px;
+          height: auto;
+          max-height: 100%;
         }
       }
     }

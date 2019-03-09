@@ -1,5 +1,5 @@
 import Swiper from 'swiper';
-import 'swiper/dist/css/swiper.css'
+import 'swiper/dist/css/swiper.css';
 
 var sliderRviewLanding = new Swiper('.slider-reviews-landing__container', {
   slidesPerView: 1,
@@ -8,6 +8,7 @@ var sliderRviewLanding = new Swiper('.slider-reviews-landing__container', {
   autoplay: {
     delay: 10000,
     speed: 600,
+    disableOnInteraction: true,
   },
   pagination: {
     el: '.review__dots',
