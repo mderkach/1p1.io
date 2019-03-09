@@ -119,6 +119,9 @@
       width: 100%;
       max-width: 126px;
 
+      @include mq-down (xl) {
+        right: -10px;
+      }
     }
   }
 }

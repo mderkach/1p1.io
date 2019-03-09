@@ -60,6 +60,10 @@ header {
         text-decoration: none;
         cursor: pointer;
       }
+      
+      @include mq-down(lg){
+        display: none;
+      }
     }
   }
 }

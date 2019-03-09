@@ -21,6 +21,10 @@
       @include make-col(4);
       @include make-col-offset(1);
       padding-left: 50px;
+
+      @include mq-down(xl){
+        @include make-col-offset(0);
+      }
     }
     &__item {
       display: flex;
