@@ -1,0 +1,59 @@
+<div class="popup__fullscreen">
+  <div class="popup__fullscreen-wrapper">
+    <button class="popup__close">
+      <img src="/assets/img/icons/icon-close-blue.svg" alt="">
+    </button>
+    <div class="row">
+      <div class="header__wrapper-popup">
+        <h2 class="header__h2 header__popup">Регистрация</h1>
+      </div>
+      <form action="#" class="form__popup">
+        <div class="inline-inputs">
+          <label for="name" class="form__popup-label">Имя</label>
+          <div class="form__popup-input-wrapper">
+            <input type="text" name="name" class="form__popup-input" id="name" onfocus="this.placeholder = ''"
+              onblur="this.placeholder = 'Иван'" placeholder="Иван">
+          </div>
+        </div>
+        <div class="inline-inputs">
+          <label for="second-name" class="form__popup-label">Фамилия</label>
+          <div class="form__popup-input-wrapper">
+            <input type="text" name="second-name" class="form__popup-input" id="second-name"
+              onfocus="this.placeholder = ''" onblur="this.placeholder = 'Петров'" placeholder="Петров">
+          </div>
+        </div>
+        <div class="inline-inputs">
+          <label for="email" class="form__popup-label">Email</label>
+          <div class="form__popup-input-wrapper">
+            <input type="email" name="email" class="form__popup-input" id="email" onfocus="this.placeholder = ''"
+              onblur="this.placeholder = 'Ваша@почта'" placeholder="Ваша@почта">
+          </div>
+        </div>
+        <div class="inline-inputs">
+          <label for="password" class="form__popup-label">Пароль</label>
+          <div class="form__popup-input-wrapper">
+            <input type="password" name="password" class="form__popup-input" id="password"
+              onfocus="this.placeholder = ''" onblur="this.placeholder = 'Не менее 8 символов'"
+              placeholder="Не менее 8 символов">
+          </div>
+        </div>
+        <div class="inline-inputs">
+          <label for="phone" class="form__popup-label">Телефон</label>
+          <div class="form__popup-input-wrapper">
+            <input type="tel" class="form__popup-input" id="phone" name="phone" onfocus="this.placeholder = ''"
+              onblur="this.placeholder = '+7 ( ) - - -'" placeholder="+7 ( ) - - -">
+          </div>
+        </div>
+        <div class="inline-inputs">
+          <label for="" class="form__popup-label"></label>
+          <div class="form__popup-input-wrapper">
+            <input class="form__popup-input-checkbox" type="checkbox" id="checkbox" name="checkbox">
+            <label for="checkbox" class="form__popup-label-checkbox">Я ознакомился и подтверждаю согласие с Офертой и
+              Условиями пользовательского соглашения.</label>
+          </div>
+        </div>
+        <input class="form__popup-submit" type="submit" value="Зарегистрироваться">
+      </form>
+    </div>
+  </div>
+</div>

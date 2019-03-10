@@ -1,5 +1,10 @@
-// core
+//libs
+import Inputmask from "inputmask";
+var im = new Inputmask("+7(999)999-99-99");
+im.mask(document.querySelector('input[name=phone]'));
+
 import 'bootstrap.native'
+// core
 import './js/common'
 import './scss/main.scss'
 // js component

@@ -1,0 +1,55 @@
+.search-form {
+  @include make-col(8);
+  @include make-col-offset(2);
+
+  @include mq-down(sm) {
+    @include make-col(12);
+    @include make-col-offset(0);
+    padding-left: $gap;
+    padding-right: $gap;
+  }
+  .inline-inputs {
+    @extend .inline-inputs;
+    justify-content: center;
+    box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.5);
+  }
+  &_input {
+    width: 100%;
+    max-width: 780px;
+    height: 62px;
+    padding: 0 25px;
+    border-radius: 4px;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    background-color: #ffffff;
+    border: none;
+    font-size: rem(21);
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    &::placeholder {
+      color: #c0d1dd;
+    }
+
+    @include mq-down (sm) {
+      font-size: rem(18);
+    }
+  }
+  &_submit {
+    width: 66px;
+    height: 62px;
+    border-radius: 4px;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    background-color: #4489ff;
+    border: none;
+    &-img {
+      margin: 0 auto;
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+    }
+  }
+}

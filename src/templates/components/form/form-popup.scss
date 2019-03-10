@@ -1,0 +1,89 @@
+.form {
+  &__popup {
+    margin-top: 30px;
+    max-width: 700px;
+    width: 100%;
+    padding-left: $gap;
+    padding-right: $gap;
+    .inline-inputs {
+      margin-top: 30px;
+    }
+    &-label {
+      width: 100%;
+      max-width: 180px;
+      padding-right: $gap;
+      padding-left: 3px;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      font-size: rem(18);
+      font-weight: 500;
+      line-height: 1.44;
+      color: #5d5d5d;
+      margin-bottom: 0;
+      border: 2px solid transparent;
+      &-checkbox {
+        margin-bottom: 0;
+        margin-left: 30px;
+        font-size: rem(12);
+        font-weight: 500;
+        line-height: 1.42;
+
+        &::before{
+          display: block;
+          content: '';
+          position: absolute;
+          left: 10px;
+          top: 0;
+          width: 16px;
+          height: 16px;
+          background: transparent;
+          border-radius: 2px;
+          border: solid 2px rgba(93, 93, 93, .5);
+        }
+      }
+    }
+    &-input {
+      width: 100%;
+      max-width: 500px;
+      height: 50px;
+      border: none;
+      border-bottom: 1px solid #5d5d5d;
+      padding: 0 5px;
+      &-checkbox {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+
+        &:checked + .form__popup-label-checkbox {
+          &::before{
+            background: url('/assets/img/icons/icon-checkmark.svg') no-repeat;
+            background-size: contain;
+          }
+        }
+      }
+      &:focus {
+        border-bottom: 2px solid #2b6aab;
+      }
+      @include placeholder {
+        line-height: 1.58;
+        letter-spacing: -0.2px;
+        font-size: rem(19);
+      }
+      &-wrapper {
+        position: relative;
+        width: 100%;
+        padding-left: $gap;
+        display: flex;
+      }
+    }
+    &-submit {
+      @extend .btn-xlg;
+      max-width: 250px;
+      margin: 55px auto 0 auto;
+    }
+  }
+}
