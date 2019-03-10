@@ -7,6 +7,10 @@
     padding-right: $gap;
     .inline-inputs {
       margin-top: 30px;
+
+      @include mq-down(md) {
+        flex-direction: column;
+      }
     }
     &-label {
       width: 100%;
@@ -51,6 +55,11 @@
       border: none;
       border-bottom: 1px solid #5d5d5d;
       padding: 0 5px;
+
+      @include mq-down(md) {
+        max-width: 100%;
+      }
+
       &-checkbox {
         position: absolute;
         opacity: 0;
@@ -78,6 +87,10 @@
         width: 100%;
         padding-left: $gap;
         display: flex;
+
+        @include mq-down(md) {
+          padding-right: $gap;
+        }
       }
     }
     &-submit {

@@ -55,33 +55,6 @@
 }
 
 //
-//  RESPOND ABOVE
-//––––––––––––––––––––––––––––––––––––––––––––––––––
-
-// @include mq-up(sm) {}
-@mixin mq-up($breakpoint) {
-
-  // If the breakpoint exists in the map.
-  @if map-has-key($grid-breakpoints, $breakpoint) {
-
-    // Get the breakpoint value.
-    $breakpoint-value: map-get($grid-breakpoints, $breakpoint);
-
-    // Write the media query.
-    @media (min-width: $breakpoint-value) {
-      @content;
-    }
-  
-  // If the breakpoint doesn't exist in the map.
-  } @else {
-
-    // Log a warning.
-    @warn 'Invalid breakpoint: #{$breakpoint}.';
-  }
-}
-
-
-//
 //  RESPOND BELOW
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
@@ -145,3 +118,31 @@
     }
   }
 }
+
+//
+//  RESPOND ABOVE
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+// @include mq-up(sm) {}
+@mixin mq-up($breakpoint) {
+
+  // If the breakpoint exists in the map.
+  @if map-has-key($grid-breakpoints, $breakpoint) {
+
+    // Get the breakpoint value.
+    $breakpoint-value: map-get($grid-breakpoints, $breakpoint);
+
+    // Write the media query.
+    @media (min-width: $breakpoint-value) {
+      @content;
+    }
+  
+  // If the breakpoint doesn't exist in the map.
+  } @else {
+
+    // Log a warning.
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  }
+}
+
+

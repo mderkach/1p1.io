@@ -13,15 +13,17 @@ menuBtn.addEventListener("click", function(){
 var popupFullscreen = document.querySelector('.popup__fullscreen');
 var popupCaller = document.querySelector('.popup--registration'); 
 var popupClose = document.querySelector('.popup__close');
-
+var body = document.querySelector('body');
 function popupTransition() {
   popupFullscreen.classList.toggle("is-active");
 }
 
 popupCaller.addEventListener("click", function(){
   popupTransition();
+  body.classList.toggle('modal-open');
 });
 
 popupClose.addEventListener("click", function(){
   popupTransition();
+  body.classList.toggle('modal-open');
 });
