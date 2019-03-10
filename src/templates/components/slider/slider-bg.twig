@@ -1,13 +1,11 @@
+{% if backgorunds_slider %}
 <div class="slider-bg__container">
     <div class="swiper-wrapper">
+        {% for background in backgorunds_slider %}
         <div class="swiper-slide slider-bg__slide">
-          <img class="slider-bg__slide_img" src="./assets/img/background/main-image.jpg" alt="">
+          <img class="slider-bg__slide_img" src="{{ background }}" alt="">
         </div>
-        <div class="swiper-slide slider-bg__slide">
-          <img class="slider-bg__slide_img" src="./assets/img/background/main-image-2.jpg" alt="">
-        </div>
-        <div class="swiper-slide slider-bg__slide">
-          <img class="slider-bg__slide_img" src="./assets/img/background/main-image-3.jpg" alt="">
-        </div>
+        {% endfor %}
     </div>
 </div>
+{% endif %}

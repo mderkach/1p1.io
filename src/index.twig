@@ -1,57 +1,79 @@
-<!DOCTYPE html>
-<html lang="ru">
+{% extends "./templates/layout/landing.twig" %}
+{% set page_title = "1p1.io" %}
+{% set landing_h1 = 'Покупка и продажа вещей в помощь людям' %}
+{% set backgorunds_slider = [
+	'./assets/img/background/main-image.jpg',
+	'./assets/img/background/main-image-2.jpg',
+	'./assets/img/background/main-image-3.jpg'
+	] %}
 
-<head>
-
-	<meta charset="utf-8">
-	<!-- <base href="/"> -->
-	{% set page_title = "1p1.io" %}
-	<title>{{ page_title }}</title>
-	<meta name="description" content="">
-
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-	<!-- Template Basic Images Start -->
-	<meta property="og:image" content="path/to/image.jpg">
-	<link rel="icon" href="#">
-	<link rel="apple-touch-icon" sizes="180x180" href="#">
-	<!-- Template Basic Images End -->
-
-	<!-- Custom Browsers Color Start -->
-	<meta name="theme-color" content="#4489ff">
-	<!-- Custom Browsers Color End -->
-</head>
-
-<body>
-	<main>
-		{% block header %}
-			{% include "./templates/components/header/header.twig" %}
-		{% endblock %}
-		{% block mainScreen %}
-			{% include "./templates/components/screen/screen__landing.twig" %}
-			{% include "./templates/components/slider/slider-bg.twig" %}
-		{% endblock %}
-	</main>
-	{% include "./templates/components/bullets/bullets-numeric.twig" %}
-	{% block categories %}
-		{% include "./templates/components/categories/categories-landing.twig" %}
-	{% endblock %}
-	{% block sliderReviews %}
-		{% include "./templates/components/slider/slider-reviews-landing.twig" %}
-	{% endblock %}
-	{% block news %}
-		{% include "./templates/components/news/news-landing.twig" %}
-	{% endblock %}
-	{% block sliderPartners %}
-		{% include "./templates/components/slider/slider-partners.twig" %}
-	{% endblock %}
-	{% block blockchain %}
-		{% include "./templates/components/blockchain/blockchain.twig" %}
-	{% endblock %}
-	{% block footer %}
-	 {% include "./templates/components/footer/footer.twig" %}
-	{% endblock %}
-</body>
-
-</html>
+{% set reviews_slider = [
+	{
+		authorName: 'Чулпан Хаматова',
+		authorAvatar: '/assets/img/background/main-image.jpg',
+		authorRole: 'Актриса',
+		authorReview: 'Спасибо всем, кто помогает нашим детям! Деньги на <br>
+		их лечение собраны, и все необходимое оплачено или <br>
+		куплено. Без Вашей поддержки мы не смогли бы <br>
+		оплатить поиск и активацию донора костного мозга, <br>
+		лечение за рубежом, покупку дорогих лекарств<br> 
+		и операций. Спасибо!',
+	},
+	{
+		authorName: 'Чулпан Хаматова',
+		authorAvatar: '/assets/img/background/main-image.jpg',
+		authorRole: 'Актриса',
+		authorReview: 'Спасибо всем, кто помогает нашим детям! Деньги на <br>
+		их лечение собраны, и все необходимое оплачено или <br>
+		куплено. Без Вашей поддержки мы не смогли бы <br>
+		оплатить поиск и активацию донора костного мозга, <br>
+		лечение за рубежом, покупку дорогих лекарств<br> 
+		и операций. Спасибо!',
+	},
+	{
+		authorName: 'Чулпан Хаматова',
+		authorAvatar: '/assets/img/background/main-image.jpg',
+		authorRole: 'Актриса',
+		authorReview: 'Спасибо всем, кто помогает нашим детям! Деньги на <br>
+		их лечение собраны, и все необходимое оплачено или <br>
+		куплено. Без Вашей поддержки мы не смогли бы <br>
+		оплатить поиск и активацию донора костного мозга, <br>
+		лечение за рубежом, покупку дорогих лекарств<br> 
+		и операций. Спасибо!',
+	},
+	{
+		authorName: 'Чулпан Хаматова',
+		authorAvatar: '/assets/img/background/main-image.jpg',
+		authorRole: 'Актриса',
+		authorReview: 'Спасибо всем, кто помогает нашим детям! Деньги на <br>
+		их лечение собраны, и все необходимое оплачено или <br>
+		куплено. Без Вашей поддержки мы не смогли бы <br>
+		оплатить поиск и активацию донора костного мозга, <br>
+		лечение за рубежом, покупку дорогих лекарств<br> 
+		и операций. Спасибо!',
+	},
+	] %}
+	{% set news_landing = [
+		{
+			newsLink:'#',
+			newsPreview: '/assets/img/background/main-image-2.jpg',
+			newsTitle: 'Наталья Водянова <br>о проекте One+One',
+			newsExcerpt: 'Национальная акция «Подари детям заботу», сбор денежных средств сотрудниками
+			московского офиса и Осенний праздник к…',
+			newsDate: '12 октября 2017',
+		},{
+			newsLink:'#',
+			newsPreview: '/assets/img/background/main-image-2.jpg',
+			newsTitle: 'Наталья Водянова <br>о проекте One+One',
+			newsExcerpt: 'Национальная акция «Подари детям заботу», сбор денежных средств сотрудниками
+			московского офиса и Осенний праздник к…',
+			newsDate: '12 октября 2017',
+		},{
+			newsLink:'#',
+			newsPreview: '/assets/img/background/main-image-2.jpg',
+			newsTitle: 'Наталья Водянова <br>о проекте One+One',
+			newsExcerpt: 'Национальная акция «Подари детям заботу», сбор денежных средств сотрудниками
+			московского офиса и Осенний праздник к…',
+			newsDate: '12 октября 2017',
+		},
+		] %}

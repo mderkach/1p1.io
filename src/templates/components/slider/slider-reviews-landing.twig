@@ -1,27 +1,23 @@
+{% if reviews_slider %}
 <section class="slider-reviews-landing">
   <div class="container">
     <div class="row">
       <div class="slider-reviews-landing__container">
         <div class="swiper-wrapper slider-reviews-landing__wrapper">
-          {% for i in 0..4 %}
+          {% for review in reviews_slider %}
           <div class="swiper-slide slider-reviews-landing__slide">
             <div class="slider-reviews-landing__item">
               <div class="review-author__wrapper">
                 <div class="review-author__avatar">
-                  <img src="/assets/img/background/main-image.jpg" alt="" class="img-responsive review-author__avatar-img">
+                  <img src="{{ review.authorAvatar }}" alt="" class="img-responsive review-author__avatar-img">
                 </div>
                 <div class="review-author__info">
-                  <h4 class="review-author__name">Чулпан Хаматова</h4>
-                  <p class="review-author__role">Акстриса</p>
+                  <h4 class="review-author__name">{{ review.authorName }}</h4>
+                  <p class="review-author__role">{{ review.authorRole }}</p>
                 </div>
               </div>
               <div class="review__descr-wrapper">
-                <p class="review__descr">Спасибо всем, кто помогает нашим детям! Деньги на <br>
-                  их лечение собраны, и все необходимое оплачено или <br>
-                  куплено. Без Вашей поддержки мы не смогли бы <br>
-                  оплатить поиск и активацию донора костного мозга, <br>
-                  лечение за рубежом, покупку дорогих лекарств<br> 
-                  и операций. Спасибо!</p>
+                <p class="review__descr">{{ review.authorReview }}</p>
               </div>
             </div>
           </div>
@@ -33,3 +29,4 @@
     </div>
   </div>
 </section>
+{% endif %}
