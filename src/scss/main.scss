@@ -49,12 +49,12 @@ body {
   textarea {
     border: #666 1px solid;
     outline: none;
-    &:focus:required:invalid {
-      border-color: red
-    }
-    &:required:valid {
-      border-color: green
-    }
+    // &:focus:required:invalid {
+    //   border-color: red
+    // }
+    // &:required:valid {
+    //   border-color: green
+    // }
   }
 }
 
@@ -81,6 +81,10 @@ strong {
 
 .absolute {
   position: absolute;
+}
+
+.visible {
+  visibility: visible !important;
 }
 
 main {

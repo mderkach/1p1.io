@@ -7,49 +7,55 @@
       <div class="header__wrapper-popup">
         <h2 class="header__h2 header__popup">Регистрация</h1>
       </div>
-      <form action="#" class="form__popup">
+      <form action="#" class="form__popup validate" novalidate>
         <div class="inline-inputs">
           <label for="name" class="form__popup-label">Имя</label>
           <div class="form__popup-input-wrapper">
             <input type="text" name="name" class="form__popup-input" id="name" onfocus="this.placeholder = ''"
-              onblur="this.placeholder = 'Иван'" placeholder="Иван">
+              onblur="this.placeholder = 'Иван'" placeholder="Иван" required>
+            <div class="not-valid">Заполните поле</div>
           </div>
         </div>
         <div class="inline-inputs">
           <label for="second-name" class="form__popup-label">Фамилия</label>
           <div class="form__popup-input-wrapper">
             <input type="text" name="second-name" class="form__popup-input" id="second-name"
-              onfocus="this.placeholder = ''" onblur="this.placeholder = 'Петров'" placeholder="Петров">
+              onfocus="this.placeholder = ''" onblur="this.placeholder = 'Петров'" placeholder="Петров" required>
+            <div class="not-valid">Заполните поле</div>
           </div>
         </div>
         <div class="inline-inputs">
           <label for="email" class="form__popup-label">Email</label>
           <div class="form__popup-input-wrapper">
             <input type="email" name="email" class="form__popup-input" id="email" onfocus="this.placeholder = ''"
-              onblur="this.placeholder = 'Ваша@почта'" placeholder="Ваша@почта">
+              onblur="this.placeholder = 'Ваша@почта'" placeholder="Ваша@почта" required>
+            <div class="not-valid">Неверный формат Email</div>
           </div>
         </div>
         <div class="inline-inputs">
           <label for="password" class="form__popup-label">Пароль</label>
           <div class="form__popup-input-wrapper">
-            <input type="password" name="password" class="form__popup-input" id="password"
+            <input type="password" name="password" pattern=".{8,}" class="form__popup-input" id="password"
               onfocus="this.placeholder = ''" onblur="this.placeholder = 'Не менее 8 символов'"
-              placeholder="Не менее 8 символов">
+              placeholder="Не менее 8 символов" required>
+            <div class="not-valid">Не менее 8 символов</div>
           </div>
         </div>
         <div class="inline-inputs">
           <label for="phone" class="form__popup-label">Телефон</label>
           <div class="form__popup-input-wrapper">
             <input type="tel" class="form__popup-input" id="phone" name="phone" onfocus="this.placeholder = ''"
-              onblur="this.placeholder = '+7 ( ) - - -'" placeholder="+7 ( ) - - -">
+              onblur="this.placeholder = '+7 ( ) - - -'" placeholder="+7 ( ) - - -" required>
+              <div class="not-valid">Заполните поле</div>
           </div>
         </div>
         <div class="inline-inputs">
           <label for="" class="form__popup-label"></label>
           <div class="form__popup-input-wrapper">
-            <input class="form__popup-input-checkbox" type="checkbox" id="checkbox" name="checkbox">
+            <input class="form__popup-input-checkbox" type="checkbox" id="checkbox" name="checkbox" required>
             <label for="checkbox" class="form__popup-label-checkbox">Я ознакомился и подтверждаю согласие с Офертой и
               Условиями пользовательского соглашения.</label>
+            <div class="not-valid">Примите условия</div>
           </div>
         </div>
         <input class="form__popup-submit" type="submit" value="Зарегистрироваться">
