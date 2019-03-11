@@ -115,6 +115,10 @@
       display: flex;
       justify-content: center;
       margin: auto auto 50px auto;
+
+      @include mq-down(md) {
+        max-width: 100%;
+      }
       img {
         margin-left: 10px;
       }

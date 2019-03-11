@@ -2,6 +2,7 @@ import Swiper from 'swiper';
 import 'swiper/dist/css/swiper.css'
 
 var sliderPartners = new Swiper('.slider__partners-container', {
+  init: false,
   slidesPerView: 8,
   loop: true,
   autoplay: {
@@ -13,8 +14,11 @@ var sliderPartners = new Swiper('.slider__partners-container', {
     992: {
       slidesPerView: 4,
     },
-    360: {
+    480: {
       slidesPerView: 1,
     }
   }
 });
+if (window.innerWidth > 380) {
+  sliderPartners.init();
+}

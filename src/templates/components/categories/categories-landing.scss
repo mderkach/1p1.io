@@ -30,6 +30,10 @@
         @include mq-down(lg){
           @include make-col(12);
           max-width: 100%;
+
+          &:nth-child(1) {
+            margin-bottom: 20px;
+          }
         }
 
         @include mq-down(md){

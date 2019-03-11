@@ -30,10 +30,19 @@
       }
     }
     &-title {
-      font-size: 22px;
+      font-size: rem(22);
       font-weight: 500;
       line-height: 1.45;
       margin-bottom: 6px;
+
+      @include mq-down(md) {
+        font-size: rem(18);
+        margin-left: $gap;
+      }
+
+      @media screen and (max-width: 330px) {
+        margin-left: $gap;
+      }
     }
     &-more {
       display: flex;
@@ -49,12 +58,26 @@
         text-decoration: none;
         cursor: pointer;
       }
+
+      @include mq-down(md) {
+        font-size: rem(18);
+        
+      }
+      
+      @media screen and (max-width: 330px) {
+        margin-left: -$gap*2;
+      }
+
     }
     &-logo {
       margin-left: 45px;
 
       @include mq-down(md) {
         margin-left: 0;
+      }
+
+      @media screen and (max-width: 330px) {
+        margin-right: auto; 
       }
     }
   }

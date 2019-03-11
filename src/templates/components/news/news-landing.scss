@@ -2,6 +2,10 @@
   &__landing {
     padding: 80px 0 50px;
     background-color: #f1f5f9;
+
+    @include mq-down(md){
+      padding: 40px 10px;
+    }
     &-card {
       @extend .card;
       @include make-col(4);
@@ -61,6 +65,10 @@
         @include mq-down(xl){
          padding: 40px 30px;
         }
+
+        @include mq-between(xs,md) {
+          padding: 24px 20px;
+        }
       }
     }
     &-img {
@@ -75,6 +83,11 @@
     font-weight: 500;
     line-height: 1.45;
     margin-bottom: 24px;
+
+    @include mq-down(md){
+      font-size: rem(20);
+      margin-bottom: 12px;
+    }
   }
   &__excerpt {
     font-size: rem(16);
@@ -86,6 +99,10 @@
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
+
+    @include mq-down(md){
+      margin-bottom: 18px;
+    }
   }
   &__date {
     font-weight: 300;
@@ -93,5 +110,6 @@
     line-height: 1.8;
     letter-spacing: 1px;
     color: #4b5769;
+    margin-bottom: 0;
   }
 }

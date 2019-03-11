@@ -36,7 +36,8 @@ footer {}
       }
 
       @include mq-down(md) {
-        @include make-col(12);
+        max-width: 100% !important;
+        flex: 0 0 100% !important;
         padding-right: $gap;
       }
       
@@ -44,6 +45,10 @@ footer {}
         font-size: rem(11);
         font-weight: 500;
         color: #4489ff;
+
+        @include mq-down(md) {
+          font-size: rem(10);
+        }
       }
     }
   }
@@ -121,7 +126,8 @@ footer {}
     }
 
     @include mq-down(md) {
-      @include make-col(12);
+      max-width: 100% !important;
+      flex: 0 0 100% !important;
       padding-left: $gap;
       margin-bottom: 20px;
     }

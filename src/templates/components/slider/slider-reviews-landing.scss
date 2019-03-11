@@ -5,9 +5,18 @@
     padding: 50px 0 75px;
   }
 
+  @include mq-down(md) {
+    padding-bottom: 55px;
+  }
+
   &__container {
     width: 100%;
     overflow: hidden;
+
+    @include mq-down(md) {
+      padding-left: $gap;
+      padding-right: $gap;
+    }
   }
   &__item {
     @include make-col(12);
@@ -62,12 +71,22 @@
       font-weight: 500;
       line-height: 1.24;
       color: #000;
+
+      @include mq-down(md){
+        font-size: rem(24);
+        max-width: 90%;
+        margin-bottom: 0;
+      }
     }
     &__role {
       margin-bottom: 0;
       font-size: rem(16);
       font-weight: 500;
       line-height: 1.5;
+
+      @include mq-down(md) {
+        font-size: rem(15);
+      }
     }
   }
   &__descr {
@@ -85,6 +104,11 @@
       br {
         display: none;
       }
+    }
+
+    @include mq-down(md) {
+      font-size: rem(16);
+      margin-bottom: 40px;
     }
 
     &-wrapper {
