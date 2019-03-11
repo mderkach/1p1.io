@@ -31,8 +31,6 @@
       padding-top: 9px;
       padding-bottom: 8px;
     }
-
-    
   }
   &-xlg {
     @extend [class^='btn'];
@@ -150,6 +148,22 @@
           margin-left: 15px;
         }
       }
+    }
+  }
+  &-ok{
+    @extend .btn-mid;
+    max-width: 130px;
+    height: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    background: #4489ff;
+
+    @include mq-down(md) {
+      max-width: 90%;
+    }
+
+    &:hover {
+      background: #4f90fe;
     }
   }
 }

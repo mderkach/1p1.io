@@ -1,11 +1,11 @@
-<div class="popup__fullscreen">
+<div class="popup__fullscreen" id="registration">
   <div class="popup__fullscreen-wrapper">
-    <button class="popup__close">
+    <button class="popup__close btn--close-popup" data-modal="registration">
       <img src="/assets/img/icons/icon-close-blue.svg" alt="">
     </button>
     <div class="row">
       <div class="header__wrapper-popup">
-        <h2 class="header__h2 header__popup">Регистрация</h1>
+        <h2 class="header__h2 header__popup">Регистрация</h2>
       </div>
       <form action="#" class="form__popup validate" novalidate>
         <div class="inline-inputs">
@@ -46,13 +46,13 @@
           <div class="form__popup-input-wrapper">
             <input type="tel" class="form__popup-input" id="phone" name="phone" onfocus="this.placeholder = ''"
               onblur="this.placeholder = '+7 ( ) - - -'" placeholder="+7 ( ) - - -" required>
-              <div class="not-valid">Заполните поле</div>
+            <div class="not-valid">Заполните поле</div>
           </div>
         </div>
         <div class="inline-inputs">
           <label for="" class="form__popup-label"></label>
           <div class="form__popup-input-wrapper">
-            <input class="form__popup-input-checkbox" type="checkbox" id="checkbox" name="checkbox" required>
+            <input class="form__popup-input-checkbox" type="checkbox" id="checkbox" name="checkbox" required checked>
             <label for="checkbox" class="form__popup-label-checkbox">Я ознакомился и подтверждаю согласие с Офертой и
               Условиями пользовательского соглашения.</label>
             <div class="not-valid">Примите условия</div>

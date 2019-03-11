@@ -10,23 +10,40 @@ menuBtn.addEventListener("click", function () {
   menuTransition();
 });
 // popup transition
-var popupFullscreen = document.querySelector('.popup__fullscreen');
-var popupCaller = document.querySelector('.popup--registration');
-var popupClose = document.querySelector('.popup__close');
+var popupRegistration = document.querySelector('#registration');
+var popupSucess = document.querySelector('#success');
+var popupCaller = document.querySelectorAll('.popup--toggle');
+var popupClose = document.querySelectorAll('.btn--close-popup');
 var body = document.querySelector('body');
-function popupTransition() {
-  popupFullscreen.classList.toggle("is-active");
+
+for (i = 0; i < popupCaller.length; ++i) {
+  popupCaller[i].addEventListener("click", function () {
+    if (this.getAttribute('data-modal') == 'registration') {
+      event.preventDefault();
+      popupRegistration.classList.toggle("is-active");
+    }
+    else {
+      event.preventDefault();
+      popupSucess.classList.toggle("is-active");
+    }
+    body.classList.toggle('modal-open');
+  });
 }
 
-popupCaller.addEventListener("click", function () {
-  popupTransition();
-  body.classList.toggle('modal-open');
-});
+for (i = 0; i < popupClose.length; ++i) {
+  popupClose[i].addEventListener("click", function () {
+    if (this.getAttribute('data-modal') == 'registration') {
+      event.preventDefault();
+      popupRegistration.classList.toggle("is-active");
+    }
+    else {
+      event.preventDefault();
+      popupSucess.classList.toggle("is-active");
+    }
+    body.classList.toggle('modal-open');
+  });
+}
 
-popupClose.addEventListener("click", function () {
-  popupTransition();
-  body.classList.toggle('modal-open');
-});
 
 // custom validation
 var setInvalid = 'is-invalid';
@@ -39,28 +56,31 @@ window.addEventListener('load', function () {
   var validation = Array.prototype.filter.call(forms, function (form) {
     form.addEventListener('submit', function (event) {
       validateInput();
-      if (form.checkValidity() === false) {
-        event.preventDefault();
+      if (form.checkValidity() === false) { //if errors
+        event.preventDefault(); //disable submit
         event.stopPropagation();
-
+      } else { // if no errors
+        event.preventDefault(); // disble submit
+        popupSucess.classList.toggle("is-active"); //open sucess modal
       }
       form.classList.add('was-validated');
     }, false);
   });
 }, false);
+
 function validateInput() {
   inputs.forEach(function (input) {
     // Add a css class on submit when the input is invalid.
     input.addEventListener('invalid', function () {
       input.classList.add(setInvalid);
-      input.parentElement.children[1].classList.add('visible');
+      input.parentElement.lastChild.previousSibling.classList.add('visible');
     });
     // Remove the class when the input becomes valid.
     // 'input' will fire each time the user types
     input.addEventListener('input', function () {
       if (input.validity.valid) {
         input.classList.remove(setInvalid);
-        input.parentElement.children[1].classList.remove('visible');
+        input.parentElement.lastChild.previousSibling.classList.add('visible');
       }
     });
   });
