@@ -9,7 +9,7 @@
       <div class="header__wrapper-popup">
         <h2 class="header__h2 header__popup">Регистрация</h2>
       </div>
-      <form action="#" class="form__popup validate" novalidate>
+      <form action="#" method="POST" class="form__popup validate" novalidate>
         {{ inputs.inputRegistration('name', 'text', 'Имя', 'Иван', 'Заполните поле' ) }}
         {{ inputs.inputRegistration('second-name', 'text', 'Фамилия', 'Петров', 'Заполните поле' ) }}
         {{ inputs.inputRegistration('email', 'email', 'Email', 'Ваша@почта', 'Неверный формат Email' ) }}
@@ -22,3 +22,22 @@
     </div>
   </div>
 </div>
+
+<div class="popup__fullscreen" id="login">
+    <div class="popup__fullscreen-wrapper">
+      <button class="popup__close btn--close-popup" data-modal="login">
+        <img src="/assets/img/icons/icon-close-blue.svg" alt="">
+      </button>
+      <div class="row">
+        <div class="header__wrapper-popup">
+          <h2 class="header__h2 header__popup">Вход</h2>
+        </div>
+        <form action="#" method="GET" class="form__popup validate" novalidate>
+          {{ inputs.inputRegistration('email-login', 'email', 'Email', 'Ваша@почта', 'Email не найден' ) }}
+          {{ inputs.inputRegistration('password-login', 'password', 'Пароль', 'Пароль', 'Неверный пароль' ) }}
+          {{ inputs.loginButtons() }}
+          {{ inputs.submitRegistration('Войти') }}
+        </form>
+      </div>
+    </div>
+  </div>

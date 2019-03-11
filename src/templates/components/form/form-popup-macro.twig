@@ -23,3 +23,13 @@
 {% macro submitRegistration(value) %}
 <input class="form__popup-submit" type="submit" value="{{ value }}">
 {% endmacro %}
+
+{% macro loginButtons() %}
+<div class="inline-inputs">
+  <label for="" class="form__popup-label"></label>
+  <div class="form__popup-input-wrapper form__popup-login-anchors">
+    <a class="form__popup-login-anchor" href="#">Забыли пароль?</a>
+    <a class="form__popup-login-anchor" href="#">Регистрация</a>
+  </div>
+</div>
+{% endmacro %}

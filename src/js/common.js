@@ -12,6 +12,7 @@ menuBtn.addEventListener("click", function () {
 // popup transition
 var popupRegistration = document.querySelector('#registration');
 var popupSucess = document.querySelector('#success');
+var popupLogin = document.querySelector('#login');
 var popupCaller = document.querySelectorAll('.popup--toggle');
 var popupClose = document.querySelectorAll('.btn--close-popup');
 var body = document.querySelector('body');
@@ -22,7 +23,10 @@ for (i = 0; i < popupCaller.length; ++i) {
       event.preventDefault();
       popupRegistration.classList.toggle("is-active");
     }
-    else {
+    else if (this.getAttribute('data-modal') == 'login') {
+      event.preventDefault();
+      popupLogin.classList.toggle("is-active");
+    } else {
       event.preventDefault();
       popupSucess.classList.toggle("is-active");
     }
@@ -35,8 +39,10 @@ for (i = 0; i < popupClose.length; ++i) {
     if (this.getAttribute('data-modal') == 'registration') {
       event.preventDefault();
       popupRegistration.classList.toggle("is-active");
-    }
-    else {
+    } else if (this.getAttribute('data-modal') == 'login') {
+      event.preventDefault();
+      popupLogin.classList.toggle("is-active");
+    } else {
       event.preventDefault();
       popupSucess.classList.toggle("is-active");
     }

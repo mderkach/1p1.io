@@ -26,11 +26,9 @@
       color: #5d5d5d;
       margin-bottom: 0;
       border: 2px solid transparent;
-
       @include mq-down(md) {
         font-size: rem(15);
       }
-
       &-checkbox {
         margin-bottom: 0;
         margin-left: 30px;
@@ -59,7 +57,6 @@
       border-bottom: 1px solid #5d5d5d;
       padding: 0 5px;
       font-size: rem(19);
-      
       @include mq-down(md) {
         max-width: 100%;
       }
@@ -89,7 +86,6 @@
           }
         }
       }
-     
       @include placeholder {
         line-height: 1.58;
         letter-spacing: -0.2px;
@@ -119,6 +115,22 @@
       @extend .btn-xlg;
       max-width: 250px;
       margin: 55px auto 0 auto;
+    }
+    &-login {
+      &-anchors {
+        display: flex;
+        justify-content: space-between;
+      }
+      &-anchor {
+        font-size: rem(14);
+        font-weight: bold;
+        line-height: 1.86;
+        color: #4489ff;
+
+        @include mq-down(md) {
+          font-size: rem(15);
+        }
+      }
     }
   }
 }
