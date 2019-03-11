@@ -86,3 +86,13 @@ function validateInput() {
     });
   });
 }
+
+var formFooter = document.querySelectorAll('.form__footer');
+window.addEventListener('load', function () {
+  var subscribition = Array.prototype.filter.call(formFooter, function (form) {
+    form.addEventListener('submit', function (event) {
+      event.preventDefault(); //disable submit
+      form.classList.add('is-subscribed');
+    }, false);
+  });
+}, false);
