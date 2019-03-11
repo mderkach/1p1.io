@@ -79,7 +79,9 @@
   }
   &-video {
     @extend [class^='btn'];
+    color: #fff !important;
     max-width: 235px;
+    padding: 0;
     font-size: rem(18);
     font-weight: 500;
     border: none;
