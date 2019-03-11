@@ -61,6 +61,7 @@ window.addEventListener('load', function () {
         event.stopPropagation();
       } else { // if no errors
         event.preventDefault(); // disble submit
+        popupRegistration.classList.toggle("is-active");
         popupSucess.classList.toggle("is-active"); //open sucess modal
       }
       form.classList.add('was-validated');

@@ -1,0 +1,25 @@
+{% macro inputRegistration(name, type, label, placeholder, error) %}
+<div class="inline-inputs">
+  <label for="{{ name }}" class="form__popup-label">{{ label }}</label>
+  <div class="form__popup-input-wrapper">
+    <input type="{{ type }}" name="{{ name }}" class="form__popup-input" id="{{ name }}" onfocus="this.placeholder = ''"
+      onblur="this.placeholder = '{{ placeholder }}'" placeholder="{{ placeholder }}" required>
+    <div class="not-valid">{{ error }}</div>
+  </div>
+</div>
+{% endmacro %}
+
+{% macro checkboxRegistration(name, text, error) %}
+<div class="inline-inputs">
+  <label for="" class="form__popup-label"></label>
+  <div class="form__popup-input-wrapper">
+    <input class="form__popup-input-checkbox" type="checkbox" id="{{ name }}" name="{{ name }}" required checked>
+    <label for="{{ name }}" class="form__popup-label-checkbox">{{ text }}</label>
+    <div class="not-valid">{{ error }}</div>
+  </div>
+</div>
+{% endmacro %}
+
+{% macro submitRegistration(value) %}
+<input class="form__popup-submit" type="submit" value="{{ value }}">
+{% endmacro %}
