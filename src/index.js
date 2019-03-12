@@ -3,9 +3,9 @@ import Inputmask from "inputmask";
 var im = new Inputmask("+7(999)999-99-99");
 im.mask(document.querySelector('input[name=phone]'));
 
-import 'bootstrap.native'
-import 'lightgallery.js'
-import '../node_modules/lightgallery.js/src/js/lg-utils'
+//import 'bootstrap.native'
+//import 'lightgallery.js'
+//import '../node_modules/lightgallery.js/src/js/lg-utils'
 // core
 import './js/common'
 import './scss/main.scss'

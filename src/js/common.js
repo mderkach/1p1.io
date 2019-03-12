@@ -106,6 +106,8 @@ window.addEventListener('load', function () {
 }, false);
 
 
+var video = document.querySelector('#video');
+
 lightGallery(document.querySelector('.btn-video'), {
   mode: 'lg-fade',
   cssEasing : 'cubic-bezier(0.25, 0, 0.25, 1)',
@@ -113,4 +115,5 @@ lightGallery(document.querySelector('.btn-video'), {
   controls: false,
   download: false,
   counter: false,
+  selector: '#video',
 }); 
