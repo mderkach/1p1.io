@@ -1,0 +1,14 @@
+.video {
+  overflow: hidden;
+  display: none;
+  width: 100%;
+  max-width: 960px;
+  height: auto;
+  max-height: 540px;
+  padding: 0;
+  video {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+  }
+}

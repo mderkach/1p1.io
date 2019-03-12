@@ -25,37 +25,39 @@
 <body>
 	<main>
 		{% block header %}
-			{% include "../components/header/header.twig" %}
+		{% include "../components/header/header.twig" %}
 		{% endblock %}
 		{% block mainScreen %}
-			{% include "../components/screen/screen__landing.twig" %}
-			{% include "../components/slider/slider-bg.twig" %}
+		{% include "../components/screen/screen__landing.twig" %}
+		{% include "../components/slider/slider-bg.twig" %}
 		{% endblock %}
 	</main>
 	{% include "../components/bullets/bullets-numeric.twig" %}
 	{% block categories %}
-		{% include "../components/categories/categories-landing.twig" %}
+	{% include "../components/categories/categories-landing.twig" %}
 	{% endblock %}
 	{% block sliderReviews %}
-		{% include "../components/slider/slider-reviews-landing.twig" %}
+	{% include "../components/slider/slider-reviews-landing.twig" %}
 	{% endblock %}
 	{% block news %}
-		{% include "../components/news/news-landing.twig" %}
+	{% include "../components/news/news-landing.twig" %}
 	{% endblock %}
 	{% block sliderPartners %}
-		{% include "../components/slider/slider-partners.twig" %}
+	{% include "../components/slider/slider-partners.twig" %}
 	{% endblock %}
 	{% block blockchain %}
-		{% include "../components/blockchain/blockchain.twig" %}
+	{% include "../components/blockchain/blockchain.twig" %}
 	{% endblock %}
 	{% block footer %}
-	 {% include "../components/footer/footer.twig" %}
+	{% include "../components/footer/footer.twig" %}
 	{% endblock %}
 	{% block popup %}
-	 {% include "../components/popup/popup.twig" %}
-	 {% include "../components/popup/popup-sucess.twig" %}
+	{% include "../components/popup/popup.twig" %}
+	{% include "../components/popup/popup-sucess.twig" %}
 	{% endblock %}
-
+	{% block video %}
+	{% include "../components/video/video-landing.twig" %}
+	{% endblock %}
 </body>
 
 </html>

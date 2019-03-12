@@ -118,7 +118,6 @@ var video = document.querySelector('#video');
 //   selector: '#video',
 // }); 
 
-$('data-fancybox').fancybox({
-  src  : '#video',
-
+$('.btn-video').fancybox({
+  buttons: ["close"],
 });
