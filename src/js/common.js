@@ -108,12 +108,17 @@ window.addEventListener('load', function () {
 
 var video = document.querySelector('#video');
 
-lightGallery(document.querySelector('.btn-video'), {
-  mode: 'lg-fade',
-  cssEasing : 'cubic-bezier(0.25, 0, 0.25, 1)',
-  loop: false,
-  controls: false,
-  download: false,
-  counter: false,
-  selector: '#video',
-}); 
+// lightGallery(document.querySelector('.btn-video'), {
+//   mode: 'lg-fade',
+//   cssEasing : 'cubic-bezier(0.25, 0, 0.25, 1)',
+//   loop: false,
+//   controls: false,
+//   download: false,
+//   counter: false,
+//   selector: '#video',
+// }); 
+
+$('data-fancybox').fancybox({
+  src  : '#video',
+
+});
