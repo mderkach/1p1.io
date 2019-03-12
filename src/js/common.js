@@ -21,6 +21,7 @@ for (i = 0; i < popupCaller.length; ++i) {
   popupCaller[i].addEventListener("click", function () {
     if (this.getAttribute('data-modal') == 'registration') {
       event.preventDefault();
+      popupLogin.classList.remove("is-active");
       popupRegistration.classList.toggle("is-active");
     }
     else if (this.getAttribute('data-modal') == 'login') {
@@ -67,8 +68,9 @@ window.addEventListener('load', function () {
         event.stopPropagation();
       } else { // if no errors
         event.preventDefault(); // disble submit
-        popupRegistration.classList.toggle("is-active");
+        popupRegistration.classList.remove("is-active");
         popupSucess.classList.toggle("is-active"); //open sucess modal
+        body.classList.toggle('modal-open');
       }
       form.classList.add('was-validated');
     }, false);
