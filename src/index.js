@@ -1,5 +1,5 @@
 //libs
-import Inputmask from "inputmask";
+import Inputmask from "../node_modules/inputmask/dist/inputmask/inputmask";
 var im = new Inputmask("+7(999)999-99-99");
 im.mask(document.querySelector('input[name=phone]'));
 import '@fancyapps/fancybox'

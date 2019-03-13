@@ -79,11 +79,6 @@ module.exports = {
       use: [
         'twig-loader'
       ]
-    }, {
-      test: /bootstrap\.native/,
-      use: {
-        loader: 'bootstrap.native-loader'
-      }
     }]
   },
   plugins: [
