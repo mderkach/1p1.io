@@ -4,27 +4,21 @@
     background-color: #f1f5f9;
 
     @include mq-down(md){
-      padding: 40px 10px;
+      padding: 40px 20px;
     }
     &-card {
       @extend .card;
-      @include make-col(4);
-      max-width: 380px;
+      width: 100%;
       height: 100%;
       border-radius: 0;
       border: none;
 
-      @include mq-between(lg,xl) {
-        max-width: 306px;
-      }
-
-      @include mq-down(lg) {
-        @include make-col(12);
-        max-width: 100%;
-      }
       &--wrapper {
         margin-left: $gap;
         margin-right: $gap;
+        @include make-col(4);
+        max-width: 380px;
+
         &:nth-child(1) {
           max-height: 615px;
           margin-left: 0;
@@ -42,17 +36,39 @@
           box-shadow: 0 0 20px 0 rgba(57, 60, 66, 0.1);
         }
 
-        @include mq-down(lg) {
-          margin-bottom: 40px;
-          margin-left: $gap !important;
-          margin-right: $gap !important;
+        @include mq-between(lg,xl) {
+          max-width: 306px;
         }
 
-        @include mq-down(md) {
+        @include mq-between(md,lg) {
+          @include make-col(6);
+          max-width: 48%;
+          margin-bottom: 40px;
+
           &:nth-child(1), &:nth-child(2), &:nth-last-child(1) {
             max-height: 100%;
             height: 100%;
           }
+
+          &:nth-child(1){
+            margin-right: auto;
+          }
+
+          &:nth-child(2) {
+            margin-left: auto;
+          }
+
+          &:nth-child(3) {
+            margin-left: auto;
+            margin-right: auto;
+          }
+
+        }
+
+        @include mq-down(md){
+          @include make-col(12);
+          max-width: 100%;
+          margin: 0 0 35px 0;
         }
       }
       &-body {
@@ -111,5 +127,9 @@
     letter-spacing: 1px;
     color: #4b5769;
     margin-bottom: 0;
+
+    @include mq-down(md) {
+      text-transform: uppercase;
+    }
   }
 }
