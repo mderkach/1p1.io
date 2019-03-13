@@ -35,7 +35,11 @@
 
 .screen {
   &__landing {
-    padding: 40px 0 120px 0;
+    padding: 110px 0 120px 0;
+
+    @include mq-down(sm) {
+      padding-top: 90px;
+    }
   }
 }
 

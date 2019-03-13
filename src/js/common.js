@@ -139,5 +139,53 @@ window.onload = function () {
     }
   });
 }
+// add class to header on scroll
+var scrollpos = window.scrollY;
+var header = document.querySelector(".header");
+var header_height = header.offsetHeight;
+
+function add_class_on_scroll() {
+  if (header.classList.contains("--transparent")) {
+    header.classList.toggle("--transparent");
+    header.classList.toggle("--white");
+  }
+  header.classList.add("--fixed");
+};
+
+function remove_class_on_scroll() {
+  if (header.classList.contains("--white")) {
+    header.classList.toggle("--transparent");
+    header.classList.toggle("--white");
+  }
+  header.classList.remove("--fixed");
+};
+
+window.addEventListener('scroll', function () {
+  scrollpos = window.scrollY;
+
+  if (scrollpos >= header_height) {
+    add_class_on_scroll();
+  } else {
+    remove_class_on_scroll();
+  }
+});
+
+// expand header search form
+var expander = document.querySelector('.expand-form');
+var headerSearchForm = document.querySelector('.form__search-header');
+var inputSearchHeader = document.querySelector('.form__search-header-input');
+
+function expandForm() {
+  headerSearchForm.classList.toggle('collapsed');
+};
+
+expander.addEventListener('click', function(){
+  expandForm();
+  inputSearchHeader.focus();
+});
+
+inputSearchHeader.addEventListener('blur', function(){
+  expandForm();
+});
 
 
