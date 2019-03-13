@@ -1,0 +1,16 @@
+{% import "../form/form-popup-macro.twig" as login %}
+<div class="login-mobile">
+  <div class="popup__fullscreen-wrapper">
+    <div class="row">
+      <div class="header__wrapper-popup">
+        <h2 class="header__h2 header__popup">Вход</h2>
+      </div>
+      <form action="#" method="GET" class="form__popup validate" novalidate>
+        {{ login.inputRegistration('email-login', 'email', 'Email', 'Ваша@почта', 'Email не найден' ) }}
+        {{ login.inputRegistration('password-login', 'password', 'Пароль', 'Пароль', 'Неверный пароль' ) }}
+        {{ login.loginButtons() }}
+        {{ login.submitRegistration('Войти') }}
+      </form>
+    </div>
+  </div>
+</div>

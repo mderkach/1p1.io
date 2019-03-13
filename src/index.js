@@ -15,3 +15,4 @@ import './templates/components/slider/slider-reviews-landing'
 import './templates/components/slider/slider-partners'
 //pages
 var template = require('./index.twig')
+var loginMobile = require('./templates/pages/login-mobile.twig')

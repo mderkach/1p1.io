@@ -1,0 +1,37 @@
+{% set page_title = "1p1.io login" %}
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+	<meta charset="utf-8">
+	<!-- <base href="/"> -->
+	<title>{{ page_title }}</title>
+	<meta name="description" content="">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- Template Basic Images Start -->
+	<meta property="og:image" content="path/to/image.jpg">
+	<link rel="icon" href="#">
+	<link rel="apple-touch-icon" sizes="180x180" href="#">
+	<!-- Template Basic Images End -->
+
+	<!-- Custom Browsers Color Start -->
+	<meta name="theme-color" content="#4489ff">
+	<!-- Custom Browsers Color End -->
+</head>
+
+<body>
+	<main>
+		{% block header %}
+		{% include "../components/header/header.twig" %}
+		{% endblock %}
+    {% block mainScreen %}
+      {% include "../components/form/form-login-mobile.twig" %}
+		{% endblock %}
+	</main>
+</body>
+
+</html>

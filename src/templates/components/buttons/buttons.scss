@@ -163,6 +163,7 @@
     margin-left: auto;
     margin-right: auto;
     background: #4489ff;
+    font-size: rem(19);
 
     @include mq-down(md) {
       max-width: 90%;

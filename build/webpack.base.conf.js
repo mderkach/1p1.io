@@ -95,7 +95,12 @@ module.exports = {
       filename: `${PATHS.assets}css/[name].css`,
     }),
     new HtmlWebpackPlugin({
+      filename: 'index.html',
       template: `${PATHS.src}/index.twig`,
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'login-mobile.html',
+      template: `${PATHS.src}/templates/pages/login-mobile.twig`,
     }),
     new CopyWebpackPlugin([
       { from: `${PATHS.src}/img`, to: `${PATHS.assets}img` },

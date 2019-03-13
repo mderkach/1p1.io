@@ -54,10 +54,9 @@ for (i = 0; i < popupClose.length; ++i) {
 
 // custom validation
 var setInvalid = 'is-invalid';
-var password = document.querySelector('input[name=password]');
+var password = document.querySelectorAll('input[type=password]');
 var forms = document.querySelectorAll('.validate');
 var inputs = document.querySelectorAll('input');
-
 window.addEventListener('load', function () {
   // Loop over forms and prevent submission
   var validation = Array.prototype.filter.call(forms, function (form) {
@@ -105,19 +104,8 @@ window.addEventListener('load', function () {
   });
 }, false);
 
-
+// modal for video
 var video = document.querySelector('#video');
-
-// lightGallery(document.querySelector('.btn-video'), {
-//   mode: 'lg-fade',
-//   cssEasing : 'cubic-bezier(0.25, 0, 0.25, 1)',
-//   loop: false,
-//   controls: false,
-//   download: false,
-//   counter: false,
-//   selector: '#video',
-// }); 
-
 $('.btn-video').fancybox({
   modal: false,
   hideScrollbar: true,
@@ -133,7 +121,6 @@ $('.btn-video').fancybox({
 var playButton = document.querySelector("#play-pause");
 //videoplayer
 window.onload = function () {
-
   // Video
   var video = document.querySelector("video");
   video.controls = false;

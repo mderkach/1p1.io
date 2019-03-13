@@ -24,6 +24,7 @@
     margin-bottom: 0;
     @include mq-down(md) {
       font-size: rem(28);
+      padding-left: 8px;
     }
   }
   &__success {
@@ -48,6 +49,7 @@
 
       @include mq-down(md) {
         margin: 25px auto 45px auto;
+        font-size: rem(15);
       }
     }
   }

@@ -21,7 +21,12 @@
 {% endmacro %}
 
 {% macro submitRegistration(value) %}
-<input class="form__popup-submit" type="submit" value="{{ value }}">
+<div class="inline-inputs">
+  <label for="" class="form__popup-label"></label>
+  <div class="form__popup-input-wrapper">
+    <input class="form__popup-submit" type="submit" value="{{ value }}">
+  </div>
+</div>
 {% endmacro %}
 
 {% macro loginButtons() %}

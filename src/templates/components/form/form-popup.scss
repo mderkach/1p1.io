@@ -5,6 +5,11 @@
     width: 100%;
     padding-left: $gap;
     padding-right: $gap;
+
+    @include mq-down(md) {
+      margin-top: 10px;
+      margin-bottom: 40px;
+    }
     .inline-inputs {
       margin-top: 30px;
       @include mq-down(md) {
@@ -28,6 +33,7 @@
       border: 2px solid transparent;
       @include mq-down(md) {
         font-size: rem(15);
+        padding-left: 10px;
       }
       &-checkbox {
         margin-bottom: 0;
@@ -55,6 +61,7 @@
       height: 50px;
       border: none;
       border-bottom: 1px solid #5d5d5d;
+      color: #1b1d24;
       padding: 0 5px;
       font-size: rem(19);
       @include mq-down(md) {
@@ -86,10 +93,11 @@
           }
         }
       }
-      @include placeholder {
+      &::placeholder {
         line-height: 1.58;
         letter-spacing: -0.2px;
         font-size: rem(19);
+        color: #9ba1b3;
       }
       &-wrapper {
         position: relative;
@@ -114,7 +122,10 @@
     &-submit {
       @extend .btn-xlg;
       max-width: 250px;
-      margin: 55px auto 0 auto;
+
+      @include mq-down(md) {
+        max-width: 100%;
+      }
     }
     &-login {
       &-anchors {

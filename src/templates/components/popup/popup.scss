@@ -34,7 +34,6 @@
 
       @include mq-down(lg){
         max-width: 720px;
-        height: auto;
       }
 
       @include mq-down(md){
