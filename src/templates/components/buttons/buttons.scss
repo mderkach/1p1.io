@@ -119,7 +119,8 @@
       margin: auto auto 50px auto;
 
       @include mq-down(md) {
-        max-width: 100%;
+        min-width: 280px;
+        max-width: 88%;
       }
       img {
         margin-left: 10px;
