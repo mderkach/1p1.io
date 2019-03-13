@@ -1,5 +1,6 @@
 .video {
-  overflow: hidden;
+  overflow: visible;
+  background: transparent;
   position: relative;
   display: none;
   width: 100%;
@@ -8,14 +9,8 @@
   max-height: 540px;
   padding: 0;
   video {
-    overflow: hidden;
     width: 100%;
     height: 100%;
-  }
-
-  @include mq-down(md) {
-    max-width: 320px;
-    max-height: 180px;
   }
 
   &-controls {
@@ -39,5 +34,39 @@
         display: none;
       }
     }
+  }
+}
+
+.fancybox-button{
+  &.fancybox-close-small{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: #fff;
+    background: rgba(217,222,234, .8);
+    width: 36px;
+    height: 36px;
+    right: -46px;
+    padding: 0;
+    @include mq-down(lg) {
+      right: 0;
+      top: -46px;
+    }
+  }
+    svg {
+      width: 100%;
+      display: block;
+      height: 100%;
+      overflow: visible;
+      position: relative;
+      width: 26px;
+      height: 26px;
+  }
+}
+
+@include mq-down(md) {
+  .fancybox-slide--html {
+    padding: 0;
   }
 }
