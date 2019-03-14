@@ -97,6 +97,10 @@ module.exports = {
       filename: 'login-mobile.html',
       template: `${PATHS.src}/templates/pages/login-mobile.twig`,
     }),
+    new HtmlWebpackPlugin({
+      filename: 'registration-mobile.html',
+      template: `${PATHS.src}/templates/pages/registration-mobile.twig`,
+    }),
     new CopyWebpackPlugin([
       { from: `${PATHS.src}/img`, to: `${PATHS.assets}img` },
       { from: `${PATHS.src}/fonts`, to: `${PATHS.assets}fonts` },

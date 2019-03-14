@@ -144,23 +144,31 @@ window.onload = function () {
 // add class to header on scroll
 var scrollpos = window.scrollY;
 var header = document.querySelector(".header");
+var headerNoToggle = document.querySelector(".--no-toggle")
 var header_height = header.offsetHeight;
 
 function add_class_on_scroll() {
   if (header.classList.contains("--transparent")) {
-    header.classList.toggle("--transparent");
-    header.classList.toggle("--white");
+    header.classList.remove("--transparent");
+    header.classList.add("--white");
   }
   header.classList.add("--fixed");
 };
 
 function remove_class_on_scroll() {
   if (header.classList.contains("--white")) {
-    header.classList.toggle("--transparent");
-    header.classList.toggle("--white");
+    header.classList.add("--transparent");
+    header.classList.remove("--white");
+  } else if (header.classList.contains("--no-toggle")) {
+    header.classList.remove("--transparent");
+    header.classList.add("--white")
   }
   header.classList.remove("--fixed");
 };
+
+if (header.classList.contains("--no-toggle")) {
+  header.classList.remove("--transparent");
+}
 
 window.addEventListener('scroll', function () {
   scrollpos = window.scrollY;

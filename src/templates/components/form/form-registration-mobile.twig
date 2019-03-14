@@ -1,0 +1,20 @@
+{% import "../form/form-popup-macro.twig" as inputsReg %}
+<div class="registration-mobile">
+  <div class="popup__fullscreen-wrapper">
+    <div class="row">
+      <div class="header__wrapper-popup">
+        <h2 class="header__h2 header__popup">Регистрация</h2>
+      </div>
+      <form action="#" method="POST" class="form__popup validate" novalidate>
+        {{ inputsReg.inputRegistration('name', 'text', 'Имя', 'Иван', 'Заполните поле' ) }}
+        {{ inputsReg.inputRegistration('second-name', 'text', 'Фамилия', 'Петров', 'Заполните поле' ) }}
+        {{ inputsReg.inputRegistration('email', 'email', 'Email', 'Ваша@почта', 'Неверный формат Email' ) }}
+        {{ inputsReg.inputRegistration('password', 'password', 'Пароль', 'Не менее 8 символов', 'Не менее 8 символов' ) }}
+        {{ inputsReg.inputRegistration('phone', 'tel', 'Телефон', '+7 ( ) - - -', 'Заполните поле' ) }}
+        {{ inputsReg.checkboxRegistration('checkbox', 'Я ознакомился и подтверждаю согласие с Офертой и
+        Условиями пользовательского соглашения.', 'Примите условия' ) }}
+        {{ inputsReg.submitRegistration('Зарегистрироваться') }}
+      </form>
+    </div>
+  </div>
+</div>
