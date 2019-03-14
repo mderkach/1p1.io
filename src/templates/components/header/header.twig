@@ -1,4 +1,4 @@
-<header class="header {{ headerType }}">
+<header class="header {{ headerType }} {{ userStatus }}">
   <div class="container-fluid">
     <div class="row">
       <nav class="navbar">
@@ -25,8 +25,13 @@
           <div class="nav-menu--right">
             {% include "../form/form-search-header.twig" %}
             <a class="nav__menu-item" href="#">Объявления</a>
+            {% if userStatus == '--authorised' %}
+              {% include "../dropdown/dropdown-account-header.twig" %}
+            {% endif %}
             <a href="#" class="btn btn-mid btn-transparent btn-header">Продать и помочь</a>
-            <a class="nav__menu-item popup--toggle" data-modal="login" href="#">Войти</a>
+            {% if userStatus == '--unauthorised' %}
+              <a class="nav__menu-item popup--toggle" data-modal="login" href="#">Войти</a>
+            {% endif %}
           </div>
         </div>
       </nav>

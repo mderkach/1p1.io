@@ -1,0 +1,15 @@
+.dropdown {
+  &__account {
+    &-avatar {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    &-wrapper {
+      .dropdown__menu {
+        width: 200px;
+      }
+    }
+  }
+}
