@@ -161,6 +161,13 @@
       background-color: #4489ff;
     }
   }
+  .form__search-header-input {
+    border-color: #4489ff;
+    color: #4489ff;
+    &::placeholder {
+      color: #4489ff;
+    }
+  }
 }
 
 .--fixed {
