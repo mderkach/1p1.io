@@ -16,4 +16,5 @@ import './templates/components/slider/slider-partners';
 //pages
 var landing = require('./index.twig');
 var loginMobile = require('./templates/pages/login-mobile.twig');
-var loginMobile = require('./templates/pages/registration-mobile.twig');
+var regMobile = require('./templates/pages/registration-mobile.twig');
+var regMobileSuccess = require('./templates/pages/registration-mobile-success.twig');

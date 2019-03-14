@@ -131,6 +131,10 @@
       &-anchors {
         display: flex;
         justify-content: space-between;
+
+        @include mq-down(sm) {
+          justify-content: flex-start;
+        }
       }
       &-anchor {
         font-size: rem(14);
@@ -140,6 +144,10 @@
 
         @include mq-down(md) {
           font-size: rem(15);
+        }
+
+        @include mq-down(sm) {
+          margin-right: 25px;
         }
       }
     }
