@@ -140,7 +140,7 @@ window.onload = function () {
       }
     });
   }
-}
+};
 // add class to header on scroll
 var scrollpos = window.scrollY;
 var header = document.querySelector(".header");
@@ -150,17 +150,17 @@ function add_class_on_scroll() {
   if (header.classList.contains("--transparent") && header.classList.contains("--toggle")) {
     header.classList.toggle("--transparent");
     header.classList.toggle("--white");
-  } else if (header.classList.contains("--white") && header.classList.contains("--no-toggle")) {}
+  } else if (header.classList.contains("--white") && header.classList.contains("--no-toggle")) { }
   header.classList.add("--fixed");
-};
+}
 
 function remove_class_on_scroll() {
   if (header.classList.contains("--white") && header.classList.contains("--toggle")) {
     header.classList.toggle("--transparent");
     header.classList.toggle("--white");
-  } else if (header.classList.contains("--white") && header.classList.contains("--no-toggle")) {}
+  } else if (header.classList.contains("--white") && header.classList.contains("--no-toggle")) { }
   header.classList.remove("--fixed");
-};
+}
 
 window.addEventListener('scroll', function () {
   scrollpos = window.scrollY;
@@ -179,7 +179,7 @@ var inputSearchHeader = document.querySelector('.form__search-header-input');
 
 function expandForm() {
   headerSearchForm.classList.toggle('collapsed');
-};
+}
 
 expander.addEventListener('click', function () {
   expandForm();
@@ -190,4 +190,10 @@ inputSearchHeader.addEventListener('blur', function () {
   expandForm();
 });
 
-
+//dropdown menu
+var trigger = document.querySelector('.dropdown__trigger');
+if (trigger) {
+  trigger.addEventListener('click', function () {
+    this.parentElement.lastChild.previousSibling.classList.toggle('is-active');
+  });
+}

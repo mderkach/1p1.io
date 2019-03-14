@@ -43,8 +43,8 @@
           justify-content: flex-end;
         }
         &[class*='--left'] {
-          @include mq-down(sm) {
-            @include make-col(2);
+          @include mq-down(lg) {
+            width: auto;
           }
         }
       }

@@ -2,6 +2,10 @@
   &-wrapper {
     position: relative;
     margin: 0 15px;
+
+    @include mq-down(lg) {
+      display: none;
+    }
   }
   &__trigger {
     display: block;
@@ -13,12 +17,17 @@
     padding: 0;
   }
   &__menu {
+    &.is-active {
+      display: block;
+    }
+    display: none;
     position: absolute;
     top: 60px;
     right: 0;
     background: #fff;
     box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.1);
     border-radius: 6px;
+    z-index: 5;
     &::before{
       content: '';
       display: block;
@@ -27,7 +36,9 @@
       right: 12px;
       width: 18px;
       height: 18px;
-      background: #fff;
+      border-style: solid;
+      border-width: 0px 9px 9px 9px;
+      border-color: #fff transparent;
     }
     &-item {
       display: block;
