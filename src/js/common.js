@@ -113,7 +113,7 @@ $('.btn-video').fancybox({
   video: {
     autoStart: false
   },
-  onActivate: function() {
+  onActivate: function () {
     playButton.classList.remove('is-played');
   }
 
@@ -123,21 +123,23 @@ var playButton = document.querySelector("#play-pause");
 window.onload = function () {
   // Video
   var video = document.querySelector("video");
-  video.controls = false;
-  video.autoplay = false;
-  // Buttons
-  
-  // Event listener for the play/pause button
-  playButton.addEventListener("click", function () {
-    if (video.paused == true) {
-      // Play the video
-      video.play();
-      playButton.classList.toggle('is-played');
-    } else {
-      // Pause the video
-      video.pause();
-    }
-  });
+  if (video) {
+    video.controls = false;
+    video.autoplay = false;
+  }
+  if (playButton) {
+    // Event listener for the play/pause button
+    playButton.addEventListener("click", function () {
+      if (video.paused == true) {
+        // Play the video
+        video.play();
+        playButton.classList.toggle('is-played');
+      } else {
+        // Pause the video
+        video.pause();
+      }
+    });
+  }
 }
 // add class to header on scroll
 var scrollpos = window.scrollY;
@@ -179,12 +181,12 @@ function expandForm() {
   headerSearchForm.classList.toggle('collapsed');
 };
 
-expander.addEventListener('click', function(){
+expander.addEventListener('click', function () {
   expandForm();
   inputSearchHeader.focus();
 });
 
-inputSearchHeader.addEventListener('blur', function(){
+inputSearchHeader.addEventListener('blur', function () {
   expandForm();
 });
 
