@@ -1,11 +1,13 @@
-<div class="dropdown-wrapper dropdown__account-wrapper">
-  <button class="dropdown__trigger">
-    <img src="/assets/img/background/main-image-2.jpg" alt="" class="dropdown__account-avatar">
-  </button>
-  <div class="dropdown__menu">
-    <a href="#" class="dropdown__menu-item">Настройки профиля</a>
-    <a href="#" class="dropdown__menu-item">Изменить email</a>
-    <a href="#" class="dropdown__menu-item">Изменить пароль</a>
-    <a href="#" class="dropdown__menu-item">Выйти</a>
-  </div>
-</div>
+{% set dropdown = {
+  type: 'dropdown__account-wrapper',
+  img: '/assets/img/background/main-image-2.jpg',
+  imgClass: 'dropdown__account-avatar',
+  items: [
+  { link: '#', caption: 'Настройки профиля'},
+  { link: '#', caption: 'Изменить email'},
+  { link: '#', caption: 'Изменить пароль'},
+  { link: '#', caption: 'Выйти'},
+  ]
+} %}
+
+{% include "../dropdown/dropdown.twig" %}
