@@ -1,0 +1,29 @@
+{% if celebrities %}
+<section class="celebrities">
+  <div class="container">
+    <div class="row">
+      <div class="header__wrapper">
+        <h3 class="header__h3 text-left">Звезды Один<sup>+1</sup></h3>
+      </div>
+    </div>
+    <div class="row">
+      {% for celebrity in celebrities %}
+      <div class="celebrities-card">
+        <img class="celebrities-card-img img-responsive" src="{{ celebrity.celebrityAvatar }}" alt="">
+        <div class="celebrities-card-body">
+          <p class="celebrities-name">{{ celebrity.celebrityName }}</p>
+          <p class="celebrities-role">{{ celebrity.celebrityRole }}</p>
+          <a href="{{ celebrity.celebrityLotsLink }}"
+            class="btn-mid btn-lots lots-amount">{{ celebrity.celebrityLotsAmount }} доступно</a>
+          <p class="lost-total">{{ celebrity.celebrityLotsTotal }} продано</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="row">
+      <a href="#" class="btn btn-celebrities-more">Больше звезд <img
+          src="/assets/img/icons/icon-chevron-right-white.svg" alt="" class="img-responsive"></a>
+    </div>
+  </div>
+</section>
+{% endif %}

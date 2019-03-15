@@ -94,6 +94,14 @@ module.exports = {
       template: `${PATHS.src}/index.twig`,
     }),
     new HtmlWebpackPlugin({
+      filename: 'index--authorised.html',
+      template: `${PATHS.src}/templates/pages/index.html--authorised.twig`,
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'landing-celebrities.html',
+      template: `${PATHS.src}/templates/pages/landing-celebrities.twig`,
+    }),
+    new HtmlWebpackPlugin({
       filename: 'login-mobile.html',
       template: `${PATHS.src}/templates/pages/login-mobile.twig`,
     }),

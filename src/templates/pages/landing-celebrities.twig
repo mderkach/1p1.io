@@ -1,0 +1,48 @@
+{% extends "../layout/landing.twig" %}
+{% set page_title = "1p1.io" %}
+{% set headerType = "--transparent --toggle" %}
+{% set userStatus = "--unauthorised" %}
+{% set landing_h1 = 'Покупка и продажа вещей в помощь людям' %}
+{% set backgorunds_slider = [
+	'./assets/img/background/celebrities-image.jpg',
+	'./assets/img/background/celebrities-image-2.jpg',
+	] %}
+{% block categories %}{% endblock %}
+{% block sliderReviews %}{% endblock %}
+{% block news %}{% endblock %}
+{% block celebrities1p1 %}
+  {% set celebrities = [{
+    
+    celebrityAvatar: './assets/img/background/celebrities-image-2.jpg',
+    celebrityName: 'Чулпан Хаматова',
+    celebrityRole: 'Российская актриса театра и кино, общественный деятель.',
+    celebrityLotsLink: '#',
+    celebrityLotsAmount: '2 лота',
+    celebrityLotsTotal: '18'
+  },{
+    
+    celebrityAvatar: './assets/img/background/celebrities-image.jpg',
+    celebrityName: 'Мария Шарапова',
+    celebrityRole: 'Одна из учредителей благотворительного фонда «Подари жизнь».',
+    celebrityLotsLink: '#',
+    celebrityLotsAmount: '2 лота',
+    celebrityLotsTotal: '18'
+  },{
+    
+    celebrityAvatar: './assets/img/background/celebrities-image.jpg',
+    celebrityName: 'Аглая Тарасова',
+    celebrityRole: 'Российская актриса театра и кино, общественный деятель. ',
+    celebrityLotsLink: '#',
+    celebrityLotsAmount: '2 лота',
+    celebrityLotsTotal: '18'
+  },{
+    
+    celebrityAvatar: './assets/img/background/main-image-2.jpg',
+    celebrityName: 'Чулпан Хаматова',
+    celebrityRole: 'Российская актриса театра и кино, общественный деятель.',
+    celebrityLotsLink: '#',
+    celebrityLotsAmount: '2 лота',
+    celebrityLotsTotal: '18'
+  }] %}
+  {% include "../components/cards/cards-celebrities.twig" %}
+{% endblock %}

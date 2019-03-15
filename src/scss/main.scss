@@ -27,6 +27,7 @@
 @import "../templates/components/video/video-landing";
 @import "../templates/components/dropdown/dropdown";
 @import "../templates/components/dropdown/dropdown-account-header";
+@import "../templates/components/cards/cards-celebrities";
 // comon
 ::placeholder {
   color: #666
@@ -78,6 +79,13 @@ body {
   text-align: center;
 }
 
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
 b,
 strong {
   font-weight: bold;
