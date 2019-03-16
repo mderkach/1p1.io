@@ -1,7 +1,9 @@
 {% if dropdown %}
 <div class="dropdown-wrapper {{dropdown.type}}">
   <button class="dropdown__trigger">
-    <img src="{{dropdown.img}}" alt="" class="{{dropdown.imgClass}}">
+      {% for user in userInfo %}
+      <img src="{{ user.avatar }}" alt="" class="{{dropdown.imgClass}}">
+      {% endfor %}
   </button>
   <div class="dropdown__menu">
     {% for item in dropdown.items %}

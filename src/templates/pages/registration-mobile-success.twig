@@ -43,6 +43,31 @@
       </div>
     </div>
   </main>
+  {% block mobileMenu %}
+  {% set mobileMenu = [
+    {
+    link: '#',
+    description: 'Объявления'
+    }, 
+    {
+      link: '#',
+      description: 'Как это работает'
+    },
+    {
+      link: '#',
+      description: 'Фонды'
+    },
+    {
+      link: '#',
+      description: 'Новости'
+    },
+    {
+      link: '#',
+      description: 'Инвесторам'
+    },
+  ] %}
+	{% include "../components/mobile-menu/mobile-menu.twig" %}
+	{% endblock %}
 </body>
 
 </html>

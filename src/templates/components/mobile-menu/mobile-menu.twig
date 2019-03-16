@@ -1,3 +1,4 @@
+{% if mobileMenu %}
 <div class="mobile-menu-wrapper">
   <div class="mobile-menu">
     <div class="mobile-menu__header">
@@ -22,10 +23,13 @@
       </div>
     </div>
     <div class="mobile-menu__body">
-      <a class="mobile-menu__profile-wrapper" href="#">
-        <img class="mobile-menu__profile-img img-responsive" src="/assets/img/background/main-image-3.jpg" alt="">
+      {% if userStatus == "--unauthorised" %}
+      {% elseif userStatus == "--authorised" and userInfo %}
+      {% for user in userInfo %}
+      <a class="mobile-menu__profile-wrapper" href="{{ user.link}}">
+        <img class="mobile-menu__profile-img img-responsive" src="{{ user.avatar }}" alt="">
         <div class="mobile-menu__profile-info">
-          <p class="mobile-menu__profile-name">Алиса Романова</p>
+          <p class="mobile-menu__profile-name">{{ user.name }}</p>
           <svg width="5px" height="8px" viewBox="0 0 5 8" version="1.1" xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink">
             <g stroke="none" stroke-width="1" fill-rule="evenodd">
@@ -43,15 +47,21 @@
           </svg>
         </div>
       </a>
-      <a href="#" class="mobile-menu__item">Объявления</a>
-      <a href="#" class="mobile-menu__item">Как это работает</a>
-      <a href="#" class="mobile-menu__item">Фонды</a>
-      <a href="#" class="mobile-menu__item">Новости</a>
-      <a href="#" class="mobile-menu__item">Инвесторам</a>
+      {% endfor %}
+      {% endif %}
+      {% for item in mobileMenu %}
+      <a href="{{ item.link }}" class="mobile-menu__item">{{ item.description }}</a>
+      {% endfor %}
     </div>
+    {% if userStatus == "--unauthorised" %}
+    <div class="mobile-menu__enter-wrapper">
+      <a class="mobile-menu__enter popup--toggle" data-modal="login" href="#">Войти</a>
+    </div>
+    {% elseif userStatus == "--authorised" %}
     <div class="mobile-menu__enter-wrapper">
       <a class="mobile-menu__enter" href="#">Выйти</a>
     </div>
+    {% endif %}
     <div class="mobile-menu__footer">
       <p class="mobile-menu__footer-descr">2017 © Oneplusone. All rights reserved.<br> 63 W 38th St, New York, NY 10018
       </p>
@@ -63,3 +73,4 @@
     </div>
   </div>
 </div>
+{% endif %}

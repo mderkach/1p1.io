@@ -29,11 +29,6 @@
                 </g>
               </svg>
             </button>
-            {% if userStatus == '--authorised' %}
-            {% include "../mobile-menu/mobile-menu-authorised.twig" %}
-            {% elseif userStatus == '--unauthorised' %}
-            {% include "../mobile-menu/mobile-menu-unauthorised.twig" %}
-            {% endif %}
           </div>
           <div class="nav-menu--right">
             {% include "../form/form-search-header.twig" %}
