@@ -1,0 +1,121 @@
+.celebrities {
+  &-lots {
+    @extend .celebrities;
+    border-bottom: none;
+    &__wrapper {
+      @include make-row();
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      @include mq-down(xl) {
+        justify-content: center;
+      }
+    }
+    &-card {
+      @extend .card;
+      @include make-col(3);
+      min-width: 280px;
+      max-width: 280px;
+      border-radius: 0;
+      border: none;
+      margin-bottom: 20px;
+      &-body {
+        @extend .card-body;
+        padding: 15px 15px 10px 20px;
+      }
+
+      @include mq-down(xl) {
+        margin-left: $gap;
+        margin-right: $gap;
+      }
+
+      @include mq-down(md) {
+        &:nth-child(-n+4) {
+          display: flex;
+        }
+        display: none;
+      }
+    }
+    &-img {
+      width: 280px;
+      height: 280px;
+      object-fit: contain;
+    }
+    &-name {
+      font-size: rem(16);
+      font-weight: 500;
+      line-height: 1.5;
+      color: #000;
+      margin-bottom: 10px;
+    }
+    &-place {
+      font-size: rem(12);
+      font-weight: 500;
+      color: #000000;
+      margin-bottom: 10px;
+      margin-right: 10px;
+      &__wrapper {
+        display: flex;
+        align-items: center;
+      }
+    }
+    &-date {
+      @extend .celebrities-lots-place;
+    }
+    &__owner {
+      &-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      &-img {
+        width: 30px;
+        height: 30px;
+        object-fit: contain;
+        border-radius: 50%;
+      }
+    }
+    &-link {
+      &:hover {
+        text-decoration: none;
+        color: #000;
+      }
+    }
+  }
+  &-profile {
+    &-link {
+      &:hover {
+        text-decoration: none;
+        color: #000;
+      }
+    }
+  }
+}
+
+.lots {
+  &-tag {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    width: 100%;
+    max-width: 130px;
+    text-align: center;
+    display: block;
+    border-radius: 8.5px;
+    background-color: #efefef;
+    font-size: rem(12);
+    font-weight: 500;
+    color: #000;
+
+    &:hover {
+      text-decoration: none;
+      color: #000;
+    }
+  }
+  &-price {
+    margin-bottom: 0;
+    font-size: rem(16);
+    font-weight: 500;
+    line-height: 1.5;
+    color: #000000;
+  }
+}

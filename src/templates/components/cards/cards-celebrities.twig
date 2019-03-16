@@ -2,20 +2,26 @@
 <section class="celebrities">
   <div class="container">
     <div class="row">
-      <div class="header__wrapper">
+      <div class="header__wrapper-celeb">
         <h3 class="header__h3 text-left">Звезды Один<sup>+1</sup></h3>
       </div>
     </div>
-    <div class="row">
+    <div class="celebrities-card__wrapper">
       {% for celebrity in celebrities %}
       <div class="celebrities-card">
-        <img class="celebrities-card-img img-responsive" src="{{ celebrity.celebrityAvatar }}" alt="">
+        <a class="celebrities-profile-link" href="{{ celebrity.celebrityLink }}">
+          <img class="celebrities-card-img img-responsive" src="{{ celebrity.celebrityAvatar }}" alt="">
+        </a>
         <div class="celebrities-card-body">
-          <p class="celebrities-name">{{ celebrity.celebrityName }}</p>
-          <p class="celebrities-role">{{ celebrity.celebrityRole }}</p>
-          <a href="{{ celebrity.celebrityLotsLink }}"
-            class="btn-mid btn-lots lots-amount">{{ celebrity.celebrityLotsAmount }} доступно</a>
-          <p class="lost-total">{{ celebrity.celebrityLotsTotal }} продано</p>
+          <div class="celebrities-card__top">
+            <a class="celebrities-profile-link celebrities-name" href="{{ celebrity.celebrityLink }}">{{ celebrity.celebrityName }}</a>
+            <p class="celebrities-role">{{ celebrity.celebrityRole }}</p>
+          </div>
+          <div class="celebrities-card__bottom">
+            <a href="{{ celebrity.celebrityLotsLink }}"
+              class="btn-mid btn-lots lots-amount">{{ celebrity.celebrityLotsAmount }} доступно</a>
+            <p class="lots-total">{{ celebrity.celebrityLotsTotal }} продано</p>
+          </div>
         </div>
       </div>
       {% endfor %}

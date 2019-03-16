@@ -10,7 +10,12 @@
       margin-top: 35px;
     }
     &-celeb {
+      @extend .header__wrapper;
       padding: 0;
+
+      @include mq-down(sm) {
+        padding: 0 20px;
+      }
     }
   }
   &__h1 {

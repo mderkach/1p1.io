@@ -1,29 +1,46 @@
 .celebrities {
   padding: 30px 0 55px;
   background-color: #f5f6f9;
-  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid #d9deea;
   &-card {
     @extend .card;
     @include make-col(3);
-    max-width: 280px;
     margin-left: $gap;
     margin-right: $gap;
+    min-width: 280px;
+    max-width: 280px;
     border-radius: 0;
     padding: 20px 0 5px;
     border: none;
-
     &:nth-child(1) {
       margin-left: 0;
     }
     &:nth-last-child(1) {
       margin-right: 0;
+      
+    }
+    @include mq-down(xl) {
+      margin-bottom: 20px;
+
+      &:nth-last-child(2) {
+        margin-right: 0;
+      }
+
+      &:nth-last-child(1) {
+        margin-right: 0;
+        margin-left: 0;
+      }
     }
 
-    &__wrapper{
-      display: block;
-      width: auto;
+    @include mq-down(lg){
+      margin: 0 $gap 20px $gap !important;
     }
 
+    &__wrapper {
+      @include make-row();
+      justify-content: center;
+      flex-wrap: wrap;
+    }
     &-img {
       width: 160px;
       height: 160px;
@@ -34,6 +51,9 @@
     &-body {
       @extend .card-body;
       text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
   }
   &-name {
@@ -48,6 +68,12 @@
     font-weight: 500;
     line-height: 1.33;
     color: #000;
+    margin-bottom: 5px;
+  }
+}
+
+.lots {
+  &-total {
     margin-bottom: 0;
   }
 }

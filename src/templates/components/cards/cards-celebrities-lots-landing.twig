@@ -1,0 +1,38 @@
+{% if celebritiesLots %}
+<section class="celebrities-lots">
+  <div class="container">
+    <div class="row">
+      <div class="header__wrapper-celeb">
+        <h3 class="header__h3 text-left">Звездные лоты</h3>
+      </div>
+    </div>
+    <div class="celebrities-lots__wrapper">
+      {% for lot in celebritiesLots %}
+      <div class="celebrities-lots-card">
+        <a class="celebrities-lots-link" href="{{ lot.link }}">
+          <img class="celebrities-lots-img img-responsive" src="{{ lot.lotImg }}" alt="">
+        </a>
+        <div class="celebrities-lots-card-body">
+          <a href="{{ lot.link }}" class="celebrities-lots-name celebrities-lots-link">{{ lot.lotName }}</a>
+          <div class="celebrities-lots-place__wrapper">
+            <p class="celebrities-lots-place">{{ lot.lotPlace }}</p>
+            <p class="celebrities-lots-date">{{ lot.lotDate }}</p>
+          </div>
+          <a href="{{ lot.tag }}" class="lots-tag">Частные объявления</a>
+          <div class="celebrities-lots__owner-wrapper">
+            <a class="celebrities-lots__owner-link" href="{{ lot.ownerLink }}">
+              <img src="{{ lot.ownerAvatar }}" alt="" class="img-responsive celebrities-lots__owner-img">
+            </a>
+            <p class="lots-price">{{ lot.lotPrice }}</p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="row">
+      <a href="#" class="btn btn-celebrities-more">Больше лотов <img
+          src="/assets/img/icons/icon-chevron-right-white.svg" alt="" class="img-responsive"></a>
+    </div>
+  </div>
+</section>
+{% endif %}

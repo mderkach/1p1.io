@@ -12,7 +12,7 @@
 {% block news %}{% endblock %}
 {% block celebrities1p1 %}
   {% set celebrities = [{
-    
+    celebrityLink: '#',
     celebrityAvatar: './assets/img/background/celebrities-image-2.jpg',
     celebrityName: 'Чулпан Хаматова',
     celebrityRole: 'Российская актриса театра и кино, общественный деятель.',
@@ -20,7 +20,7 @@
     celebrityLotsAmount: '2 лота',
     celebrityLotsTotal: '18'
   },{
-    
+    celebrityLink: '#',
     celebrityAvatar: './assets/img/background/celebrities-image.jpg',
     celebrityName: 'Мария Шарапова',
     celebrityRole: 'Одна из учредителей благотворительного фонда «Подари жизнь».',
@@ -28,7 +28,7 @@
     celebrityLotsAmount: '2 лота',
     celebrityLotsTotal: '18'
   },{
-    
+    celebrityLink: '#',
     celebrityAvatar: './assets/img/background/celebrities-image.jpg',
     celebrityName: 'Аглая Тарасова',
     celebrityRole: 'Российская актриса театра и кино, общественный деятель. ',
@@ -36,7 +36,7 @@
     celebrityLotsAmount: '2 лота',
     celebrityLotsTotal: '18'
   },{
-    
+    celebrityLink: '#',
     celebrityAvatar: './assets/img/background/main-image-2.jpg',
     celebrityName: 'Чулпан Хаматова',
     celebrityRole: 'Российская актриса театра и кино, общественный деятель.',
@@ -45,4 +45,92 @@
     celebrityLotsTotal: '18'
   }] %}
   {% include "../components/cards/cards-celebrities.twig" %}
+{% endblock %}
+{% block celebritiesLots %}
+  {% set celebritiesLots = [{
+    link: '#',
+    ownerLink: '#',
+    ownerAvatar: '/assets/img/lots/celebrities-profile-avatar.png',
+    tag: '#',
+    lotImg: '/assets/img/lots/celebrities-lots-sweetshot.jpg',
+    lotName: 'Свитшот и юбка',
+    lotPlace: 'м. Кропоткинская',
+    lotDate: '1 дн. назад',
+    lotPrice: '1 500 Р.'
+  },
+  {
+    link: '#',
+    ownerLink: '#',
+    ownerAvatar: '/assets/img/lots/celebrities-profile-avatar-2.jpg',
+    tag: '#',
+    lotImg: '/assets/img/lots/celebrities-lots-iphone7+.png',
+    lotName: 'iPhone7+',
+    lotPlace: 'с. Кукуево',
+    lotDate: '11 дн. назад',
+    lotPrice: '71 500 Р.'
+  },{
+    link: '#',
+    ownerLink: '#',
+    ownerAvatar: '/assets/img/lots/celebrities-profile-avatar.png',
+    tag: '#',
+    lotImg: '/assets/img/lots/celebrities-lots-sweetshot.jpg',
+    lotName: 'Свитшот и юбка',
+    lotPlace: 'м. Кропоткинская',
+    lotDate: '1 дн. назад',
+    lotPrice: '1 500 Р.'
+  },
+  {
+    link: '#',
+    ownerLink: '#',
+    ownerAvatar: '/assets/img/lots/celebrities-profile-avatar-2.jpg',
+    tag: '#',
+    lotImg: '/assets/img/lots/celebrities-lots-iphone7+.png',
+    lotName: 'iPhone7+',
+    lotPlace: 'с. Кукуево',
+    lotDate: '11 дн. назад',
+    lotPrice: '71 500 Р.'
+  },{
+    link: '#',
+    ownerLink: '#',
+    ownerAvatar: '/assets/img/lots/celebrities-profile-avatar.png',
+    tag: '#',
+    lotImg: '/assets/img/lots/celebrities-lots-sweetshot.jpg',
+    lotName: 'Свитшот и юбка',
+    lotPlace: 'м. Кропоткинская',
+    lotDate: '1 дн. назад',
+    lotPrice: '1 500 Р.'
+  },
+  {
+    link: '#',
+    ownerLink: '#',
+    ownerAvatar: '/assets/img/lots/celebrities-profile-avatar-2.jpg',
+    tag: '#',
+    lotImg: '/assets/img/lots/celebrities-lots-iphone7+.png',
+    lotName: 'iPhone7+',
+    lotPlace: 'с. Кукуево',
+    lotDate: '11 дн. назад',
+    lotPrice: '71 500 Р.'
+  },{
+    link: '#',
+    ownerLink: '#',
+    ownerAvatar: '/assets/img/lots/celebrities-profile-avatar.png',
+    tag: '#',
+    lotImg: '/assets/img/lots/celebrities-lots-sweetshot.jpg',
+    lotName: 'Свитшот и юбка',
+    lotPlace: 'м. Кропоткинская',
+    lotDate: '1 дн. назад',
+    lotPrice: '1 500 Р.'
+  },
+  {
+    link: '#',
+    ownerLink: '#',
+    ownerAvatar: '/assets/img/lots/celebrities-profile-avatar-2.jpg',
+    tag: '#',
+    lotImg: '/assets/img/lots/celebrities-lots-iphone7+.png',
+    lotName: 'iPhone7+',
+    lotPlace: 'с. Кукуево',
+    lotDate: '11 дн. назад',
+    lotPrice: '71 500 Р.'
+  },] %}
+  {% include "../components/cards/cards-celebrities-lots-landing.twig" %}
 {% endblock %}
