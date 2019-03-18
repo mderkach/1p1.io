@@ -1,0 +1,8 @@
+.accountInfo {
+  background-color: #fafafa;
+  padding-bottom: 40px;
+
+  &__wrapper {
+    @include make-row();
+  }
+}

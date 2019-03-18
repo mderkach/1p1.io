@@ -30,6 +30,9 @@
 @import "../templates/components/cards/cards-celebrities";
 @import "../templates/components/cards/cards-celebrities-lots-landing";
 @import "../templates/components/banner/banner";
+@import "../templates/components/screen/screen__accountInfo";
+@import "../templates/components/cards/card-account";
+@import "../templates/components/menu-bar/manu-bar";
 // comon
 ::placeholder {
   color: #666
@@ -53,7 +56,7 @@ body {
   min-width: 320px;
   position: relative;
   line-height: 1.65;
-  font-family: $default-font;
+  font-family: $default-font, sans-serif;
   overflow-x: hidden;
   color: $text;
   input,
