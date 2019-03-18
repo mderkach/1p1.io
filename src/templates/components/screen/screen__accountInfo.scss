@@ -4,5 +4,6 @@
 
   &__wrapper {
     @include make-row();
+    flex-wrap: nowrap;
   }
 }
