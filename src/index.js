@@ -20,3 +20,4 @@ var regMobile = require('./templates/pages/registration-mobile.twig');
 var regMobileSuccess = require('./templates/pages/registration-mobile-success.twig');
 var landingAuthorised = require('./templates/pages/index.html--authorised.twig');
 var landingCelebrities = require('./templates/pages/landing-celebrities.twig');
+var accountPublic = require('./templates/pages/account-public.twig');
