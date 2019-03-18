@@ -2,6 +2,11 @@
   padding: 30px 0 55px;
   background-color: #f5f6f9;
   border-bottom: 1px solid #d9deea;
+
+  @include mq-down(md) {
+    padding-bottom: 40px;
+  }
+
   &-card {
     @extend .card;
     @include make-col(3);

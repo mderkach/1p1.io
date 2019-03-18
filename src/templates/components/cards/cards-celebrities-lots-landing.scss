@@ -2,6 +2,11 @@
   &-lots {
     @extend .celebrities;
     border-bottom: none;
+
+    @include mq-down(md) {
+      padding-bottom: 40px;
+    }
+
     &__wrapper {
       @include make-row();
       flex-wrap: wrap;
