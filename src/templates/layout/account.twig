@@ -27,6 +27,9 @@
     {% include "../components/header/header.twig" %}
   {% endblock %}
   {% block body %}
+    {% block error %}
+      <div class="ads__bookmark-error">Вы успешно подписались на наши новости!</div>
+    {% endblock %}  
     {% block accountBanner %}
       {% include "../components/banner/banner.twig" %}
     {% endblock %}

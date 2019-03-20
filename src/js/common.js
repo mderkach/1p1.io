@@ -4,6 +4,7 @@ import './custom-validation';
 import './modal';
 import './header-scroll';
 import './serach-header-expand';
+import './bookmark.js';
 
 
 
