@@ -1,14 +1,56 @@
+{% if ads %}
 <div class="ads-wrapper">
+  {% for adsCard in ads %}
   <div class="ads-card">
-    asda
+    <img src="{{ adsCard.img }}" alt="" class="ads-img">
+    <div class="ads-card-body">
+      <div class="ads-card__top">
+        <p class="ads-price__wrapper">
+          <span class="ads-price">{{ adsCard.currentBet }}</span> ₽
+        </p>
+        <p class="ads-name">{{ adsCard.name }}</p>
+        {% if adsCard.onauction %}
+          <p class="ads-bet-start"> {{ adsCard.startBet }} Р.
+            {% if adsCard.addPoints %}
+              можно оплатить баллами
+            {% endif %}
+          </p>
+        {% endif %}
+      </div>
+      <div class="ads-card__bottom">
+        <div class="ads-bet__current-wrapper">
+          <p class="ads-bet__current-descr">Сумма пожертвования</p>
+          <p class="ads-bet__current-info">
+            <span class="ads-bet__current-info-amount">{{ adsCard.fundDonation }}</span> ₽
+          </p>
+        </div>
+        <div class="ads-bet__fundTo-wrapper">
+          <p class="ads-bet__fundTo-descr">Фонд</p>
+          <p class="ads-bet__fundTo-name">{{ adsCard.fundName }}</p>
+        </div>
+      </div>
+      <div class="ads-bet-footer">
+        <p class="ads-bet__place">{{ adsCard.place }}</p>
+        {% if adsCard.onauction %}
+          <img src="/assets/img/icons/icon-onauction.svg" alt="" class="img-responsive ads-bet-onauction">
+        {% endif %}
+      </div>
+      <div class="ads__bookmark-wrapper">
+        {% if adsCard.bookmarked == false %}
+          <svg class="ads__bookmark-img" xmlns="http://www.w3.org/2000/svg" width="11" height="14" viewBox="0 0 11 14">
+            <path fill-rule="evenodd" stroke="#4489FF"
+              d="M10.5 12.554V1.5a1 1 0 0 0-1-1h-8a1 1 0 0 0-1 1v11.054l5-3.41 5 3.41z" opacity=".4" />
+          </svg>
+          {% else %}
+          <svg class="ads__bookmark-img is-bookmarked" xmlns="http://www.w3.org/2000/svg" width="11" height="14" viewBox="0 0 11 14">
+            <path fill-rule="evenodd" stroke="#4489FF"
+              d="M10.5 12.554V1.5a1 1 0 0 0-1-1h-8a1 1 0 0 0-1 1v11.054l5-3.41 5 3.41z" opacity=".4" />
+          </svg>
+        {% endif %}
+        
+      </div>
+    </div>
   </div>
-  <div class="ads-card">
-    asda
-  </div>
-  <div class="ads-card">
-    asda
-  </div>
-  <div class="ads-card">
-    asda
-  </div>
+  {% endfor %}
 </div>
+{% endif %}

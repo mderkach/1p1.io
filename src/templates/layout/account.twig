@@ -24,26 +24,29 @@
 
 <body>
   {% block header %}
-  {% include "../components/header/header.twig" %}
+    {% include "../components/header/header.twig" %}
   {% endblock %}
-  {% block accountBanner %}
-  {% include "../components/banner/banner.twig" %}
+  {% block body %}
+    {% block accountBanner %}
+      {% include "../components/banner/banner.twig" %}
+    {% endblock %}
+    {% block accountInfo %}
+      {% include "../components/screen/screen__accountInfo.twig" %}
+    {% endblock %}
   {% endblock %}
-  {% block accountInfo %}
-  {% include "../components/screen/screen__accountInfo.twig" %}
-  {% endblock %}
-  {% block footer %}
-  {% include "../components/footer/footer.twig" %}
-  {% endblock %}
-  {% block mobileMenu %}
-  {% include "../components/mobile-menu/mobile-menu.twig" %}
-  {% endblock %}
-  {% block popup %}
-  {% include "../components/popup/popup.twig" %}
-  {% include "../components/popup/popup-sucess.twig" %}
-  {% endblock %}
-  {% block video %}
-  {% include "../components/video/video-landing.twig" %}
+  {% block footerMain %}
+    {% block blockchain %}{% endblock %}
+    {% block footer %}
+      {% include "../components/footer/footer.twig" %}
+    {% endblock %}
+    {% block mobileMenu %}
+      {% include "../components/mobile-menu/mobile-menu.twig" %}
+    {% endblock %}
+    {% block popup %}
+      {% include "../components/popup/popup.twig" %}
+      {% include "../components/popup/popup-sucess.twig" %}
+    {% endblock %}
+    {% block video %}{% endblock %}
   {% endblock %}
 </body>
 
