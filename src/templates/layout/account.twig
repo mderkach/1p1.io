@@ -27,9 +27,6 @@
     {% include "../components/header/header.twig" %}
   {% endblock %}
   {% block body %}
-    {% block error %}
-      <div class="ads__bookmark-error">Вы успешно подписались на наши новости!</div>
-    {% endblock %}  
     {% block accountBanner %}
       {% include "../components/banner/banner.twig" %}
     {% endblock %}
@@ -37,6 +34,9 @@
       {% include "../components/screen/screen__accountInfo.twig" %}
     {% endblock %}
   {% endblock %}
+  {% block error %}
+      {% include "../components/bookmark/bookmark-error.twig" %}
+  {% endblock %}  
   {% block footerMain %}
     {% block blockchain %}{% endblock %}
     {% block footer %}

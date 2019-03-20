@@ -1,0 +1,20 @@
+.bookmark {
+  &-error {
+    opacity: 0.8;
+    z-index: 500;
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    background-color: #000000;
+    padding: 10px 15px;
+    border-radius: 100px;
+    color: #fff;
+    font-size: rem(12);
+    font-weight: 500;
+    &.is-error {
+      display: block;
+    }
+  }
+}
