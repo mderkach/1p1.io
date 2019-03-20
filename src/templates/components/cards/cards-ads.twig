@@ -6,16 +6,16 @@
     <div class="ads-card-body">
       <div class="ads-card__top">
         <p class="ads-price__wrapper">
-          <span class="ads-price">{{ adsCard.currentBet }}</span> ₽
+          <span class="ads-price">{{ adsCard.price }}</span> ₽
         </p>
         <p class="ads-name">{{ adsCard.name }}</p>
-        {% if adsCard.onauction %}
+        {# {% if adsCard.onauction %}
           <p class="ads-bet-start"> {{ adsCard.startBet }} Р.
             {% if adsCard.addPoints %}
               можно оплатить баллами
             {% endif %}
           </p>
-        {% endif %}
+        {% endif %} #}
       </div>
       <div class="ads-card__bottom">
         <div class="ads-bet__current-wrapper">
@@ -37,15 +37,19 @@
       </div>
       <div class="ads__bookmark-wrapper">
         {% if adsCard.bookmarked == false %}
-          <svg class="ads__bookmark-img" xmlns="http://www.w3.org/2000/svg" width="11" height="14" viewBox="0 0 11 14">
-            <path fill-rule="evenodd" stroke="#4489FF"
-              d="M10.5 12.554V1.5a1 1 0 0 0-1-1h-8a1 1 0 0 0-1 1v11.054l5-3.41 5 3.41z" opacity=".4" />
-          </svg>
+          <button class="btn-bookmark">
+            <svg class="ads__bookmark-img" xmlns="http://www.w3.org/2000/svg" width="11" height="14" viewBox="0 0 11 14">
+              <path fill-rule="evenodd" stroke="#4489FF"
+                d="M10.5 12.554V1.5a1 1 0 0 0-1-1h-8a1 1 0 0 0-1 1v11.054l5-3.41 5 3.41z" opacity=".4" />
+            </svg>
+          </button>
           {% else %}
-          <svg class="ads__bookmark-img is-bookmarked" xmlns="http://www.w3.org/2000/svg" width="11" height="14" viewBox="0 0 11 14">
-            <path fill-rule="evenodd" stroke="#4489FF"
-              d="M10.5 12.554V1.5a1 1 0 0 0-1-1h-8a1 1 0 0 0-1 1v11.054l5-3.41 5 3.41z" opacity=".4" />
-          </svg>
+          <button class="btn-bookmark">
+            <svg class="ads__bookmark-img is-bookmarked" xmlns="http://www.w3.org/2000/svg" width="11" height="14" viewBox="0 0 11 14">
+              <path fill-rule="evenodd" stroke="#4489FF"
+                d="M10.5 12.554V1.5a1 1 0 0 0-1-1h-8a1 1 0 0 0-1 1v11.054l5-3.41 5 3.41z" opacity=".4" />
+            </svg>
+          </button>
         {% endif %}
         
       </div>
