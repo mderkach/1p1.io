@@ -1,41 +1,57 @@
 .numeric-info {
   padding: 80px 0 110px;
-
-  @include mq-down(lg){
+  @include mq-down(lg) {
     padding: 50px 0 60px;
   }
   &__item {
+    display: block;
     text-align: center;
     width: 100%;
+    color: #000;
     max-width: 280px;
-
-    @include mq-down(lg){
+    &:hover {
+      text-decoration: none;
+      color: #000;
+      .numeric-info__item-descr {
+        color: #4489ff;
+      }
+      .numeric-info__item-img {
+        transform: translateX(5px)
+      }
+      &:nth-child(2) {
+        cursor: default;
+        
+        .numeric-info__item-descr {
+          color: #000
+        }
+        .numeric-info__item-img {
+          transform: none
+        }
+      }
+    }
+    @include mq-down(lg) {
       max-width: 50%;
       padding-left: $gap;
       padding-right: $gap;
       margin-bottom: 55px;
-
-      &:nth-last-child(1){
+      &:nth-last-child(1) {
         margin-bottom: 0;
       }
     }
-
-    @include mq-between( xs, md){
+    @include mq-between( xs, md) {
       max-width: 100%;
     }
-
     &-header {
       display: flex;
       flex-direction: row;
       justify-content: center;
       align-items: flex-start;
     }
-
     &-img {
+      transition: transform 0.5s ease;
       margin-right: 10px;
       margin-top: 15px;
     }
-
     &-number {
       font-size: rem(64);
       font-weight: 500;
@@ -43,7 +59,6 @@
       margin-bottom: 5px;
       margin-right: 5px;
     }
-
     &-descr {
       font-size: rem(16);
       font-weight: 500;
