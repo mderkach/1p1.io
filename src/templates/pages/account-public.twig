@@ -46,3 +46,27 @@
 		bookmarked: true,
 	}
 ] %}
+
+{% set menubar = [
+	{
+		link: '#',
+		isActive: true,
+		descr: 'Объявления',
+		isAds: true,
+		adsCount: ads.length,
+	},
+	{
+		link: '#',
+		isActive: false,
+		descr: 'О звезде',
+		isAds: false,
+		adsCount: ads.length,
+	},
+	{
+		link: '#',
+		isActive: false,
+		descr: 'Благотворительные фонды',
+		isAds: false,
+		adsCount: ads.length,
+	},
+] %}
