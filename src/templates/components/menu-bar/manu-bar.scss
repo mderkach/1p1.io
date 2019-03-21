@@ -31,4 +31,9 @@
       }
     }
   }
+
+  @include mq-down(lg) {
+    top: 92px;
+    padding: 0 20px;
+  }
 }

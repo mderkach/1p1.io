@@ -7,10 +7,23 @@
     margin-left: 20px;
     margin-top: 75px;
     justify-content: flex-start;
+
+    @include mq-down(lg) {
+      margin-top: 200px;
+      margin-left: 0;
+      display: flex;
+      justify-content: center;
+
+    }
   }
   &-img {
     width: 100%;
     max-width: 230px;
+
+    @include mq-down(lg) {
+      max-width: 100%;
+      height: auto;
+    }
   }
   &-card {
     @extend .card;
@@ -25,12 +38,30 @@
     margin-bottom: 20px;
     &:nth-of-type(2n) {
       margin-right: 0;
+
+      @include mq-down(lg) {
+        margin-right: auto;
+      }
     }
+
+    @include mq-down(lg) {
+      display: flex;
+      flex-direction: column;
+      max-width: 280px;
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
     &-body {
       @extend .card-body;
       padding: 0;
       position: relative;
       width: 230px;
+
+      @include mq-down(lg) {
+        width: 100%;
+      }
     }
     &__top,
     &__bottom {

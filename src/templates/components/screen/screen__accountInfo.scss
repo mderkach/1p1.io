@@ -5,5 +5,11 @@
   &__wrapper {
     @include make-row();
     flex-wrap: nowrap;
+
+    @include mq-down(lg) {
+      position: relative;
+      flex-direction: column;
+      flex-wrap: wrap;
+    }
   }
 }
