@@ -22,4 +22,25 @@
       flex-wrap: wrap;
     }
   }
+
+  &__content {
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 20px;
+    margin-top: 75px;
+    justify-content: flex-start;
+
+    @include mq-down(lg) {
+      margin-top: 30px;
+      margin-left: 0;
+      display: flex;
+      justify-content: center;
+
+    }
+    @include mq-down(sm) {
+      padding: 0 20px;
+    }
+  }
 }

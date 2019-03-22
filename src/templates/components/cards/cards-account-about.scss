@@ -1,0 +1,20 @@
+.card{
+  &-about {
+    @extend .card;
+    padding: 35px 50px 45px 40px;
+    border: none;
+    width: 100%;
+    max-width: 740px;
+
+    @include mq-down(sm) {
+      padding: 18px 20px;
+      width: 280px;
+    }
+    &-descr {
+      font-size: rem(15);
+      font-weight: 500;
+      line-height: 1.33;
+      color: #444a59;
+    }
+  }
+}
