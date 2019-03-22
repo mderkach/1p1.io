@@ -1,5 +1,6 @@
 {% if menubar %}
   <div class="menu-bar">
+    <div class="menu-bar__scroll-cont">
     {% for menuItem in menubar %}
       <a href="{{ menuItem.link }}" class="menu-bar__item {% if menuItem.isActive %}is-active{% endif %}">
         {{ menuItem.descr }} 
@@ -8,5 +9,6 @@
         {% endif %}
       </a>
     {% endfor %}
+    </div>
   </div>
 {% endif %}

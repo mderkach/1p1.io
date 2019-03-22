@@ -5,9 +5,17 @@
   background: #fff;
   border-bottom: 1px solid #d9deea;
   padding-left: 285px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+
+  @include mq-down(sm) {
+    height: 55px;
+  }
+  &__scroll-cont {
+    display: flex;
+    flex-shrink: 0;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
   &__item {
     padding: 14px 0;
     margin-right: 40px;
@@ -16,6 +24,12 @@
     font-size: rem(13);
     font-weight: 500;
     color: #4b5769;
+
+    @include mq-down(sm) {
+      margin-right: 25px;
+      flex-shrink: 0;
+      padding: 16px 0;
+    }
     span {
       color: #79879e;
     }
