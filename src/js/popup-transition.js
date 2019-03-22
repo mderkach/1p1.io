@@ -8,7 +8,7 @@ var popupClose = document.querySelectorAll('.btn--close-popup');
 var body = document.querySelector('body');
 
 for (i = 0; i < popupCaller.length; ++i) {
-  popupCaller[i].addEventListener("click", function () {
+  popupCaller[i].addEventListener("click", function (event) {
     if (this.getAttribute('data-modal') == 'registration') {
       event.preventDefault();
       popupLogin.classList.remove("is-active");
@@ -21,12 +21,12 @@ for (i = 0; i < popupCaller.length; ++i) {
       event.preventDefault();
       popupSucess.classList.toggle("is-active");
     }
-    body.classList.toggle('modal-open');
+    body.classList.add('modal-open');
   });
 }
 
 for (i = 0; i < popupClose.length; ++i) {
-  popupClose[i].addEventListener("click", function () {
+  popupClose[i].addEventListener("click", function (event) {
     if (this.getAttribute('data-modal') == 'registration') {
       event.preventDefault();
       popupRegistration.classList.toggle("is-active");
@@ -37,7 +37,7 @@ for (i = 0; i < popupClose.length; ++i) {
       event.preventDefault();
       popupSucess.classList.toggle("is-active");
     }
-    body.classList.toggle('modal-open');
+    body.classList.remove('modal-open');
   });
 }
 
