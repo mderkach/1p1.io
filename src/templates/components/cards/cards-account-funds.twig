@@ -1,0 +1,18 @@
+{% if cardsFoundations %}
+  {% for item in cardsFoundations %}
+    <div class="card-fund">
+      <img src="{{ item.logo }}" alt="" class="card-fund__logo">
+      <div class="card-fund-body">
+        <div class="card-fund-header">
+          <img src="{{ item.logo }}" alt="" class="card-fund__logo-header">
+          <p class="card-fund__name">{{ item.name }}</p>
+        </div>
+        <p class="card-fund__descr">{{ item.descr }}</p>
+        <p class="card-fund__donate-descr">Сумма пожертвований</p>
+        <p class="card-fund__donate">
+          <span>{{ item.donations }}</span> Р.
+        </p>
+      </div>
+    </div>
+  {% endfor %}
+{% endif %}
