@@ -2,11 +2,23 @@
   @include make-container();
   height: 350px;
   margin-top: 70px;
-  .container {
+
+  @include mq-down(sm) {
+    margin-top: 50px;
+    height: 120px;
+  }
+  &__container {
+    @include make-container-max-widths($max-widths: $container-max-widths, $breakpoints: $grid-breakpoints);
+    margin: 0 auto;
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+
+    @include mq-down(lg) {
+      width: 100%;
+      max-width: 100%;
+    }
   }
   &__accountName {
     font-size: rem(42);
@@ -16,5 +28,16 @@
     margin-top: auto;
     margin-bottom: 0;
     margin-left: 270px;
+
+    @include mq-between(md,lg) {
+      margin-left: 195px;
+      margin-bottom: 10px;
+    }
+
+    @include mq-down(md) {
+      margin-left: 95px;
+      margin-bottom: 10px;
+      font-size:  rem(24);
+    }
   }
 }
