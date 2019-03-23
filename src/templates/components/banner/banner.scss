@@ -8,6 +8,7 @@
     height: 120px;
   }
   &__container {
+    position: relative;
     @include make-container-max-widths($max-widths: $container-max-widths, $breakpoints: $grid-breakpoints);
     margin: 0 auto;
     height: 100%;

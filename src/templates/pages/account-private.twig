@@ -1,0 +1,123 @@
+{% extends "../layout/account.twig" %}
+{% set page_title = "acount public" %}
+{% set headerType = "--white --no-toggle" %}
+{% set userStatus = "--authorised" %}
+{% set userInfo = [{
+	avatar: '/assets/img/background/main-image-2.jpg',
+	link: '#',
+	name: 'Алиса Романова'
+}] %}
+{% set mobileMenu = [
+	{
+	link: '#',
+	description: 'Объявления'
+	}, 
+	{
+		link: '#',
+		description: 'Как это работает'
+	},
+	{
+		link: '#',
+		description: 'Фонды'
+	},
+	{
+		link: '#',
+		description: 'Новости'
+	},
+	{
+		link: '#',
+		description: 'Инвесторам'
+	},
+] %}
+{% set dropdown = {
+  type: 'dropdown__account-wrapper',
+  imgClass: 'dropdown__account-avatar',
+  items: [
+  { link: '#', caption: 'Настройки профиля'},
+  { link: '#', caption: 'Изменить email'},
+  { link: '#', caption: 'Изменить пароль'},
+  { link: '#', caption: 'Выйти'},
+  ]
+}, {
+	type: 'dropdown__banner-edit',
+	items: [
+  { link: '#', caption: 'Выбрать цвет'},
+  { link: '#', caption: 'Выбрать фотографию'},
+  ]
+} %}
+{% set banner = [
+	{
+		name: 'Квартет И',
+		editable: true,
+	},
+	] 
+%}
+{% set ads = [
+	{
+		img: '/assets/img/lots/account-public-ads-1.jpg',
+		price: '3 000',
+		name: 'Афиша фильма «День выборов 2» с автографами',
+		place: 'Москва',
+		fundDonation: '3 000',
+		fundName: 'БФ "Бюро добрых дел"',
+		onauction: true,
+		bookmarked: false,
+	},
+	{
+		img: '/assets/img/lots/account-public-ads-1.jpg',
+		price: '78 000',
+		name: 'Афиша',
+		place: 'Кукуево',
+		fundDonation: '3 000',
+		fundName: 'БФ "Бюро добрых дел"',
+		onauction: false,
+		bookmarked: true,
+	},
+] %}
+
+{% set menubar = [
+	{
+		link: '#',
+		isActive: true,
+		descr: 'Объявления',
+		isAds: true,
+		adsCount: ads.length,
+	},
+	{
+		link: '#',
+		isActive: false,
+		descr: 'О звезде',
+		isAds: false,
+		adsCount: ads.length,
+	},
+	{
+		link: '#',
+		isActive: false,
+		descr: 'Благотворительные фонды',
+		isAds: false,
+		adsCount: ads.length,
+	},
+] %}
+{% set aboutStar =  'Комедии "Квартета И" знают почти наизусть и политики, и олигархи, и студенты, и врачи, и даже гламурные барышни с
+	маленькими собачками под мышкой. Искренний чистый юмор стирает границы между богатым и бедным, неудачником и тем,
+	кому постоянно везет. На спектаклях "Квартета И" все равны. "День радио", "День выборов", "Разговоры мужчин среднего
+	возраста о женщинах, кино и алюминиевых вилках" - современные хиты не только театра, но жизни в целом. А герои
+	Леонида Бараца, Ростислава Хаита, Александра Демидова и Камиля Ларина давно стали нарицательными. Им подражают, на
+	них равняются, их любят - как любят только настоящих заядлых друзей. Им доверяют и ждут каждой премьеры как события.'
+ %}
+
+ {% set cardsFoundations = [
+	{
+		logo: '/assets/img/funds/foundation.jpg',
+		name: 'Charitable foundation Masonic',
+		descr: 'Помощь больным несовершенным остеогенезом и другой костной патологией',
+		donations: '2 736',
+	},
+	{
+		logo: '/assets/img/funds/foundation.jpg',
+		name: 'Charitable foundation Masonic',
+		descr: 'Помощь больным несовершенным остеогенезом и другой костной патологией',
+		donations: '2 736',
+	},
+	]
+ %}

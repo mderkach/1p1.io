@@ -15,11 +15,3 @@ expander.addEventListener('click', function () {
 inputSearchHeader.addEventListener('blur', function () {
   expandForm();
 });
-
-//dropdown menu
-var trigger = document.querySelector('.dropdown__trigger');
-if (trigger) {
-  trigger.addEventListener('click', function () {
-    this.parentElement.lastChild.previousSibling.classList.toggle('is-active');
-  });
-}

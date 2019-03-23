@@ -1,9 +1,15 @@
 {% if dropdown %}
 <div class="dropdown-wrapper {{dropdown.type}}">
   <button class="dropdown__trigger">
+    {% if dropdown.type == 'dropdown__account-wrapper'%}
       {% for user in userInfo %}
-      <img src="{{ user.avatar }}" alt="" class="{{dropdown.imgClass}}">
+        <img src="{{ user.avatar }}" alt="" class="{{dropdown.imgClass}}">
       {% endfor %}
+    {% endif %}
+    {% if dropdown.type == 'dropdown__banner-edit'%}
+      <img src="/assets/img/icons/icon-camera.svg" alt="">
+      Изменить обложку
+    {% endif %}
   </button>
   <div class="dropdown__menu">
     {% for item in dropdown.items %}

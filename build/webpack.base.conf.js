@@ -113,6 +113,10 @@ module.exports = {
       filename: 'account-public.html',
       template: `${PATHS.src}/templates/pages/account-public.twig`,
     }),
+    new HtmlWebpackPlugin({
+      filename: 'account-private.html',
+      template: `${PATHS.src}/templates/pages/account-private.twig`,
+    }),
     new CopyWebpackPlugin([
       { from: `${PATHS.src}/img`, to: `${PATHS.assets}img` },
       { from: `${PATHS.src}/fonts`, to: `${PATHS.assets}fonts` },
