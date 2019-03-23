@@ -5,7 +5,6 @@ var phoneInput = document.querySelector('input[name=phone]');
 if (phoneInput) {
   im.mask(phoneInput);
 }
-import '@fancyapps/fancybox'
 // core
 import './js/common';
 import './scss/main.scss';

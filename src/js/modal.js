@@ -1,4 +1,7 @@
 // modal for video
+var $ = require("jquery");
+window.jQuery = $;
+require("@fancyapps/fancybox");
 var video = document.querySelector('#video');
 $('.btn-video').fancybox({
   modal: false,

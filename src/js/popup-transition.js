@@ -40,4 +40,3 @@ for (i = 0; i < popupClose.length; ++i) {
     body.classList.remove('modal-open');
   });
 }
-
