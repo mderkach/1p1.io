@@ -24,8 +24,8 @@
     </div>
     <div class="mobile-menu__body">
       {% if userStatus == "--unauthorised" %}
-      {% elseif userStatus == "--authorised" and userInfo %}
-      {% for user in userInfo %}
+      {% elseif userStatus == "--authorised" and accountInfo %}
+      {% for user in accountInfo %}
       <a class="mobile-menu__profile-wrapper" href="{{ user.link}}">
         <img class="mobile-menu__profile-img img-responsive" src="{{ user.avatar }}" alt="">
         <div class="mobile-menu__profile-info">

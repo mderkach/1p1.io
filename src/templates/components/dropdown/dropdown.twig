@@ -2,7 +2,7 @@
 <div class="dropdown-wrapper {{dropdown.type}}">
   <button class="dropdown__trigger">
     {% if dropdown.type == 'dropdown__account-wrapper'%}
-      {% for user in userInfo %}
+      {% for user in accountInfo %}
         <img src="{{ user.avatar }}" alt="" class="{{dropdown.imgClass}}">
       {% endfor %}
     {% endif %}

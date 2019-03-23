@@ -1,13 +1,25 @@
-<div class="account-card">
-  <img  class="account-avatar img-responsive" src="/assets/img/account/account-avatar.jpg" alt="">
-  <div class="account-card-body">
-    <div class="account-donations">
-      <p class="account-donations-total">0 <span>₽</span></p>
-      <p class="account-donations-descr">пожертвовано</p>
-    </div>
-    <div class="account-funds">
-      <p class="account-funds-total">0</p>
-      <p class="account-funds-descr">поддержано фондов</p>
-    </div>
+{% if accountInfo %}
+  <div class="account-card">
+    {% for user in accountInfo %}
+      <div class="account-avatar__wrapper">
+        <img  class="account-avatar img-responsive" src="{{ user.avatar }}" alt="">
+        {% if user.editable == true %}
+          <button class="btn-edit-avatar">
+              <img src="/assets/img/icons/icon-camera.svg" alt="">
+              Изменить аватар
+          </button>
+        {% endif %}
+      </div>
+      <div class="account-card-body">
+        <div class="account-donations">
+          <p class="account-donations-total">{{ user.donations }} <span>₽</span></p>
+          <p class="account-donations-descr">пожертвовано</p>
+        </div>
+        <div class="account-funds">
+          <p class="account-funds-total">{{ user.totalFunds }}</p>
+          <p class="account-funds-descr">поддержано фондов</p>
+        </div>
+      </div>
+    {% endfor %}
   </div>
-</div>
+{% endif %}
