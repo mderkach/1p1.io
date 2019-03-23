@@ -49,6 +49,7 @@
 		fundName: 'БФ "Бюро добрых дел"',
 		onauction: true,
 		bookmarked: false,
+		editable: false,
 	},
 	{
 		img: '/assets/img/lots/account-public-ads-1.jpg',
@@ -59,6 +60,7 @@
 		fundName: 'БФ "Бюро добрых дел"',
 		onauction: false,
 		bookmarked: true,
+		editable: false,
 	},
 	{
 		img: '/assets/img/lots/account-public-ads-1.jpg',
@@ -69,6 +71,7 @@
 		fundName: 'БФ "Бюро добрых дел"',
 		onauction: true,
 		bookmarked: false,
+		editable: false,
 	},
 	{
 		img: '/assets/img/lots/account-public-ads-1.jpg',
@@ -79,6 +82,7 @@
 		fundName: 'БФ "Бюро добрых дел"',
 		onauction: false,
 		bookmarked: true,
+		editable: false,
 	},
 	{
 		img: '/assets/img/lots/account-public-ads-1.jpg',
@@ -89,6 +93,7 @@
 		fundName: 'БФ "Бюро добрых дел"',
 		onauction: true,
 		bookmarked: false,
+		editable: false,
 	},
 	{
 		img: '/assets/img/lots/account-public-ads-1.jpg',
@@ -99,6 +104,7 @@
 		fundName: 'БФ "Бюро добрых дел"',
 		onauction: false,
 		bookmarked: true,
+		editable: false,
 	},
 ] %}
 
@@ -125,13 +131,16 @@
 		adsCount: ads.length,
 	},
 ] %}
-{% set aboutStar =  'Комедии "Квартета И" знают почти наизусть и политики, и олигархи, и студенты, и врачи, и даже гламурные барышни с
+{% set aboutStar = {
+	descr: 'Комедии "Квартета И" знают почти наизусть и политики, и олигархи, и студенты, и врачи, и даже гламурные барышни с
 	маленькими собачками под мышкой. Искренний чистый юмор стирает границы между богатым и бедным, неудачником и тем,
 	кому постоянно везет. На спектаклях "Квартета И" все равны. "День радио", "День выборов", "Разговоры мужчин среднего
 	возраста о женщинах, кино и алюминиевых вилках" - современные хиты не только театра, но жизни в целом. А герои
 	Леонида Бараца, Ростислава Хаита, Александра Демидова и Камиля Ларина давно стали нарицательными. Им подражают, на
-	них равняются, их любят - как любят только настоящих заядлых друзей. Им доверяют и ждут каждой премьеры как события.'
- %}
+	них равняются, их любят - как любят только настоящих заядлых друзей. Им доверяют и ждут каждой премьеры как события.',
+	editable: false,
+}
+%}	
 
  {% set cardsFoundations = [
 	{

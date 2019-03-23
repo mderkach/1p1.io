@@ -34,38 +34,46 @@
           <img src="/assets/img/icons/icon-onauction.svg" alt="" class="img-responsive ads-bet-onauction">
         {% endif %}
       </div>
-      <div class="ads__bookmark-wrapper">
-        {% if adsCard.bookmarked == false %}
-          <button class="btn-bookmark">
-            <svg class="ads__bookmark-img" width="11px" height="14px" viewbox="0 0 11 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-              <g stroke="none" stroke-width="1"  fill-rule="evenodd">
-                  <g transform="translate(-1284.000000, -510.000000)" stroke="#4489FF">
-                      <g transform="translate(850.000000, 495.000000)">
-                          <g transform="translate(434.000000, 15.000000)">
-                              <path d="M10.5,12.5539306 L10.5,1.5 C10.5,0.94771525 10.0522847,0.5 9.5,0.5 L1.5,0.5 C0.94771525,0.5 0.5,0.94771525 0.5,1.5 L0.5,12.5539306 L5.5,9.14483968 L10.5,12.5539306 Z" id="Shape"></path>
-                          </g>
+<div class="ads__buttons-wrapper">
+  {% if adsCard.editable == false %}
+    {% if adsCard.bookmarked == false %}
+      <button class="btn-bookmark">
+        <svg class="ads__bookmark-img" width="11px" height="14px" viewbox="0 0 11 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <g stroke="none" stroke-width="1"  fill-rule="evenodd">
+              <g transform="translate(-1284.000000, -510.000000)" stroke="#4489FF">
+                  <g transform="translate(850.000000, 495.000000)">
+                      <g transform="translate(434.000000, 15.000000)">
+                          <path d="M10.5,12.5539306 L10.5,1.5 C10.5,0.94771525 10.0522847,0.5 9.5,0.5 L1.5,0.5 C0.94771525,0.5 0.5,0.94771525 0.5,1.5 L0.5,12.5539306 L5.5,9.14483968 L10.5,12.5539306 Z"></path>
                       </g>
                   </g>
               </g>
-          </svg>
-          </button>
-          {% else %}
-          <button class="btn-bookmark">
-            <svg class="ads__bookmark-img is-bookmarked" width="11px" height="14px" viewbox="0 0 11 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-              <g stroke="none" stroke-width="1"  fill-rule="evenodd">
-                  <g transform="translate(-1284.000000, -510.000000)" stroke="#4489FF">
-                      <g transform="translate(850.000000, 495.000000)">
-                          <g transform="translate(434.000000, 15.000000)">
-                              <path d="M10.5,12.5539306 L10.5,1.5 C10.5,0.94771525 10.0522847,0.5 9.5,0.5 L1.5,0.5 C0.94771525,0.5 0.5,0.94771525 0.5,1.5 L0.5,12.5539306 L5.5,9.14483968 L10.5,12.5539306 Z" id="Shape"></path>
-                          </g>
+          </g>
+        </svg>
+      </button>
+    {% else %}
+      <button class="btn-bookmark">
+        <svg class="ads__bookmark-img is-bookmarked" width="11px" height="14px" viewbox="0 0 11 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <g stroke="none" stroke-width="1"  fill-rule="evenodd">
+              <g transform="translate(-1284.000000, -510.000000)" stroke="#4489FF">
+                  <g transform="translate(850.000000, 495.000000)">
+                      <g transform="translate(434.000000, 15.000000)">
+                          <path d="M10.5,12.5539306 L10.5,1.5 C10.5,0.94771525 10.0522847,0.5 9.5,0.5 L1.5,0.5 C0.94771525,0.5 0.5,0.94771525 0.5,1.5 L0.5,12.5539306 L5.5,9.14483968 L10.5,12.5539306 Z"></path>
                       </g>
                   </g>
               </g>
-          </svg>
-          </button>
-        {% endif %}
-        
-      </div>
+          </g>
+        </svg>
+      </button>
+    {% endif %}
+  {% else %}
+  <button class="btn-edit-ads">
+    <img src="/assets/img/icons/icon-edit.svg" alt="">
+  </button>
+  <button class="btn-edit-ads">
+    <img src="/assets/img/icons/icon-remove.svg" alt="">
+  </button>
+  {% endif %}
+</div>
     </div>
   </div>
   {% endfor %}

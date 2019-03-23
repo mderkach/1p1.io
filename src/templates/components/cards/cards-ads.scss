@@ -139,11 +139,6 @@
     }
   }
   &__bookmark {
-    &-wrapper {
-      position: absolute;
-      top: 15px;
-      right: 15px;
-    }
     &-img {
       fill: none;
       opacity: 0.4;
@@ -151,6 +146,16 @@
         fill: #4489ff;
         opacity: 1;
       }
+    }
+  }
+  &__buttons {
+    &-wrapper {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      position: absolute;
+      top: 15px;
+      right: 15px;
     }
   }
 }
