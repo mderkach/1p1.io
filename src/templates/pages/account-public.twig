@@ -108,27 +108,50 @@
 	},
 ] %}
 
-{% set menubar = [
+{% set menubar = [  
 	{
-		link: '#ads',
-		isActive: true,
-		descr: 'Объявления',
-		isAds: true,
-		adsCount: ads.length,
+		type: 'account',
+		items: [
+			{
+				link: '#ads',
+				isActive: true,
+				descr: 'Объявления',
+				isAds: true,
+				adsCount: ads.length,
+			},
+			{
+				link: '#about',
+				isActive: false,
+				descr: 'О звезде',
+				isAds: false,
+				adsCount: ads.length,
+			},
+			{
+				link: '#funds',
+				isActive: false,
+				descr: 'Благотворительные фонды',
+				isAds: false,
+				adsCount: ads.length,
+			},
+		],
+	}
+] %}
+
+{% set tabs = [
+	{
+		type: 'accountInfo__content',
+		id: 'ads',
+		setActive: true
 	},
 	{
-		link: '#about',
-		isActive: false,
-		descr: 'О звезде',
-		isAds: false,
-		adsCount: ads.length,
+		type: 'accountInfo__content',
+		id: 'about',
+		setActive: false
 	},
 	{
-		link: '#funds',
-		isActive: false,
-		descr: 'Благотворительные фонды',
-		isAds: false,
-		adsCount: ads.length,
+		type: 'accountInfo__content',
+		id: 'funds',
+		setActive: false
 	},
 ] %}
 {% set aboutStar = {
