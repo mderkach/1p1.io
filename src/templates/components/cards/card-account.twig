@@ -20,6 +20,11 @@
           <p class="account-funds-descr">поддержано фондов</p>
         </div>
       </div>
+      {% if userStatus == '--authorised' %}
+        <div class="account-sell__wrapper">
+          <a href="#" class="btn btn-mid btn-account-sell">Продать и помочь</a>
+        </div>
+      {% endif %}
     {% endfor %}
   </div>
 {% endif %}

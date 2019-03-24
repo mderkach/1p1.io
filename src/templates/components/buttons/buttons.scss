@@ -243,4 +243,12 @@
       @extend .btn-edit-ads;
     }
   }
+  &-account {
+    &-sell {
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+      background-color: #4489ff;
+      max-width: 180px;
+      margin: 0 auto;
+    }
+  }
 }
