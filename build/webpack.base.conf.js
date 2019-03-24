@@ -117,6 +117,10 @@ module.exports = {
       filename: 'account-private.html',
       template: `${PATHS.src}/templates/pages/account-private.twig`,
     }),
+    new HtmlWebpackPlugin({
+      filename: 'account-private-color.html',
+      template: `${PATHS.src}/templates/pages/account-private-color.twig`,
+    }),
     new CopyWebpackPlugin([
       { from: `${PATHS.src}/img`, to: `${PATHS.assets}img` },
       { from: `${PATHS.src}/fonts`, to: `${PATHS.assets}fonts` },

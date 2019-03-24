@@ -9,7 +9,7 @@
 
     @include mq-down(sm) {
       padding: 18px 20px;
-      width: 280px;
+      width: 100%;
     }
     &-descr {
       font-size: rem(15);

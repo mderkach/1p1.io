@@ -249,6 +249,16 @@
       background-color: #4489ff;
       max-width: 180px;
       margin: 0 auto;
+      border-color: #4489ff;
+
+      &:hover {
+        background: #4f90fe;
+        color: #fff;
+      }
+
+      &:focus {
+        color: #fff;
+      }
     }
   }
 }

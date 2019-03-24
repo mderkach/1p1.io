@@ -13,10 +13,6 @@
     margin-bottom: 20px;
     &:nth-of-type(2n) {
       margin-right: 0;
-
-      @include mq-down(lg) {
-        margin-right: 20px;
-      }
     }
 
     @include mq-down(lg) {
@@ -25,12 +21,10 @@
       margin-right: 20px;
     }
     
-    @include mq-between(md, lg) {
+    @include mq-down(lg) {
       width: 100%;
-    }
-
-    @include mq-down(md) {
-      width: 280px;
+      margin-left: 0;
+      margin-right: 0;
     }
 
     &__logo {

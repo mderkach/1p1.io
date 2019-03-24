@@ -1,6 +1,10 @@
 {% if banner %}
   {% for banner in banner %}
-    <div class="banner" style="background-image: url(/assets/img/banner/1.jpg);background-repeat: no-repeat; background-size: cover; background-position: center top">
+    {% if editMode == 'photo' %}
+      <div class="banner" style="background-image: url(/assets/img/banner/1.jpg);background-repeat: no-repeat; background-size: cover; background-position: center top">
+    {% elseif editMode == 'color' %}
+      <div class="banner" style="background-color: #ffc857;">
+    {% endif %}
       <div class="banner__container">
         <p class="banner__accountName">{{ banner.name }}</p>
         {% if banner.editable == true %}
