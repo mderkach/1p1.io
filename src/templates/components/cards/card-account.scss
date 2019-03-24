@@ -133,4 +133,24 @@
       }
     }
   }
+  &-edit{
+    &-controls{
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+
+      &-submit {
+        @extend .form-button-color-submit;
+        max-width: 100%;
+        width: 100%;
+        margin-bottom: 8px;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+      }
+      &-reset {
+        @extend .form-button-color-reset;
+        max-width: 100%;
+        width: 100% !important;
+      }
+    }
+  }
 }

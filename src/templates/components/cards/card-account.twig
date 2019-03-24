@@ -15,10 +15,17 @@
         {% endif %}
       </div>
       <div class="account-card-body">
-        <div class="account-donations">
-          <p class="account-donations-total">{{ user.donations }} <span>₽</span></p>
-          <p class="account-donations-descr">пожертвовано</p>
+        {% if user.editable == true and editMode == 'photo' %}
+        <div class="account-edit-controls">
+          <button class="account-edit-controls-submit" disabled>Сохранить изменения</button>
+          <button class="account-edit-controls-reset">Отменить</button>
         </div>
+        {% else %}
+          <div class="account-donations">
+            <p class="account-donations-total">{{ user.donations }} <span>₽</span></p>
+            <p class="account-donations-descr">пожертвовано</p>
+          </div>
+        {% endif %}
         <div class="account-funds">
           <p class="account-funds-total">{{ user.totalFunds }}</p>
           <p class="account-funds-descr">поддержано фондов</p>
