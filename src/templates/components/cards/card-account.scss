@@ -45,26 +45,31 @@
     width: 100%;
     height: 100%;
 
-    @include mq-between(md, lg) {
-      position: relative;
-      bottom: -15px;
-      padding: 0;
-      max-width: 180px;
-    }
-
-    @include mq-down(md) {
-      position: relative;
-      bottom: -15px;
-      padding: 0;
-      max-width: 80px;
-    }
-
     &__wrapper {
       overflow: hidden;
       position: relative;
       margin: 4px;
       border-radius: 8px;
       border: solid 1px rgba(0, 0, 0, 0.1);
+
+      @include mq-down(lg) {
+        margin: 0;
+        border: none;
+      }
+
+      @include mq-between(md, lg) {
+        position: relative;
+        bottom: -15px;
+        padding: 0;
+        max-width: 180px;
+      }
+  
+      @include mq-down(md) {
+        position: relative;
+        bottom: -15px;
+        padding: 0;
+        max-width: 80px;
+      }
     }
   }
   &-donations,
