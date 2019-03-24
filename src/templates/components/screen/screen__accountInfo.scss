@@ -27,16 +27,20 @@
   &__content {
     width: auto;
     height: auto;
-    display: flex;
+    display: none;
     flex-wrap: wrap;
     margin-left: 20px;
     margin-top: 75px;
     justify-content: flex-start;
+    align-items: flex-start;
+
+    &.is-active {
+      display: flex;
+    }
 
     @include mq-down(lg) {
       margin-top: 30px;
       margin-left: 0;
-      display: flex;
       justify-content: center;
 
     }

@@ -8,16 +8,20 @@
         {% include "../menu-bar/menu-bar.twig" %}
       {% endblock %}
       {% block accountMenuContent %}
-        <div class="accountInfo__content">
-            {% block accountAds %}
-              {% include "../cards/cards-ads.twig" %}
-            {% endblock %}
-            {% block accountAbout %}
-              {% include "../cards/cards-account-about.twig" %}
-            {% endblock %}
-            {% block accountFunds %}
-              {% include "../cards/cards-account-funds.twig" %}
-            {% endblock %}
+        <div class="accountInfo__content is-active" id="ads">
+          {% block accountAds %}
+            {% include "../cards/cards-ads.twig" %}
+          {% endblock %}
+        </div>
+        <div class="accountInfo__content" id="about">
+          {% block accountAbout %}
+            {% include "../cards/cards-account-about.twig" %}
+          {% endblock %}
+        </div>
+        <div class="accountInfo__content" id="funds">
+          {% block accountFunds %}
+            {% include "../cards/cards-account-funds.twig" %}
+          {% endblock %}
         </div>
       {% endblock %}
     </div>

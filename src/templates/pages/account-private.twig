@@ -82,21 +82,21 @@
 
 {% set menubar = [
 	{
-		link: '#',
+		link: '#ads',
 		isActive: true,
 		descr: 'Объявления',
 		isAds: true,
 		adsCount: ads.length,
 	},
 	{
-		link: '#',
+		link: '#about',
 		isActive: false,
 		descr: 'О звезде',
 		isAds: false,
 		adsCount: ads.length,
 	},
 	{
-		link: '#',
+		link: '#funds',
 		isActive: false,
 		descr: 'Благотворительные фонды',
 		isAds: false,
@@ -112,9 +112,9 @@
 	них равняются, их любят - как любят только настоящих заядлых друзей. Им доверяют и ждут каждой премьеры как события.',
 	editable: true,
 }
-%}	
+%}
 
- {% set cardsFoundations = [
+{% set cardsFoundations = [
 	{
 		logo: '/assets/img/funds/foundation.jpg',
 		name: 'Charitable foundation Masonic',
