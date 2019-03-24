@@ -13,8 +13,5 @@
     <a href="javascript:void(0);" data-color="#ffc857" class="form-button-color__btn is-picked"></a>
     <input class="form-button-color-info" type="text" name="color-paste" value="">
   </div>
-  <div class="form-button-color__controls">
-    <input class="form-button-color-reset" type="reset" value="Отменить">
-    <input class="form-button-color-submit" type="submit" value="Сохранить изменения" disabled>
-  </div>
+  {% include "./form-edit-account-controls.twig" %}
 </form>

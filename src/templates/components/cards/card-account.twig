@@ -3,10 +3,14 @@
     {% for user in accountInfo %}
       <div class="account-avatar__wrapper">
         <img  class="account-avatar img-responsive" src="{{ user.avatar }}" alt="">
-        {% if user.editable == true %}
+        {% if user.editable == true and editMode != 'photo' %}
           <button class="btn-edit-avatar">
               <img src="/assets/img/icons/icon-camera.svg" alt="">
               Изменить аватар
+          </button>
+        {% elseif editMode == 'photo' %}
+          <button class="btn-edit-avatar">
+            <img src="/assets/img/icons/icon-drag.svg" alt="">
           </button>
         {% endif %}
       </div>

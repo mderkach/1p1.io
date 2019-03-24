@@ -23,3 +23,4 @@ var landingCelebrities = require('./templates/pages/landing-celebrities.twig');
 var accountPublic = require('./templates/pages/account-public.twig');
 var accountPrivate = require('./templates/pages/account-private.twig');
 var accountPrivateColor = require('./templates/pages/account-private-color.twig');
+var accountPrivatePhoto = require('./templates/pages/account-private-color.twig');

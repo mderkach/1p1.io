@@ -41,4 +41,15 @@
       font-size:  rem(24);
     }
   }
+  &__move {
+    position: absolute;
+    right: 0;
+    bottom: 25px;
+    margin-bottom: 0;
+    font-size: rem(16);
+    font-weight: 500;
+    line-height: normal;
+    text-align: right;
+    color: #fff;
+  }
 }

@@ -1,14 +1,19 @@
 {% if banner %}
   {% for banner in banner %}
-    {% if editMode == 'photo' %}
+    {% if editMode != 'color' %}
       <div class="banner" style="background-image: url(/assets/img/banner/1.jpg);background-repeat: no-repeat; background-size: cover; background-position: center top">
     {% elseif editMode == 'color' %}
       <div class="banner" style="background-color: #ffc857;">
     {% endif %}
       <div class="banner__container">
         <p class="banner__accountName">{{ banner.name }}</p>
-        {% if banner.editable == true %}
+        {% if banner.editable == true and editMode != 'photo' %}
           {% include "../dropdown/dropdown.twig" %}
+        {% elseif banner.editable == true and editMode == 'photo' %}
+          <p class="banner__move">
+            <img src="/assets/img/icons/icon-drag.svg" alt="">
+            Перетащите изображение, чтобы изменить его положение
+          </p>
         {% endif %}
       </div>
     </div>

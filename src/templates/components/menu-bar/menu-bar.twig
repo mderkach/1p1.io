@@ -1,6 +1,6 @@
 {% if menubar %}
   {% for menu in menubar if menu.type == 'account' %}
-    {% if editMode != "color" %}
+    {% if editMode != "color" and editMode != 'photo' %}
       <div class="menu-bar__account">
         <div class="menu-bar__scroll-cont">
           {% for item in menu.items %}
@@ -14,9 +14,15 @@
         </div>
       </div>
       {% elseif editMode == 'color' %}
-      <div class="menu-bar__color">
-        {% include "../form/form-button-color.twig" %}
-      </div>
-      {% endif %}
+        <div class="menu-bar__color">
+          {% include "../form/form-button-color.twig" %}
+        </div>
+      {% elseif editMode == 'photo' %}
+        <div class="menu-bar__color">
+          <form class="form-button-color" style="justify-content: flex-end;" action="#" method="POST">
+            {% include "../form/form-edit-account-controls.twig" %}
+          </form>
+        </div>
+    {% endif %}
   {% endfor %}
 {% endif %}
