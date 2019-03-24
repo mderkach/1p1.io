@@ -1,14 +1,22 @@
 .menu-bar {
-  position: absolute;
-  width: 100%;
-  height: 50px;
-  background: #fff;
-  border-bottom: 1px solid #d9deea;
-  padding-left: 285px;
+  &__account {
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    padding-left: 285px;
+    background: #fff;
+    border-bottom: 1px solid #d9deea;
 
-  @include mq-down(sm) {
-    height: 55px;
+    @include mq-down(sm) {
+      height: 55px;
+    }
+    
+    @include mq-down(lg) {
+      position: relative;
+      padding: 0 20px;
+    }
   }
+
   &__scroll-cont {
     display: flex;
     flex-shrink: 0;
@@ -44,10 +52,5 @@
         background-image: linear-gradient(268deg, #9c5eff, #4489ff);
       }
     }
-  }
-
-  @include mq-down(lg) {
-    position: relative;
-    padding: 0 20px;
   }
 }

@@ -1,0 +1,13 @@
+{% if tabs %}
+  {% for tab in tabs %}
+    <div class="{{ tab.type }} tab__content {% if tab.setActive == true %} is-active {% endif %}" id="{{ tab.id }}">
+      {% if tab.id == 'ads' %}
+        {% include "../cards/cards-ads.twig" %}
+      {% elseif tab.id == 'about' %}
+        {% include "../cards/cards-account-about.twig" %}
+      {% elseif tab.id == 'funds' %}
+        {% include "../cards/cards-account-funds.twig" %}
+      {% endif %}
+    </div>
+  {% endfor %}
+{% endif %}

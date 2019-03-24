@@ -6,7 +6,3 @@ import './header-scroll';
 import './serach-header-expand';
 import './bookmark.js';
 import './dropdown.js';
-import './tabs.js';
-
-
-

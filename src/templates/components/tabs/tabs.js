@@ -1,5 +1,5 @@
 window.addEventListener("load", function () {
-  var items = document.querySelectorAll('.menu-bar__item');
+  var items = document.querySelectorAll('.tab__switcher');
 
   function switchTab(showTab) {
     items.forEach(function (item) {
@@ -7,7 +7,7 @@ window.addEventListener("load", function () {
     });
     var targetTab = showTab.currentTarget.classList.add('is-active');
     showTab.preventDefault();
-    var tabContent = document.querySelectorAll('.accountInfo__content');
+    var tabContent = document.querySelectorAll('.tab__content');
     tabContent.forEach(function (tab) {
       tab.classList.remove('is-active');
     });
@@ -19,5 +19,4 @@ window.addEventListener("load", function () {
   items.forEach(function(tab){
     tab.addEventListener('click', switchTab);
   });
-
 });

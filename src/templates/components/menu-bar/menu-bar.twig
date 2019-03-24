@@ -1,14 +1,16 @@
 {% if menubar %}
-  <div class="menu-bar">
-    <div class="menu-bar__scroll-cont">
-    {% for menuItem in menubar %}
-      <a href="{{ menuItem.link }}" class="menu-bar__item {% if menuItem.isActive %}is-active{% endif %}">
-        {{ menuItem.descr }} 
-        {% if menuItem.isAds %}
-          <span>({{ menuItem.adsCount }})</span>
-        {% endif %}
-      </a>
-    {% endfor %}
+  {% for menu in menubar if menu.type == 'account' %}
+    <div class="menu-bar__account">
+      <div class="menu-bar__scroll-cont">
+        {% for item in menu.items %}
+          <a href="{{ item.link }}" class="menu-bar__item tab__switcher {% if item.isActive %}is-active{% endif %}">
+            {{ item.descr }} 
+            {% if item.isAds %}
+              <span>({{ item.adsCount }})</span>
+            {% endif %}
+          </a>
+        {% endfor %}
+      </div>
     </div>
-  </div>
+  {% endfor %}
 {% endif %}

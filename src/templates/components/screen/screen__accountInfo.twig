@@ -4,25 +4,9 @@
       {% block accountProfileCard %}
         {% include "../cards/card-account.twig" %}
       {% endblock %}
-      {% block accountMenuBar %}
+      {% block accountTabs %}
         {% include "../menu-bar/menu-bar.twig" %}
-      {% endblock %}
-      {% block accountMenuContent %}
-        <div class="accountInfo__content is-active" id="ads">
-          {% block accountAds %}
-            {% include "../cards/cards-ads.twig" %}
-          {% endblock %}
-        </div>
-        <div class="accountInfo__content" id="about">
-          {% block accountAbout %}
-            {% include "../cards/cards-account-about.twig" %}
-          {% endblock %}
-        </div>
-        <div class="accountInfo__content" id="funds">
-          {% block accountFunds %}
-            {% include "../cards/cards-account-funds.twig" %}
-          {% endblock %}
-        </div>
+        {% include "../tabs/tabs-account.twig" %}
       {% endblock %}
     </div>
   </div>
