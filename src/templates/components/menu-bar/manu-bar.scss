@@ -53,4 +53,9 @@
       }
     }
   }
+
+  &__color {
+    @extend .menu-bar__account;
+    padding-left: 240px;
+  }
 }

@@ -1,16 +1,22 @@
 {% if menubar %}
   {% for menu in menubar if menu.type == 'account' %}
-    <div class="menu-bar__account">
-      <div class="menu-bar__scroll-cont">
-        {% for item in menu.items %}
-          <a href="{{ item.link }}" class="menu-bar__item tab__switcher {% if item.isActive %}is-active{% endif %}">
-            {{ item.descr }} 
-            {% if item.isAds %}
-              <span>({{ item.adsCount }})</span>
-            {% endif %}
-          </a>
-        {% endfor %}
+    {% if editMode != "color" %}
+      <div class="menu-bar__account">
+        <div class="menu-bar__scroll-cont">
+          {% for item in menu.items %}
+            <a href="{{ item.link }}" class="menu-bar__item tab__switcher {% if item.isActive %}is-active{% endif %}">
+              {{ item.descr }} 
+              {% if item.isAds %}
+                <span>({{ item.adsCount }})</span>
+              {% endif %}
+            </a>
+          {% endfor %}
+        </div>
       </div>
-    </div>
+      {% elseif editMode == 'color' %}
+      <div class="menu-bar__color">
+        {% include "../form/form-button-color.twig" %}
+      </div>
+      {% endif %}
   {% endfor %}
 {% endif %}
