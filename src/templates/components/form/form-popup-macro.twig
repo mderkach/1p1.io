@@ -38,3 +38,32 @@
   </div>
 </div>
 {% endmacro %}
+
+{% macro textarea(name, label, tip, tooltipTrigger) %}
+<div class="inline-inputs">
+  <label for="{{ name }}" class="form__popup-label-sell">{{ label }}</label>
+  <div class="form__popup-textarea-wrapper">
+    <textarea class="form__popup-textarea" rows="1" name="{{ name }}"></textarea>
+    <div class="form__popup-tip__wrapper">
+      <p class="form__popup-tip">
+        {{ tip }}
+      </p>
+      <a class="form__popup-tip-trigger" href="javascript:void();"> {{ tooltipTrigger}} </a>
+    </div>
+  </div>
+</div>  
+{% endmacro %}
+
+{% macro selectSimple(name, label, options) %}
+<div class="inline-inputs">
+  <label for="{{ name }}" class="form__popup-label">{{ label }}</label>
+  <div class="form__popup-selectSimple-wrapper">
+    <select class="form__popup-selectSimple" name="{{ name }}">
+      {% for key in options %}
+        <option value="{{ key.key }}" {{ key.selected == true ? 'selected' : '' }}> {{ key.value }}</option>
+      {% endfor %}
+    </select>
+    <img class="chevron" src="/assets/img/icons/icon-chevron-down.svg" alt="">
+  </div>
+</div> 
+{% endmacro %}

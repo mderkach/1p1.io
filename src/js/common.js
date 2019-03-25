@@ -7,3 +7,6 @@ import './serach-header-expand';
 import './bookmark.js';
 import './dropdown.js';
 import './color-pick.js';
+
+import autosize from 'autosize';
+autosize(document.querySelectorAll('textarea'));

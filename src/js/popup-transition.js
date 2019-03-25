@@ -13,7 +13,7 @@ var popupLogin = document.querySelector('#login');
 var popupCaller = document.querySelectorAll('.popup--toggle');
 var popupClose = document.querySelectorAll('.btn--close-popup');
 var body = document.querySelector('body');
-
+// TO DO: сделать открытие-закрытие универсальным
 for (i = 0; i < popupCaller.length; ++i) {
   popupCaller[i].addEventListener("click", function (event) {
     if (this.getAttribute('data-modal') == 'registration') {

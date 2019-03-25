@@ -1,5 +1,5 @@
 {% import "../form/form-popup-macro.twig" as inputs %}
-
+{% block popupRegistration %}
 <div class="popup__fullscreen" id="registration">
   <div class="popup__fullscreen-wrapper">
     <button class="popup__close btn--close-popup" data-modal="registration">
@@ -22,22 +22,58 @@
     </div>
   </div>
 </div>
+{% endblock %}
 
+{% block popupLogin %}
 <div class="popup__fullscreen" id="login">
-    <div class="popup__fullscreen-wrapper">
-      <button class="popup__close btn--close-popup" data-modal="login">
-        <img src="/assets/img/icons/icon-close-blue.svg" alt="">
-      </button>
-      <div class="row">
-        <div class="header__wrapper-popup">
-          <h2 class="header__h2 header__popup">Вход</h2>
-        </div>
-        <form action="#" method="GET" class="form__popup validate" novalidate>
-          {{ inputs.inputRegistration('email-login', 'email', 'Email', 'Ваша@почта', 'Email не найден' ) }}
-          {{ inputs.inputRegistration('password-login', 'password', 'Пароль', 'Пароль', 'Неверный пароль' ) }}
-          {{ inputs.loginButtons() }}
-          {{ inputs.submitRegistration('Войти') }}
-        </form>
+  <div class="popup__fullscreen-wrapper">
+    <button class="popup__close btn--close-popup" data-modal="login">
+      <img src="/assets/img/icons/icon-close-blue.svg" alt="">
+    </button>
+    <div class="row">
+      <div class="header__wrapper-popup">
+        <h2 class="header__h2 header__popup">Вход</h2>
       </div>
+      <form action="#" method="GET" class="form__popup validate" novalidate>
+        {{ inputs.inputRegistration('email-login', 'email', 'Email', 'Ваша@почта', 'Email не найден' ) }}
+        {{ inputs.inputRegistration('password-login', 'password', 'Пароль', 'Пароль', 'Неверный пароль' ) }}
+        {{ inputs.loginButtons() }}
+        {{ inputs.submitRegistration('Войти') }}
+      </form>
     </div>
   </div>
+</div>
+{% endblock %}
+
+{% block popupSellItem %}
+<div class="popup__fullscreen" id="sell-item">
+  <div class="popup__fullscreen-wrapper">
+    <button class="popup__close btn--close-popup" data-modal="login">
+      <img src="/assets/img/icons/icon-close-blue.svg" alt="">
+    </button>
+    <div class="row">
+      <div class="header__wrapper-popup">
+        <h2 class="header__h2 header__popup">Sell your item for a charity</h2>
+      </div>
+      <form action="#" method="POST" class="form__popup">
+        {{ inputs.textarea('Title','Title', 'e. g. Gucci Black Leather Jacket', 'How to write a good title') }}
+        {% set optsCategory = [
+          { 
+            key: 'Jewelry',
+            value: 'Jewelry',
+            selected: true,
+          },
+          { 
+            key: 'Clothes',
+            value: 'Clothes',
+            selected: false,
+          },
+          ],
+        %}
+        {{ inputs.selectSimple('Category','Category', optsCategory) }}
+        {{ inputs.textarea('Description','Description', 'Up to 500 words, describing your item', 'How to write a good description') }}
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

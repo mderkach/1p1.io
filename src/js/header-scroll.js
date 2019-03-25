@@ -19,6 +19,7 @@ function remove_class_on_scroll() {
   header.classList.remove("--fixed");
 }
 
+
 window.addEventListener('scroll', function () {
   scrollpos = window.scrollY;
 
