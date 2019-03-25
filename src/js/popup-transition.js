@@ -1,3 +1,11 @@
+//check user agent
+var isMobile = navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i);
+
+function checkMobile() {
+  if (!isMobile) {
+    body.classList.add('--scrollbar-hidden');
+  }
+}
 // popup transition
 var popupRegistration = document.querySelector('#registration');
 var popupSucess = document.querySelector('#success');
@@ -12,8 +20,7 @@ for (i = 0; i < popupCaller.length; ++i) {
       event.preventDefault();
       popupLogin.classList.remove("is-active");
       popupRegistration.classList.toggle("is-active");
-    }
-    else if (this.getAttribute('data-modal') == 'login') {
+    } else if (this.getAttribute('data-modal') == 'login') {
       event.preventDefault();
       popupLogin.classList.toggle("is-active");
     } else {
@@ -21,6 +28,7 @@ for (i = 0; i < popupCaller.length; ++i) {
       popupSucess.classList.toggle("is-active");
     }
     body.classList.add('modal-open');
+    checkMobile();
   });
 }
 
@@ -36,7 +44,7 @@ for (i = 0; i < popupClose.length; ++i) {
       event.preventDefault();
       popupSucess.classList.toggle("is-active");
     }
-    body.classList.remove('modal-open');
+    body.classList.remove('modal-open','--scrollbar-hidden');
   });
 }
 
@@ -45,14 +53,15 @@ var editBtn = document.querySelectorAll('.btn-edit-ads');
 var removeAds = document.querySelectorAll('.btn-remove-ads');
 var modalAbout = document.querySelector('#edit-about');
 var modalRemove = document.querySelector('#remove-ads');
-var modalTextarea = document. querySelector('.popup-edit__textarea');
+var modalTextarea = document.querySelector('.popup-edit__textarea');
 var closeModal = document.querySelectorAll('.popup-edit-reset');
 editBtn.forEach(
-  function(btn){
-    btn.addEventListener('click', function(){
+  function (btn) {
+    btn.addEventListener('click', function () {
       if (this.parentElement.parentElement.classList.contains('card-about')) {
         modalAbout.classList.add('is-active');
         body.classList.add('modal-open');
+        checkMobile();
         auto_grow(modalTextarea);
       }
     });
@@ -60,16 +69,17 @@ editBtn.forEach(
 )
 
 function auto_grow(element) {
-  element.style.height = (element.scrollHeight) + 2 +"px";
+  element.style.height = (element.scrollHeight) + 2 + "px";
 }
 
 //popup delete ads
 removeAds.forEach(
-  function(btn) {
-    btn.addEventListener('click', function() {
+  function (btn) {
+    btn.addEventListener('click', function () {
       if (this.parentElement.parentElement.parentElement.classList.contains('ads-card')) {
         modalRemove.classList.add('is-active');
         body.classList.add('modal-open');
+        checkMobile();
       }
     });
   }
@@ -77,12 +87,12 @@ removeAds.forEach(
 
 //close modal edit and remove
 closeModal.forEach(
-  function(btn) {
-    btn.addEventListener('click', function(event){
+  function (btn) {
+    btn.addEventListener('click', function (event) {
       event.preventDefault();
       modalAbout.classList.remove('is-active');
       modalRemove.classList.remove('is-active');
-      body.classList.remove('modal-open');
+      body.classList.remove('modal-open','--scrollbar-hidden');
     });
   }
 );
