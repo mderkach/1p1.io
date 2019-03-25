@@ -8,6 +8,11 @@
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
+      &__btn {
+        &.is-picked {
+          border: solid 2px #4489ff;
+        }
+      }
 
       &__container {
         height: 100%;
@@ -22,10 +27,6 @@
         align-items: center;
       }
   
-      &.is-picked {
-        border: solid 2px #4489ff;
-      }
-  
       &-info {
         z-index: 0;
         margin-left: -30px;
@@ -35,11 +36,9 @@
         border-bottom: 1px solid #fafafa;
         font-size: rem(12);
         font-weight: 500;
-        font-style: normal;
-        font-stretch: normal;
         line-height: 1.42;
-        letter-spacing: normal;
-        color: #000000;
+        color: #000;
+        text-transform: uppercase;
       }
       &__btn {
         z-index: 1;
