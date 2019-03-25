@@ -1,5 +1,5 @@
 //check user agent
-var isMobile = navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i);
+var isMobile = navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)|(android)|(webOS)|(Mac)/i);
 
 function checkMobile() {
   if (!isMobile) {
