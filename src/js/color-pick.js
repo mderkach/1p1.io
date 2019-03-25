@@ -1,7 +1,6 @@
 var buttons = document.querySelectorAll('.form-button-color__btn');
 var inputColor = document.querySelector('[name=color-paste]');
 var banner = document.querySelector('.banner');
-console.log(inputColor);
 buttons.forEach(
   function (btn) {
     var dataColor = btn.getAttribute('data-color');

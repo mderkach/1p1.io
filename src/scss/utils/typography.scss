@@ -70,4 +70,11 @@
       }
     }
   }
+  &-edit {
+    &-header {
+      font-size: rem(25);
+      font-weight: bold;
+      color: #000;
+    }
+  }
 }

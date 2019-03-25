@@ -1,4 +1,3 @@
-
 // popup transition
 var popupRegistration = document.querySelector('#registration');
 var popupSucess = document.querySelector('#success');
@@ -40,3 +39,50 @@ for (i = 0; i < popupClose.length; ++i) {
     body.classList.remove('modal-open');
   });
 }
+
+// popup edit modal
+var editBtn = document.querySelectorAll('.btn-edit-ads');
+var removeAds = document.querySelectorAll('.btn-remove-ads');
+var modalAbout = document.querySelector('#edit-about');
+var modalRemove = document.querySelector('#remove-ads');
+var modalTextarea = document. querySelector('.popup-edit__textarea');
+var closeModal = document.querySelectorAll('.popup-edit-reset');
+editBtn.forEach(
+  function(btn){
+    btn.addEventListener('click', function(){
+      if (this.parentElement.parentElement.classList.contains('card-about')) {
+        modalAbout.classList.add('is-active');
+        body.classList.add('modal-open');
+        auto_grow(modalTextarea);
+      }
+    });
+  }
+)
+
+function auto_grow(element) {
+  element.style.height = (element.scrollHeight) + 2 +"px";
+}
+
+//popup delete ads
+removeAds.forEach(
+  function(btn) {
+    btn.addEventListener('click', function() {
+      if (this.parentElement.parentElement.parentElement.classList.contains('ads-card')) {
+        modalRemove.classList.add('is-active');
+        body.classList.add('modal-open');
+      }
+    });
+  }
+);
+
+//close modal edit and remove
+closeModal.forEach(
+  function(btn) {
+    btn.addEventListener('click', function(event){
+      event.preventDefault();
+      modalAbout.classList.remove('is-active');
+      modalRemove.classList.remove('is-active');
+      body.classList.remove('modal-open');
+    });
+  }
+);

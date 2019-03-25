@@ -1,14 +1,14 @@
 {% if aboutStar %}
   <div class="card-about">
-      <p class="card-about-descr">
-        {{ aboutStar.descr }}
-      </p>
-      {% if aboutStar.editable %}
-        <div class="ads__buttons-wrapper">
-          <button class="btn-edit-ads">
-            <img src="/assets/img/icons/icon-edit.svg" alt="">
-          </button>
-        </div>
-      {% endif %}
-    </div>
+    <p class="card-about-descr">
+      {{ aboutStar.descr }}
+    </p>
+    {% if aboutStar.editable %}
+      <div class="ads__buttons-wrapper">
+        <button class="btn-edit-ads">
+          <img src="/assets/img/icons/icon-edit.svg" alt="">
+        </button>
+      </div>
+    {% endif %}
+  </div>
 {% endif %}

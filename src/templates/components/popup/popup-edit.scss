@@ -1,0 +1,99 @@
+.popup-edit {
+  @include make-col(6);
+  background: #fff;
+  padding: 50px 50px 40px;
+  border-radius: 3px;
+
+  @include mq-down(lg) {
+    @include make-col(12);
+    padding: 20px;
+  }
+  &__background {
+    overflow: auto;
+    display: none;
+    width: 100%;
+    height: 100vh;
+    background: rgba($color: #000, $alpha: 0.7);
+    position: fixed;
+    top: 0;
+    z-index: 9000;
+    &.is-active {
+      display: block;
+    }
+  }
+  &__container {
+    @include make-container-max-widths($max-widths: $container-max-widths, $breakpoints: $grid-breakpoints);
+    @include make-container();
+    height: 100%;
+  }
+  &__wrapper {
+    @include make-row();
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+
+    @include mq-down(lg) {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+  &__textarea {
+    resize: none;
+    overflow: auto;
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #ebeff4;
+    padding: 5px;
+    font-size: rem(15);
+    font-weight: 500;
+    line-height: 1.47;
+    color: #000;
+
+    &:focus {
+      border-color: #4489ff;
+    }
+  }
+  &__controls {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+
+    @include mq-down(lg) {
+      margin-top: 10px;
+    }
+
+    @include mq-down(md) {
+      flex-direction: column;
+    }
+  }
+  &-reset, &-submit {
+    @extend .btn-mid;
+    max-width: 160px;
+    height: 50px;
+    border: solid 2px #4489ff;
+    font-size: rem(19);
+    font-weight: 500;
+
+    @include mq-down(lg) {
+      margin-top: 10px;
+    }
+  }
+  &-reset {
+    background: #fff;
+    color: #4489ff;
+  }
+  &-submit {
+    background: #4489ff;
+    color: #fff;
+  }
+  &-ads {
+    font-size: rem(15);
+    font-weight: 500;
+    line-height: 1.33;
+    color: #4b5769;
+    margin-bottom: rem(16);
+  }
+}
