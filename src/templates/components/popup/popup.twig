@@ -73,6 +73,7 @@
         %}
           {{ inputs.selectSimple('Category','Category', optsCategory) }}
           {{ inputs.textarea('Description','Description', 'Up to 500 words, describing your item', 'How to write a good description') }}
+          {{ inputs.photos('images') }}
           {% set priceType = [
           {
             key: 'fixed',
