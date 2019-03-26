@@ -85,7 +85,13 @@
           },
         ] %}
         {{ inputs.selectMiniDual('Price, ₽', 'type', priceType, 'price', 0) }}
-        {{ inputs.selectSimpleDual('Donation','donate', 50 ) }}
+        {% set donateTo = [
+          {
+            key: 'first',
+            value :'first',
+          }
+        ] %}
+        {{ inputs.selectSimpleDual('Donation','donate', donateTo, 50 ) }}
       </form>
     </div>
   </div>

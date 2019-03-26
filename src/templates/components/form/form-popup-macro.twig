@@ -86,7 +86,7 @@
     <div class="form__popup-inputNumberMini-outer">
       <label class="form__popup-inputNumberMini-outer-label" for="{{ inputNumberName }}">{{ inputNumberName }}</label>
       <div class="form__popup-inputNumberMini-wrapper">
-        <input class="form__popup-inputNumberMini" data-type="number" type="number" min="0" name="{{ inputNumberName }}"
+        <input class="form__popup-inputNumberMini" data-type="number" type="number" min="1" name="{{ inputNumberName }}"
           value="{{ priceValue }}">
         <div class="form__popup-inputNumberMini-controls-wrapper">
           <button data-action="increase" type="button" class="form__popup-inputNumberMini-controls">
@@ -102,14 +102,15 @@
 </div>
 {% endmacro %}
 
-{% macro selectSimpleDual(name, label, donateValue) %}
+{% macro selectSimpleDual(name, label, donation, donateValue) %}
 <div class="inline-inputs">
   <label for="{{ name }}" class="form__popup-label">{{ label }}</label>
-  <div class="form__popup-input-wrapper">
+  <div class="form__popup-input-container">
     <div class="form__popup-select-outer">
-      <select class="form__popup-select" name="{{ name }}">
-        {% for key in options %}
-          <option value="{{ key.key }}" {{ key.selected == true ? 'selected' : '' }}>{{ key.value }}</option>
+      <select class="form__popup-select" name="{{ name }}" required>
+        <option value="" disabled selected hidden>Donate to</option>
+        {% for key in donation %}
+        <option value="{{ key.key }}">{{ key.value }}</option>
         {% endfor %}
       </select>
       <img class="form__popup-chevronSelect" src="/assets/img/icons/icon-chevron-down.svg" alt="">
@@ -117,8 +118,8 @@
     <div class="form__popup-inputNumberMini-outer">
       <label class="form__popup-inputNumberMini-outer-label" for="{{ inputNumberName }}">{{ inputNumberName }}</label>
       <div class="form__popup-inputNumberMini-wrapper">
-        <input class="form__popup-inputNumberMini" data-type="percent" type="text" min="0" max="100" name="{{ inputNumberName }}"
-          value="{{ donateValue }}">
+        <input class="form__popup-inputNumberMini" data-type="percent" type="number" min="1" max="99"
+          name="{{ inputNumberName }}" value="{{ donateValue }}">
         <div class="form__popup-inputNumberMini-controls-wrapper">
           <button data-action="increase" type="button" class="form__popup-inputNumberMini-controls">
             <img src="/assets/img/icons/icon-button-inputNumber-control.svg" alt="">
@@ -127,6 +128,7 @@
             <img src="/assets/img/icons/icon-button-inputNumber-control.svg" alt="">
           </button>
         </div>
+        <span class="form__popup-inputNumberMini-span">%</span>
       </div>
     </div>
   </div>
