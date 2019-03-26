@@ -5,7 +5,10 @@
     width: 100%;
     padding-left: $gap;
     padding-right: $gap;
-
+    &-sell {
+      @extend .form__popup;
+      margin-bottom: 110px;
+    }
     @include mq-down(md) {
       margin-top: 10px;
       margin-bottom: 40px;

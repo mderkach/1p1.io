@@ -46,18 +46,19 @@
 {% endblock %}
 
 {% block popupSellItem %}
-<div class="popup__fullscreen" id="sell-item">
-  <div class="popup__fullscreen-wrapper">
-    <button class="popup__close btn--close-popup" data-modal="login">
-      <img src="/assets/img/icons/icon-close-blue.svg" alt="">
-    </button>
-    <div class="row">
-      <div class="header__wrapper-popup">
-        <h2 class="header__h2 header__popup">Sell your item for a charity</h2>
-      </div>
-      <form action="#" method="POST" class="form__popup">
-        {{ inputs.textarea('Title','Title', 'e. g. Gucci Black Leather Jacket', 'How to write a good title') }}
-        {% set optsCategory = [
+ <div class="popup__fullscreen" id="sell-item"> 
+  <div class="popup__fullscreen-outer">
+    <div class="popup__fullscreen-wrapper">
+      <button class="popup__close btn--close-popup" data-modal="login">
+        <img src="/assets/img/icons/icon-close-blue.svg" alt="">
+      </button>
+      <div class="row">
+        <div class="header__wrapper-popup">
+          <h2 class="header__h2 header__popup">Sell your item for a charity</h2>
+        </div>
+        <form action="#" method="POST" class="form__popup-sell">
+          {{ inputs.textarea('Title','Title', 'e. g. Gucci Black Leather Jacket', 'How to write a good title') }}
+          {% set optsCategory = [
           { 
             key: 'Jewelry',
             value: 'Jewelry',
@@ -70,9 +71,9 @@
           },
           ],
         %}
-        {{ inputs.selectSimple('Category','Category', optsCategory) }}
-        {{ inputs.textarea('Description','Description', 'Up to 500 words, describing your item', 'How to write a good description') }}
-        {% set priceType = [
+          {{ inputs.selectSimple('Category','Category', optsCategory) }}
+          {{ inputs.textarea('Description','Description', 'Up to 500 words, describing your item', 'How to write a good description') }}
+          {% set priceType = [
           {
             key: 'fixed',
             value: 'Fixed',
@@ -84,15 +85,22 @@
             selected: false,
           },
         ] %}
-        {{ inputs.selectMiniDual('Price, ₽', 'type', priceType, 'price', 0) }}
-        {% set donateTo = [
+          {{ inputs.selectMiniDual('Price, ₽', 'type', priceType, 'price', 0) }}
+          {% set donateTo = [
           {
             key: 'first',
             value :'first',
           }
         ] %}
-        {{ inputs.selectSimpleDual('Donation','donate', donateTo, 50 ) }}
-      </form>
+          {{ inputs.selectSimpleDual('Donation','donate', donateTo, 50 ) }}
+        </form>
+      </div>
+    </div>
+    <div class="popup__fullscreen-footer-wrapper">
+      <div class="popup__fullscreen-footer">
+        <p class="popup__fullscreen-footer-descr">Step 1. Describe your item</p>
+        <a class="btn-sell-item-continue" href="javascript:void(0);">Continue</a>
+      </div>
     </div>
   </div>
 </div>
