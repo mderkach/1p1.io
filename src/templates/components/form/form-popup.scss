@@ -8,6 +8,7 @@
 
     &-sell {
       @extend .form__popup;
+      max-width: 780px;
       margin-bottom: 110px;
     }
 
@@ -309,6 +310,9 @@
 
       &-outer {
         @extend .form__popup-selectMini-outer;
+        &:nth-last-of-type(1) {
+          margin-right: 0;
+        }
 
         &-label {
           @extend .form__popup-selectMini-outer-label;
@@ -395,6 +399,11 @@
         color: #5d5d5d;
         &:nth-last-child(1) {
           margin-right: 0;
+        }
+
+        &-wrapper {
+          @extend .form__popup-input-wrapper;
+          padding-left: 0;
         }
       }
     }
