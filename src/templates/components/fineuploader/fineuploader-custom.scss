@@ -3,6 +3,11 @@
   height: 180px;
   background-color: #f3f3f3;
   overflow: hidden;
+  margin-right: 20px;
+
+  &:nth-last-child(1) {
+    margin-right: 0;
+  }
 }
 
 .qq-gallery {
@@ -34,18 +39,40 @@
     }
   }
 
-  &.qq-upload-button {}
-}
+  .qq-upload-button {
+    width: 100%;
+    height: 180px;
+    padding: 0;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    position: relative;
+  
+    &:hover {
+      box-shadow: inset 0 1px 1px hsla(0,0%,100%,.37), inset 1px 0 1px hsla(0,0%,100%,.07), 0 1px 0 rgba(0,0,0,.36), inset 0 -2px 12px rgba(0,0,0,.08)
+    }
+  }
+  .qq-upload-list {
+    position: absolute;
+    top: 0;
+    padding: 0;
 
-.qq-gallery .qq-upload-button {
-  width: 100%;
-  height: 180px;
-  background: transparent;
-  border: none;
-  box-shadow: none;
-  position: relative;
-
-  &:hover {
-    box-shadow: inset 0 1px 1px hsla(0,0%,100%,.37), inset 1px 0 1px hsla(0,0%,100%,.07), 0 1px 0 rgba(0,0,0,.36), inset 0 -2px 12px rgba(0,0,0,.08)
+    li {
+      display: block;
+      width: 100%;
+      height: 100%;
+      max-width: 180px;
+      max-height: 180px;
+      margin: 0;
+    }
+  }
+  .qq-thumbnail-wrapper {
+    width: 100%;
+    height: 100%;
+  }
+  .qq-thumbnail-selector {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
   }
 }

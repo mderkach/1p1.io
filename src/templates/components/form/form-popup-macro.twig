@@ -156,7 +156,13 @@
   <label for="" class="form__popup-label-sell">{{ label }}</label>
   <div class="form__popup-upload-photo-container">
     <div class="form__popup-upload-photo-wrapper">
-      <div class="fineuploader" id="uploader">
+      <div class="fineuploader">
+        {% include "../fineuploader/fineuploader.twig" %}
+      </div>
+      <div class="fineuploader">
+        {% include "../fineuploader/fineuploader.twig" %}
+      </div>
+      <div class="fineuploader">
         {% include "../fineuploader/fineuploader.twig" %}
       </div>
     </div>
