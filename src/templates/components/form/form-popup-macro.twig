@@ -86,13 +86,45 @@
     <div class="form__popup-inputNumberMini-outer">
       <label class="form__popup-inputNumberMini-outer-label" for="{{ inputNumberName }}">{{ inputNumberName }}</label>
       <div class="form__popup-inputNumberMini-wrapper">
-        <input class="form__popup-inputNumberMini" type="number" min="0" name="{{ inputNumberName }}" value="{{ priceValue }}">
+        <input class="form__popup-inputNumberMini" data-type="number" type="number" min="0" name="{{ inputNumberName }}"
+          value="{{ priceValue }}">
         <div class="form__popup-inputNumberMini-controls-wrapper">
-          <button type="button" onclick="this.parentNode.parentNode.querySelector('input[type=number]').stepUp()" class="form__popup-inputNumberMini-controls">
+          <button data-action="increase" type="button" class="form__popup-inputNumberMini-controls">
             <img src="/assets/img/icons/icon-button-inputNumber-control.svg" alt="">
           </button>
-          <button type="button" onclick="this.parentNode.parentNode.querySelector('input[type=number]').stepDown()" class="form__popup-inputNumberMini-controls">
-              <img src="/assets/img/icons/icon-button-inputNumber-control.svg" alt="">
+          <button data-action="decrease" type="button" class="form__popup-inputNumberMini-controls">
+            <img src="/assets/img/icons/icon-button-inputNumber-control.svg" alt="">
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endmacro %}
+
+{% macro selectSimpleDual(name, label, donateValue) %}
+<div class="inline-inputs">
+  <label for="{{ name }}" class="form__popup-label">{{ label }}</label>
+  <div class="form__popup-input-wrapper">
+    <div class="form__popup-select-outer">
+      <select class="form__popup-select" name="{{ name }}">
+        {% for key in options %}
+          <option value="{{ key.key }}" {{ key.selected == true ? 'selected' : '' }}>{{ key.value }}</option>
+        {% endfor %}
+      </select>
+      <img class="form__popup-chevronSelect" src="/assets/img/icons/icon-chevron-down.svg" alt="">
+    </div>
+    <div class="form__popup-inputNumberMini-outer">
+      <label class="form__popup-inputNumberMini-outer-label" for="{{ inputNumberName }}">{{ inputNumberName }}</label>
+      <div class="form__popup-inputNumberMini-wrapper">
+        <input class="form__popup-inputNumberMini" data-type="percent" type="text" min="0" max="100" name="{{ inputNumberName }}"
+          value="{{ donateValue }}">
+        <div class="form__popup-inputNumberMini-controls-wrapper">
+          <button data-action="increase" type="button" class="form__popup-inputNumberMini-controls">
+            <img src="/assets/img/icons/icon-button-inputNumber-control.svg" alt="">
+          </button>
+          <button data-action="decrease" type="button" class="form__popup-inputNumberMini-controls">
+            <img src="/assets/img/icons/icon-button-inputNumber-control.svg" alt="">
           </button>
         </div>
       </div>
