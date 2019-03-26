@@ -81,12 +81,12 @@
             selected: true,
           },
           {
-            key: 'notfixed',
-            value: 'Not fixed',
+            key: 'auction',
+            value: 'Auction',
             selected: false,
           },
         ] %}
-          {{ inputs.selectMiniDual('Price, ₽', 'type', priceType, 'price', 0) }}
+          {{ inputs.selectMiniTrio('Price, ₽', 'type', priceType, 'Starting price', 0, 'Buyout price', 0) }}
           {% set donateTo = [
           {
             key: 'first',
