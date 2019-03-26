@@ -2,7 +2,8 @@
   &-img {
     width: 100%;
     max-width: 230px;
-
+    object-fit: cover;
+    
     @include mq-down(lg) {
       max-width: 100%;
       height: auto;
@@ -68,10 +69,7 @@
     }
     &__bottom {
       padding-bottom: 15px;
-
-      @include mq-down(lg) {
-        margin-bottom: 35px
-      }
+      margin-bottom: 40px;
     }
   }
   &-price {
