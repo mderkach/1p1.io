@@ -3,7 +3,6 @@
     width: 100%;
     max-width: 230px;
     object-fit: cover;
-    
     @include mq-down(lg) {
       max-width: 100%;
       height: auto;
@@ -23,12 +22,10 @@
     box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.1);
     &:nth-of-type(2n) {
       margin-right: 0;
-
       @include mq-down(lg) {
         margin-right: auto;
       }
     }
-
     @include mq-between(md, lg) {
       display: flex;
       flex-direction: column;
@@ -37,7 +34,6 @@
       margin-left: auto;
       margin-right: auto;
     }
-
     @include mq-down(md) {
       display: flex;
       flex-direction: column;
@@ -46,13 +42,11 @@
       margin-left: auto;
       margin-right: auto;
     }
-
     &-body {
       @extend .card-body;
       padding: 0;
       position: relative;
       width: 230px;
-
       @include mq-down(lg) {
         width: 100%;
       }
@@ -103,12 +97,10 @@
         font-weight: 300;
         color: #4b5769;
         margin-bottom: 14px;
-
         @include mq-down(sm) {
           font-size: rem(15);
           margin-bottom: 10px;
         }
-
         &-amount {
           font-weight: bold;
         }
@@ -164,5 +156,13 @@
       top: 15px;
       right: 15px;
     }
+  }
+  &__placeholder {
+    width: 100%;
+    margin-bottom: 0;
+    font-size: rem(17);
+    font-weight: 500;
+    text-align: center;
+    color: #79879e;
   }
 }

@@ -1,4 +1,4 @@
-{% if ads %}
+{% if ads.length > 0 %}
   {% for adsCard in ads %}
   <div class="ads-card">
     <img src="{{ adsCard.img }}" alt="" class="ads-img">
@@ -77,4 +77,6 @@
     </div>
   </div>
   {% endfor %}
+{% else %}
+  <p class="ads__placeholder">Сейчас нет объявлений</p>
 {% endif %}
