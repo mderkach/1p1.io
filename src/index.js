@@ -13,7 +13,8 @@ import './templates/components/slider/slider-bg';
 import './templates/components/slider/slider-reviews-landing';
 import './templates/components/slider/slider-partners';
 import './templates/components/tabs/tabs';
-import './templates/components/fineuploader/fineuploader'
+import './templates/components/fineuploader/fineuploader';
+import './templates/components/tooltip/tooltip';
 //pages
 var landing = require('./index.twig');
 var loginMobile = require('./templates/pages/login-mobile.twig');

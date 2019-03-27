@@ -64,6 +64,14 @@
       display: flex;
       justify-content: center;
 
+      @include mq-down(lg) {
+        display: flex;
+        bottom: auto;
+        top: 10px;
+        right: 10px;
+        justify-content: flex-end;
+        width: 200px;
+      }
 
       .dropdown__trigger {
         width: 180px;
@@ -79,14 +87,28 @@
         line-height: normal;
         letter-spacing: normal;
         color: #fff;
+
+        @include mq-down(lg) {
+          font-size: 0;
+          width: auto;
+        }
       }
 
       .dropdown__menu {
         top: 40px;
 
+        @include mq-down(lg) {
+          right: -20px;
+        }
+        
         &::before {
           right: 50%;
           left: 50%;
+
+          @include mq-down(lg) {
+            right: 23px;
+            left: auto;
+          }
         }
       }
     }

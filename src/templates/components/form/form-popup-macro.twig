@@ -49,14 +49,7 @@
         {{ tip }}
       </p>
       <a class="form__popup-tip-trigger tooltip-trigger" href="#"> {{ tooltipTrigger}} </a>
-      <div class="form__popup-tooltip tooltip">
-        <div class="form__popup-tooltip-descr-wrapper">
-          <p class="form__popup-tooltip-descr">
-            {{ tooltipDescr }}
-            {{ tooltipDescr }}
-          </p>
-        </div>
-      </div>
+      {% include "../tooltip/tooltip-form-popup.twig" %}
     </div>
   </div>
 </div>
@@ -177,14 +170,7 @@
     <div class="form__popup-tip__wrapper">
       <p class="form__popup-tip"></p>
       <a class="form__popup-tip-trigger tooltip-trigger" href="#"> {{ tooltipTrigger}} </a>
-      <div class="form__popup-tooltip tooltip">
-        <div class="form__popup-tooltip-descr-wrapper">
-          <p class="form__popup-tooltip-descr">
-            {{ tooltipDescr }}
-            {{ tooltipDescr }}
-          </p>
-        </div>
-      </div>
+      {% include "../tooltip/tooltip-form-popup.twig" %}
     </div>
   </div>
 </div>

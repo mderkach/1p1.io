@@ -162,12 +162,16 @@
     height: 75%;
     margin-bottom: 0;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-
+    margin-bottom: 60px;
+    margin-top: 30px;
     &-descr {
+      text-align: center;
       font-size: rem(17);
       font-weight: 500;
+      line-height: 1;
       color: #79879e;
     }
   }

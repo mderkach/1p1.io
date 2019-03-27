@@ -77,8 +77,13 @@
     </div>
   </div>
   {% endfor %}
-{% else %}
+{% elseif ads.length == 0 and pageType == 'public' %}
   <div class="ads__placeholder">
     <p class="ads__placeholder-descr">Сейчас нет объявлений</p>
+  </div>
+{% elseif ads.length == 0 and pageType == 'private' %}
+<div class="ads__placeholder">
+    <p class="ads__placeholder-descr">Здесь вы увидите список своих объявлений</p>
+    <button class="btn-createNew">Создать первое объявление</button>
   </div>
 {% endif %}

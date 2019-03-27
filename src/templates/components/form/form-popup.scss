@@ -408,55 +408,5 @@
         }
       }
     }
-
-    &-tooltip {
-      display: none;
-      position: absolute;
-      padding: 25px 0;
-      z-index: 15;
-      right: 0;
-      top: 50px;
-      border-radius: 3px;
-      background-color: #fff;
-      max-width: 460px;
-      width: auto;
-      max-height: 290px;
-      height: auto;
-      box-shadow: 0 2px 20px 12px rgba(0,0,0,.1);
-
-      &.is-active {
-        display: block;
-      }
-
-      &::before{
-        content: "";
-        display: block;
-        position: absolute;
-        top: -22px;
-        right: 55px;
-        width: 51px;
-        height: 22px;
-        border-color: #fff rgba(0,0,0,0);
-        border-style: solid;
-        border-width: 0 26px 22px;
-      }
-
-      &-descr {
-        font-size: rem(14);
-        font-weight: 500;
-        color: #000;
-        margin-bottom: 0;
-        font-style: normal;
-        font-stretch: normal;
-        line-height: normal;
-        letter-spacing: normal;
-
-        &-wrapper {
-          padding: 0 45px 0 25px;
-          height: 240px;
-          overflow-y: auto;
-        }
-      }
-    }
   }
 }
