@@ -4,7 +4,6 @@
   background-color: #f3f3f3;
   overflow: hidden;
   margin-right: 20px;
-
   &:nth-last-child(1) {
     margin-right: 0;
   }
@@ -18,7 +17,6 @@
     border-radius: 0;
     background: transparent;
     border: none;
-
     &::before {
       opacity: 0.5;
       font-family: 'Museo';
@@ -27,7 +25,6 @@
       text-align: center;
       color: #5d5d5d;
     }
-
     &::after {
       position: absolute;
       top: 54px;
@@ -38,7 +35,6 @@
       background-image: url('/assets/img/icons/icon-camera-upload.svg');
     }
   }
-
   .qq-upload-button {
     width: 100%;
     height: 180px;
@@ -47,16 +43,14 @@
     border: none;
     box-shadow: none;
     position: relative;
-  
     &:hover {
-      box-shadow: inset 0 1px 1px hsla(0,0%,100%,.37), inset 1px 0 1px hsla(0,0%,100%,.07), 0 1px 0 rgba(0,0,0,.36), inset 0 -2px 12px rgba(0,0,0,.08)
+      box-shadow: inset 0 1px 1px hsla(0, 0%, 100%, .37), inset 1px 0 1px hsla(0, 0%, 100%, .07), 0 1px 0 rgba(0, 0, 0, .36), inset 0 -2px 12px rgba(0, 0, 0, .08)
     }
   }
   .qq-upload-list {
     position: absolute;
     top: 0;
     padding: 0;
-
     li {
       display: block;
       width: 100%;
@@ -64,15 +58,30 @@
       max-width: 180px;
       max-height: 180px;
       margin: 0;
+      background: transparent !important;
+    }
+  }
+  .qq-in-progress {
+    .qq-thumbnail-wrapper {
+      opacity: 1;
+      filter: blur(5px);
     }
   }
   .qq-thumbnail-wrapper {
     width: 100%;
     height: 100%;
+    z-index: 1;
   }
   .qq-thumbnail-selector {
     width: 100%;
     height: 180px;
     object-fit: cover;
+  }
+  .qq-progress-bar {
+    position: absolute;
+    width: 100%;
+    height: 10%;
+    background: #4489ff;
+    z-index: 2 !important;
   }
 }
