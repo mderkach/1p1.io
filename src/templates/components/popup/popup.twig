@@ -57,7 +57,12 @@
           <h2 class="header__h2 header__popup">Sell your item for a charity</h2>
         </div>
         <form action="#" method="POST" class="form__popup-sell">
-          {{ inputs.textarea('Title','Title', 'e. g. Gucci Black Leather Jacket', 'How to write a good title') }}
+          {% set titleTooltip = "Before you get into the nitty-gritty of coming up with a perfect title, start with a rough draft: your working title. What is that, exactly? A lot of people confuse working titles with topics. Let's clear that up:
+          <br><br>
+          Topics are very general and could yield several different blog posts. Think 'raising healthy kids,' or 'kitchen storage.' A writer might look at either of those topics and choose to take them in very, very different directions.
+          <br><br>
+          A working title, on the other hand, is very specific and guides the creation of a single blog post. For example, from the topic 'raising healthy kids,' you could derive the following working titles:" %}
+          {{ inputs.textarea('Title','Title', 'e. g. Gucci Black Leather Jacket', 'How to write a good title', titleTooltip) }}
           {% set optsCategory = [
           { 
             key: 'Jewelry',
@@ -72,8 +77,8 @@
           ],
         %}
           {{ inputs.selectSimple('Category','Category', optsCategory) }}
-          {{ inputs.textarea('Description','Description', 'Up to 500 words, describing your item', 'How to write a good description') }}
-          {{ inputs.photos('images', 'How to make a killer images of your items') }}
+          {{ inputs.textarea('Description','Description', 'Up to 500 words, describing your item', 'How to write a good description', titleTooltip) }}
+          {{ inputs.photos('images', 'How to make a killer images of your items', titleTooltip) }}
           {% set priceType = [
           {
             key: 'fixed',

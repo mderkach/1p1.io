@@ -8,6 +8,7 @@ import './bookmark.js';
 import './dropdown.js';
 import './color-pick.js';
 import './input-number-controls.js'
+import './tooltip.js'
 
 import autosize from 'autosize';
 autosize(document.querySelectorAll('textarea'));
