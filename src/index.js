@@ -1,10 +1,18 @@
 //libs
 import Inputmask from "../node_modules/inputmask/dist/inputmask/inputmask";
 var im = new Inputmask("+7(999)999-99-99");
-var phoneInput = document.querySelector('input[name=phone]');
-if (phoneInput) {
-  im.mask(phoneInput);
+var phoneInput = document.querySelectorAll('input[type=tel]');
+if (phoneInput.length != 0) {
+  phoneInput.forEach(
+    function(input){
+      im.mask(input);
+    }
+  );
 }
+
+
+import autosize from 'autosize';
+autosize(document.querySelectorAll('textarea'));
 // core
 import './js/common';
 import './scss/main.scss';
@@ -26,4 +34,5 @@ var accountPublic = require('./templates/pages/account-public.twig');
 var accountPrivate = require('./templates/pages/account-private.twig');
 var accountPrivateColor = require('./templates/pages/account-private-color.twig');
 var accountPrivatePhoto = require('./templates/pages/account-private-photo.twig');
-var sellItem = require('./templates/pages/sell-item.twig');
+var sellItem = require('./templates/pages/sell-item-step-1.twig');
+var sellItem2 = require('./templates/pages/sell-item-step-2.twig');

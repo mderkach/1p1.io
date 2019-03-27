@@ -46,10 +46,10 @@
 {% endblock %}
 
 {% block popupSellItem %}
- <div class="popup__fullscreen popup__sell-item" id="sell-item"> 
+<div class="popup__fullscreen popup__sell-item" id="sell-item-step-1">
   <div class="popup__fullscreen-outer">
     <div class="popup__fullscreen-wrapper">
-      <button class="popup__close btn--close-popup" data-modal="login">
+      <button class="popup__close btn--close-popup" data-modal="sell-item-step-1">
         <img src="/assets/img/icons/icon-close-blue.svg" alt="">
       </button>
       <div class="row">
@@ -106,6 +106,70 @@
       <div class="popup__fullscreen-footer">
         <p class="popup__fullscreen-footer-descr">Step 1. Describe your item</p>
         <a class="btn-sell-item-continue" href="javascript:void(0);">Continue</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="popup__fullscreen popup__sell-item" id="sell-item-step-2">
+  <div class="popup__fullscreen-outer">
+    <div class="popup__fullscreen-wrapper">
+      <button class="popup__close btn--close-popup" data-modal="sell-item-step-2">
+        <img src="/assets/img/icons/icon-close-blue.svg" alt="">
+      </button>
+      <div class="row">
+        <div class="header__wrapper-popup">
+          <h2 class="header__h2 header__popup">Sell your item for a charity</h2>
+        </div>
+        <form action="#" method="POST" class="form__popup-sell">
+          {% set accountCreateOrLoginTabs = '1' %}
+          {{ inputs.loginTabs('account', 'Create new', 'Log in to existing account') }}
+          <div class="form__popup-tabs-wrapper">
+            <div class="form__popup-tabs tab__content is-active" id="create-user-tab">
+              {{ inputs.inputCreate('login-create-user', 'text', 'name',  'Jake McDowell') }}
+              {% set zip = [
+                  {
+                    key: '1',
+                    value: '1'
+                  },
+                  {
+                    key: '83011',
+                    value: '83011'
+                  },
+                ] %}
+              {% set state = [
+                  {
+                    key: 'washington',
+                    value: 'Washington D.C.'
+                  },
+                  {
+                    key: 'moscow',
+                    value: 'Moscow'
+                  },
+                ] %}
+              {{ inputs.inputCreateDoubleSelectMini('location', 'ZIP', 'ZIP', zip, 'State', 'State', state, 'text', 'create-use-city', 'City') }}
+              {{ inputs.inputCreate('adress-create-user',  'text', 'Address Line 1', 'Address') }}
+              {{ inputs.inputCreate('phone-create-user', 'tel', 'Phone',  'Phone number') }}
+              {{ inputs.inputCreate('email-create-user', 'email', 'Email',  'your@mail.com') }}
+              {{ inputs.inputCreate('password-create-user', 'password', 'Password',  'Minimum 6 symbols') }}
+            </div>
+            <div class="form__popup-tabs tab__content" id="login-tab">
+              {{ inputs.inputCreate('email-login-user', 'email', 'Email',  'your@mail.com') }}
+              {{ inputs.inputCreate('password-login-user', 'password', 'Password',  'Minimum 6 symbols') }}
+              <div class="inline-inputs">
+                <label for="" class="form__popup-label"></label>
+                <div class="form__popup-input-create-wrapper form__popup-login-anchors">
+                  <a class="form__popup-login-anchor" href="#">Forgot password?</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="popup__fullscreen-footer-wrapper">
+      <div class="popup__fullscreen-footer">
+        <p class="popup__fullscreen-footer-descr">Step 2. Login or create new user</p>
+        <a class="btn-sell-item-continue" href="javascript:void(0);">Submit item</a>
       </div>
     </div>
   </div>

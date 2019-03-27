@@ -126,8 +126,12 @@ module.exports = {
       template: `${PATHS.src}/templates/pages/account-private-photo.twig`,
     }),
     new HtmlWebpackPlugin({
-      filename: 'sell-item.html',
-      template: `${PATHS.src}/templates/pages/sell-item.twig`,
+      filename: 'sell-item-step-1.html',
+      template: `${PATHS.src}/templates/pages/sell-item-step-1.twig`,
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'sell-item-step-2.html',
+      template: `${PATHS.src}/templates/pages/sell-item-step-2.twig`,
     }),
     new CopyWebpackPlugin([
       { from: `${PATHS.src}/img`, to: `${PATHS.assets}img` },

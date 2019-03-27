@@ -175,3 +175,53 @@
   </div>
 </div>
 {% endmacro %}
+
+{% macro loginTabs(label, firstTab, secondTab) %}
+<div class="inline-inputs">
+  <label for="" class="form__popup-label-sell">{{ label }}</label>
+  <div class="form__popup-tabs-items">
+    <a href="#create-user-tab" class="form__popup-tabs_switcher tab__switcher is-active">{{ firstTab }}</a>
+    <a href="#login-tab" class="form__popup-tabs_switcher tab__switcher">{{ secondTab }}</a>
+  </div>
+</div>
+{% endmacro %}
+
+{% macro inputCreate(name, type, label, placeholder) %}
+<div class="inline-inputs">
+  <label for="{{ name }}" class="form__popup-label">{{ label }}</label>
+  <div class="form__popup-input-create-wrapper">
+    <input type="{{ type }}" name="{{ name }}" class="form__popup-input-create" id="{{ name }}"
+      onfocus="this.placeholder = ''" onblur="this.placeholder = '{{ placeholder }}'" placeholder="{{ placeholder }}"
+      required>
+  </div>
+</div>
+{% endmacro %}
+
+{% macro inputCreateDoubleSelectMini(label, firstSelectName, firstSelectPlaceholder, firstSelectOpts, secondSelectName, secondSelectPlaceholder, secondSelectOpts, inputType, inputName, inputPlaceholder ) %}
+<div class="inline-inputs">
+  <label for="{{ inputName }}" class="form__popup-label">{{ label }}</label>
+  <div class="form__popup-input-container">
+    <div class="form__popup-select-outer_location">
+      <select class="form__popup-select" name="{{ firstSelectName }}" required>
+        <option value="" disabled selected hidden>{{ firstSelectPlaceholder }}</option>
+        {% for key in firstSelectOpts %}
+        <option value="{{ key.key }}">{{ key.value }}</option>
+        {% endfor %}
+      </select>
+      <img class="form__popup-chevronSelect" src="/assets/img/icons/icon-chevron-down.svg" alt="">
+    </div>
+    <div class="form__popup-select-outer_location">
+      <select class="form__popup-select" name="{{ secondSelectName }}" required>
+        <option value="" disabled selected hidden>{{ secondSelectPlaceholder }}</option>
+        {% for key in secondSelectOpts %}
+        <option value="{{ key.key }}">{{ key.value }}</option>
+        {% endfor %}
+      </select>
+      <img class="form__popup-chevronSelect" src="/assets/img/icons/icon-chevron-down.svg" alt="">
+    </div>
+    <input type="{{ inputType }}" name="{{ inputName }}" class="form__popup-input-create" id="{{ inputName }}"
+      onfocus="this.placeholder = ''" onblur="this.placeholder = '{{ inputPlaceholder }}'"
+      placeholder="{{ inputPlaceholder }}" required>
+  </div>
+</div>
+{% endmacro %}
