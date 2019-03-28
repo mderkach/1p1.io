@@ -9,10 +9,12 @@
     &-sell {
       &-fieldset {
         order: 2;
-        position: absolute;
-        margin-bottom: 145px;
+        overflow: hidden;
+        height: 0;
+        margin-bottom: 0;
+        position: relative;
         transition: transform .5s ease;
-        transform: translate3d(-200%,0,0);
+        transition: height 600ms ease 0ms;
 
         &-wrapper {
           @extend .form__popup;
@@ -23,9 +25,10 @@
         }
 
         &.is-active {
+          display: block !important;
           order: 1;
-          position: relative;
-          transform: translate3d(0,0,0);
+          height: 100%;
+          margin-bottom: 145px;
         }
       }
     }
@@ -181,7 +184,7 @@
         color: #000;
 
         &::placeholder {
-          color: #5d5d5d;
+          color: rgba($color: #5d5d5d, $alpha: 0.5);
         }
 
         &:focus {
@@ -249,7 +252,7 @@
       font-size: rem(14);
       font-weight: 500;
       line-height: 1.86;
-      color: #5d5d5d;
+      color: rgba($color: #5d5d5d, $alpha: 0.5);
       margin-bottom: 0;
 
       &__wrapper {
@@ -275,6 +278,7 @@
 
     &-selectSimple {
       appearance: none;
+      border-radius: 0;
       width: 100%;
       border: none;
       border-bottom: 2px solid #ebeff4;
@@ -342,11 +346,18 @@
     }
 
     &-inputNumberMini {
-      @extend .form__popup-selectMini;
-
+      width: 100%;
+      border: none;
+      border-bottom: 2px solid #ebeff4;
+      background: #fff;
+      padding: 5px;
+      font-size: rem(19);
+      font-weight: 500;
+      line-height: 1.58;
+      color: #000;
       &::-webkit-inner-spin-button,
       &::-webkit-outer-spin-button {
-        appearence: none;
+        appearance: none;
       }
 
       &-outer {
@@ -479,7 +490,7 @@
         font-stretch: normal;
         line-height: 1.37;
         letter-spacing: normal;
-        color: #5d5d5d;
+        color: rgba($color: #5d5d5d, $alpha: 0.5);
         padding-bottom: 14px;
 
         &:hover {
