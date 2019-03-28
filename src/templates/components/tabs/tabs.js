@@ -16,7 +16,7 @@ window.addEventListener("load", function () {
     tabActive.classList.add('is-active');
   }
 
-  items.forEach(function(tab){
+  items.forEach(function (tab) {
     tab.addEventListener('click', switchTab);
   });
 });

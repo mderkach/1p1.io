@@ -1,6 +1,6 @@
 {% import "../form/form-popup-macro.twig" as inputs %}
 {% block popupRegistration %}
-<div class="popup__fullscreen" id="registration">
+<div class="popup__fullscreen popup--target" id="registration">
   <div class="popup__fullscreen-wrapper">
     <button class="popup__close btn--close-popup" data-modal="registration">
       <img src="/assets/img/icons/icon-close-blue.svg" alt="">
@@ -25,7 +25,7 @@
 {% endblock %}
 
 {% block popupLogin %}
-<div class="popup__fullscreen" id="login">
+<div class="popup__fullscreen popup--target" id="login">
   <div class="popup__fullscreen-wrapper">
     <button class="popup__close btn--close-popup" data-modal="login">
       <img src="/assets/img/icons/icon-close-blue.svg" alt="">
@@ -46,10 +46,10 @@
 {% endblock %}
 
 {% block popupSellItem %}
-<div class="popup__fullscreen popup__sell-item" id="sell-item-step-1">
+<div class="popup__fullscreen popup__sell-item popup--target" id="sell-item">
   <div class="popup__fullscreen-outer">
     <div class="popup__fullscreen-wrapper">
-      <button class="popup__close btn--close-popup" data-modal="sell-item-step-1">
+      <button class="popup__close btn--close-popup" data-modal="sell-item">
         <img src="/assets/img/icons/icon-close-blue.svg" alt="">
       </button>
       <div class="row">
@@ -107,12 +107,12 @@
     <div class="popup__fullscreen-footer-wrapper">
       <div class="popup__fullscreen-footer">
         <p class="popup__fullscreen-footer-descr">Step 1. Describe your item</p>
-        <a class="btn-sell-item-continue" href="javascript:void(0);">Continue</a>
+        <a class="btn-sell-item-continue popup--toggle" href="#sell-item-step-2">Continue</a>
       </div>
     </div>
   </div>
 </div>
-<div class="popup__fullscreen popup__sell-item" id="sell-item-step-2">
+<div class="popup__fullscreen popup__sell-item popup--target" id="sell-item-step-2">
   <div class="popup__fullscreen-outer">
     <div class="popup__fullscreen-wrapper">
       <button class="popup__close btn--close-popup" data-modal="sell-item-step-2">

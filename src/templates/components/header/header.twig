@@ -36,9 +36,9 @@
             {% if userStatus == '--authorised' %}
             {% include "../dropdown/dropdown-account-header.twig" %}
             {% endif %}
-            <a href="#" class="btn btn-mid btn-transparent btn-header">Продать и помочь</a>
+            <a href="#sell-item" class="btn btn-mid btn-transparent btn-header popup--toggle" data-modal="sell-item">Продать и помочь</a>
             {% if userStatus == '--unauthorised' %}
-            <a class="nav__menu-item popup--toggle" data-modal="login" href="#">Войти</a>
+            <a class="nav__menu-item popup--toggle" data-modal="login" href="#login">Войти</a>
             {% endif %}
           </div>
         </div>
