@@ -37,7 +37,7 @@
       font-size: rem(18);
       font-weight: 500;
       line-height: 1.44;
-      color: #5d5d5d;
+      color: rgba($color: #5d5d5d, $alpha: 0.5);
       margin-bottom: 0;
       border: 2px solid transparent;
       text-transform: capitalize;
@@ -215,7 +215,8 @@
 
     &-textarea {
       @extend .popup-edit__textarea;
-
+      font-size: rem(19) !important;
+      
       &-wrapper {
         display: flex;
         width: 100%;
@@ -405,7 +406,7 @@
 
       &:required {
         &:invalid {
-          color: #5d5d5d;
+          color: rgba($color: #5d5d5d, $alpha: 0.5);
         }
       }
     }
