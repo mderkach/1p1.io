@@ -45,6 +45,12 @@
         padding: 0 45px 0 25px;
         height: 240px;
         overflow-y: auto;
+        &::-webkit-scrollbar {
+          width: 9px;
+        }
+        &::-webkit-scrollbar-thumb {
+          background: #d8d8d8; 
+        }
       }
     }
   }

@@ -119,7 +119,7 @@
 </div>
 {% endmacro %}
 
-{% macro selectSimpleDual(name, label, donation, donateValue) %}
+{% macro selectSimpleDual(name, label, donation, donateValue, inputNumberName) %}
 <div class="inline-inputs">
   <label for="{{ name }}" class="form__popup-label">{{ label }}</label>
   <div class="form__popup-input-container">
@@ -145,7 +145,6 @@
             <img src="/assets/img/icons/icon-button-inputNumber-control.svg" alt="">
           </button>
         </div>
-        <span class="form__popup-inputNumberMini-span">%</span>
       </div>
     </div>
   </div>
