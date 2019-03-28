@@ -1,0 +1,29 @@
+.filter {
+  &__wrapper {
+    width: 250px;
+    height: 214px;
+    border-radius: 4px;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+  }
+
+  &__item {
+    padding: 15px 15px 10px 15px;
+    border-bottom: 1px solid #fafafa;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__name {
+    font-size: rem(15);
+    font-weight: 500;
+    color: #000;
+  }
+
+  &__chevron {
+    &-fill {
+      fill: #cdcdcd;
+    }
+  }
+}
