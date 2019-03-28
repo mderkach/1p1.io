@@ -20,6 +20,7 @@ import './scss/main.scss';
 import './templates/components/slider/slider-bg';
 import './templates/components/slider/slider-reviews-landing';
 import './templates/components/slider/slider-partners';
+import './templates/components/dropdown/dropdown';
 import './templates/components/tabs/tabs';
 import './templates/components/fineuploader/fineuploader';
 import './templates/components/tooltip/tooltip';

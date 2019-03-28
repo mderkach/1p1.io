@@ -45,10 +45,17 @@
 
     &-footer {
       @extend .popup__fullscreen-wrapper;
-      display: flex;
+      max-width: 772px;
+      padding-left: $gap;
+      padding-right: $gap;
+      display: none;
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
+     
+      &.is-active {
+        display: flex;
+      }
 
       &-wrapper {
         position: absolute;

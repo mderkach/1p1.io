@@ -4,7 +4,7 @@ import './custom-validation';
 import './modal';
 import './header-scroll';
 import './serach-header-expand';
-import './bookmark.js';
-import './dropdown.js';
-import './color-pick.js';
-import './input-number-controls.js'
+import './bookmark';
+import './color-pick';
+import './input-number-controls'
+import './sell-item-transition'

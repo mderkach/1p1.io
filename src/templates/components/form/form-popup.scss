@@ -7,9 +7,27 @@
     padding-right: $gap;
 
     &-sell {
-      @extend .form__popup;
-      max-width: 782px;
-      margin-bottom: 145px;
+      &-fieldset {
+        order: 2;
+        position: absolute;
+        margin-bottom: 145px;
+        transition: transform .5s ease;
+        transform: translate3d(-200%,0,0);
+
+        &-wrapper {
+          @extend .form__popup;
+          width: 100% ;
+          max-width: 782px;
+          display: flex;
+          flex-direction: column;
+        }
+
+        &.is-active {
+          order: 1;
+          position: relative;
+          transform: translate3d(0,0,0);
+        }
+      }
     }
 
     @include mq-down(md) {
