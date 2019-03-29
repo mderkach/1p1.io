@@ -290,4 +290,15 @@
     line-height: 1;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
   }
+  &__sucess {
+    max-width: 230px;
+    width: 100%;
+    margin-right: 15px;
+
+    @include mq-down(sm) {
+      max-width: 100%;
+      margin-right: 0;
+      margin-bottom: 15px;
+    }
+  }
 }

@@ -140,4 +140,20 @@
     @extend .popup__fullscreen;
     padding: 0;
   }
+
+  &__sucess {
+    &-btn {
+      &-wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+
+        @include mq-down(sm) {
+          flex-direction: column;
+          padding: 0 10px;
+        }
+      }
+    }
+  }
 }

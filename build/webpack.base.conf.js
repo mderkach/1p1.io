@@ -130,6 +130,14 @@ module.exports = {
       template: `${PATHS.src}/templates/pages/sell-item-mobile.twig`,
     }),
     new HtmlWebpackPlugin({
+      filename: 'sell-item-success.html',
+      template: `${PATHS.src}/templates/pages/sell-item-success.twig`,
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'sell-item-success-mobile.html',
+      template: `${PATHS.src}/templates/pages/sell-item-success-mobile.twig`,
+    }),
+    new HtmlWebpackPlugin({
       filename: 'catalogue.html',
       template: `${PATHS.src}/templates/pages/catalogue.twig`,
     }),

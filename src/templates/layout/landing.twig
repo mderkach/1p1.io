@@ -25,43 +25,48 @@
 <body>
 	<main>
 		{% block header %}
-		{% include "../components/header/header.twig" %}
+			{% include "../components/header/header.twig" %}
 		{% endblock %}
-		{% block mainScreen %}
-		{% include "../components/screen/screen__landing.twig" %}
-		{% include "../components/slider/slider-bg.twig" %}
-		{% endblock %}
+		{% block body %}
+			{% block mainScreen %}
+				{% include "../components/screen/screen__landing.twig" %}
+				{% include "../components/slider/slider-bg.twig" %}
+			{% endblock %}
 	</main>
-	{% include "../components/bullets/bullets-numeric.twig" %}
-	{% block celebrities1p1 %}{% endblock %}
-	{% block celebritiesLots %}{% endblock %}
-	{% block categories %}
-	{% include "../components/categories/categories-landing.twig" %}
-	{% endblock %}
-	{% block sliderReviews %}
-	{% include "../components/slider/slider-reviews-landing.twig" %}
-	{% endblock %}
-	{% block news %}
-	{% include "../components/news/news-landing.twig" %}
-	{% endblock %}
-	{% block sliderPartners %}
-	{% include "../components/slider/slider-partners.twig" %}
+		{% include "../components/bullets/bullets-numeric.twig" %}
+		{% block celebrities1p1 %}{% endblock %}
+		{% block celebritiesLots %}{% endblock %}
+		{% block categories %}
+			{% include "../components/categories/categories-landing.twig" %}
+		{% endblock %}
+		{% block sliderReviews %}
+			{% include "../components/slider/slider-reviews-landing.twig" %}
+		{% endblock %}
+		{% block news %}
+			{% include "../components/news/news-landing.twig" %}
+		{% endblock %}
+		{% block sliderPartners %}
+			{% include "../components/slider/slider-partners.twig" %}
+		{% endblock %}
 	{% endblock %}
 	{% block blockchain %}
-	{% include "../components/blockchain/blockchain.twig" %}
+		{% include "../components/blockchain/blockchain.twig" %}
 	{% endblock %}
-	{% block footer %}
-	{% include "../components/footer/footer.twig" %}
-	{% endblock %}
-	{% block mobileMenu %}
-	{% include "../components/mobile-menu/mobile-menu.twig" %}
-	{% endblock %}
-	{% block popup %}
-	{% include "../components/popup/popup.twig" %}
-	{% include "../components/popup/popup-sucess.twig" %}
-	{% endblock %}
-	{% block video %}
-	{% include "../components/video/video-landing.twig" %}
+	{% block footerMain %}
+		{% block footer %}
+			{% include "../components/footer/footer.twig" %}
+		{% endblock %}
+		{% block mobileMenu %}
+			{% include "../components/mobile-menu/mobile-menu.twig" %}
+		{% endblock %}
+		{% block popup %}
+			{% include "../components/popup/popup.twig" %}
+			{% include "../components/popup/popup-sucess.twig" %}
+			{% include "../components/popup/sell-item-sucess.twig" %}
+		{% endblock %}
+		{% block video %}
+			{% include "../components/video/video-landing.twig" %}
+		{% endblock %}
 	{% endblock %}
 </body>
 
