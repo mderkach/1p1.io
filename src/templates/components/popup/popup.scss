@@ -52,7 +52,12 @@
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
-     
+
+      @include mq-down(sm) {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+      }
+
       &.is-active {
         display: flex;
       }
@@ -72,6 +77,10 @@
         line-height: 1.44;
         color: #000;
         margin-bottom: 0;
+
+        @include mq-down(sm) {
+          font-size: 0;
+        }
       }
     }
 
@@ -85,6 +94,10 @@
 
       &::-webkit-scrollbar {
         display: none; // Safari and Chrome
+      }
+
+      @include mq-down(sm) {
+        padding: 0;
       }
 
       // .popup__fullscreen-wrapper {
@@ -121,6 +134,7 @@
       }
     }
   }
+
   &__sell-item {
     @extend .popup__fullscreen;
     padding: 0;

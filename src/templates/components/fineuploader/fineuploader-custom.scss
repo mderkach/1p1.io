@@ -4,6 +4,12 @@
   background-color: #f3f3f3;
   overflow: hidden;
   margin-right: 20px;
+  flex: 1 0 180px;
+
+  @include mq-down(sm) {
+    margin-top: 10px;
+  }
+  
   &:nth-last-child(1) {
     margin-right: 0;
   }
