@@ -9,12 +9,14 @@
     &-sell {
       &-fieldset {
         order: 2;
-        overflow: hidden;
-        height: 0;
         margin-bottom: 0;
+        height: 0;
         position: relative;
+        transform: scale(0);
         transition: transform .5s ease;
-        transition: height 600ms ease 0ms;
+        & > * {
+          height: 0;
+        }
 
         &-wrapper {
           @extend .form__popup;
@@ -27,8 +29,12 @@
         &.is-active {
           display: block !important;
           order: 1;
-          height: 100%;
+          height: auto;
+          transform: scale(1);
           margin-bottom: 145px;
+          > * {
+            height: auto;
+          }
         }
 
         .inline-inputs {
@@ -183,7 +189,7 @@
         @include mq-down(sm) {
           padding-left: 10px;
           padding-right: 10px;
-          flex-direction: column;
+          flex-wrap: wrap;
         }
       }
 
@@ -371,7 +377,7 @@
         @include mq-down(sm) {
           padding-left: 10px;
           padding-right: 10px;
-          flex-direction: column;
+          flex-wrap: wrap;
         }
       }
 
@@ -444,6 +450,12 @@
 
         @include mq-down(sm) {
           margin-top: 30px;
+          flex: 0 1 48%; 
+          margin-right: 10px;
+
+          &:nth-last-child(1){
+            margin-right: 0;
+          }
         }
 
         &:nth-last-of-type(1) {
@@ -531,6 +543,12 @@
 
           @include mq-down(sm) {
             margin-top: 10px;
+            flex: 0 1 48%;
+            margin-right: 10px;
+            
+            &:nth-last-of-type(1) {
+              margin-right: 0;
+            }
           }
         }
       }

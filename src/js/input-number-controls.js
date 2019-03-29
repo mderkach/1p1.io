@@ -1,6 +1,5 @@
 var controls = document.querySelectorAll('.form__popup-inputNumberMini-controls');
 var input = document.querySelectorAll('.form__popup-inputNumberMini');
-
 var percent = document.querySelector('[data-type=percent]');
 
 function setValue() {
@@ -12,36 +11,41 @@ function setValue() {
   }
   percent.setAttribute('value', parseInt(percent.value));
 }
-percent.addEventListener('input', function () {
-  setValue();
-});
 
-percent.addEventListener('blur', function () {
-  if (percent.value == "") {
-    percent.value = 0;
-    percent.setAttribute('value', parseInt(percent.value));
-  } else {
+if (percent) {
+  percent.addEventListener('input', function () {
     setValue();
-  }
-});
+  });
 
-controls.forEach(
-  function (control) {
-    var inputValue = control.parentNode.parentNode.querySelector('input');
-    var action = control.getAttribute('data-action');
+  percent.addEventListener('blur', function () {
+    if (percent.value == "") {
+      percent.value = 0;
+      percent.setAttribute('value', parseInt(percent.value));
+    } else {
+      setValue();
+    }
+  });
+}
 
-    control.addEventListener('click', function () {
-      if (action == 'increase') {
-        // var integer = parseInt(inputValue.value);
-        // inputValue.value = integer += 1;
-        inputValue.stepUp();
-        inputValue.setAttribute('value', parseInt(inputValue.value));
-      } else {
-        // var integer = parseInt(inputValue.value);
-        // inputValue.value = integer -= 1;
-        inputValue.stepDown();
-        inputValue.setAttribute('value', parseInt(inputValue.value));
-      }
-    });
-  }
-);
+if (controls.length != 0) {
+  controls.forEach(
+    function (control) {
+      var inputValue = control.parentNode.parentNode.querySelector('input');
+      var action = control.getAttribute('data-action');
+
+      control.addEventListener('click', function () {
+        if (action == 'increase') {
+          // var integer = parseInt(inputValue.value);
+          // inputValue.value = integer += 1;
+          inputValue.stepUp();
+          inputValue.setAttribute('value', parseInt(inputValue.value));
+        } else {
+          // var integer = parseInt(inputValue.value);
+          // inputValue.value = integer -= 1;
+          inputValue.stepDown();
+          inputValue.setAttribute('value', parseInt(inputValue.value));
+        }
+      });
+    }
+  );
+}

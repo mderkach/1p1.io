@@ -37,3 +37,4 @@ var accountPrivate = require('./templates/pages/account-private.twig');
 var accountPrivateColor = require('./templates/pages/account-private-color.twig');
 var accountPrivatePhoto = require('./templates/pages/account-private-photo.twig');
 var catalogue = require('./templates/pages/catalogue.twig');
+var sellItemMobile = require('./templates/pages/sell-item-mobile.twig');

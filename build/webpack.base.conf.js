@@ -126,6 +126,10 @@ module.exports = {
       template: `${PATHS.src}/templates/pages/account-private-photo.twig`,
     }),
     new HtmlWebpackPlugin({
+      filename: 'sell-item-mobile.html',
+      template: `${PATHS.src}/templates/pages/sell-item-mobile.twig`,
+    }),
+    new HtmlWebpackPlugin({
       filename: 'catalogue.html',
       template: `${PATHS.src}/templates/pages/catalogue.twig`,
     }),

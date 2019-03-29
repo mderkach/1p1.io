@@ -132,7 +132,7 @@
       </select>
       <img class="form__popup-chevronSelect" src="/assets/img/icons/icon-chevron-down.svg" alt="">
     </div>
-    <div class="form__popup-inputNumberMini-outer">
+    <div class="form__popup-inputNumberMini-outer --solo-mobile">
       <label class="form__popup-inputNumberMini-outer-label" for="{{ inputNumberName }}">{{ inputNumberName }}</label>
       <div class="form__popup-inputNumberMini-wrapper">
         <input class="form__popup-inputNumberMini" data-type="percent" type="number" min="0" max="100"
@@ -218,7 +218,7 @@
       </select>
       <img class="form__popup-chevronSelect" src="/assets/img/icons/icon-chevron-down.svg" alt="">
     </div>
-    <input type="{{ inputType }}" name="{{ inputName }}" class="form__popup-input-create" id="{{ inputName }}"
+    <input type="{{ inputType }}" name="{{ inputName }}" class="form__popup-input-create --solo-mobile" id="{{ inputName }}"
       onfocus="this.placeholder = ''" onblur="this.placeholder = '{{ inputPlaceholder }}'"
       placeholder="{{ inputPlaceholder }}" required>
   </div>

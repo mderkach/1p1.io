@@ -1,0 +1,116 @@
+{% import "../form/form-popup-macro.twig" as inputs %}
+<div class="sell-item-mobile">
+  <div class="popup__fullscreen-outer">
+    <div class="popup__fullscreen-wrapper">
+      <div class="row">
+        <div class="header__wrapper-popup">
+          <h2 class="header__h2 header__popup">Sell your item for a charity</h2>
+        </div>
+      </div>
+      <div class="row">
+        <form class="form__popup-sell-fieldset-wrapper" action="#" method="POST">
+          <fieldset class="form__popup-sell-fieldset is-active" data-step="footer-step-1" id="step-1">
+            {% set titleTooltip = "Before you get into the nitty-gritty of coming up with a perfect title, start with a rough draft: your working title. What is that, exactly? A lot of people confuse working titles with topics. Let's clear that up:
+                <br><br>
+                Topics are very general and could yield several different blog posts. Think 'raising healthy kids,' or 'kitchen storage.' A writer might look at either of those topics and choose to take them in very, very different directions.
+                <br><br>
+                A working title, on the other hand, is very specific and guides the creation of a single blog post. For example, from the topic 'raising healthy kids,' you could derive the following working titles:
+                <br><br>
+                A working title, on the other hand, is very specific and guides the creation of a single blog post. For example, from the topic 'raising healthy kids,' you could derive the following working titles:" %}
+            {{ inputs.textarea('Title','Title', 'e. g. Gucci Black Leather Jacket', 'How to write a good title', titleTooltip) }}
+            {% set optsCategory = [
+                { 
+                  key: 'Jewelry',
+                  value: 'Jewelry',
+                  selected: true,
+                },
+                { 
+                  key: 'Clothes',
+                  value: 'Clothes',
+                  selected: false,
+                },
+                ],
+              %}
+            {{ inputs.selectSimple('Category','Category', optsCategory) }}
+            {{ inputs.textarea('Description','Description', 'Up to 500 words, describing your item', 'How to write a good description', titleTooltip) }}
+            {{ inputs.photos('images', 'How to make a killer images of your items', titleTooltip) }}
+            {% set priceType = [
+                {
+                  key: 'fixed',
+                  value: 'Fixed',
+                  selected: true,
+                },
+                {
+                  key: 'auction',
+                  value: 'Auction',
+                  selected: false,
+                },
+              ] %}
+            {{ inputs.selectMiniTrio('Price, ₽', 'type', priceType, 'Starting price', 0, 'Buyout price', 0) }}
+            {% set donateTo = [
+                {
+                  key: 'first',
+                  value :'first',
+                }
+              ] %}
+            {{ inputs.selectSimpleDual('Donation','donate', donateTo, 50, 'percent' ) }}
+          </fieldset>
+          <fieldset class="form__popup-sell-fieldset" data-step="footer-step-2" id="step-2">
+            {% set accountCreateOrLoginTabs = '1' %}
+            {{ inputs.loginTabs('account', 'Create new', 'Log in to existing account') }}
+            <div class="form__popup-tabs-wrapper">
+              <div class="form__popup-tabs tab__content is-active" id="create-user-tab">
+                {{ inputs.inputCreate('login-create-user', 'text', 'name',  'Jake McDowell') }}
+                {% set zip = [
+                      {
+                        key: '1',
+                        value: '1'
+                      },
+                      {
+                        key: '83011',
+                        value: '83011'
+                      },
+                    ] %}
+                {% set state = [
+                      {
+                        key: 'washington',
+                        value: 'Washington D.C.'
+                      },
+                      {
+                        key: 'moscow',
+                        value: 'Moscow'
+                      },
+                    ] %}
+                {{ inputs.inputCreateDoubleSelectMini('location', 'ZIP', 'ZIP', zip, 'State', 'State', state, 'text', 'create-use-city', 'City') }}
+                {{ inputs.inputCreate('adress-create-user',  'text', 'Address Line 1', 'Address') }}
+                {{ inputs.inputCreate('phone-create-user', 'tel', 'Phone',  'Phone number') }}
+                {{ inputs.inputCreate('email-create-user', 'email', 'Email',  'your@mail.com') }}
+                {{ inputs.inputCreate('password-create-user', 'password', 'Password',  'Minimum 6 symbols') }}
+              </div>
+              <div class="form__popup-tabs tab__content" id="login-tab">
+                {{ inputs.inputCreate('email-login-user', 'email', 'Email',  'your@mail.com') }}
+                {{ inputs.inputCreate('password-login-user', 'password', 'Password',  'Minimum 6 symbols') }}
+                <div class="inline-inputs">
+                  <label for="" class="form__popup-label"></label>
+                  <div class="form__popup-input-create-wrapper form__popup-login-anchors">
+                    <a class="form__popup-login-anchor" href="#">Forgot password?</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+    <div class="popup__fullscreen-footer-wrapper">
+      <div class="popup__fullscreen-footer is-active" data-step="step-1" id="footer-step-1">
+        <p class="popup__fullscreen-footer-descr">Step 1. Describe your item</p>
+        <a class="btn-sell-item-continue swith__fieldset" data-step="footer-step-2" href="#step-2">Continue</a>
+      </div>
+      <div class="popup__fullscreen-footer" data-step="step-2" id="footer-step-2">
+        <p class="popup__fullscreen-footer-descr">Step 2. Login or create new user</p>
+        <a class="btn-sell-item-continue" href="javascript:void(0);">Submit item</a>
+      </div>
+    </div>
+  </div>
+</div>

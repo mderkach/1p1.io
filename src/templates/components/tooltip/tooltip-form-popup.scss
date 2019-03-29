@@ -29,6 +29,10 @@
       border-color: #fff rgba(0,0,0,0);
       border-style: solid;
       border-width: 0 26px 22px;
+
+      @include mq-down(sm) {
+        right: 15px;
+      }
     }
 
     &-descr {

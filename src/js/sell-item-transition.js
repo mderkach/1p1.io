@@ -4,13 +4,15 @@ var switcher = document.querySelector('.swith__fieldset');
 var footers = document.querySelectorAll('.popup__fullscreen-footer');
 
 window.addEventListener("load", function () {
-  switcher.addEventListener('click', switchFieldset);
+  if (switcher) {
+    switcher.addEventListener('click', switchFieldset);
+  }
 
-  function switchFieldset(fieldset){
-    fieldsets.forEach(function(allFieldsets){
+  function switchFieldset(fieldset) {
+    fieldsets.forEach(function (allFieldsets) {
       allFieldsets.classList.remove('is-active');
     });
-    footers.forEach(function(allFooters){
+    footers.forEach(function (allFooters) {
       allFooters.classList.remove('is-active');
     });
     fieldset.preventDefault();
@@ -20,5 +22,6 @@ window.addEventListener("load", function () {
     var footerActive = document.querySelector('#' + footerActiveId);
     fieldsetActive.classList.add('is-active');
     footerActive.classList.add('is-active');
+    document.querySelector('.popup__fullscreen-outer').scrollTop = 0;
   }
 });
