@@ -7,7 +7,7 @@
     &-popup {
       @extend .header__wrapper;
       text-align: left;
-      margin-top: 35px;
+      margin-top: 55px;
     }
     &-celeb {
       @extend .header__wrapper;
@@ -43,6 +43,7 @@
     @include mq-down(md) {
       font-size: rem(28);
       padding-left: 8px;
+      line-height: 1;
     }
   }
   &__success {

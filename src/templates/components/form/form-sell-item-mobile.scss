@@ -1,8 +1,10 @@
 .sell-item-mobile {
   margin-top: 70px;
   border-top: 1px solid rgba(217,228,234,.5);
+  height: calc(100vh - 70px);
 
   @include mq-down(sm) {
     margin-top: 53px;
+    height: calc(100vh - 53px);
   }
 }

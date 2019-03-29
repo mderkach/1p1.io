@@ -97,6 +97,10 @@
         display: none; // Safari and Chrome
       }
 
+      @include mq-between(sm,lg) {
+        padding: 40px 0;
+      }
+
       @include mq-down(sm) {
         padding: 0;
       }
@@ -138,7 +142,7 @@
 
   &__sell-item {
     @extend .popup__fullscreen;
-    padding: 0;
+    padding: 0 !important;
   }
 
   &__sucess {
