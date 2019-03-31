@@ -9,8 +9,6 @@ if (phoneInput.length != 0) {
     }
   );
 }
-
-
 import autosize from 'autosize';
 autosize(document.querySelectorAll('textarea'));
 // core

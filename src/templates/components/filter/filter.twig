@@ -1,25 +1,70 @@
+{% set catalogueFilter = {
+  globalType: 'filter',
+  items: [{
+    filterType: 'select-solo',
+    name: 'Charity',
+    expanded: false,
+    dropdownId: 'select',
+    filterContent: [{
+      name: 'select-charity',
+      options: [{
+          key: 'Choose charity',
+          value: '',
+          selected: true
+        },{
+          key: 'key',
+          value: 'value',
+          selected: false
+        },{
+          key: 'another',
+          value: 'another',
+          selected: false
+        }],
+      }]
+    },{
+    filterType: 'radio',
+    name: 'Gender',
+    expanded: false,
+    dropdownId: 'radio-gender',
+    filterContent: []
+    }]
+} %}
+
 <div style="height: 200px;"></div>
-<div class="container">
+<div
+  class="container">
   <!--  -->
-  <div class="filter__wrapper">
-    <div class="filter__item">
-      <div class="filter__item-head">
-        <span class="filter__name">Charity</span>
-        <svg class="filter__chevron" width="14px" height="9px" viewBox="0 0 14 9" version="1.1"
-          xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-          <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-            <g class="filter__chevron-fill" transform="translate(-260.000000, -21.000000)" fill-rule="nonzero">
-              <polygon id="dropdown-arrow"
-                points="272.646447 21 274.06066 22.4142136 267.353553 29.1213203 260.646447 22.4142136 262.06066 21 267.353553 26.2928932">
-              </polygon>
-            </g>
-          </g>
-        </svg>
-      </div>
-      <div class="filter__item-dropdown">
-       Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis numquam molestias distinctio praesentium tempore nam. Eveniet pariatur error velit incidunt adipisci impedit numquam ipsam, deleniti ducimus similique commodi omnis ad?
-      </div>
+  {% if catalogueFilter %}
+    <div class="filter__wrapper" id="{{ catalogueFilter.globalType }}">
+      {% for item in catalogueFilter.items %}
+        <div class="filter__item" id="filter__{{ item.name }}">
+          <a role="button" data-toggle="collapse" href="#{{ item.dropdownId }}" aria-expanded="{{ item.expanded }}" aria-controls="{{ item.dropdownId }}" class="filter__item-head collapsed">
+            <span class="filter__name">{{ item.name }}</span>
+            <svg class="filter__chevron" height="9px" version="1.1" viewbox="0 0 14 9" width="14px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+              <g fill-rule="evenodd" fill="none" stroke-width="1" stroke="none">
+                <g class="filter__chevron-fill" fill-rule="nonzero" transform="translate(-260.000000, -21.000000)">
+                  <polygon id="dropdown-arrow" points="272.646447 21 274.06066 22.4142136 267.353553 29.1213203 260.646447 22.4142136 262.06066 21 267.353553 26.2928932"></polygon>
+                </g>
+              </g>
+            </svg>
+          </a>
+          <div id="{{ item.dropdownId }}" aria-labelledby="filter__{{ item.name }}" class="filter__item-dropdown collapse {% if item.expanded == false %}{% else %}show{% endif %}">
+            {% if item.filterType == 'select-solo' %}
+              <div class="filter__input-wrapper">
+                {% for select in item.filterContent %}
+                  <select class="filter__input-select" name="{{ select.name }}" id="{{ select.name }}" required>
+                    {% for option in select.options %}
+                      <option {% if option.selected %} disabled selected hidden {% endif %} value="{{ option.value }}">{{ option.key }}</option>
+                    {% endfor %}
+                  </select>
+                  <img alt="" class="filter__input-select-chevron" src="/assets/img/icons/icon-chevron-down.svg">
+                {% endfor %}
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
     </div>
-  </div>
+  {% endif %}
   <!--  -->
 </div>
