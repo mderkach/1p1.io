@@ -16,7 +16,8 @@ module.exports = {
     paths: PATHS
   },
   entry: {
-    app: PATHS.src
+    app: PATHS.src,
+    sellItem: `${PATHS.src}/js/sell-item-transition.js`
   },
   output: {
     filename: `${PATHS.assets}js/[name].js`,
