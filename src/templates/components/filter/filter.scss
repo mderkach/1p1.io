@@ -100,11 +100,12 @@
       &-wrapper {
         display: flex;
         align-items: center;
+        margin-right: -25px;
       }
 
       &-label {
         margin-top: 10px;
-        margin-right: 45px;
+        margin-right: 25px;
         margin-bottom: 5px;
         padding-top: 2px;
         display: block;

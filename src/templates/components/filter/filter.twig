@@ -35,10 +35,12 @@
       filterContent: [
         {
           name: 'male',
+          for: 'male',
           id: 'gender'
         },
         {
           name: 'female',
+          for: 'female',
           id: 'gender'
         }
       ]
@@ -56,6 +58,25 @@
               key: 'Choose category',
               value: '',
               selected: true,
+              hasRadio: false,
+            },
+            {
+              key: 'shoes',
+              value: 'shoes',
+              selected: false,
+              hasRadio: true,
+              radios: [
+                {
+                  name: 'leather',
+                  for: 'leather',
+                  id: 'shoes'
+                },
+                {
+                  name: 'non leather',
+                  for: 'non-leather',
+                  id: 'shoes'
+                }
+              ]
             },
             {
               key: 'sweaters',
@@ -129,8 +150,8 @@
             {% elseif item.filterType == 'radio' %}
               <div class="filter__input-radio-wrapper">
                 {% for radio in item.filterContent %}
-                  <label class="filter__input-radio-label" for="radio-{{ radio.id }}-{{ radio.name }}">
-                    <input class="filter__input-radio" id="radio-{{ radio.id }}-{{ radio.name }}" name="radio-{{ radio.id }}" type="radio">
+                  <label class="filter__input-radio-label" for="radio-{{ radio.id }}-{{ radio.for }}">
+                    <input class="filter__input-radio" id="radio-{{ radio.id }}-{{ radio.for }}" name="radio-{{ radio.id }}" type="radio">
                     {{radio.name}}
                     <span class="filter__input-radio-checkmark"></span>
                   </label>
@@ -147,9 +168,20 @@
                     </select>
                     <img alt="" class="filter__input-select-chevron" src="/assets/img/icons/icon-chevron-down.svg">
                   </div>
-                  {% for subcategory in option.subcategories %}
-                  sika
-                    
+                {% endfor %}
+                {% for select in item.filterContent %}
+                  {% for option in select.options %}
+                    {% if option.hasRadio == true %}
+                      <div class="filter__input-radio-wrapper">
+                        {% for radio in option.radios %}
+                          <label class="filter__input-radio-label" for="radio-{{ radio.id }}-{{ radio.for }}">
+                            <input class="filter__input-radio" id="radio-{{ radio.id }}-{{ radio.for }}" name="radio-{{ radio.id }}" type="radio">
+                            {{radio.name}}
+                            <span class="filter__input-radio-checkmark"></span>
+                          </label>
+                        {% endfor %}
+                      </div>
+                    {% endif %}
                   {% endfor %}
                 {% endfor %}
               </div>
