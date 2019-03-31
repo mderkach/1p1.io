@@ -2,6 +2,7 @@
   @include make-container();
   height: 350px;
   margin-top: 70px;
+  position: relative;
 
   @include mq-down(sm) {
     margin-top: 50px;
