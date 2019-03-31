@@ -1,4 +1,4 @@
-{% set page_title = "acount public" %}
+{% set page_title = "catalogue" %}
 {% set headerType = "--white --no-toggle" %}
 {% set userStatus = "--unauthorised" %}
 {% set pageType = 'public' %}
@@ -32,7 +32,48 @@
 		description: 'Инвесторам'
 	},
 ] %}
-
+{% set menubar = [  
+	{
+		type: 'regular',
+		items: [
+			{
+				link: '#categories',
+				isActive: false,
+				descr: 'All categories',
+			},
+			{
+				link: '#fashion',
+				isActive: true,
+				descr: 'Fashion',
+			},
+			{
+				link: '#arts',
+				isActive: false,
+				descr: 'Arts',
+			},
+			{
+				link: '#Electronics',
+				isActive: false,
+				descr: 'Electronics',
+			},
+			{
+				link: '#Tickets',
+				isActive: false,
+				descr: 'Tickets',
+			},
+			{
+				link: '#celebs',
+				isActive: false,
+				descr: 'Goods from celebrities',
+			},
+			{
+				link: '#private',
+				isActive: false,
+				descr: 'Private offers',
+			},
+		],
+	}
+] %}
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -62,7 +103,12 @@
     {% include "../components/header/header.twig" %}
   {% endblock %}
   {% block body %}
-    {% include "../components/filter/filter.twig" %}
+    {% block menubar %}
+      {% include "../components/menu-bar/menu-bar.twig" %}
+    {% endblock %}
+    {% block filterCatalogue %}
+      {% include "../components/filter/filter.twig" %}
+    {% endblock %}
   {% endblock %}  
   {% block footerMain %}
     {% block blockchain %}{% endblock %}

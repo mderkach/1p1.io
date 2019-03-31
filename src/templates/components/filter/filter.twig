@@ -192,6 +192,149 @@
         },
       ]
     },
+    {
+      filterType: 'checkbox-solo',
+      name: 'Collection',
+      expanded: false,
+      dropdownId: 'checkbox-collection',
+      filterContent: [
+        {
+          name: 'Winter/Spring 2018',
+          for: 'Winter/Spring 2018',
+          id: 'collection',
+          checked: false,
+        },
+        {
+          name: 'Spring 2018',
+          for: 'Spring 2018',
+          id: 'collection',
+          checked: true,
+        },
+        {
+          name: 'Summer 2018',
+          for: 'Summer 2018',
+          id: 'collection',
+          checked: true,
+        },
+        {
+          name: 'Autumn 2018',
+          for: 'Autumn 2018',
+          id: 'collection',
+          checked: true,
+        },
+      ]
+    },
+    {
+      filterType: 'checkbox-color',
+      name: 'Color',
+      expanded: false,
+      dropdownId: 'checkbox-color',
+      filterContent: [
+        {
+          name: '#000',
+          id: 'color',
+          for: '000',
+          checked: false,
+        },
+        {
+          name: '#fff',
+          id: 'color',
+          for: 'fff',
+          checked: false,
+        },
+        {
+          name: '#ff0000',
+          id: 'color',
+          for: 'ff0000',
+          checked: false,
+        },
+        {
+          name: '#ffc400',
+          id: 'color',
+          for: 'ffc400',
+          checked: false,
+        },
+        {
+          name: '#4489ff',
+          id: 'color',
+          for: '4489ff',
+          checked: true,
+        },
+        {
+          name: '#fc8037',
+          id: 'color',
+          for: 'fc8037',
+          checked: false,
+        },
+      ]
+    },
+    {
+      filterType: 'select-solo',
+      name: 'Size',
+      expanded: false,
+      dropdownId: 'select-size',
+      filterContent: [{
+        name: 'select-size',
+        options: [
+          {
+            key: 'Choose size',
+            value: '',
+            selected: true
+          },
+          {
+            key: 'Size XS',
+            value: 'XS',
+            selected: false
+          },
+          {
+            key: 'Size M',
+            value: 'M',
+            selected: false
+          }
+          ],
+        }]
+    },
+    {
+      filterType: 'price',
+      name: 'Price',
+      expanded: false,
+      dropdownId: 'choose-price',
+      filterContent: [
+       {
+          name: 'Items on sale',
+          for: 'sale',
+          id: 'price',
+          checked: false,
+        },
+        {
+          name: 'Auctions',
+          for: 'auctions',
+          id: 'price',
+          checked: true,
+        },
+      ]
+    },
+    {
+      filterType: 'select-solo',
+      name: 'Sort',
+      expanded: false,
+      dropdownId: 'select-sort',
+      filterContent: [{
+        name: 'select-sort',
+        options: [
+          {
+            key: 'Price from low to high',
+            value: 'low',
+            selected: false
+          },
+          {
+            key: 'Price from high to low',
+            value: 'high',
+            selected: false
+          }
+          ],
+        }]
+    },
   ]
 } %}
 
@@ -276,11 +419,40 @@
                     </label>
                   {% endfor %}
                 </div>
+              {% elseif item.filterType == 'checkbox-color' %}
+                <div class="filter__input-checkbox-wrapper">
+                  {% for checkbox in item.filterContent %}
+                    <label class="filter__input-checkbox-label-color" for="checkbox-{{ checkbox.id }}-{{ checkbox.for }}">
+                      <input class="filter__input-checkbox" id="checkbox-{{ checkbox.id }}-{{ checkbox.for }}" name="checkbox-{{ checkbox.id }}" type="checkbox" {% if checkbox.checked %} checked {% endif %}>
+                      <span class="filter__input-checkbox-checkmark-color" style="background-color: {{ checkbox.name }}"></span>
+                    </label>
+                  {% endfor %}
+                </div>
+              {% elseif item.filterType == 'price' %}
+                <div class="filter__input-checkbox-wrapper">
+                  {% for checkbox in item.filterContent %}
+                    <label class="filter__input-checkbox-label-solo" for="checkbox-{{ checkbox.id }}-{{ checkbox.for }}">
+                      <input class="filter__input-checkbox" id="checkbox-{{ checkbox.id }}-{{ checkbox.for }}" name="checkbox-{{ checkbox.id }}" type="checkbox" {% if checkbox.checked %} checked {% endif %}>
+                      {{ checkbox.name }}
+                      <span class="filter__input-checkbox-checkmark"></span>
+                    </label>
+                  {% endfor %}
+                </div>
+                <div class="filter__input-number-wrapper">
+                  <input class="filter__input-number" id="" name="" placeholder="Price from" type="number">
+                  <span class="filter__input-number-separator">
+                    -
+                  </span>
+                  <input class="filter__input-number" id="" name="" placeholder="Price to" type="number">
+                </div>
               {% endif %}
             </div>
           </div>
         </div>
       {% endfor %}
+      <div class="filter__item" id="discard">
+        <a class="filter__discard" href="#">Discard filters</a>
+      </div>
     </div>
   {% endif %}
   <!--  -->
