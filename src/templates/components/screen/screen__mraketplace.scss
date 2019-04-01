@@ -1,0 +1,33 @@
+.screen {
+  &__marketplace {
+    background-color: #fafafa;
+  }
+}
+
+.marketplace {
+  &__container {
+    margin-top: 35px;
+    @include make-container();
+      @include make-container-max-widths($max-widths: $container-max-widths, $breakpoints: $grid-breakpoints);
+  }
+
+  &__wrapper {
+    @include make-row();
+  }
+
+  &__controls {
+    @include make-col(12);
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 0 15px;
+  }
+
+  &__tag {
+
+    &-wrapper {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+}

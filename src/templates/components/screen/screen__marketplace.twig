@@ -1,0 +1,23 @@
+<section class="screen__marketplace">
+  {% block menubar %}
+    {% include "../menu-bar/menu-bar.twig" %}
+  {% endblock %}
+  <div class="marketplace__container">
+    <div class="marketplace__wrapper">
+      <div class="header__wrapper header__wrapper-regular">
+        <h1 class="header__h1 regular__h1">Clothes</h1>
+      </div>
+      <div class="marketplace__controls">
+        <div class="marketplace__tag-wrapper">
+          <button class="btn__marketplace-tag is-active ">All results (14 732 626)</button>
+          <button class="btn__marketplace-tag">Goods from celebs (150)</button>
+          <button class="btn__marketplace-tag">Auctions (150)</button>
+        </div>
+        {% include "../form/form__marketplace-serach.twig" %}
+      </div>
+      {% block filterCatalogue %}
+        {% include "../filter/filter.twig" %}
+      {% endblock %}
+    </div>
+  </div>
+</div>

@@ -4,11 +4,13 @@
     @include make-col(12);
     padding-left: $gap;
     padding-right: $gap;
+
     &-popup {
       @extend .header__wrapper;
       text-align: left;
       margin-top: 55px;
     }
+
     &-celeb {
       @extend .header__wrapper;
       padding: 0;
@@ -17,7 +19,14 @@
         padding: 0 20px;
       }
     }
+
+    &-regular {
+      padding-left: 0;
+      padding-right: 0;
+      text-align: left;
+    }
   }
+
   &__h1 {
     font-size: rem(34);
     font-weight: 500;
@@ -26,6 +35,7 @@
       font-size: rem(30);
     }
   }
+
   &__h3 {
     font-size: rem(24);
     font-weight: 500;
@@ -36,6 +46,7 @@
       line-height: normal;
     }
   }
+
   &__popup {
     font-size: rem(36);
     font-weight: 700;
@@ -46,6 +57,7 @@
       line-height: 1;
     }
   }
+
   &__success {
     @extend .header__popup;
     text-align: center;
@@ -78,4 +90,11 @@
       color: #000;
     }
   }
+}
+
+.regular {
+  &__h1 {
+    font-size: rem(36);
+    margin-bottom: 0;
+  } 
 }

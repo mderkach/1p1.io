@@ -338,122 +338,117 @@
   ]
 } %}
 
-<div style="height: 200px;"></div>
-<div
-  class="container">
-  <!--  -->
-  {% if catalogueFilter %}
-    <div class="filter__wrapper" id="{{ catalogueFilter.globalType }}">
-      {% for item in catalogueFilter.items %}
-        <div class="filter__item" id="filter__{{ item.name }}">
-          <a role="button" data-toggle="collapse" href="#{{ item.dropdownId }}" aria-expanded="{{ item.expanded }}" aria-controls="{{ item.dropdownId }}" class="filter__item-head collapsed">
-            <span class="filter__name">{{ item.name }}</span>
-            <svg class="filter__chevron" height="9px" version="1.1" viewbox="0 0 14 9" width="14px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
-              <g fill-rule="evenodd" fill="none" stroke-width="1" stroke="none">
-                <g class="filter__chevron-fill" fill-rule="nonzero" transform="translate(-260.000000, -21.000000)">
-                  <polygon id="dropdown-arrow" points="272.646447 21 274.06066 22.4142136 267.353553 29.1213203 260.646447 22.4142136 262.06066 21 267.353553 26.2928932"></polygon>
-                </g>
+
+{% if catalogueFilter %}
+  <div class="filter__wrapper" id="{{ catalogueFilter.globalType }}">
+    {% for item in catalogueFilter.items %}
+      <div class="filter__item" id="filter__{{ item.name }}">
+        <a role="button" data-toggle="collapse" href="#{{ item.dropdownId }}" aria-expanded="{{ item.expanded }}" aria-controls="{{ item.dropdownId }}" class="filter__item-head collapsed">
+          <span class="filter__name">{{ item.name }}</span>
+          <svg class="filter__chevron" height="9px" version="1.1" viewbox="0 0 14 9" width="14px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+            <g fill-rule="evenodd" fill="none" stroke-width="1" stroke="none">
+              <g class="filter__chevron-fill" fill-rule="nonzero" transform="translate(-260.000000, -21.000000)">
+                <polygon id="dropdown-arrow" points="272.646447 21 274.06066 22.4142136 267.353553 29.1213203 260.646447 22.4142136 262.06066 21 267.353553 26.2928932"></polygon>
               </g>
-            </svg>
-          </a>
-          <div id="{{ item.dropdownId }}" aria-labelledby="filter__{{ item.name }}" class="collapse {% if item.expanded == false %}{% else %}show{% endif %}">
-            <div class="filter__item-dropdown">
-              {% if item.filterType == 'select-solo' %}
-                <div class="filter__input-wrapper">
-                  {% for select in item.filterContent %}
-                    <div class="filter__input-select-wrapper">
-                      <select class="filter__input-select" name="{{ select.name }}" id="{{ select.name }}" required>
-                        {% for option in select.options %}
-                          <option {% if option.selected %} disabled selected hidden {% endif %} value="{{ option.value }}">{{ option.key }}</option>
+            </g>
+          </svg>
+        </a>
+        <div id="{{ item.dropdownId }}" aria-labelledby="filter__{{ item.name }}" class="collapse {% if item.expanded == false %}{% else %}show{% endif %}">
+          <div class="filter__item-dropdown">
+            {% if item.filterType == 'select-solo' %}
+              <div class="filter__input-wrapper">
+                {% for select in item.filterContent %}
+                  <div class="filter__input-select-wrapper">
+                    <select class="filter__input-select" name="{{ select.name }}" id="{{ select.name }}" required>
+                      {% for option in select.options %}
+                        <option {% if option.selected %} disabled selected hidden {% endif %} value="{{ option.value }}">{{ option.key }}</option>
+                      {% endfor %}
+                    </select>
+                    <img alt="" class="filter__input-select-chevron" src="/assets/img/icons/icon-chevron-down.svg">
+                  </div>
+                {% endfor %}
+              </div>
+            {% elseif item.filterType == 'radio' %}
+              <div class="filter__input-radio-wrapper">
+                {% for radio in item.filterContent %}
+                  <label class="filter__input-radio-label" for="radio-{{ radio.id }}-{{ radio.for }}">
+                    <input class="filter__input-radio" id="radio-{{ radio.id }}-{{ radio.for }}" name="radio-{{ radio.id }}" type="radio">
+                    {{radio.name}}
+                    <span class="filter__input-radio-checkmark"></span>
+                  </label>
+                {% endfor %}
+              </div>
+            {% elseif item.filterType == 'select-dual' %}
+              <div class="filter__input-wrapper">
+                {% for select in item.filterContent %}
+                  <div class="filter__input-select-wrapper">
+                    <select class="filter__input-select" name="{{ select.name }}" id="{{ select.name }}" required>
+                      {% for option in select.options %}
+                        <option {% if option.selected %} disabled selected hidden {% endif %} value="{{ option.value }}">{{ option.key }}</option>
+                      {% endfor %}
+                    </select>
+                    <img alt="" class="filter__input-select-chevron" src="/assets/img/icons/icon-chevron-down.svg">
+                  </div>
+                {% endfor %}
+                {% for select in item.filterContent %}
+                  {% for option in select.options %}
+                    {% if option.hasRadio == true %}
+                      <div class="filter__input-radio-wrapper">
+                        {% for radio in option.radios %}
+                          <label class="filter__input-radio-label" for="radio-{{ radio.id }}-{{ radio.for }}">
+                            <input class="filter__input-radio" id="radio-{{ radio.id }}-{{ radio.for }}" name="radio-{{ radio.id }}" type="radio">
+                            {{radio.name}}
+                            <span class="filter__input-radio-checkmark"></span>
+                          </label>
                         {% endfor %}
-                      </select>
-                      <img alt="" class="filter__input-select-chevron" src="/assets/img/icons/icon-chevron-down.svg">
-                    </div>
+                      </div>
+                    {% endif %}
                   {% endfor %}
-                </div>
-              {% elseif item.filterType == 'radio' %}
-                <div class="filter__input-radio-wrapper">
-                  {% for radio in item.filterContent %}
-                    <label class="filter__input-radio-label" for="radio-{{ radio.id }}-{{ radio.for }}">
-                      <input class="filter__input-radio" id="radio-{{ radio.id }}-{{ radio.for }}" name="radio-{{ radio.id }}" type="radio">
-                      {{radio.name}}
-                      <span class="filter__input-radio-checkmark"></span>
-                    </label>
-                  {% endfor %}
-                </div>
-              {% elseif item.filterType == 'select-dual' %}
-                <div class="filter__input-wrapper">
-                  {% for select in item.filterContent %}
-                    <div class="filter__input-select-wrapper">
-                      <select class="filter__input-select" name="{{ select.name }}" id="{{ select.name }}" required>
-                        {% for option in select.options %}
-                          <option {% if option.selected %} disabled selected hidden {% endif %} value="{{ option.value }}">{{ option.key }}</option>
-                        {% endfor %}
-                      </select>
-                      <img alt="" class="filter__input-select-chevron" src="/assets/img/icons/icon-chevron-down.svg">
-                    </div>
-                  {% endfor %}
-                  {% for select in item.filterContent %}
-                    {% for option in select.options %}
-                      {% if option.hasRadio == true %}
-                        <div class="filter__input-radio-wrapper">
-                          {% for radio in option.radios %}
-                            <label class="filter__input-radio-label" for="radio-{{ radio.id }}-{{ radio.for }}">
-                              <input class="filter__input-radio" id="radio-{{ radio.id }}-{{ radio.for }}" name="radio-{{ radio.id }}" type="radio">
-                              {{radio.name}}
-                              <span class="filter__input-radio-checkmark"></span>
-                            </label>
-                          {% endfor %}
-                        </div>
-                      {% endif %}
-                    {% endfor %}
-                  {% endfor %}
-                </div>
-              {% elseif item.filterType == 'checkbox-solo' %}
-                <div class="filter__input-checkbox-wrapper">
-                  {% for checkbox in item.filterContent %}
-                    <label class="filter__input-checkbox-label-solo" for="checkbox-{{ checkbox.id }}-{{ checkbox.for }}">
-                      <input class="filter__input-checkbox" id="checkbox-{{ checkbox.id }}-{{ checkbox.for }}" name="checkbox-{{ checkbox.id }}" type="checkbox" {% if checkbox.checked %} checked {% endif %}>
-                      {{ checkbox.name }}
-                      <span class="filter__input-checkbox-checkmark"></span>
-                    </label>
-                  {% endfor %}
-                </div>
-              {% elseif item.filterType == 'checkbox-color' %}
-                <div class="filter__input-checkbox-wrapper">
-                  {% for checkbox in item.filterContent %}
-                    <label class="filter__input-checkbox-label-color" for="checkbox-{{ checkbox.id }}-{{ checkbox.for }}">
-                      <input class="filter__input-checkbox" id="checkbox-{{ checkbox.id }}-{{ checkbox.for }}" name="checkbox-{{ checkbox.id }}" type="checkbox" {% if checkbox.checked %} checked {% endif %}>
-                      <span class="filter__input-checkbox-checkmark-color" style="background-color: {{ checkbox.name }}"></span>
-                    </label>
-                  {% endfor %}
-                </div>
-              {% elseif item.filterType == 'price' %}
-                <div class="filter__input-checkbox-wrapper">
-                  {% for checkbox in item.filterContent %}
-                    <label class="filter__input-checkbox-label-solo" for="checkbox-{{ checkbox.id }}-{{ checkbox.for }}">
-                      <input class="filter__input-checkbox" id="checkbox-{{ checkbox.id }}-{{ checkbox.for }}" name="checkbox-{{ checkbox.id }}" type="checkbox" {% if checkbox.checked %} checked {% endif %}>
-                      {{ checkbox.name }}
-                      <span class="filter__input-checkbox-checkmark"></span>
-                    </label>
-                  {% endfor %}
-                </div>
-                <div class="filter__input-number-wrapper">
-                  <input class="filter__input-number" id="" name="" placeholder="Price from" type="number">
-                  <span class="filter__input-number-separator">
-                    -
-                  </span>
-                  <input class="filter__input-number" id="" name="" placeholder="Price to" type="number">
-                </div>
-              {% endif %}
-            </div>
+                {% endfor %}
+              </div>
+            {% elseif item.filterType == 'checkbox-solo' %}
+              <div class="filter__input-checkbox-wrapper">
+                {% for checkbox in item.filterContent %}
+                  <label class="filter__input-checkbox-label-solo" for="checkbox-{{ checkbox.id }}-{{ checkbox.for }}">
+                    <input class="filter__input-checkbox" id="checkbox-{{ checkbox.id }}-{{ checkbox.for }}" name="checkbox-{{ checkbox.id }}" type="checkbox" {% if checkbox.checked %} checked {% endif %}>
+                    {{ checkbox.name }}
+                    <span class="filter__input-checkbox-checkmark"></span>
+                  </label>
+                {% endfor %}
+              </div>
+            {% elseif item.filterType == 'checkbox-color' %}
+              <div class="filter__input-checkbox-wrapper">
+                {% for checkbox in item.filterContent %}
+                  <label class="filter__input-checkbox-label-color" for="checkbox-{{ checkbox.id }}-{{ checkbox.for }}">
+                    <input class="filter__input-checkbox" id="checkbox-{{ checkbox.id }}-{{ checkbox.for }}" name="checkbox-{{ checkbox.id }}" type="checkbox" {% if checkbox.checked %} checked {% endif %}>
+                    <span class="filter__input-checkbox-checkmark-color" style="background-color: {{ checkbox.name }}"></span>
+                  </label>
+                {% endfor %}
+              </div>
+            {% elseif item.filterType == 'price' %}
+              <div class="filter__input-checkbox-wrapper">
+                {% for checkbox in item.filterContent %}
+                  <label class="filter__input-checkbox-label-solo" for="checkbox-{{ checkbox.id }}-{{ checkbox.for }}">
+                    <input class="filter__input-checkbox" id="checkbox-{{ checkbox.id }}-{{ checkbox.for }}" name="checkbox-{{ checkbox.id }}" type="checkbox" {% if checkbox.checked %} checked {% endif %}>
+                    {{ checkbox.name }}
+                    <span class="filter__input-checkbox-checkmark"></span>
+                  </label>
+                {% endfor %}
+              </div>
+              <div class="filter__input-number-wrapper">
+                <input class="filter__input-number" id="" name="" placeholder="Price from" type="number">
+                <span class="filter__input-number-separator">
+                  -
+                </span>
+                <input class="filter__input-number" id="" name="" placeholder="Price to" type="number">
+              </div>
+            {% endif %}
           </div>
         </div>
-      {% endfor %}
-      <div class="filter__item" id="discard">
-        <a class="filter__discard" href="#">Discard filters</a>
       </div>
+    {% endfor %}
+    <div class="filter__item" id="discard">
+      <a class="filter__discard" href="#">Discard filters</a>
     </div>
-  {% endif %}
-  <!--  -->
-</div>
+  </div>
+{% endif %}

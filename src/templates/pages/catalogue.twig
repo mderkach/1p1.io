@@ -103,11 +103,8 @@
     {% include "../components/header/header.twig" %}
   {% endblock %}
   {% block body %}
-    {% block menubar %}
-      {% include "../components/menu-bar/menu-bar.twig" %}
-    {% endblock %}
-    {% block filterCatalogue %}
-      {% include "../components/filter/filter.twig" %}
+    {% block marketplace %}
+      {% include "../components/screen/screen__marketplace.twig" %}
     {% endblock %}
   {% endblock %}  
   {% block footerMain %}

@@ -3,6 +3,7 @@
   border: 1px solid #fff;
   color: #fff;
   width: 100%;
+
   &:hover {
     cursor: pointer;
     text-decoration: none;
@@ -11,6 +12,7 @@
 
 .btn {
   &-sm {}
+
   &-mid {
     @extend [class^='btn'];
     border-radius: 96px;
@@ -23,6 +25,7 @@
     line-height: normal;
     letter-spacing: normal;
     padding: 10px 30px 9px 30px;
+
     &:focus {
       border: solid 2px #e9ff00;
       text-decoration: none;
@@ -31,6 +34,7 @@
       padding-bottom: 8px;
     }
   }
+
   &-xlg {
     @extend [class^='btn'];
     background: #4489ff;
@@ -41,11 +45,13 @@
     border: 2px solid #4489ff;
     text-align: center;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+
     &:hover {
       background: #4f90fe;
       color: #fff;
       box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
     }
+
     &:focus {
       border-color: #e9ff00;
       text-decoration: none;
@@ -53,24 +59,30 @@
       color: #fff;
     }
   }
+
   &-header {
     padding: 7px 10px;
+
     &:focus {
       padding: 6px 10px;
     }
+
     @include mq-down(lg) {
       margin-left: 15px;
     }
   }
+
   &-transparent {
     @extend [class^='btn'];
     background: transparent;
     color: #fff;
+
     &:hover {
       background: #fff;
       color: #000;
     }
   }
+
   &-video {
     @extend [class^='btn'];
     color: #fff !important;
@@ -81,20 +93,24 @@
     border: none;
     background: transparent;
     margin: 0 auto 60px auto;
+
     span {
       margin-right: 25px;
+
       @include mq-down(sm) {
         margin-right: 0;
         order: 2;
         margin-top: 1rem;
       }
     }
+
     @include mq-down(sm) {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
     }
+
     &__img {
       width: 32px;
       height: 32px;
@@ -102,21 +118,25 @@
       border: none;
     }
   }
+
   &__categories {
     &_landing {
       @extend .btn-xlg;
       display: flex;
       justify-content: center;
       margin: auto auto 50px auto;
+
       @include mq-down(md) {
         min-width: 280px;
         max-width: 88%;
       }
+
       img {
         margin-left: 10px;
       }
     }
   }
+
   &__news {
     &-more {
       @extend .btn-xlg;
@@ -129,9 +149,11 @@
       padding-left: 45px;
       width: 100%;
       max-width: 126px;
+
       @include mq-between (lg, xl) {
         right: -10px;
       }
+
       @include mq-down (lg) {
         position: relative;
         top: 0;
@@ -139,12 +161,14 @@
         width: 100%;
         max-width: 100%;
         justify-content: center;
+
         img {
           margin-left: 15px;
         }
       }
     }
   }
+
   &-ok {
     @extend .btn-mid;
     max-width: 130px;
@@ -153,13 +177,16 @@
     margin-right: auto;
     background: #4489ff;
     font-size: rem(19);
+
     @include mq-down(md) {
       max-width: 90%;
     }
+
     &:hover {
       background: #4f90fe;
     }
   }
+
   &-lots {
     margin: 0 auto 22px auto;
     max-width: 160px;
@@ -172,6 +199,7 @@
     padding-left: 0;
     padding-right: 0;
   }
+
   &-celebrities {
     &-more {
       @extend .btn-xlg;
@@ -184,16 +212,18 @@
         margin-top: 10px;
       }
 
-      img{
+      img {
         margin-left: 15px;
       }
     }
   }
+
   &-bookmark {
     padding: 0;
     border: none;
     background: transparent;
   }
+
   &-edit {
     &-avatar {
       z-index: 2;
@@ -208,6 +238,7 @@
       justify-content: flex-end;
       align-items: center;
       border: none;
+
       &::after {
         content: '';
         position: absolute;
@@ -223,6 +254,7 @@
         padding-bottom: 0;
       }
     }
+
     &-ads {
       display: flex;
       justify-content: center;
@@ -238,17 +270,19 @@
       img {
         width: 10px;
       }
-      
+
       &:nth-last-child(1) {
         margin-right: 0;
       }
     }
   }
+
   &-remove {
     &-ads {
       @extend .btn-edit-ads;
     }
   }
+
   &-account {
     &-sell {
       box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
@@ -267,6 +301,7 @@
       }
     }
   }
+
   &-sell {
     &-item {
       &-continue {
@@ -282,6 +317,7 @@
       }
     }
   }
+
   &-createNew {
     @extend .btn-xlg;
     max-width: 240px;
@@ -290,6 +326,7 @@
     line-height: 1;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
   }
+
   &__sucess {
     max-width: 230px;
     width: 100%;
@@ -299,6 +336,25 @@
       max-width: 100%;
       margin-right: 0;
       margin-bottom: 15px;
+    }
+  }
+
+  &__marketplace {
+    &-tag {
+      width: auto;
+      padding: 8px 14px;
+      margin-right: 10px;
+      font-size: rem(14);
+      font-weight: 500;
+      line-height: normal;
+      color: #000;
+      border-radius: 4px;
+      border: none;
+      background: #eeeef3;
+
+      &.is-active {
+        background: #fff;
+      }
     }
   }
 }
