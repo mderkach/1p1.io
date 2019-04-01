@@ -15,9 +15,19 @@
         </div>
         {% include "../form/form__marketplace-serach.twig" %}
       </div>
-      {% block filterCatalogue %}
-        {% include "../filter/filter.twig" %}
-      {% endblock %}
+      <aside class="marketplace__filter-outer">
+        {% block filterCatalogue %}
+          {% include "../filter/filter.twig" %}
+        {% endblock %}
+      </aside>
+      <main class="marketplace__content-outer">
+        {% block marketplaceCards %}
+          {% include "../cards/cards-marketplace.twig" %}
+        {% endblock %}
+        {% block pagination %}
+          {% include "../pagination/pagination.twig" %}
+        {% endblock %}
+      </main>
     </div>
   </div>
 </div>

@@ -1,0 +1,47 @@
+{% if pagination %}
+  <div class="pagination__wrapper">
+    {% if pagination.loadButton == true %}
+      <div class="pagination__button-wrapper">
+        <button class="btn__pagination">
+          Show more
+        </button>
+      </div>
+    {% endif %}
+    {% if pagination.paginationButtons %}
+      <div class="pagination__controls-wrapper">
+        <a href="#" class="btn__pagination-control">
+          <svg height="12px" version="1.1" viewbox="0 0 5 8" width="7px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+            <g fill-rule="evenodd" fill="none" stroke-width="1" stroke="none">
+              <g fill-rule="nonzero" transform="translate(-622.000000, -3111.000000)">
+                <g transform="translate(0.000000, 2825.000000)">
+                  <g transform="translate(623.000000, 285.784946)">
+                    <polygon points="1.47856425 3.9186453 3.77918473 1.66750054 5.17794377 3.09700154 1.47856425 6.71682452 -2.17794377 3.13895107 -0.779184726 1.70945007" transform="translate(1.500000, 4.192163) rotate(-90.000000) translate(-1.500000, -4.192163) "></polygon>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </a>
+        <a href="#" class="btn__pagination-control is-active">1</a>
+        <a href="#" class="btn__pagination-control">2</a>
+        <a href="#" class="btn__pagination-control">3</a>
+        <a href="#" class="btn__pagination-control">...</a>
+        <a href="#" class="btn__pagination-control">23</a>
+        <a href="#" class="btn__pagination-control">24</a>
+        <a href="#" class="btn__pagination-control">
+          <svg height="12px" version="1.1" viewbox="0 0 5 8" width="7px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+            <g fill-rule="evenodd" fill="none" stroke-width="1" stroke="none">
+              <g fill-rule="nonzero" transform="translate(-622.000000, -3111.000000)">
+                <g transform="translate(0.000000, 2825.000000)">
+                  <g transform="translate(623.000000, 285.784946)">
+                    <polygon points="1.47856425 3.9186453 3.77918473 1.66750054 5.17794377 3.09700154 1.47856425 6.71682452 -2.17794377 3.13895107 -0.779184726 1.70945007" transform="translate(1.500000, 4.192163) rotate(-90.000000) translate(-1.500000, -4.192163) "></polygon>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </a>
+      </div>
+    {% endif %}
+  </div>
+{% endif %}

@@ -6,6 +6,10 @@
       max-width: 580px;
       top: -50px;
 
+      @include mq-between(lg,xl) {
+        max-width: 450px;
+      }
+
       &-input {
         @extend .form__popup-input-create;
         padding-bottom: 15px;

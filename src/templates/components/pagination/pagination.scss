@@ -1,0 +1,21 @@
+.pagination {
+  &__wrapper {
+    @include make-col(12);
+  }
+  &__button {
+    &-wrapper {
+      @include make-col(12);
+      display: flex;
+      justify-content: center;
+      margin-top: 50px;
+      margin-bottom: 40px;
+    }
+  }
+  &__controls {
+    &-wrapper {
+      @include make-col(12);
+      display: flex;
+      justify-content: center;
+    }
+  }
+}

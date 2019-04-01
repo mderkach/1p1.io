@@ -1,6 +1,6 @@
 .filter {
   &__wrapper {
-    width: 250px;
+    width: 100%;
     height: auto;
     border-radius: 4px;
     box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.1);
@@ -112,10 +112,10 @@
         margin-right: 25px;
         margin-bottom: 5px;
         padding-top: 2px;
+        padding-left: 20px;
         display: block;
         position: relative;
         user-select: none;
-        padding-left: 25px;
         cursor: pointer;
         font-size: rem(13);
         font-weight: 500;

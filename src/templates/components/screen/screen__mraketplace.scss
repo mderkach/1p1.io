@@ -6,9 +6,12 @@
 
 .marketplace {
   &__container {
-    margin-top: 35px;
+    padding: 35px 0 60px;
     @include make-container();
-      @include make-container-max-widths($max-widths: $container-max-widths, $breakpoints: $grid-breakpoints);
+    @include make-container-max-widths($max-widths: $container-max-widths, $breakpoints: $grid-breakpoints);
+    @include mq-up(xl) {
+      max-width: 1200px;
+    }
   }
 
   &__wrapper {
@@ -28,6 +31,26 @@
       display: flex;
       flex-direction: row;
       align-items: center;
+    }
+  }
+
+  &__filter {
+    &-outer {
+      height: auto;
+      width: 230px;
+      margin-right: 10px;
+    }
+  }
+
+  &__content {
+    &-outer {
+      width: 100%;
+      max-width: 950px;
+      margin-left: 10px;
+
+      @include mq-between(lg,xl) {
+        max-width: 710px;
+      }
     }
   }
 }
