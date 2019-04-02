@@ -100,11 +100,13 @@ if (filterPopup && closeFilterPopup && openFilterPopup) {
       var mobileMenuBtn = document.querySelector('.btn--mobile--menu');
       mobileMenuBtn.style.width = 0;
       closeFilterPopup.classList.add('is-active');
+      checkMobile();
 
       closeFilterPopup.addEventListener('click', function(){
         filterPopup.classList.remove('is-active');
         closeFilterPopup.classList.remove('is-active');
         mobileMenuBtn.style.width = 'auto';
+        document.body.classList.remove('modal-open', '--scrollbar-hidden');
       });
     }
   });

@@ -15,7 +15,7 @@
     }
 
     @include mq-down(sm) {
-      padding-bottom: 0;
+      padding-bottom: 40px;
     }
   }
 

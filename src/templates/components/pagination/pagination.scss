@@ -19,13 +19,12 @@
 
   &__controls {
     &-wrapper {
-      @include make-col(12);
+      max-width: 320px;
+      margin: 0 auto;
+      box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.1);
+      border-radius: 4px;
       display: flex;
       justify-content: center;
-
-      @include mq-down(sm) {
-        display: none;
-      }
     }
   }
 }

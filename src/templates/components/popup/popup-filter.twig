@@ -29,7 +29,7 @@
                 <div class="filter__input-wrapper">
                   {% for select in item.filterContent %}
                     <div class="filter__input-select-wrapper">
-                      <select class="filter__input-select" name="{{ select.name }}" id="{{ select.name }}" required>
+                      <select class="filter__input-select" name="{{ select.name }}-mobile" id="{{ select.name }}-mobile" required>
                         {% for option in select.options %}
                           <option {% if option.selected %} disabled selected hidden {% endif %} value="{{ option.value }}">{{ option.key }}</option>
                         {% endfor %}
@@ -41,8 +41,8 @@
               {% elseif item.filterType == 'radio' %}
                 <div class="filter__input-radio-wrapper">
                   {% for radio in item.filterContent %}
-                    <label class="filter__input-radio-label" for="radio-{{ radio.id }}-{{ radio.for }}">
-                      <input class="filter__input-radio" id="radio-{{ radio.id }}-{{ radio.for }}" name="radio-{{ radio.id }}" type="radio">
+                    <label class="filter__input-radio-label" for="radio-{{ radio.id }}-{{ radio.for }}-mobile">
+                      <input class="filter__input-radio" id="radio-{{ radio.id }}-{{ radio.for }}-mobile" name="radio-{{ radio.id }}-mobile" type="radio">
                       {{radio.name}}
                       <span class="filter__input-radio-checkmark"></span>
                     </label>
@@ -52,7 +52,7 @@
                 <div class="filter__input-wrapper">
                   {% for select in item.filterContent %}
                     <div class="filter__input-select-wrapper">
-                      <select class="filter__input-select" name="{{ select.name }}" id="{{ select.name }}" required>
+                      <select class="filter__input-select" name="{{ select.name }}-mobile" id="{{ select.name }}-mobile" required>
                         {% for option in select.options %}
                           <option {% if option.selected %} disabled selected hidden {% endif %} value="{{ option.value }}">{{ option.key }}</option>
                         {% endfor %}
@@ -65,8 +65,8 @@
                       {% if option.hasRadio == true %}
                         <div class="filter__input-radio-wrapper">
                           {% for radio in option.radios %}
-                            <label class="filter__input-radio-label" for="radio-{{ radio.id }}-{{ radio.for }}">
-                              <input class="filter__input-radio" id="radio-{{ radio.id }}-{{ radio.for }}" name="radio-{{ radio.id }}" type="radio">
+                            <label class="filter__input-radio-label" for="radio-{{ radio.id }}-{{ radio.for }}-mobile">
+                              <input class="filter__input-radio" id="radio-{{ radio.id }}-{{ radio.for }}-mobile" name="radio-{{ radio.id }}-mobile" type="radio">
                               {{radio.name}}
                               <span class="filter__input-radio-checkmark"></span>
                             </label>
@@ -79,8 +79,8 @@
               {% elseif item.filterType == 'checkbox-solo' %}
                 <div class="filter__input-checkbox-wrapper">
                   {% for checkbox in item.filterContent %}
-                    <label class="filter__input-checkbox-label-solo" for="checkbox-{{ checkbox.id }}-{{ checkbox.for }}">
-                      <input class="filter__input-checkbox" id="checkbox-{{ checkbox.id }}-{{ checkbox.for }}" name="checkbox-{{ checkbox.id }}" type="checkbox" {% if checkbox.checked %} checked {% endif %}>
+                    <label class="filter__input-checkbox-label-solo" for="checkbox-{{ checkbox.id }}-{{ checkbox.for }}-mobile">
+                      <input class="filter__input-checkbox" id="checkbox-{{ checkbox.id }}-{{ checkbox.for }}-mobile" name="checkbox-{{ checkbox.id }}-mobile" type="checkbox" {% if checkbox.checked %} checked {% endif %}>
                       {{ checkbox.name }}
                       <span class="filter__input-checkbox-checkmark"></span>
                     </label>
@@ -89,8 +89,8 @@
               {% elseif item.filterType == 'checkbox-color' %}
                 <div class="filter__input-checkbox-wrapper">
                   {% for checkbox in item.filterContent %}
-                    <label class="filter__input-checkbox-label-color" for="checkbox-{{ checkbox.id }}-{{ checkbox.for }}">
-                      <input class="filter__input-checkbox" id="checkbox-{{ checkbox.id }}-{{ checkbox.for }}" name="checkbox-{{ checkbox.id }}" type="checkbox" {% if checkbox.checked %} checked {% endif %}>
+                    <label class="filter__input-checkbox-label-color" for="checkbox-{{ checkbox.id }}-{{ checkbox.for }}-mobile">
+                      <input class="filter__input-checkbox" id="checkbox-{{ checkbox.id }}-{{ checkbox.for }}-mobile" name="checkbox-{{ checkbox.id }}-mobile" type="checkbox" {% if checkbox.checked %} checked {% endif %}>
                       <span class="filter__input-checkbox-checkmark-color" style="background-color: {{ checkbox.name }}"></span>
                     </label>
                   {% endfor %}
@@ -98,8 +98,8 @@
               {% elseif item.filterType == 'price' %}
                 <div class="filter__input-checkbox-wrapper">
                   {% for checkbox in item.filterContent %}
-                    <label class="filter__input-checkbox-label-solo" for="checkbox-{{ checkbox.id }}-{{ checkbox.for }}">
-                      <input class="filter__input-checkbox" id="checkbox-{{ checkbox.id }}-{{ checkbox.for }}" name="checkbox-{{ checkbox.id }}" type="checkbox" {% if checkbox.checked %} checked {% endif %}>
+                    <label class="filter__input-checkbox-label-solo" for="checkbox-{{ checkbox.id }}-{{ checkbox.for }}-mobile">
+                      <input class="filter__input-checkbox" id="checkbox-{{ checkbox.id }}-{{ checkbox.for }}-mobile" name="checkbox-{{ checkbox.id }}-mobile" type="checkbox" {% if checkbox.checked %} checked {% endif %}>
                       {{ checkbox.name }}
                       <span class="filter__input-checkbox-checkmark"></span>
                     </label>
