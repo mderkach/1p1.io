@@ -9,12 +9,19 @@
     overflow: hidden;
     margin-bottom: 10px;
 
-    @include mq-between(lg,xl) {
+    @include mq-between(md,xl) {
       width: 32.4%;
     }
 
+    @include mq-down(md) {
+      width: 49%;
+    }
+
+    @include mq-down(sm) {
+      margin-bottom: 4px;
+    }
+
     &-wrapper {
-      margin-left: -10px;
       width: 100%;
       overflow: hidden;
       opacity: 0;
@@ -22,6 +29,14 @@
 
       &.masonry-active {
         opacity: 1;
+      }
+    }
+
+    &-gutter {
+      width: 10px;
+
+      @include mq-down(sm) {
+        width: 4px;
       }
     }
 

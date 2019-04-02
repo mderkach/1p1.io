@@ -31,6 +31,7 @@
     font-size: rem(34);
     font-weight: 500;
     line-height: 1.24;
+
     @include mq-down(sm) {
       font-size: rem(30);
     }
@@ -51,6 +52,7 @@
     font-size: rem(36);
     font-weight: 700;
     margin-bottom: 0;
+
     @include mq-down(md) {
       font-size: rem(28);
       padding-left: 8px;
@@ -77,17 +79,39 @@
       font-weight: 500;
       line-height: 1.58;
       color: #4b5769;
+
       @include mq-down(md) {
         margin: 25px auto 45px auto;
         font-size: rem(15);
       }
     }
   }
+
+
   &-edit {
     &-header {
       font-size: rem(25);
       font-weight: bold;
       color: #000;
+    }
+  }
+
+
+  &__filter {
+    &-header {
+      font-size: rem(30);
+      font-weight: 500;
+      line-height: normal;
+      color: #444a59;
+      margin-bottom: 0;
+      margin-right: 10px;
+    }
+    &-count {
+      font-size: rem(30);
+      font-weight: 500;
+      line-height: normal;
+      color: #79879e;
+      margin-bottom: 0;
     }
   }
 }
@@ -96,5 +120,5 @@
   &__h1 {
     font-size: rem(36);
     margin-bottom: 0;
-  } 
+  }
 }

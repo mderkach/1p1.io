@@ -2,6 +2,7 @@
   &__wrapper {
     @include make-col(12);
   }
+
   &__button {
     &-wrapper {
       @include make-col(12);
@@ -9,13 +10,22 @@
       justify-content: center;
       margin-top: 50px;
       margin-bottom: 40px;
+
+      @include mq-down(sm) {
+        margin-top: 30px;
+      }
     }
   }
+
   &__controls {
     &-wrapper {
       @include make-col(12);
       display: flex;
       justify-content: center;
+
+      @include mq-down(sm) {
+        display: none;
+      }
     }
   }
 }

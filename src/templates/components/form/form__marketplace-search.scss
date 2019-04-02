@@ -1,13 +1,20 @@
 .form {
   &__marketplace {
     &-search {
-      position: relative;
+      position: absolute;
       width: 100%;
       max-width: 580px;
-      top: -50px;
+      top: -55px;
+      right: 0;
 
       @include mq-between(lg,xl) {
         max-width: 450px;
+      }
+
+      @include mq-down(lg) {
+        position: relative;
+        top: 0;
+        max-width: 60%;
       }
 
       &-input {
@@ -23,7 +30,18 @@
 
         &::placeholder {
           font-size: rem(28);
-          color: rgba($color: #79879e, $alpha: .3)
+          color: rgba($color: #79879e, $alpha: .3);
+
+          @include mq-down(lg) {
+            font-size: rem(15);
+          }
+        }
+
+        @include mq-down(lg) {
+          padding-left: 5px;
+          padding-bottom: 5px;
+          font-size: rem(15);
+          max-height: 36px;
         }
       }
 
@@ -31,6 +49,10 @@
         fill: rgba($color: #79879e, $alpha: .3);
         width: 100%;
         height: 100%;
+
+        @include mq-down(lg) {
+          display: none;
+        }
       }
 
       &-submit {

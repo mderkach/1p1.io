@@ -8,8 +8,14 @@
   }
 
   &__item {
+    background: #fff;
     padding: 15px 15px 10px 15px;
     border-bottom: 1px solid #fafafa;
+
+    @include mq-down(lg) {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
 
     &:hover {
       cursor: pointer;

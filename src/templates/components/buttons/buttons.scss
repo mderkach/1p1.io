@@ -361,6 +361,41 @@
         background: #fff;
       }
     }
+
+    &-filter {
+      max-width: 32%;
+      max-height: 34px;
+      height: 100%;
+      border-radius: 4px;
+      border: none;
+      background-color: #eeeef3;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #000;
+      font-size: rem(14);
+      font-weight: 500;
+      line-height: normal;
+      color: #000;
+
+      @include mq-up(lg) {
+        display: none;
+      }
+
+      &-count {
+        width: 18px;
+        height: 18px;
+        background-color: #ff6e63;
+        border-radius: 50%;
+        border: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: rem(10);
+        color: #fff;
+        margin-left: 5px;
+      }
+    }
   }
 
   &__pagination {
@@ -438,5 +473,14 @@
         border-color: #4489ff;
       }
     }
+  }
+}
+
+.hamburger {
+  width: 0;
+  overflow: hidden;
+
+  &.is-active {
+    width: auto;
   }
 }

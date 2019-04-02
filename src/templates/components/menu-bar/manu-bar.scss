@@ -33,10 +33,10 @@
     font-size: rem(13);
     font-weight: 500;
     color: #4b5769;
+    flex-shrink: 0;
 
     @include mq-down(sm) {
       margin-right: 25px;
-      flex-shrink: 0;
       padding: 16px 0 17px;
     }
     span {
@@ -69,11 +69,23 @@
     border-left: none;
     border-right: none;
 
+    @include mq-down(sm) {
+      margin-top: 50px;
+    }
+
     &-container{
       @include make-container();
       @include make-container-max-widths($max-widths: $container-max-widths, $breakpoints: $grid-breakpoints);
       @include mq-up(xl) {
         max-width: 1200px;
+      }
+
+      @include mq-between(md,lg) {
+        padding: 0 10px;
+      }
+
+      @include mq-down(md) {
+        padding: 0 20px;
       }
     }
 
@@ -81,6 +93,10 @@
       @include make-row();
       @extend .menu-bar__scroll-cont;
       flex-wrap: nowrap;
+
+      @include mq-down(lg) {
+        margin: 0;
+      }
     }
   }
 }

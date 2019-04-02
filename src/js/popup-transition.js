@@ -89,3 +89,23 @@ closeModal.forEach(
     });
   }
 );
+
+//close button for mobile filters popup
+var filterPopup = document.querySelector('.popup__filter');
+var closeFilterPopup = document.querySelector('.hamburger');
+var openFilterPopup = document.querySelector('.btn__marketplace-filter');
+if (filterPopup && closeFilterPopup && openFilterPopup) {
+  openFilterPopup.addEventListener('click', function(){
+    if (filterPopup.classList.contains('is-active')) {
+      var mobileMenuBtn = document.querySelector('.btn--mobile--menu');
+      mobileMenuBtn.style.width = 0;
+      closeFilterPopup.classList.add('is-active');
+
+      closeFilterPopup.addEventListener('click', function(){
+        filterPopup.classList.remove('is-active');
+        closeFilterPopup.classList.remove('is-active');
+        mobileMenuBtn.style.width = 'auto';
+      });
+    }
+  });
+}
