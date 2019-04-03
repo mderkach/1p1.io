@@ -11,7 +11,6 @@
 }
 
 .btn {
-  &-sm {}
 
   &-mid {
     @extend [class^='btn'];
@@ -404,6 +403,10 @@
     background: #fff;
     color: #4489ff;
     border-color: #4489ff;
+
+    @include mq-down(sm) {
+      max-width: 100%;
+    }
 
     &:focus {
       color: #4489ff;
