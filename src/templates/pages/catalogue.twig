@@ -1,4 +1,5 @@
-{% set page_title = "acount public" %}
+{% extends "../layout/marketplace.twig" %}
+{% set page_title = "catalogue" %}
 {% set headerType = "--white --no-toggle" %}
 {% set userStatus = "--unauthorised" %}
 {% set pageType = 'public' %}
@@ -32,52 +33,436 @@
 		description: 'Инвесторам'
 	},
 ] %}
-
-<!DOCTYPE html>
-<html lang="ru">
-
-<head>
-
-  <meta charset="utf-8">
-  <!-- <base href="/"> -->
-  <title>{{ page_title }}</title>
-  <meta name="description" content="">
-
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-  <!-- Template Basic Images Start -->
-  <meta property="og:image" content="path/to/image.jpg">
-  <link rel="icon" href="#">
-  <link rel="apple-touch-icon" sizes="180x180" href="#">
-  <!-- Template Basic Images End -->
-
-  <!-- Custom Browsers Color Start -->
-  <meta name="theme-color" content="#4489ff">
-  <!-- Custom Browsers Color End -->
-</head>
-
-<body>
-  {% block header %}
-    {% include "../components/header/header.twig" %}
-  {% endblock %}
-  {% block body %}
-    {% include "../components/filter/filter.twig" %}
-  {% endblock %}  
-  {% block footerMain %}
-    {% block blockchain %}{% endblock %}
-    {% block footer %}
-      {% include "../components/footer/footer.twig" %}
-    {% endblock %}
-    {% block mobileMenu %}
-      {% include "../components/mobile-menu/mobile-menu.twig" %}
-    {% endblock %}
-    {% block popup %}
-      {% include "../components/popup/popup.twig" %}
-      {% include "../components/popup/popup-sucess.twig" %}
-    {% endblock %}
-    {% block video %}{% endblock %}
-  {% endblock %}
-</body>
-
-</html>
+{% set menubar = [  
+	{
+		type: 'regular',
+		items: [
+			{
+				link: '#categories',
+				isActive: false,
+				descr: 'All categories',
+			},
+			{
+				link: '#fashion',
+				isActive: true,
+				descr: 'Fashion',
+			},
+			{
+				link: '#arts',
+				isActive: false,
+				descr: 'Arts',
+			},
+			{
+				link: '#Electronics',
+				isActive: false,
+				descr: 'Electronics',
+			},
+			{
+				link: '#Tickets',
+				isActive: false,
+				descr: 'Tickets',
+			},
+			{
+				link: '#celebs',
+				isActive: false,
+				descr: 'Goods from celebrities',
+			},
+			{
+				link: '#private',
+				isActive: false,
+				descr: 'Private offers',
+			},
+		],
+	}
+] %}
+{% set cardsMarketplace = [
+	{
+		name: 'Stella McCartney',
+		descr: 'Blue jacket',
+		img: '/assets/img/catalogue/catalogue-example-1.jpg',
+		currency: '$',
+		value: '736'
+	},
+	{
+		name: 'CALVIN KLEIN',
+		descr: 'Boots',
+		img: '/assets/img/catalogue/catalogue-example-2.jpg',
+		currency: '$',
+		value: '1693'
+	},
+	{
+		name: 'Bag',
+		descr: 'bag',
+		img: '/assets/img/catalogue/catalogue-example-3.jpg',
+		currency: '$',
+		value: '10'
+	},
+	{
+		name: 'Pot',
+		descr: 'Pot',
+		img: '/assets/img/catalogue/catalogue-example-4.jpg',
+		currency: '$',
+		value: '10'
+	},
+	{
+		name: 'CALVIN KLEIN',
+		descr: 'Boots',
+		img: '/assets/img/catalogue/catalogue-example-2.jpg',
+		currency: '$',
+		value: '1693'
+	},
+	{
+		name: 'Pot',
+		descr: 'Pot',
+		img: '/assets/img/catalogue/catalogue-example-4.jpg',
+		currency: '$',
+		value: '10'
+	},
+	{
+		name: 'Stella McCartney',
+		descr: 'Blue jacket',
+		img: '/assets/img/catalogue/catalogue-example-1.jpg',
+		currency: '$',
+		value: '736'
+	},
+	{
+		name: 'Bag',
+		descr: 'bag',
+		img: '/assets/img/catalogue/catalogue-example-3.jpg',
+		currency: '$',
+		value: '10'
+	},
+] %}
+{% set tags = [
+	{
+		name: 'All results',
+		count: '14 732 626',
+		value: 'all',
+		isActive: true,
+		isChecked: true,
+	},
+	{
+		name: 'Goods from celebs',
+		count: '150',
+		value: 'celebs',
+		isActive: false,
+		isChecked: false,
+	},
+	{
+		name: 'Auctions',
+		count: '1',
+		value: 'auctions',
+		isActive: false,
+		isChecked: false,
+	}
+ ] %}
+{% set pagination = {
+	loadButton: true,
+	paginationButtons: true,
+	pages: [{}],
+ } 
+%}
+{% set catalogueFilter = {
+  globalType: 'filter',
+  items: [
+    {
+      filterType: 'select-solo',
+      name: 'Charity',
+      expanded: false,
+      dropdownId: 'select-charity',
+      filterContent: [{
+        name: 'select-charity',
+        options: [
+          {
+            key: 'Choose charity',
+            value: '',
+            selected: true
+          },
+          {
+            key: 'key',
+            value: 'value',
+            selected: false
+          },
+          {
+            key: 'another',
+            value: 'another',
+            selected: false
+          }
+          ],
+        }]
+    },
+    {
+      filterType: 'radio',
+      name: 'Gender',
+      expanded: false,
+      dropdownId: 'radio-gender',
+      filterContent: [
+        {
+          name: 'male',
+          for: 'male',
+          id: 'gender'
+        },
+        {
+          name: 'female',
+          for: 'female',
+          id: 'gender'
+        }
+      ]
+    },
+    {
+      filterType: 'select-dual',
+      name: 'Category',
+      expanded: false,
+      dropdownId: 'select-dual-category',
+      filterContent: [
+        {
+          name: 'select-category',
+          options: [
+            {
+              key: 'Choose category',
+              value: '',
+              selected: true,
+              hasRadio: false,
+            },
+            {
+              key: 'shoes',
+              value: 'shoes',
+              selected: false,
+              hasRadio: true,
+              radios: [
+                {
+                  name: 'leather',
+                  for: 'leather',
+                  id: 'shoes'
+                },
+                {
+                  name: 'non leather',
+                  for: 'non-leather',
+                  id: 'shoes'
+                }
+              ]
+            },
+            {
+              key: 'sweaters',
+              value: 'sweaters',
+              selected: false,
+            },
+          ],
+        },
+        {
+          name: 'select-subcategory',
+          options: [
+            {
+              key: 'Choose category first',
+              value: '',
+              selected: true,
+            },
+            {
+              key: 'cardigan',
+              value: 'cardigan',
+              selected: false,
+            },
+            {
+              key: 'sweetshots',
+              value: 'sweetshots',
+              selected: false,
+            },
+            {
+              key: 'pullover',
+              value: 'pullover',
+              selected: false,
+            },
+          ],
+        },
+      ]
+    },
+    {
+      filterType: 'checkbox-solo',
+      name: 'Brand',
+      expanded: false,
+      dropdownId: 'checkbox-brand',
+      filterContent: [
+        {
+          name: 'asos',
+          for: 'asos',
+          id: 'brand',
+          checked: false,
+        },
+        {
+          name: 'ADL',
+          for: 'ADL',
+          id: 'brand',
+          checked: true,
+        },
+        {
+          name: 'A-Style',
+          for: 'A-Style',
+          id: 'brand',
+          checked: true,
+        },
+        {
+          name: 'Adidas',
+          for: 'Adidas',
+          id: 'brand',
+          checked: true,
+        },
+        {
+          name: 'Bershka',
+          for: 'Bershka',
+          id: 'brand',
+          checked: false,
+        },
+        {
+          name: 'SOAD',
+          for: 'SOAD',
+          id: 'brand',
+          checked: false,
+        },
+      ]
+    },
+    {
+      filterType: 'checkbox-solo',
+      name: 'Collection',
+      expanded: false,
+      dropdownId: 'checkbox-collection',
+      filterContent: [
+        {
+          name: 'Winter/Spring 2018',
+          for: 'Winter/Spring 2018',
+          id: 'collection',
+          checked: false,
+        },
+        {
+          name: 'Spring 2018',
+          for: 'Spring 2018',
+          id: 'collection',
+          checked: true,
+        },
+        {
+          name: 'Summer 2018',
+          for: 'Summer 2018',
+          id: 'collection',
+          checked: true,
+        },
+        {
+          name: 'Autumn 2018',
+          for: 'Autumn 2018',
+          id: 'collection',
+          checked: true,
+        },
+      ]
+    },
+    {
+      filterType: 'checkbox-color',
+      name: 'Color',
+      expanded: false,
+      dropdownId: 'checkbox-color',
+      filterContent: [
+        {
+          name: '#000',
+          id: 'color',
+          for: '000',
+          checked: false,
+        },
+        {
+          name: '#fff',
+          id: 'color',
+          for: 'fff',
+          checked: false,
+        },
+        {
+          name: '#ff0000',
+          id: 'color',
+          for: 'ff0000',
+          checked: false,
+        },
+        {
+          name: '#ffc400',
+          id: 'color',
+          for: 'ffc400',
+          checked: false,
+        },
+        {
+          name: '#4489ff',
+          id: 'color',
+          for: '4489ff',
+          checked: true,
+        },
+        {
+          name: '#fc8037',
+          id: 'color',
+          for: 'fc8037',
+          checked: false,
+        },
+      ]
+    },
+    {
+      filterType: 'select-solo',
+      name: 'Size',
+      expanded: false,
+      dropdownId: 'select-size',
+      filterContent: [{
+        name: 'select-size',
+        options: [
+          {
+            key: 'Choose size',
+            value: '',
+            selected: true
+          },
+          {
+            key: 'Size XS',
+            value: 'XS',
+            selected: false
+          },
+          {
+            key: 'Size M',
+            value: 'M',
+            selected: false
+          }
+          ],
+        }]
+    },
+    {
+      filterType: 'price',
+      name: 'Price',
+      expanded: false,
+      dropdownId: 'choose-price',
+      filterContent: [
+       {
+          name: 'Items on sale',
+          for: 'sale',
+          id: 'price',
+          checked: false,
+        },
+        {
+          name: 'Auctions',
+          for: 'auctions',
+          id: 'price',
+          checked: true,
+        },
+      ]
+    },
+    {
+      filterType: 'select-solo',
+      name: 'Sort',
+      expanded: false,
+      dropdownId: 'select-sort',
+      filterContent: [{
+        name: 'select-sort',
+        options: [
+          {
+            key: 'Price from low to high',
+            value: 'low',
+            selected: false
+          },
+          {
+            key: 'Price from high to low',
+            value: 'high',
+            selected: false
+          }
+          ],
+        }]
+    },
+  ]
+	} 
+%}

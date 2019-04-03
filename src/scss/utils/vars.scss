@@ -11,3 +11,21 @@ $container-max-widths: (sm: 540px, md: 720px, lg: 960px, xl: 1180px);
 
 $gutter: $grid-gutter-width;
 $gap: $gutter/2;
+
+//hamburgers
+$hamburger-padding-x           : 0;
+$hamburger-padding-y           : 0;
+$hamburger-layer-width         : 16px;
+$hamburger-layer-height        : 2px;
+$hamburger-layer-spacing       : 2px;
+$hamburger-layer-color         : #000;
+$hamburger-layer-border-radius : 0;
+$hamburger-hover-opacity       : 0.7;
+$hamburger-active-layer-color  : $hamburger-layer-color;
+$hamburger-active-hover-opacity: $hamburger-hover-opacity;
+$hamburger-hover-use-filter   : false;
+$hamburger-hover-filter       : opacity(50%);
+$hamburger-active-hover-filter: $hamburger-hover-filter;
+$hamburger-types: (
+  arrow,
+) !default;

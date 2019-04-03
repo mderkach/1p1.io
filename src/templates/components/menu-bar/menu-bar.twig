@@ -5,7 +5,7 @@
         <div class="menu-bar__scroll-cont">
           {% for item in menu.items %}
             <a href="{{ item.link }}" class="menu-bar__item tab__switcher {% if item.isActive %}is-active{% endif %}">
-              {{ item.descr }} 
+              {{ item.descr }}
               {% if item.isAds %}
                 <span>({{ item.adsCount }})</span>
               {% endif %}
@@ -13,16 +13,29 @@
           {% endfor %}
         </div>
       </div>
-      {% elseif editMode == 'color' %}
-        <div class="menu-bar__color">
-          {% include "../form/form-button-color.twig" %}
-        </div>
-      {% elseif editMode == 'photo' %}
-        <div class="menu-bar__color">
-          <form class="form-button-color" style="justify-content: flex-end;" action="#" method="POST">
-            {% include "../form/form-edit-account-controls.twig" %}
-          </form>
-        </div>
+    {% elseif editMode == 'color' %}
+      <div class="menu-bar__color">
+        {% include "../form/form-button-color.twig" %}
+      </div>
+    {% elseif editMode == 'photo' %}
+      <div class="menu-bar__color">
+        <form action="#" class="form-button-color" method="POST" style="justify-content: flex-end;">
+          {% include "../form/form-edit-account-controls.twig" %}
+        </form>
+      </div>
     {% endif %}
+  {% endfor %}
+  {% for menu in menubar if menu.type == 'regular' %}
+    <div class="menu-bar__regular">
+      <div class="menu-bar__regular-container">
+        <div class="menu-bar__regular-wrapper">
+          {% for item in menu.items %}
+            <a href="{{ item.link }}" class="menu-bar__item {% if item.isActive %}is-active{% endif %}">
+              {{ item.descr }}
+            </a>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
   {% endfor %}
 {% endif %}

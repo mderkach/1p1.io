@@ -1,459 +1,113 @@
-{% set catalogueFilter = {
-  globalType: 'filter',
-  items: [
-    {
-      filterType: 'select-solo',
-      name: 'Charity',
-      expanded: false,
-      dropdownId: 'select-charity',
-      filterContent: [{
-        name: 'select-charity',
-        options: [
-          {
-            key: 'Choose charity',
-            value: '',
-            selected: true
-          },
-          {
-            key: 'key',
-            value: 'value',
-            selected: false
-          },
-          {
-            key: 'another',
-            value: 'another',
-            selected: false
-          }
-          ],
-        }]
-    },
-    {
-      filterType: 'radio',
-      name: 'Gender',
-      expanded: false,
-      dropdownId: 'radio-gender',
-      filterContent: [
-        {
-          name: 'male',
-          for: 'male',
-          id: 'gender'
-        },
-        {
-          name: 'female',
-          for: 'female',
-          id: 'gender'
-        }
-      ]
-    },
-    {
-      filterType: 'select-dual',
-      name: 'Category',
-      expanded: false,
-      dropdownId: 'select-dual-category',
-      filterContent: [
-        {
-          name: 'select-category',
-          options: [
-            {
-              key: 'Choose category',
-              value: '',
-              selected: true,
-              hasRadio: false,
-            },
-            {
-              key: 'shoes',
-              value: 'shoes',
-              selected: false,
-              hasRadio: true,
-              radios: [
-                {
-                  name: 'leather',
-                  for: 'leather',
-                  id: 'shoes'
-                },
-                {
-                  name: 'non leather',
-                  for: 'non-leather',
-                  id: 'shoes'
-                }
-              ]
-            },
-            {
-              key: 'sweaters',
-              value: 'sweaters',
-              selected: false,
-            },
-          ],
-        },
-        {
-          name: 'select-subcategory',
-          options: [
-            {
-              key: 'Choose category first',
-              value: '',
-              selected: true,
-            },
-            {
-              key: 'cardigan',
-              value: 'cardigan',
-              selected: false,
-            },
-            {
-              key: 'sweetshots',
-              value: 'sweetshots',
-              selected: false,
-            },
-            {
-              key: 'pullover',
-              value: 'pullover',
-              selected: false,
-            },
-          ],
-        },
-      ]
-    },
-    {
-      filterType: 'checkbox-solo',
-      name: 'Brand',
-      expanded: false,
-      dropdownId: 'checkbox-brand',
-      filterContent: [
-        {
-          name: 'asos',
-          for: 'asos',
-          id: 'brand',
-          checked: false,
-        },
-        {
-          name: 'ADL',
-          for: 'ADL',
-          id: 'brand',
-          checked: true,
-        },
-        {
-          name: 'A-Style',
-          for: 'A-Style',
-          id: 'brand',
-          checked: true,
-        },
-        {
-          name: 'Adidas',
-          for: 'Adidas',
-          id: 'brand',
-          checked: true,
-        },
-        {
-          name: 'Bershka',
-          for: 'Bershka',
-          id: 'brand',
-          checked: false,
-        },
-        {
-          name: 'SOAD',
-          for: 'SOAD',
-          id: 'brand',
-          checked: false,
-        },
-        {
-          name: 'asos',
-          for: 'asos',
-          id: 'brand',
-          checked: false,
-        },
-        {
-          name: 'ADL',
-          for: 'ADL',
-          id: 'brand',
-          checked: false,
-        },
-        {
-          name: 'A-Style',
-          for: 'A-Style',
-          id: 'brand',
-          checked: false,
-        },
-        {
-          name: 'Adidas',
-          for: 'Adidas',
-          id: 'brand',
-          checked: false,
-        },
-        {
-          name: 'Bershka',
-          for: 'Bershka',
-          id: 'brand',
-          checked: true,
-        },
-        {
-          name: 'SOAD',
-          for: 'SOAD',
-          id: 'brand',
-          checked: true,
-        },
-      ]
-    },
-    {
-      filterType: 'checkbox-solo',
-      name: 'Collection',
-      expanded: false,
-      dropdownId: 'checkbox-collection',
-      filterContent: [
-        {
-          name: 'Winter/Spring 2018',
-          for: 'Winter/Spring 2018',
-          id: 'collection',
-          checked: false,
-        },
-        {
-          name: 'Spring 2018',
-          for: 'Spring 2018',
-          id: 'collection',
-          checked: true,
-        },
-        {
-          name: 'Summer 2018',
-          for: 'Summer 2018',
-          id: 'collection',
-          checked: true,
-        },
-        {
-          name: 'Autumn 2018',
-          for: 'Autumn 2018',
-          id: 'collection',
-          checked: true,
-        },
-      ]
-    },
-    {
-      filterType: 'checkbox-color',
-      name: 'Color',
-      expanded: false,
-      dropdownId: 'checkbox-color',
-      filterContent: [
-        {
-          name: '#000',
-          id: 'color',
-          for: '000',
-          checked: false,
-        },
-        {
-          name: '#fff',
-          id: 'color',
-          for: 'fff',
-          checked: false,
-        },
-        {
-          name: '#ff0000',
-          id: 'color',
-          for: 'ff0000',
-          checked: false,
-        },
-        {
-          name: '#ffc400',
-          id: 'color',
-          for: 'ffc400',
-          checked: false,
-        },
-        {
-          name: '#4489ff',
-          id: 'color',
-          for: '4489ff',
-          checked: true,
-        },
-        {
-          name: '#fc8037',
-          id: 'color',
-          for: 'fc8037',
-          checked: false,
-        },
-      ]
-    },
-    {
-      filterType: 'select-solo',
-      name: 'Size',
-      expanded: false,
-      dropdownId: 'select-size',
-      filterContent: [{
-        name: 'select-size',
-        options: [
-          {
-            key: 'Choose size',
-            value: '',
-            selected: true
-          },
-          {
-            key: 'Size XS',
-            value: 'XS',
-            selected: false
-          },
-          {
-            key: 'Size M',
-            value: 'M',
-            selected: false
-          }
-          ],
-        }]
-    },
-    {
-      filterType: 'price',
-      name: 'Price',
-      expanded: false,
-      dropdownId: 'choose-price',
-      filterContent: [
-       {
-          name: 'Items on sale',
-          for: 'sale',
-          id: 'price',
-          checked: false,
-        },
-        {
-          name: 'Auctions',
-          for: 'auctions',
-          id: 'price',
-          checked: true,
-        },
-      ]
-    },
-    {
-      filterType: 'select-solo',
-      name: 'Sort',
-      expanded: false,
-      dropdownId: 'select-sort',
-      filterContent: [{
-        name: 'select-sort',
-        options: [
-          {
-            key: 'Price from low to high',
-            value: 'low',
-            selected: false
-          },
-          {
-            key: 'Price from high to low',
-            value: 'high',
-            selected: false
-          }
-          ],
-        }]
-    },
-  ]
-} %}
-
-<div style="height: 200px;"></div>
-<div
-  class="container">
-  <!--  -->
-  {% if catalogueFilter %}
-    <div class="filter__wrapper" id="{{ catalogueFilter.globalType }}">
-      {% for item in catalogueFilter.items %}
-        <div class="filter__item" id="filter__{{ item.name }}">
-          <a role="button" data-toggle="collapse" href="#{{ item.dropdownId }}" aria-expanded="{{ item.expanded }}" aria-controls="{{ item.dropdownId }}" class="filter__item-head collapsed">
-            <span class="filter__name">{{ item.name }}</span>
-            <svg class="filter__chevron" height="9px" version="1.1" viewbox="0 0 14 9" width="14px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
-              <g fill-rule="evenodd" fill="none" stroke-width="1" stroke="none">
-                <g class="filter__chevron-fill" fill-rule="nonzero" transform="translate(-260.000000, -21.000000)">
-                  <polygon id="dropdown-arrow" points="272.646447 21 274.06066 22.4142136 267.353553 29.1213203 260.646447 22.4142136 262.06066 21 267.353553 26.2928932"></polygon>
-                </g>
+{% if catalogueFilter %}
+  <div class="filter__wrapper" id="{{ catalogueFilter.globalType }}">
+    {% for item in catalogueFilter.items %}
+      <div class="filter__item" id="filter__{{ item.name }}">
+        <a role="button" data-toggle="collapse" href="#{{ item.dropdownId }}" aria-expanded="{{ item.expanded }}" aria-controls="{{ item.dropdownId }}" class="filter__item-head collapsed">
+          <span class="filter__name">{{ item.name }}</span>
+          <svg class="filter__chevron" height="9px" version="1.1" viewbox="0 0 14 9" width="14px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+            <g fill-rule="evenodd" fill="none" stroke-width="1" stroke="none">
+              <g class="filter__chevron-fill" fill-rule="nonzero" transform="translate(-260.000000, -21.000000)">
+                <polygon id="dropdown-arrow" points="272.646447 21 274.06066 22.4142136 267.353553 29.1213203 260.646447 22.4142136 262.06066 21 267.353553 26.2928932"></polygon>
               </g>
-            </svg>
-          </a>
-          <div id="{{ item.dropdownId }}" aria-labelledby="filter__{{ item.name }}" class="collapse {% if item.expanded == false %}{% else %}show{% endif %}">
-            <div class="filter__item-dropdown">
-              {% if item.filterType == 'select-solo' %}
-                <div class="filter__input-wrapper">
-                  {% for select in item.filterContent %}
-                    <div class="filter__input-select-wrapper">
-                      <select class="filter__input-select" name="{{ select.name }}" id="{{ select.name }}" required>
-                        {% for option in select.options %}
-                          <option {% if option.selected %} disabled selected hidden {% endif %} value="{{ option.value }}">{{ option.key }}</option>
+            </g>
+          </svg>
+        </a>
+        <div id="{{ item.dropdownId }}" aria-labelledby="filter__{{ item.name }}" class="collapse {% if item.expanded == false %}{% else %}show{% endif %}">
+          <div class="filter__item-dropdown">
+            {% if item.filterType == 'select-solo' %}
+              <div class="filter__input-wrapper">
+                {% for select in item.filterContent %}
+                  <div class="filter__input-select-wrapper">
+                    <select class="filter__input-select" name="{{ select.name }}" id="{{ select.name }}" required>
+                      {% for option in select.options %}
+                        <option {% if option.selected %} disabled selected hidden {% endif %} value="{{ option.value }}">{{ option.key }}</option>
+                      {% endfor %}
+                    </select>
+                    <img alt="" class="filter__input-select-chevron" src="/assets/img/icons/icon-chevron-down.svg">
+                  </div>
+                {% endfor %}
+              </div>
+            {% elseif item.filterType == 'radio' %}
+              <div class="filter__input-radio-wrapper">
+                {% for radio in item.filterContent %}
+                  <label class="filter__input-radio-label" for="radio-{{ radio.id }}-{{ radio.for }}">
+                    <input class="filter__input-radio" id="radio-{{ radio.id }}-{{ radio.for }}" name="radio-{{ radio.id }}" type="radio">
+                    {{radio.name}}
+                    <span class="filter__input-radio-checkmark"></span>
+                  </label>
+                {% endfor %}
+              </div>
+            {% elseif item.filterType == 'select-dual' %}
+              <div class="filter__input-wrapper">
+                {% for select in item.filterContent %}
+                  <div class="filter__input-select-wrapper">
+                    <select class="filter__input-select" name="{{ select.name }}" id="{{ select.name }}" required>
+                      {% for option in select.options %}
+                        <option {% if option.selected %} disabled selected hidden {% endif %} value="{{ option.value }}">{{ option.key }}</option>
+                      {% endfor %}
+                    </select>
+                    <img alt="" class="filter__input-select-chevron" src="/assets/img/icons/icon-chevron-down.svg">
+                  </div>
+                {% endfor %}
+                {% for select in item.filterContent %}
+                  {% for option in select.options %}
+                    {% if option.hasRadio == true %}
+                      <div class="filter__input-radio-wrapper">
+                        {% for radio in option.radios %}
+                          <label class="filter__input-radio-label" for="radio-{{ radio.id }}-{{ radio.for }}">
+                            <input class="filter__input-radio" id="radio-{{ radio.id }}-{{ radio.for }}" name="radio-{{ radio.id }}" type="radio">
+                            {{radio.name}}
+                            <span class="filter__input-radio-checkmark"></span>
+                          </label>
                         {% endfor %}
-                      </select>
-                      <img alt="" class="filter__input-select-chevron" src="/assets/img/icons/icon-chevron-down.svg">
-                    </div>
+                      </div>
+                    {% endif %}
                   {% endfor %}
-                </div>
-              {% elseif item.filterType == 'radio' %}
-                <div class="filter__input-radio-wrapper">
-                  {% for radio in item.filterContent %}
-                    <label class="filter__input-radio-label" for="radio-{{ radio.id }}-{{ radio.for }}">
-                      <input class="filter__input-radio" id="radio-{{ radio.id }}-{{ radio.for }}" name="radio-{{ radio.id }}" type="radio">
-                      {{radio.name}}
-                      <span class="filter__input-radio-checkmark"></span>
-                    </label>
-                  {% endfor %}
-                </div>
-              {% elseif item.filterType == 'select-dual' %}
-                <div class="filter__input-wrapper">
-                  {% for select in item.filterContent %}
-                    <div class="filter__input-select-wrapper">
-                      <select class="filter__input-select" name="{{ select.name }}" id="{{ select.name }}" required>
-                        {% for option in select.options %}
-                          <option {% if option.selected %} disabled selected hidden {% endif %} value="{{ option.value }}">{{ option.key }}</option>
-                        {% endfor %}
-                      </select>
-                      <img alt="" class="filter__input-select-chevron" src="/assets/img/icons/icon-chevron-down.svg">
-                    </div>
-                  {% endfor %}
-                  {% for select in item.filterContent %}
-                    {% for option in select.options %}
-                      {% if option.hasRadio == true %}
-                        <div class="filter__input-radio-wrapper">
-                          {% for radio in option.radios %}
-                            <label class="filter__input-radio-label" for="radio-{{ radio.id }}-{{ radio.for }}">
-                              <input class="filter__input-radio" id="radio-{{ radio.id }}-{{ radio.for }}" name="radio-{{ radio.id }}" type="radio">
-                              {{radio.name}}
-                              <span class="filter__input-radio-checkmark"></span>
-                            </label>
-                          {% endfor %}
-                        </div>
-                      {% endif %}
-                    {% endfor %}
-                  {% endfor %}
-                </div>
-              {% elseif item.filterType == 'checkbox-solo' %}
-                <div class="filter__input-checkbox-wrapper">
-                  {% for checkbox in item.filterContent %}
-                    <label class="filter__input-checkbox-label-solo" for="checkbox-{{ checkbox.id }}-{{ checkbox.for }}">
-                      <input class="filter__input-checkbox" id="checkbox-{{ checkbox.id }}-{{ checkbox.for }}" name="checkbox-{{ checkbox.id }}" type="checkbox" {% if checkbox.checked %} checked {% endif %}>
-                      {{ checkbox.name }}
-                      <span class="filter__input-checkbox-checkmark"></span>
-                    </label>
-                  {% endfor %}
-                </div>
-              {% elseif item.filterType == 'checkbox-color' %}
-                <div class="filter__input-checkbox-wrapper">
-                  {% for checkbox in item.filterContent %}
-                    <label class="filter__input-checkbox-label-color" for="checkbox-{{ checkbox.id }}-{{ checkbox.for }}">
-                      <input class="filter__input-checkbox" id="checkbox-{{ checkbox.id }}-{{ checkbox.for }}" name="checkbox-{{ checkbox.id }}" type="checkbox" {% if checkbox.checked %} checked {% endif %}>
-                      <span class="filter__input-checkbox-checkmark-color" style="background-color: {{ checkbox.name }}"></span>
-                    </label>
-                  {% endfor %}
-                </div>
-              {% elseif item.filterType == 'price' %}
-                <div class="filter__input-checkbox-wrapper">
-                  {% for checkbox in item.filterContent %}
-                    <label class="filter__input-checkbox-label-solo" for="checkbox-{{ checkbox.id }}-{{ checkbox.for }}">
-                      <input class="filter__input-checkbox" id="checkbox-{{ checkbox.id }}-{{ checkbox.for }}" name="checkbox-{{ checkbox.id }}" type="checkbox" {% if checkbox.checked %} checked {% endif %}>
-                      {{ checkbox.name }}
-                      <span class="filter__input-checkbox-checkmark"></span>
-                    </label>
-                  {% endfor %}
-                </div>
-                <div class="filter__input-number-wrapper">
-                  <input class="filter__input-number" id="" name="" placeholder="Price from" type="number">
-                  <span class="filter__input-number-separator">
-                    -
-                  </span>
-                  <input class="filter__input-number" id="" name="" placeholder="Price to" type="number">
-                </div>
-              {% endif %}
-            </div>
+                {% endfor %}
+              </div>
+            {% elseif item.filterType == 'checkbox-solo' %}
+              <div class="filter__input-checkbox-wrapper">
+                {% for checkbox in item.filterContent %}
+                  <label class="filter__input-checkbox-label-solo" for="checkbox-{{ checkbox.id }}-{{ checkbox.for }}">
+                    <input class="filter__input-checkbox" id="checkbox-{{ checkbox.id }}-{{ checkbox.for }}" name="checkbox-{{ checkbox.id }}" type="checkbox" {% if checkbox.checked %} checked {% endif %}>
+                    {{ checkbox.name }}
+                    <span class="filter__input-checkbox-checkmark"></span>
+                  </label>
+                {% endfor %}
+              </div>
+            {% elseif item.filterType == 'checkbox-color' %}
+              <div class="filter__input-checkbox-wrapper">
+                {% for checkbox in item.filterContent %}
+                  <label class="filter__input-checkbox-label-color" for="checkbox-{{ checkbox.id }}-{{ checkbox.for }}">
+                    <input class="filter__input-checkbox" id="checkbox-{{ checkbox.id }}-{{ checkbox.for }}" name="checkbox-{{ checkbox.id }}" type="checkbox" {% if checkbox.checked %} checked {% endif %}>
+                    <span class="filter__input-checkbox-checkmark-color" style="background-color: {{ checkbox.name }}"></span>
+                  </label>
+                {% endfor %}
+              </div>
+            {% elseif item.filterType == 'price' %}
+              <div class="filter__input-checkbox-wrapper">
+                {% for checkbox in item.filterContent %}
+                  <label class="filter__input-checkbox-label-solo" for="checkbox-{{ checkbox.id }}-{{ checkbox.for }}">
+                    <input class="filter__input-checkbox" id="checkbox-{{ checkbox.id }}-{{ checkbox.for }}" name="checkbox-{{ checkbox.id }}" type="checkbox" {% if checkbox.checked %} checked {% endif %}>
+                    {{ checkbox.name }}
+                    <span class="filter__input-checkbox-checkmark"></span>
+                  </label>
+                {% endfor %}
+              </div>
+              <div class="filter__input-number-wrapper">
+                <input class="filter__input-number" id="" name="" placeholder="Price from" type="number">
+                <span class="filter__input-number-separator">
+                  -
+                </span>
+                <input class="filter__input-number" id="" name="" placeholder="Price to" type="number">
+              </div>
+            {% endif %}
           </div>
         </div>
-      {% endfor %}
-      <div class="filter__item" id="discard">
-        <a class="filter__discard" href="#">Discard filters</a>
       </div>
+    {% endfor %}
+    <div class="filter__item" id="discard">
+      <a class="filter__discard" href="#">Discard filters</a>
     </div>
-  {% endif %}
-  <!--  -->
-</div>
+  </div>
+{% endif %}

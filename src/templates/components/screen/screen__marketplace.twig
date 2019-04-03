@@ -1,0 +1,53 @@
+<section class="screen__marketplace">
+  {% block menubar %}
+    {% include "../menu-bar/menu-bar.twig" %}
+  {% endblock %}
+  <div class="marketplace__container">
+    <div class="marketplace__wrapper">
+      <div class="header__wrapper header__wrapper-regular">
+        <h1 class="header__h1 regular__h1">Clothes</h1>
+      </div>
+      <div class="marketplace__controls">
+        {% if tags %}
+          {# выводить блок при разрешениее выше 992px #}
+          <div class="marketplace__tag-wrapper">
+            {% for tag in tags %}
+              <button class="btn__marketplace-tag {% if tag.isActive == true %}is-active{% endif %}">{{ tag.name }} (<span>{{ tag.count }}</span>)</button>
+            {% endfor %}
+          </div>
+          {# /выводить блок при разрешениее выше 992px #}
+          <div class="marketplace__tag-mobile-wrapper">
+            <select class="marketplace__tag-mobile" name="" id="">
+              {% for tag in tags %}
+                <option value="{{ tag.value }}" {% if tag.isChecked == true %}checked{% endif %}>{{ tag.name }} (<span>{{ tag.count }}</span>)</option>
+              {% endfor %}
+            </select>
+            <img class="marketplace__tag-mobile-chevron" src="/assets/img/icons/icon-chevron-down.svg" alt="">
+          </div>
+        {% endif %}
+        {% include "../form/form__marketplace-serach.twig" %}
+        {# выводить боок при разрешениее меньше 992px #}
+        <a href="#{{ catalogueFilter.globalType }}-mobile" data-modal="{{ catalogueFilter.globalType }}-mobile" class="btn__marketplace-filter popup--toggle">Filters
+          <span class="btn__marketplace-filter-count">2</span>
+        </a>
+        {# /выводить боок при разрешениее меньше 992px #}
+      </div>
+      {# /выводить блок при разрешениее выше 992px #}
+
+      <aside class="marketplace__filter-outer">
+        {% block filterCatalogue %}
+          {% include "../filter/filter.twig" %}
+        {% endblock %}
+      </aside>
+      {# выводить блок при разрешениее выше 992px #}
+      <main class="marketplace__content-outer">
+        {% block marketplaceCards %}
+          {% include "../cards/cards-marketplace.twig" %}
+        {% endblock %}
+        {% block pagination %}
+          {% include "../pagination/pagination.twig" %}
+        {% endblock %}
+      </main>
+    </div>
+  </div>
+</div>

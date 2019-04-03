@@ -1,0 +1,22 @@
+{% if cardsMarketplace %}
+  <div class="marketplace-card-wrapper">
+    <div class="marketplace-card-gutter"></div>
+    {% for item in cardsMarketplace %}
+      <div class="marketplace-card">
+        <a href="{{ item.link }}">
+          <img alt="" class="marketplace-card-img" src="{{ item.img }}">
+        </a>
+        <div class="marketplace-card-body">
+          <a href="{{ item.link }}">
+            <p class="marketplace-card__name">{{ item.name }}</p>
+          </a>
+          <p class="marketplace-card__descr">{{ item.descr }}</p>
+          <p class="marketplace-card__price">
+            <span class="marketplace-card__price-icon">{{ item.currency }}</span>
+            {{ item.value }}
+          </p>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}

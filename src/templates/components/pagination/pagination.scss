@@ -1,0 +1,30 @@
+.pagination {
+  &__wrapper {
+    @include make-col(12);
+  }
+
+  &__button {
+    &-wrapper {
+      @include make-col(12);
+      display: flex;
+      justify-content: center;
+      margin-top: 50px;
+      margin-bottom: 40px;
+
+      @include mq-down(sm) {
+        margin-top: 30px;
+      }
+    }
+  }
+
+  &__controls {
+    &-wrapper {
+      max-width: 320px;
+      margin: 0 auto;
+      box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.1);
+      border-radius: 4px;
+      display: flex;
+      justify-content: center;
+    }
+  }
+}

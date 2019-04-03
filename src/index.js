@@ -23,6 +23,7 @@ import './templates/components/tabs/tabs';
 import './templates/components/fineuploader/fineuploader';
 import './templates/components/tooltip/tooltip';
 import './templates/components/filter/filter';
+import './templates/components/cards/cards-marketplace'
 //pages
 var landing = require('./index.twig');
 var loginMobile = require('./templates/pages/login-mobile.twig');
