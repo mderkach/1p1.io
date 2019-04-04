@@ -1,0 +1,32 @@
+.screen {
+  &__cart {
+    padding-top: 70px;
+    background-color: #fafafa;
+  }
+}
+
+.cart {
+  &__container {
+    @include make-container();
+    @include make-container-max-widths($max-widths: $container-max-widths, $breakpoints: $grid-breakpoints);
+  }
+
+  &__wrapper {
+    @include make-row();
+  }
+
+  &-items {
+
+    &__wrapper {
+      width: 100%;
+      max-width: 780px;
+      margin-right: 10px;
+    }
+
+    &__aside {
+      width: 100%;
+      max-width: 380px;
+      margin-left: 10px;
+    }
+  }
+}

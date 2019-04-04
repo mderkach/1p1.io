@@ -150,6 +150,10 @@ module.exports = {
       filename: 'catalogue.html',
       template: `${PATHS.src}/templates/pages/catalogue.twig`,
     }),
+    new HtmlWebpackPlugin({
+      filename: 'cart.html',
+      template: `${PATHS.src}/templates/pages/cart.twig`,
+    }),
     new CopyWebpackPlugin([
       { from: `${PATHS.src}/img`, to: `${PATHS.assets}img` },
       { from: `${PATHS.src}/fonts`, to: `${PATHS.assets}fonts` },
