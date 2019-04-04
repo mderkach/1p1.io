@@ -17,16 +17,41 @@
 
   &-items {
 
-    &__wrapper {
+    &__container {
       width: 100%;
       max-width: 780px;
       margin-right: 10px;
+    }
+
+    &__wrapper, &__aside {
+      width: 100%;
+      background: #fff;
+      border-radius: 4px;
+      box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.1);
     }
 
     &__aside {
       width: 100%;
       max-width: 380px;
       margin-left: 10px;
+    }
+  }
+
+  &-header {
+    &__wrapper {
+      @extend .popup__filter-header-wrapper;
+    }
+
+    &__outer {
+      margin: 30px 0;
+      display: block;
+      width: 100%;
+    }
+
+    &__count {
+      @extend .popup__filter-count;
+      font-size: rem(36);
+      margin-left: 20px;
     }
   }
 }
