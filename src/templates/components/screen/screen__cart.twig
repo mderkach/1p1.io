@@ -4,16 +4,20 @@
       <div class="cart-header__outer">
         <div class="cart-header__wrapper">
           <h1 class="header__h1 regular__h1">Корзина</h1>
-          <span class="cart-header__count">3 товара</span>
+          <span class="cart-header__count">{{cartItems.length}}
+            товаров</span>
         </div>
       </div>
       <main class="cart-items__container">
         <div class="cart-items__wrapper">
           {% include "../cards/cards-cart.twig" %}
         </div>
+        <div class="cart-delivery__wrapper">
+          {% include "../form/form-cart-delivery.twig" %}
+        </div>
       </main>
       <aside class="cart-items__aside">
-        asi
+        {% include "../form/form-cart-checkout.twig" %}
       </aside>
     </div>
   </div>

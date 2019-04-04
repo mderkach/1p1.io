@@ -1,0 +1,61 @@
+{% if checkoutInfo %}
+  <form action="#" class="form-cart-checkout" method="POST">
+    <div class="form-cart-checkout__header">
+      <p class="form-cart-checkout__header-descr">Сумма заказа:</p>
+      <span class="form-cart-checkout__header-value">
+        {{ checkoutInfo.orderValue }}
+        <span>{{ checkoutInfo.priceTag }}</span>
+      </span>
+    </div>
+    <div class="form-cart-checkout__support">
+      <div class="form-cart-checkout__support-wrapper">
+        <img alt="" src="/assets/img/icons/icon-heart-color.svg">
+        <p class="form-cart-checkout__support-value">
+          {{ checkoutInfo.supportValue }}
+          <span>{{ checkoutInfo.priceTag }}</span>
+        </p>
+      </div>
+      <p class="form-cart-checkout__support-descr">пойдут на поддержку
+        {% for fund in checkoutInfo.funds %}
+          <span>{{ fund.name }}</span>
+          {% if loop.last == false %},{% else %}.
+          {% endif %}
+        {% endfor %}
+      </p>
+    </div>
+    <div class="form-cart-checkout__delivery">
+      <div class="form-cart-checkout__delivery-info">
+        <p class="form-cart-checkout__delivery-descr">Доставка:</p>
+        <span class="form-cart-checkout__delivery-value">
+          {{ checkoutInfo.deliveryValue }}
+          <span>{{ checkoutInfo.priceTag }}</span>
+        </span>
+      </div>
+      <div class="form-cart-checkout__delivery-select-wrapper">
+        <select class="form-cart-checkout__delivery-select" id="" name="delivery">
+          {% for option in  checkoutInfo.delivery %}
+            <option value="{{ option.value }}">{{ option.name}}
+              ({{ option.duration }})</option>
+          {% endfor %}
+        </select>
+        <img alt="" class="form-cart-checkout__delivery-select-chevron" src="/assets/img/icons/icon-chevron-down.svg">
+      </div>
+      <p class="form-cart-checkout__delivery-select-descr">Мы используем службу доставки, которая доставит посылку к вам домой. Вы получите номер, по которому сможете отследить посылку.</p>
+    </div>
+    <div class="form-cart-checkout__total">
+      <div class="form-cart-checkout__total-wrapper">
+        <p class="form-cart-checkout__total-descr">Итого:</p>
+        <span class="form-cart-checkout__total-value"> 
+        {{  checkoutInfo.totalValue }}
+        <span>{{ checkoutInfo.priceTag }}</span>
+        </span>
+      </div>
+      <input class="btn__form-checkout-submit" disabled type="submit" value="Оформить заказ">
+    </div>
+    <div class="form-cart-checkout__addInfo">
+      <img alt="" src="/assets/img/icons/icon-shield-color.svg">
+      <a class="form-cart-checkout__addInfo-link" href="#">Безопасная сделка</a>
+      <p class="form-cart-checkout__addInfo-descr">Нажимая кнопку Оформить заказ - вы подтверждаете согласие с Офертой и Условиями пользовательского соглашения.</p>
+    </div>
+  </form>
+{% endif %}

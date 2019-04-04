@@ -478,6 +478,36 @@
       }
     }
   }
+
+  &__cart {
+    &-remove {
+      background: transparent;
+      border: none;
+      padding: 0;
+      position: absolute;
+      top: -15px;
+      right: 0;
+      width: 15px;
+      height: 15px;
+    }
+  }
+
+  &__form {
+    &-checkout {
+      &-submit {
+        width: 100%;
+        max-width: 320px;
+        margin: 25px auto;
+        padding: 11px 0;
+        border-radius: 96px;
+        background-color: #4489ff;
+
+        &:disabled {
+          opacity: .5;
+        }
+      }
+    }
+  }
 }
 
 .hamburger {

@@ -1,0 +1,119 @@
+.form {
+  &-cart {
+    &-delivery {
+      &__header {
+        @extend .form-cart-checkout__header;
+
+        &-descr {
+          @extend .form-cart-checkout__header-descr;
+        }
+      }
+
+      &-body {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        padding: 20px 30px 40px;
+      }
+
+      &__contacts {
+        &-wrapper {
+          width: 100%;
+          max-width: 250px;
+          margin-right: $gap;
+        }
+
+        &-header {
+          font-size: rem(15);
+          font-weight: bold;
+          line-height: 2;
+          color: #000;
+          margin-bottom: 10px;
+        }
+      }
+
+      &__address {
+        &-wrapper {
+          width: 100%;
+          max-width: 440px;
+          margin-left: $gap;
+        }
+
+        &-header {
+          @extend .form-cart-delivery__contacts-header;
+        }
+
+        &-doubleInput {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+
+          >.form-cart-delivery__input-outer {
+            max-width: 210px;
+          }
+        }
+      }
+
+      &__input {
+        font-size: rem(15);
+        font-weight: 500;
+        line-height: 1.47;
+        color: #000;
+        padding: 0 5px;
+        width: 100%;
+        border: none;
+        border-bottom: 2px solid #ebeff4;
+        padding: 0 5px 5px;
+
+        &::placeholder{
+          color: rgba($color: #000, $alpha: .3);
+        }
+
+        &:focus {
+          border-color: #4489ff;
+        }
+
+        &-label {
+          top: 0;
+          left: 0;
+          font-size: rem(10);
+          font-weight: bold;
+          line-height: 1;
+          color: #4b5769;
+          margin-bottom: 0;
+          text-transform: uppercase;
+        }
+
+        &-outer {
+          position: relative;
+          width: 100%;
+          margin-bottom: 20px;
+        }
+      }
+
+      &__select {
+        @extend .form-cart-checkout__delivery-select;
+        padding-top: 0;
+        padding-bottom: 4px;
+
+        &:required {
+          &:invalid {
+            color: rgba($color: #000, $alpha: .3)
+          }
+        }
+
+        &-wrapper {
+          @extend .form-cart-checkout__delivery-select-wrapper;
+          padding: 0;
+          max-width: 210px;
+        }
+
+        &-chevron {
+          @extend .form-cart-checkout__delivery-select-chevron;
+          right: 5px;
+        }
+      }
+    }
+  }
+}

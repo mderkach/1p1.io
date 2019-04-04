@@ -6,10 +6,17 @@
     justify-content: flex-start;
     align-items: center;
     border: none;
+    border-bottom: 1px solid #ebebeb;
+    border-radius: 0;
     padding: 30px;
+    
+    &:nth-last-child(1) {
+      border-bottom: none
+    }
 
     &-body {
       @extend .card-body;
+      position: relative;
       padding: 0;
       margin-left: 25px;
       height: 115px;

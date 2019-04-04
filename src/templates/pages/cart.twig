@@ -74,56 +74,130 @@
 		],
 	}
 ] %}
+{% set cartItems = [
+	{
+		name: 'Картина «Сергей» Ольги Молчановой-Пермяковой (арт-аукцион «Всякое добро»)',
+		img: '/assets/img/cart/item-1.jpg',
+		price: '5 085',
+		amount: '10',
+		priceTag: 'Р.'
+	},
+	{
+		name: 'Картина «Сергей» Ольги Молчановой-Пермяковой (арт-аукцион «Всякое добро»)',
+		img: '/assets/img/cart/item-1.jpg',
+		price: '6 085',
+		amount: '2',
+		priceTag: 'Р.'
+	},
+	{
+		name: 'Картина «Сергей» Ольги Молчановой-Пермяковой (арт-аукцион «Всякое добро»)',
+		img: '/assets/img/cart/item-1.jpg',
+		price: '7 085',
+		amount: '1',
+		priceTag: 'Р.'
+	},
+] %}
+{% set checkoutInfo = {
+	priceTag: 'Р.',
+	orderValue: '12 083',
+	supportValue: '1 416.60',
+	funds: [
+		{
+			name: 'Фонд помощи детям в Фонд «Дедморозим» и проекта "Школа семьи" - подготовка к семейной жизни',
+		}, 
+		{
+			name: 'БФ "Бюро добрых дел"',
+		}
+	],
+	delivery: [
+		{
+			name: 'Стандартная доставка',
+			duration: '14 дней',
+			value: 'standart',
+		},
+		{
+			name: 'Нестандартная доставка',
+			duration: 'сюрприз :)',
+			value: 'non-standart',
+		}
+	],
+	deliveryValue: '85',
+	totalValue: '12 168',
+} %}
+
+{% set countries = [
+	{
+		name: 'Выберите страну',
+		value: '',
+		hidden: true
+	},
+	{
+		name: 'Russia',
+		value: 'russia'
+	}
+] 
+%}
+{% set regions  = [
+	{
+		name: 'Выберите область',
+		value: '',
+		hidden: true
+	},
+	{
+		name: 'Moscow',
+		value: 'Moscow',
+	}
+] %}
 
 <!DOCTYPE html>
 <html lang="ru">
 
-  <head>
+<head>
 
-    <meta
-    charset="utf-8">
-    <!-- <base href="/"> -->
-    <title>{{ page_title }}</title>
-    <meta content="" name="description">
-
-    <meta content="IE=edge" http-equiv="X-UA-Compatible">
-    <meta
-    content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
-
-    <!-- Template Basic Images Start -->
-    <meta content="path/to/image.jpg" property="og:image">
-    <link href="#" rel="icon">
-    <link href="#" rel="apple-touch-icon" sizes="180x180">
-    <!-- Template Basic Images End -->
-
-    <!-- Custom Browsers Color Start -->
   <meta
-    content="#4489ff" name="theme-color"> <!-- Custom Browsers Color End -->
-  </head>
+  charset="utf-8">
+  <!-- <base href="/"> -->
+  <title>{{ page_title }}</title>
+  <meta content="" name="description">
 
-  <body>
-    {% block header %}
-      {% include "../components/header/header.twig" %}
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta
+  content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
+
+  <!-- Template Basic Images Start -->
+  <meta content="path/to/image.jpg" property="og:image">
+  <link href="#" rel="icon">
+  <link href="#" rel="apple-touch-icon" sizes="180x180">
+  <!-- Template Basic Images End -->
+
+  <!-- Custom Browsers Color Start -->
+<meta
+  content="#4489ff" name="theme-color"> <!-- Custom Browsers Color End -->
+</head>
+
+<body>
+  {% block header %}
+    {% include "../components/header/header.twig" %}
+  {% endblock %}
+  {% block body %}
+    {% block cart %}
+      {% include "../components/screen/screen__cart.twig" %}
     {% endblock %}
-    {% block body %}
-      {% block cart %}
-        {% include "../components/screen/screen__cart.twig" %}
-      {% endblock %}
+  {% endblock %}
+  {% block footerMain %}
+    {% block blockchain %}{% endblock %}
+    {% block footer %}
+      {% include "../components/footer/footer.twig" %}
     {% endblock %}
-    {% block footerMain %}
-      {% block blockchain %}{% endblock %}
-      {% block footer %}
-        {% include "../components/footer/footer.twig" %}
-      {% endblock %}
-      {% block mobileMenu %}
-        {% include "../components/mobile-menu/mobile-menu.twig" %}
-      {% endblock %}
-      {% block popup %}
-        {% include "../components/popup/popup.twig" %}
-        {% include "../components/popup/popup-sucess.twig" %}
-      {% endblock %}
-      {% block video %}{% endblock %}
+    {% block mobileMenu %}
+      {% include "../components/mobile-menu/mobile-menu.twig" %}
     {% endblock %}
-  </body>
+    {% block popup %}
+      {% include "../components/popup/popup.twig" %}
+      {% include "../components/popup/popup-sucess.twig" %}
+    {% endblock %}
+    {% block video %}{% endblock %}
+  {% endblock %}
+</body>
 
 </html>

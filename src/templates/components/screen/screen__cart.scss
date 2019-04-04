@@ -1,6 +1,6 @@
 .screen {
   &__cart {
-    padding-top: 70px;
+    padding: 70px 0 40px;
     background-color: #fafafa;
   }
 }
@@ -23,16 +23,19 @@
       margin-right: 10px;
     }
 
-    &__wrapper, &__aside {
+    &__wrapper,
+    &__aside {
       width: 100%;
+      margin-bottom: 20px;
       background: #fff;
       border-radius: 4px;
       box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.1);
+      overflow: hidden;
     }
 
     &__aside {
-      width: 100%;
       max-width: 380px;
+      height: 100%;
       margin-left: 10px;
     }
   }
@@ -52,6 +55,12 @@
       @extend .popup__filter-count;
       font-size: rem(36);
       margin-left: 20px;
+    }
+  }
+
+  &-delivery {
+    &__wrapper {
+      @extend .cart-items__wrapper;
     }
   }
 }

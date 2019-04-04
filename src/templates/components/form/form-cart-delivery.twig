@@ -1,0 +1,31 @@
+{% import "../form/form-cart-macro.twig" as inputs %}
+
+<form action="#" class="form-cart-delivery" method="POST">
+  <div class="form-cart-delivery__header">
+    <p class="form-cart-delivery__header-descr">Адрес доставки</p>
+  </div>
+  <div class="form-cart-delivery-body">
+    <div class="form-cart-delivery__contacts-wrapper">
+      <p class="form-cart-delivery__contacts-header">
+        Контакты получателя:
+      </p>
+      {{ inputs.input('Полное имя получателя', 'reciever-name', 'text') }}
+      {{ inputs.input('Номер телефона', 'reciever-tel', 'tel', '+7 ( ) - - -') }}
+      {{ inputs.input('Email', 'reciever-mail', 'email', 'Ваша@почта') }}
+    </div>
+    <div class="form-cart-delivery__address-wrapper">
+      <p class="form-cart-delivery__address-header">
+        Адрес:
+      </p>
+      <div class="form-cart-delivery__address-doubleInput">
+        {{ inputs.select('Страна','Country', countries) }}
+        {{ inputs.select('Область','Region', regions) }}
+      </div>
+      <div class="form-cart-delivery__address-doubleInput">
+        {{ inputs.input('Город', 'reciever-city', 'text', 'Введите название города') }}
+        {{ inputs.input('Индекс', 'reciever-index', 'text', 'Введите индекс') }}
+      </div>
+      {{ inputs.input('Улица', 'reciever-street', 'text', 'Ваш адрес') }}
+    </div>
+  </div>
+</form>
