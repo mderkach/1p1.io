@@ -9,7 +9,7 @@
       <p class="form-cart-delivery__contacts-header">
         Контакты получателя:
       </p>
-      {{ inputs.input('Полное имя получателя', 'reciever-name', 'text') }}
+      {{ inputs.input('Полное имя получателя', '', 'text') }}
       {{ inputs.input('Номер телефона', 'reciever-tel', 'tel', '+7 ( ) - - -') }}
       {{ inputs.input('Email', 'reciever-mail', 'email', 'Ваша@почта') }}
     </div>
@@ -26,6 +26,14 @@
         {{ inputs.input('Индекс', 'reciever-index', 'text', 'Введите индекс') }}
       </div>
       {{ inputs.input('Улица', 'reciever-street', 'text', 'Ваш адрес') }}
+    </div>
+    <div class="form-cart-delivery__checkbox-outer">
+      <label class="form-cart-delivery__checkbox-label" for="checkbox">
+        <input class="form-cart-delivery__checkbox" id="chekbox" name="checkbox" type="checkbox" checked>
+        Зарегистрировать меня, используя введенные данные
+        <span class="form-cart-delivery__checkbox-checkmark"></span>
+      </label>
+
     </div>
   </div>
 </form>

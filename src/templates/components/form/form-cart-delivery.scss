@@ -11,6 +11,7 @@
 
       &-body {
         display: flex;
+        flex-wrap: wrap;
         flex-direction: row;
         justify-content: flex-start;
         padding: 20px 30px 40px;
@@ -66,7 +67,7 @@
         border-bottom: 2px solid #ebeff4;
         padding: 0 5px 5px;
 
-        &::placeholder{
+        &::placeholder {
           color: rgba($color: #000, $alpha: .3);
         }
 
@@ -112,6 +113,66 @@
         &-chevron {
           @extend .form-cart-checkout__delivery-select-chevron;
           right: 5px;
+        }
+      }
+
+      &__checkbox {
+        width: 0;
+        height: 0;
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+
+        &-label {
+          position: relative;
+          padding-left: 30px;
+          font-size: rem(15);
+          font-weight: 500;
+          line-height: 1.47;
+          color: #000;
+          cursor: pointer;
+
+          &:hover {
+            .form-cart-delivery__checkbox {
+              ~.form-cart-delivery__checkbox-checkmark {
+                border-color: #4489ff;
+              }
+            }
+          }
+
+          .form-cart-delivery__checkbox {
+            &:checked {
+              ~.form-cart-delivery__checkbox-checkmark {
+                border-color: #4489ff;
+                background-color: #4489ff;
+
+                &::after {
+                  position: absolute;
+                  content: "";
+                  left: 6px;
+                  top: 2px;
+                  width: 6px;
+                  height: 12px;
+                  border: solid #fff;
+                  border-width: 0 2px 2px 0;
+                  transform: rotate(45deg);
+                }
+              }
+            }
+          }
+        }
+
+        &-checkmark {
+          width: 22px;
+          height: 22px;
+          border: 2px solid #ebeff4;
+          border-radius: 4px;
+          position: absolute;
+          left: 0;
+          top: 0;
+          background: #fff;
         }
       }
     }
