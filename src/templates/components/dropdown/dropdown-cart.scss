@@ -1,0 +1,56 @@
+.dropdown {
+  &__cart {
+    &-wrapper {
+      position: absolute;
+      right: 0;
+      top: 6px;
+
+      .dropdown__trigger {
+        position: relative;
+        width: 36px;
+        height: 36px;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+        background-color: #fff;
+      }
+    }
+
+    &-counter {
+      position: absolute;
+      top: 2px;
+      right: 2px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background-color: #ff6e63;
+      font-size: rem(10);
+      font-weight: bold;
+      line-height: normal;
+      color: #fff;
+    }
+
+    &-cards {
+      &-wrapper {
+        width: 280px;
+        height: auto;
+        max-height: 230px;
+        overflow: auto;
+
+        &::-webkit-scrollbar {
+          margin-right: 5px;
+          width: 20px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          border-radius: 10px;
+          background: #d8d8d8;
+          border: 5px solid transparent;
+          background-clip: padding-box;
+        }
+      }
+    }
+  }
+}

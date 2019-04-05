@@ -1,6 +1,7 @@
 [class^='btn'] {
   display: block;
   border: 1px solid #fff;
+  box-sizing: border-box;
   color: #fff;
   width: 100%;
 
@@ -543,6 +544,22 @@
           opacity: .5;
         }
       }
+    }
+  }
+
+  &--dropdown {
+    &-checkout {
+      max-width: 150px;
+      padding: 10px 15px;
+      border-radius: 96px;
+      border: 1px solid #4489ff;
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+      background-color: #4489ff;
+      color: #fff;
+      font-size: rem(14);
+      font-weight: 500;
+      line-height: normal;
+      text-align: center;
     }
   }
 }

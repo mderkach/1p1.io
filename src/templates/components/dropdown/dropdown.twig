@@ -1,20 +1,33 @@
 {% if dropdown %}
-<div class="dropdown-wrapper {{dropdown.type}}">
-  <button class="dropdown__trigger">
-    {% if dropdown.type == 'dropdown__account-wrapper'%}
-      {% for user in accountInfo %}
-        <img src="{{ user.avatar }}" alt="" class="{{dropdown.imgClass}}">
+  <div class="dropdown-wrapper {{dropdown.type}}">
+    <button class="dropdown__trigger">
+      {% if dropdown.type == 'dropdown__account-wrapper' %}
+        {% for user in accountInfo %}
+          <img src="{{ user.avatar }}" alt="" class="{{dropdown.imgClass}}">
+        {% endfor %}
+      {% elseif dropdown.type == 'dropdown__banner-edit' %}
+        <img src="/assets/img/icons/icon-camera.svg" alt="">
+        Изменить обложку
+      {% elseif dropdown.type ==  'dropdown__cart-wrapper' %}
+        <img src="/assets/img/icons/icon-cart-color.svg" alt="">
+        {% if cartItems.length > 0 %}
+          <span class="dropdown__cart-counter">{{ cartItems.length }}</span>
+        {% endif %}
+      {% endif %}
+    </button>
+    <div class="dropdown__menu">
+      {% for item in dropdown.items if dropdown.type != 'dropdown__cart-wrapper' %}
+        <a href="{{item.link}}" class="dropdown__menu-item">{{item.caption}}</a> 
       {% endfor %}
-    {% endif %}
-    {% if dropdown.type == 'dropdown__banner-edit'%}
-      <img src="/assets/img/icons/icon-camera.svg" alt="">
-      Изменить обложку
-    {% endif %}
-  </button>
-  <div class="dropdown__menu">
-    {% for item in dropdown.items %}
-      <a href="{{item.link}}" class="dropdown__menu-item">{{item.caption}}</a> 
-    {% endfor %}
+      {% if dropdown.type == 'dropdown__cart-wrapper' %}
+        <div class="dropdown__cart-cards-wrapper">
+          {% include "../cards/cards-cart--dropdown.twig" %}
+        </div>
+        <div class="cards-cart--dropdown-total-wrapper">
+          <p class="cards-cart--dropdown-total">7 083 Р.</p>
+          <a role="button" href="#" class="btn--dropdown-checkout">Оформить заказ</a>
+        </div>
+      {% endif %}
+    </div>
   </div>
-</div>
 {% endif %}
