@@ -9,31 +9,82 @@
       <p class="form-cart-delivery__contacts-header">
         Контакты получателя:
       </p>
-      {{ inputs.input('Полное имя получателя', '', 'text') }}
-      {{ inputs.input('Номер телефона', 'reciever-tel', 'tel', '+7 ( ) - - -') }}
-      {{ inputs.input('Email', 'reciever-mail', 'email', 'Ваша@почта') }}
+      {% if not accountInfo %}
+        {{ inputs.input('Полное имя получателя', 'reciever-name', 'text') }}
+        {{ inputs.input('Номер телефона', 'reciever-tel', 'tel', '+7 ( ) - - -') }}
+        {{ inputs.input('Email', 'reciever-mail', 'email', 'Ваша@почта') }}
+      {% else %}
+        {% for user in accountInfo %}
+          <div class="form-cart-delivery__contacts-info">
+            <p class="form-cart-delivery__contacts-info-descr">{{ user.name }}</p>  
+            <p class="form-cart-delivery__contacts-info-descr">{{ user.contacts.number }}</p>  
+            <p class="form-cart-delivery__contacts-info-descr">{{ user.contacts.email }}</p>  
+            <input type="hidden" name="reciever-name" value="{{ user.name }}">
+            <input type="hidden" name="reciever-tel" value="{{ user.contacts.number }}">
+            <input type="hidden" name="reciever-email" value="{{ user.contacts.email }}">
+            <button role="button" class="btn-edit-contacts">Изменить контакты</button>
+          </div>
+        {% endfor %}
+      {% endif %}
     </div>
     <div class="form-cart-delivery__address-wrapper">
       <p class="form-cart-delivery__address-header">
         Адрес:
       </p>
-      <div class="form-cart-delivery__address-doubleInput">
-        {{ inputs.select('Страна','Country', countries) }}
-        {{ inputs.select('Область','Region', regions) }}
-      </div>
-      <div class="form-cart-delivery__address-doubleInput">
-        {{ inputs.input('Город', 'reciever-city', 'text', 'Введите название города') }}
-        {{ inputs.input('Индекс', 'reciever-index', 'text', 'Введите индекс') }}
-      </div>
-      {{ inputs.input('Улица', 'reciever-street', 'text', 'Ваш адрес') }}
+      {% for user in accountInfo %}
+        {% if user.address == false %}
+          <div class="form-cart-delivery__address-doubleInput">
+            {{ inputs.select('Страна','Country', countries) }}
+            {{ inputs.select('Область','Region', regions) }}
+          </div>
+          <div class="form-cart-delivery__address-doubleInput">
+            {{ inputs.input('Город', 'reciever-city', 'text', 'Введите название города') }}
+            {{ inputs.input('Индекс', 'reciever-index', 'text', 'Введите индекс') }}
+          </div>
+          {{ inputs.input('Улица', 'reciever-street', 'text', 'Ваш адрес') }}
+          <div class="form-cart-delivery__checkbox-outer">
+            <label class="form-cart-delivery__checkbox-label" for="checkbox-save-address">
+              <input class="form-cart-delivery__checkbox" id="chekbox-save-address" name="checkbox-save-address" type="checkbox" checked>
+              Сохранить введенный адрес
+              <span class="form-cart-delivery__checkbox-checkmark"></span>
+            </label>
+          </div>
+        {% else %}
+          {% for address in user.address if user.address.length > 1 %}
+            <div class="form-cart-delivery__radio-wrapper">
+            <label for="radio-adress-{{ loop.index }}" class="form-cart-delivery__radio-label">
+              <input class="form-cart-delivery__radio" type="radio" name="radio-adress" id="radio-adress-{{ loop.index }}">
+              {{ address.country }}, {{ address.region }} <br>
+              {{ address.cityPrefix }} {{ address.city }}, индекс {{ address.index }} <br>
+              {{ address.address }}
+              <span class="form-cart-delivery__radio-checkmark"></span>
+            </label>
+          </div>
+          {% endfor %}
+          {% for address in user.address if user.address.length == 1 %}
+            <div class="form-cart-delivery__contacts-info">
+              <p class="form-cart-delivery__contacts-info-descr">{{ address.country }}, {{ address.region }}</p>  
+              <p class="form-cart-delivery__contacts-info-descr">{{ address.cityPrefix }} {{ address.city }}, индекс {{ address.index }}</p>  
+              <p class="form-cart-delivery__contacts-info-descr">{{ address.address }}</p>  
+              <input type="hidden" name="reciever-country" value="{{ address.country }}">
+              <input type="hidden" name="reciever-region" value="{{ address.region }}">
+              <input type="hidden" name="reciever-city" value="{{ address.cityPrefix }} {{ address.city }}">
+              <input type="hidden" name="reciever-index" value="{{ address.index }}">
+              <input type="hidden" name="reciever-adress" value="{{ address.address }}">
+            </div>
+          {% endfor %}
+           <button role="button" class="btn-edit-adress">Использовать другой адрес</button>
+        {% endif %}
+      {% endfor %}
     </div>
-    <div class="form-cart-delivery__checkbox-outer">
-      <label class="form-cart-delivery__checkbox-label" for="checkbox">
-        <input class="form-cart-delivery__checkbox" id="chekbox" name="checkbox" type="checkbox" checked>
-        Зарегистрировать меня, используя введенные данные
-        <span class="form-cart-delivery__checkbox-checkmark"></span>
-      </label>
-
-    </div>
+    {% if not accountInfo %}
+      <div class="form-cart-delivery__checkbox-outer">
+        <label class="form-cart-delivery__checkbox-label" for="checkbox">
+          <input class="form-cart-delivery__checkbox" id="chekbox" name="checkbox" type="checkbox" checked>
+          Зарегистрировать меня, используя введенные данные
+          <span class="form-cart-delivery__checkbox-checkmark"></span>
+        </label>
+      </div>
+    {% endif %}
   </div>
 </form>

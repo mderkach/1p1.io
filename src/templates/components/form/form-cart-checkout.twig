@@ -32,7 +32,7 @@
         </span>
       </div>
       <div class="form-cart-checkout__delivery-select-wrapper">
-        <select class="form-cart-checkout__delivery-select" id="" name="delivery">
+        <select class="form-cart-checkout__delivery-select" name="delivery">
           {% for option in  checkoutInfo.delivery %}
             <option value="{{ option.value }}">{{ option.name}}
               ({{ option.duration }})</option>

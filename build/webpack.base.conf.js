@@ -154,6 +154,18 @@ module.exports = {
       filename: 'cart.html',
       template: `${PATHS.src}/templates/pages/cart.twig`,
     }),
+    new HtmlWebpackPlugin({
+      filename: 'cart--has-contacts.html',
+      template: `${PATHS.src}/templates/pages/cart--has-contacts.twig`,
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'cart--has-address--multiple.html',
+      template: `${PATHS.src}/templates/pages/cart--has-address--multiple.twig`,
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'cart--has-address--single.html',
+      template: `${PATHS.src}/templates/pages/cart--has-address--single.twig`,
+    }),
     new CopyWebpackPlugin([
       { from: `${PATHS.src}/img`, to: `${PATHS.assets}img` },
       { from: `${PATHS.src}/fonts`, to: `${PATHS.assets}fonts` },
