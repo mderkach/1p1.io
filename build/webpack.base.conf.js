@@ -166,6 +166,10 @@ module.exports = {
       filename: 'cart--has-address--single.html',
       template: `${PATHS.src}/templates/pages/cart--has-address--single.twig`,
     }),
+    new HtmlWebpackPlugin({
+      filename: 'cart--mobile.html',
+      template: `${PATHS.src}/templates/pages/cart--mobile.twig`,
+    }),
     new CopyWebpackPlugin([
       { from: `${PATHS.src}/img`, to: `${PATHS.assets}img` },
       { from: `${PATHS.src}/fonts`, to: `${PATHS.assets}fonts` },

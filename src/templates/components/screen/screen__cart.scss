@@ -9,6 +9,7 @@
   &__container {
     @include make-container();
     @include make-container-max-widths($max-widths: $container-max-widths, $breakpoints: $grid-breakpoints);
+
   }
 
   &__wrapper {
@@ -21,6 +22,11 @@
       width: 100%;
       max-width: 780px;
       margin-right: 10px;
+
+      @include mq-down(lg) {
+        max-width: 100%;
+        margin-right: 0;
+      }
     }
 
     &__wrapper,
@@ -37,6 +43,11 @@
       max-width: 380px;
       height: 100%;
       margin-left: 10px;
+
+      @include mq-down(lg) {
+        max-width: 100%;
+        margin-left: 0;
+      }
     }
   }
 

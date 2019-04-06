@@ -1,13 +1,15 @@
 <section class="screen__cart">
   <div class="cart__container">
     <div class="cart__wrapper">
+    {% if screenHeader %}
       <div class="cart-header__outer">
         <div class="cart-header__wrapper">
-          <h1 class="header__h1 regular__h1">Корзина</h1>
+          <h1 class="header__h1 regular__h1">{{ screenHeader }}</h1>
           <span class="cart-header__count">{{cartItems.length}}
             товаров</span>
         </div>
       </div>
+      {% endif %}
       <main class="cart-items__container">
         <div class="cart-items__wrapper">
           {% include "../cards/cards-cart.twig" %}

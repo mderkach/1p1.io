@@ -15,6 +15,10 @@
         flex-direction: row;
         justify-content: flex-start;
         padding: 20px 30px 40px;
+
+        @include mq-down(lg) {
+          padding: 15px 20px;
+        }
       }
 
       &__contacts {
@@ -22,6 +26,11 @@
           width: 100%;
           max-width: 250px;
           margin-right: $gap;
+
+          @include mq-down(lg) {
+            max-width: 100%;
+            margin-right: 0;
+          }
         }
 
         &-header {
@@ -50,6 +59,11 @@
           width: 100%;
           max-width: 440px;
           margin-left: $gap;
+
+          @include mq-down(lg) {
+            max-width: 100%;
+            margin-left: 0;
+          }
         }
 
         &-header {
@@ -64,6 +78,10 @@
 
           >.form-cart-delivery__input-outer {
             max-width: 210px;
+
+            @include mq-down(lg) {
+              max-width: 48%;
+            }
           }
         }
       }
@@ -118,6 +136,10 @@
           @extend .form-cart-checkout__delivery-select-wrapper;
           padding: 0;
           max-width: 210px;
+
+          @include mq-down(lg) {
+            max-width: 100%;
+          }
         }
 
         &-chevron {
