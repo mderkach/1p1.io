@@ -1,6 +1,9 @@
 <section class="screen__cart">
   <div class="cart__container">
     <div class="cart__wrapper">
+    {% if breadcrumbs %}
+      {% include "../breadcrumbs/breadcrumbs.twig" %}
+    {% endif %}
     {% if screenHeader %}
       <div class="cart-header__outer">
         <div class="cart-header__wrapper">

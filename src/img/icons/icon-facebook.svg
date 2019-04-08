@@ -1,14 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="36px" height="36px" viewBox="0 0 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: sketchtool 53.2 (72643) - https://sketchapp.com -->
-    <title>7B7A4B67-56DD-47ED-9214-C668530E1919</title>
-    <desc>Created with sketchtool.</desc>
-    <g id="Header-&amp;-Footer" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Footer/footer-desktop-1280" transform="translate(-146.000000, -261.000000)" fill-rule="nonzero">
-            <g id="icon/social/ico-social-facebook-ghost" transform="translate(146.000000, 261.000000)">
-                <circle id="Oval-path" stroke="#4489FF" stroke-width="1" cx="18" cy="18" r="17.5"></circle>
-                <path d="M22.425,14.625 L19.425,14.625 L19.425,12.675 C19.425,11.925 19.95,11.775 20.25,11.775 L22.35,11.775 L22.35,8.475 L19.425,8.475 C16.125,8.475 15.45,10.95 15.45,12.45 L15.45,14.625 L13.575,14.625 L13.575,18 L15.45,18 L15.45,27.525 L19.425,27.525 L19.425,18 L22.125,18 L22.425,14.625 Z" id="Shape" fill="#4489FF"></path>
-            </g>
-        </g>
-    </g>
-</svg>
+<svg width="36" height="36" xmlns="http://www.w3.org/2000/svg"><g fill-rule="nonzero" fill="none"><circle stroke="#4489FF" cx="18" cy="18" r="17.5"/><path d="M22.425 14.625h-3v-1.95c0-.75.525-.9.825-.9h2.1v-3.3h-2.925c-3.3 0-3.975 2.475-3.975 3.975v2.175h-1.875V18h1.875v9.525h3.975V18h2.7l.3-3.375z" fill="#4489FF"/></g></svg>
