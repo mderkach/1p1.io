@@ -5,19 +5,30 @@
       <div class="cart-header__outer">
         <div class="cart-header__wrapper">
           <h1 class="header__h1 regular__h1">{{ screenHeader }}</h1>
-          <span class="cart-header__count">
-          {{cartItems.length}}
-            товара</span>
+          {% if checkoutMode != 'payment' %}
+            <span class="cart-header__count">
+              {{cartItems.length}}
+              товара
+            </span>
+          {% endif %}
         </div>
       </div>
       {% endif %}
       <main class="cart-items__container">
-        <div class="cart-items__wrapper">
-          {% include "../cards/cards-cart.twig" %}
-        </div>
-        <div class="cart-delivery__wrapper">
-          {% include "../form/form-cart-delivery.twig" %}
-        </div>
+        {% if checkoutMode != 'payment' %}
+          <div class="cart-items__wrapper">
+            {% include "../cards/cards-cart.twig" %}
+          </div>
+        {% else %}
+          <div class="cart-items__wrapper">
+            {% include "../form/form-cart-payment.twig" %}
+          </div>
+        {% endif %}
+        {% if checkoutMode != 'payment' %}
+          <div class="cart-delivery__wrapper">
+            {% include "../form/form-cart-delivery.twig" %}
+          </div>
+        {% endif %}
       </main>
       <aside class="cart-items__aside">
         {% include "../form/form-cart-checkout.twig" %}

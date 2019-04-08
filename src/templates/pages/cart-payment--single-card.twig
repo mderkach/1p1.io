@@ -1,0 +1,56 @@
+{% extends "../layout/cart.twig" %}
+{% set page_title = "cart payment" %}
+{% set headerType = "--white --no-toggle" %}
+{% set userStatus = "--authorised" %}
+{% set pageType = 'private' %}
+{% set checkoutMode = 'payment'%}
+{% set screenHeader = 'Оплата' %}
+{% set accountInfo = [
+  {
+    avatar: '/assets/img/account/account-avatar.jpg',
+    link: '#',
+    name: 'Квартет И',
+    donations: '0',
+    totalFunds: '0',
+    editable: false,
+    contacts: false,
+		address: false,
+    payment: [ 
+			{
+				cardNumberPlaceholder: '1111 *** 4444',
+				cardNumberValue: '1111 2222 3333 4444',
+				cardOwner: 'Lubomir Frolov',
+				cardValidity: '00 / 00',
+				cardCVVPlaceholder: '***',
+				cardCVV: '123',
+			},
+		]
+  }
+] %}
+{% set checkoutInfo = {
+	priceTag: 'Р.',
+	orderValue: '12 083',
+	supportValue: '1 416.60',
+	funds: [
+		{
+			name: 'Фонд помощи детям в Фонд «Дедморозим» и проекта "Школа семьи" - подготовка к семейной жизни',
+		}, 
+		{
+			name: 'БФ "Бюро добрых дел"',
+		}
+	],
+	delivery: [
+		{
+			name: 'Стандартная доставка',
+			duration: '14 дней',
+			value: 'standart',
+		},
+		{
+			name: 'Нестандартная доставка',
+			duration: 'сюрприз :)',
+			value: 'non-standart',
+		}
+	],
+	deliveryValue: '85',
+	totalValue: '12 168',
+} %}

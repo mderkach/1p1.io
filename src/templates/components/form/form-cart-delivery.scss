@@ -245,8 +245,12 @@
           padding-left: 35px;
           font-size: rem(15);
           font-weight: 500;
-          line-height: 1.33;
+          line-height: 1.5;
           color: #000;
+
+          &::first-line {
+            line-height: 1.25;
+          }
 
           &:hover {
             .form-cart-delivery__radio {

@@ -170,6 +170,18 @@ module.exports = {
       filename: 'cart--mobile.html',
       template: `${PATHS.src}/templates/pages/cart--mobile.twig`,
     }),
+    new HtmlWebpackPlugin({
+      filename: 'cart-payment.html',
+      template: `${PATHS.src}/templates/pages/cart-payment.twig`,
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'cart-payment--single-card.html',
+      template: `${PATHS.src}/templates/pages/cart-payment--single-card.twig`,
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'cart-payment--multiple-card.html',
+      template: `${PATHS.src}/templates/pages/cart-payment--multiple-card.twig`,
+    }),
     new CopyWebpackPlugin([
       { from: `${PATHS.src}/img`, to: `${PATHS.assets}img` },
       { from: `${PATHS.src}/fonts`, to: `${PATHS.assets}fonts` },
