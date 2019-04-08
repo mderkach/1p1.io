@@ -9,6 +9,10 @@
         align-items: center;
         border-bottom: 1px solid #ebeff4;
 
+        @include mq-down(lg) {
+          padding: 15px 20px;
+        }
+
         &-descr {
           font-size: rem(19);
           font-weight: bold;
@@ -49,6 +53,9 @@
           margin-bottom: 0;
           padding: 0 70px 20px 30px;
 
+          @include mq-down(lg) {
+            padding: 0 20px 15px;
+          }
         }
       }
 
@@ -76,6 +83,10 @@
           &-wrapper {
             @extend .form__popup-selectMini-wrapper;
             padding: 0 30px;
+
+            @include mq-down(lg) {
+              padding: 0 20px;
+            }
           }
 
           &-chevron {
@@ -92,6 +103,11 @@
             line-height: 1.31;
             color: #4b5769;
             padding: 15px 30px 20px;
+            margin-bottom: 0;
+
+            @include mq-down(lg) {
+              padding: 15px 20px;
+            }
           }
         }
       }
@@ -117,16 +133,31 @@
           @extend .form-cart-checkout__header;
           border-bottom: none;
           padding-bottom: 10px;
+
+          @include mq-down(lg) {
+            padding: 20px;
+          }
         }
       }
 
       &__addInfo {
         padding: 0 30px 30px;
 
+        @include mq-down(lg) {
+          padding:  0 20px 25px;
+        }
+
         &-link {
+          font-size: rem(13);
+          font-weight: 500;
+          line-height: 1.31;
           margin-left: 5px;
           color: #4489ff;
           border-bottom: dashed 1px #4489ff;
+
+          &:hover {
+            text-decoration: none;
+          }
         }
 
         &-descr {

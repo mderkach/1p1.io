@@ -1,5 +1,5 @@
-var controls = document.querySelectorAll('.form__popup-inputNumberMini-controls');
-var input = document.querySelectorAll('.form__popup-inputNumberMini');
+var controls = document.querySelectorAll('.inputNumberMini-controls');
+var input = document.querySelectorAll('.inputNumberMini');
 var percent = document.querySelector('[data-type=percent]');
 
 function setValue() {
@@ -32,7 +32,6 @@ if (controls.length != 0) {
     function (control) {
       var inputValue = control.parentNode.parentNode.querySelector('input');
       var action = control.getAttribute('data-action');
-
       control.addEventListener('click', function () {
         if (action == 'increase') {
           // var integer = parseInt(inputValue.value);

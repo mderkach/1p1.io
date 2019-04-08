@@ -4,6 +4,10 @@
       &__header {
         @extend .form-cart-checkout__header;
 
+        @include mq-down(lg) {
+          padding: 15px 20px;
+        }
+
         &-descr {
           @extend .form-cart-checkout__header-descr;
         }
@@ -36,7 +40,7 @@
         &-header {
           font-size: rem(15);
           font-weight: bold;
-          line-height: 2;
+          line-height: 1;
           color: #000;
           margin-bottom: 10px;
         }
@@ -49,7 +53,11 @@
             font-weight: 500;
             line-height: 1.5;
             color: #000;
-            margin-bottom: 0;
+            margin-bottom: 5px;
+
+            &:nth-last-child(1) {
+              margin-bottom: 0;
+            }
           }
         }
       }
@@ -76,11 +84,19 @@
           justify-content: space-between;
           align-items: center;
 
+          @include mq-down(sm) {
+            flex-wrap: wrap;
+          }
+
           >.form-cart-delivery__input-outer {
             max-width: 210px;
 
-            @include mq-down(lg) {
+            @include mq-between(sm,lg) {
               max-width: 48%;
+            }
+
+            @include mq-down(sm) {
+              max-width: 100%;
             }
           }
         }
@@ -139,6 +155,7 @@
 
           @include mq-down(lg) {
             max-width: 100%;
+            padding: 0;
           }
         }
 
@@ -223,6 +240,7 @@
 
         &-label {
           position: relative;
+          cursor: pointer;
           user-select: none;
           padding-left: 35px;
           font-size: rem(15);

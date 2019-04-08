@@ -15,6 +15,11 @@
       border-bottom: none
     }
 
+    @include mq-down(lg) {
+      padding: 20px;
+      align-items: flex-start;
+    }
+
     &-body {
       @extend .card-body;
       position: relative;
@@ -25,6 +30,11 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+
+      @include mq-down(sm) {
+        margin-left: 15px;
+        margin-top: 0;
+      }
     }
 
     &--deleted {
@@ -41,15 +51,26 @@
         font-weight: 500;
         line-height: normal;
         color: #79879e;
+
+        @include mq-down(lg) {
+          font-size: rem(15);
+          text-align: center;
+        }
       }
 
       &-decline {
         margin: 0 auto 30px;
+
+        @include mq-down(lg) {
+          font-size: rem(15);
+          text-align: center;
+        }
       }
     }
     
     &--unaviable {
       @extend .cart-card;
+
       .cart-img {
         opacity: .3;
       }
@@ -65,6 +86,11 @@
     width: 110px;
     height: 120px;
     object-fit: contain;
+
+    @include mq-down(sm) {
+      width: 70px;
+      height: 80px;
+    }
   }
 
   &-name {
@@ -73,6 +99,10 @@
     line-height: normal;
     color: #000;
     margin-bottom: 0;
+
+    @include mq-down(sm) {
+      font-size: rem(12);
+    }
   }
 
   &-info {
@@ -87,21 +117,30 @@
       line-height: normal;
       margin: 0 0 0 auto;
       color: #79879e;
+
+      @include mq-down(sm) {
+        font-size: rem(13);
+      }
     }
   }
 
   &-price {
     font-size: rem(22);
     font-weight: bold;
-    ;
     line-height: normal;
     text-align: right;
     color: #4489ff;
     margin-bottom: 0;
+
+    @include mq-down(sm) {
+      font-size: rem(13);
+    }
   }
 
   &-inputNumberMini {
     @extend .form__popup-inputNumberMini;
+    font-size: rem(15);
+    padding: 4px 5px;
 
     &-outer {
       @extend .form__popup-inputNumberMini-outer;
@@ -109,6 +148,7 @@
 
       &-label {
         @extend .form__popup-inputNumberMini-outer-label;
+        font-size: rem(10);
         margin-bottom: -5px;
 
       }
@@ -120,9 +160,11 @@
 
     &-controls {
       @extend .form__popup-inputNumberMini-controls;
+      height: 14px;
 
       &-wrapper {
         @extend .form__popup-inputNumberMini-controls-wrapper;
+        right: -3px;
       }
     }
   }
@@ -141,4 +183,8 @@
   width: 100%;
   height: 100%;
   background: rgba($color: #000, $alpha: .05);
+
+  @include mq-down(lg) {
+    padding: 20px 50px 20px 20px;
+  }
 }
