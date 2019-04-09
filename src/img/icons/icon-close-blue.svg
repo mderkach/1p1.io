@@ -1,14 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="70px" height="70px" viewBox="0 0 70 70" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: sketchtool 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
-    <title>2CC5797F-63E8-49A1-96F9-A23785F936AF</title>
-    <desc>Created with sketchtool.</desc>
-    <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="icon/ico-close-blue-l" fill="#4489FF">
-            <g id="Close">
-                <rect id="Rectangle-2" transform="translate(35.500000, 35.000000) rotate(-45.000000) translate(-35.500000, -35.000000) " x="14" y="34" width="43" height="2"></rect>
-                <rect id="Rectangle-2-Copy" transform="translate(34.500000, 35.000000) rotate(-135.000000) translate(-34.500000, -35.000000) " x="13" y="34" width="43" height="2"></rect>
-            </g>
-        </g>
-    </g>
-</svg>
+<svg width="70" height="70" xmlns="http://www.w3.org/2000/svg"><g fill="#4489FF" fill-rule="evenodd"><path d="M19.59 49.496L49.996 19.09l1.414 1.414L21.004 50.91z"/><path d="M48.996 50.91L18.59 20.504l1.414-1.414L50.41 49.496z"/></g></svg>
