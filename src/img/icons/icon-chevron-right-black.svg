@@ -1,15 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="5px" height="8px" viewBox="0 0 5 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: sketchtool 53.2 (72643) - https://sketchapp.com -->
-    <title>E25B5B43-1BA9-40A3-86F3-0CCFEB040E60</title>
-    <desc>Created with sketchtool.</desc>
-    <g id="Main-landing" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Landing-main" transform="translate(-622.000000, -3111.000000)" fill="#8F8670" fill-rule="nonzero">
-            <g id="logos" transform="translate(0.000000, 2825.000000)">
-                <g id="Arrow-Right-B-Copy" transform="translate(623.000000, 285.784946)">
-                    <polygon id="Arrow-B" transform="translate(1.500000, 4.192163) rotate(-90.000000) translate(-1.500000, -4.192163) " points="1.47856425 3.9186453 3.77918473 1.66750054 5.17794377 3.09700154 1.47856425 6.71682452 -2.17794377 3.13895107 -0.779184726 1.70945007"></polygon>
-                </g>
-            </g>
-        </g>
-    </g>
-</svg>
+<svg width="5" height="8" xmlns="http://www.w3.org/2000/svg"><path d="M2.226 3.999l-2.25-2.301L1.404.299 5.025 4 1.447 7.655.017 6.256z" fill="#8F8670" fill-rule="nonzero"/></svg>

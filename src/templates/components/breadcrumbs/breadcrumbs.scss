@@ -1,0 +1,22 @@
+.breadcrumbs {
+  &__wrapper {
+    margin-top: 30px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  &__item {
+    font-size: rem(13);
+    font-weight: 500;
+    line-height: 1.31;
+    color: #4b5769;
+  }
+
+  &__separator {
+    margin: 0 10px;
+    fill: #979797;
+  }
+}

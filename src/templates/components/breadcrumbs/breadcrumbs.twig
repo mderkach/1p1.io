@@ -1,0 +1,9 @@
+<nav class="breadcrumbs__wrapper">
+  {% for crumb in breadcrumbs %}
+    <a class="breadcrumbs__item" href="{{ crumb.link }}">{{ crumb.name }}</a>
+    {% if loop.last %}
+    {% else %}
+      <svg class="breadcrumbs__separator" height="8" width="4" xmlns="http://www.w3.org/2000/svg"><path d="M2.226 3.999l-2.25-2.301L1.404.299 5.025 4 1.447 7.655.017 6.256z" fill-rule="nonzero" /></svg>
+    {% endif %}
+  {% endfor %}
+</nav>
