@@ -582,13 +582,15 @@
           @extend .form__popup-input-wrapper;
           width: 100%;
           padding-left: 0;
-          max-width: 580px;
+          max-width: 100%;
           overflow: auto;
 
+          @include mq-down(md) {
+            margin-top: 15px;
+          }
+
           @include mq-down(sm) {
-            flex-wrap: nowrap;
             padding-right: 0 !important;
-            max-width: 100%;
           }
 
           
