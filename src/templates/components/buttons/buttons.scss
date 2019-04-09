@@ -1,6 +1,7 @@
 [class^='btn'] {
   display: block;
   border: 1px solid #fff;
+  box-sizing: border-box;
   color: #fff;
   width: 100%;
 
@@ -9,6 +10,7 @@
     text-decoration: none;
   }
 }
+
 
 .btn {
 
@@ -279,6 +281,43 @@
         margin-right: 0;
       }
     }
+
+    &-contacts {
+      margin-top: 25px;
+      width: 100%;
+      max-width: 190px;
+      border-radius: 96px;
+      border: solid 1px #4489ff;
+      background-color: #fff;
+      font-size: rem(14);
+      font-weight: 500;
+      line-height: normal;
+      color: #4489ff;
+      padding: 8px 15px;
+
+      &:hover {
+        background-color: #4f90fe;
+        color: #fff;
+      }
+
+      &:focus {
+        border-color: #e9ff00;
+        background-color: #fff;
+        color: #4489ff;
+      }
+
+      &:focus-within {
+        box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+        background-color: #3880fb;
+        color: #fff;
+        border-color: #3880fb;
+      }
+    }
+
+    &-adress {
+      @extend .btn-edit-contacts;
+      max-width: 240px;
+    }
   }
 
   &-remove {
@@ -476,6 +515,57 @@
         color: #fff;
         border-color: #4489ff;
       }
+    }
+  }
+
+  &__cart {
+    &-remove {
+      background: transparent;
+      border: none;
+      padding: 0;
+      position: absolute;
+      top: -15px;
+      right: 0;
+      width: 15px;
+      height: 15px;
+    }
+  }
+
+  &__form {
+    &-checkout {
+      &-submit {
+        width: 100%;
+        max-width: 320px;
+        margin: 25px auto;
+        padding: 11px 0;
+        border-radius: 96px;
+        background-color: #4489ff;
+
+        @include mq-down(sm) {
+          margin: 0 auto 20px;
+          max-width: 280px;
+        }
+
+        &:disabled {
+          opacity: .5;
+        }
+      }
+    }
+  }
+
+  &--dropdown {
+    &-checkout {
+      max-width: 150px;
+      padding: 10px 15px;
+      border-radius: 96px;
+      border: 1px solid #4489ff;
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+      background-color: #4489ff;
+      color: #fff;
+      font-size: rem(14);
+      font-weight: 500;
+      line-height: normal;
+      text-align: center;
     }
   }
 }

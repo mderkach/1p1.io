@@ -1,0 +1,119 @@
+.form {
+  &-cart {
+    &-payment {
+      &__header {
+        @extend .form-cart-checkout__header;
+
+        &-descr {
+          @extend .form-cart-checkout__header-descr;
+        }
+      }
+
+      &-body {
+        padding: 25px 30px 40px 35px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      &__input {
+        &-outer {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          align-items: flex-start;
+
+          &:nth-of-type(1) {
+            max-width: 250px;
+          }
+
+          &:nth-of-type(2) {
+            max-width: 440px;
+            justify-content: space-between;
+          }
+        }
+
+        &-wrapper {
+          width: 100%;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+        }
+
+        &-inline {
+          max-width: 115px;
+        }
+      }
+
+      &__checkbox {
+        @extend .form-cart-delivery__checkbox;
+
+        &-label {
+          @extend .form-cart-delivery__checkbox-label;
+          margin-bottom: 20px;
+
+          &:hover {
+            .form-cart-payment__checkbox {
+              ~.form-cart-payment__checkbox-checkmark {
+                border-color: #4489ff;
+              }
+            }
+          }
+
+          .form-cart-payment__checkbox {
+            &:checked {
+              ~.form-cart-payment__checkbox-checkmark {
+                border-color: #4489ff;
+                background-color: #4489ff;
+
+                &::after {
+                  position: absolute;
+                  content: "";
+                  left: 6px;
+                  top: 2px;
+                  width: 6px;
+                  height: 12px;
+                  border: solid #fff;
+                  border-width: 0 2px 2px 0;
+                  transform: rotate(45deg);
+                }
+              }
+            }
+          }
+        }
+
+        &-checkmark {
+          @extend .form-cart-delivery__checkbox-checkmark;
+        }
+      }
+
+      &__radio {
+        &-outer {
+          width: 100%;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          flex-wrap: wrap;
+
+          .form-cart-delivery__radio-wrapper {
+            max-width: 285px;
+          }
+        }
+      }
+
+      &__info {
+        width: 100%;
+
+        &-descr {
+          
+          @extend .form-cart-delivery__contacts-info-descr;
+        }
+      }
+    }
+  }
+}
+
+input[name=card-owner] {
+  text-transform: uppercase;
+}

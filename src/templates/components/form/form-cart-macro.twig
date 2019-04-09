@@ -1,0 +1,20 @@
+{% macro input(label, name, type, placeholder) %}
+  <div class="form-cart-delivery__input-outer">
+    <label class="form-cart-delivery__input-label" for="{{ name }}">{{ label }}</label>
+    <input class="form-cart-delivery__input" id="{{ name }}" name="{{ name }}" type="{{ type }}" onfocus="this.placeholder = ''" onblur="this.placeholder = '{{ placeholder }}'" placeholder="{{ placeholder }}">
+  </div>
+{% endmacro %}
+
+{% macro select(label, name, options) %}
+  <div class="form-cart-delivery__input-outer">
+    <label class="form-cart-delivery__input-label" for="{{ name }}">{{ label }}</label>
+    <div class="form-cart-delivery__select-wrapper">
+      <select class="form-cart-delivery__select" name="{{ name }}" id="{{ name }}" required>
+        {% for option in options %}
+          <option value="{{ option.value }}" {% if option.hidden == true %}selected hidden disabled {% endif %}>{{ option.name }}</option>
+        {% endfor %}
+      </select>
+      <img alt="" class="form-cart-delivery__select-chevron" src="/assets/img/icons/icon-chevron-down.svg">
+    </div>
+  </div>
+{% endmacro %}

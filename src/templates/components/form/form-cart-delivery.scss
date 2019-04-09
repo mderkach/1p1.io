@@ -1,0 +1,286 @@
+.form {
+  &-cart {
+    &-delivery {
+      &__header {
+        @extend .form-cart-checkout__header;
+
+        @include mq-down(lg) {
+          padding: 15px 20px;
+        }
+
+        &-descr {
+          @extend .form-cart-checkout__header-descr;
+        }
+      }
+
+      &-body {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: flex-start;
+        padding: 20px 30px 40px;
+
+        @include mq-down(lg) {
+          padding: 15px 20px;
+        }
+      }
+
+      &__contacts {
+        &-wrapper {
+          width: 100%;
+          max-width: 250px;
+          margin-right: $gap;
+
+          @include mq-down(lg) {
+            max-width: 100%;
+            margin-right: 0;
+          }
+        }
+
+        &-header {
+          font-size: rem(15);
+          font-weight: bold;
+          line-height: 1;
+          color: #000;
+          margin-bottom: 10px;
+        }
+
+        &-info {
+          padding-top: 7px;
+
+          &-descr {
+            font-size: rem(15);
+            font-weight: 500;
+            line-height: 1.5;
+            color: #000;
+            margin-bottom: 5px;
+
+            &:nth-last-child(1) {
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+
+      &__address {
+        &-wrapper {
+          width: 100%;
+          max-width: 440px;
+          margin-left: $gap;
+
+          @include mq-down(lg) {
+            max-width: 100%;
+            margin-left: 0;
+          }
+        }
+
+        &-header {
+          @extend .form-cart-delivery__contacts-header;
+        }
+
+        &-doubleInput {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+
+          @include mq-down(sm) {
+            flex-wrap: wrap;
+          }
+
+          >.form-cart-delivery__input-outer {
+            max-width: 210px;
+
+            @include mq-between(sm,lg) {
+              max-width: 48%;
+            }
+
+            @include mq-down(sm) {
+              max-width: 100%;
+            }
+          }
+        }
+      }
+
+      &__input {
+        font-size: rem(15);
+        font-weight: 500;
+        line-height: 1.47;
+        color: #000;
+        padding: 0 5px;
+        width: 100%;
+        border: none;
+        border-bottom: 2px solid #ebeff4;
+        padding: 0 5px 5px;
+
+        &::placeholder {
+          color: rgba($color: #000, $alpha: .3);
+        }
+
+        &:focus {
+          border-color: #4489ff;
+        }
+
+        &-label {
+          font-size: rem(10);
+          font-weight: bold;
+          line-height: 1;
+          color: #4b5769;
+          margin-bottom: 0;
+          text-transform: uppercase;
+        }
+
+        &-outer {
+          position: relative;
+          width: 100%;
+          margin-bottom: 20px;
+        }
+      }
+
+      &__select {
+        @extend .form-cart-checkout__delivery-select;
+        padding-top: 0;
+        padding-bottom: 4px;
+
+        &:required {
+          &:invalid {
+            color: rgba($color: #000, $alpha: .3)
+          }
+        }
+
+        &-wrapper {
+          @extend .form-cart-checkout__delivery-select-wrapper;
+          padding: 0;
+          max-width: 210px;
+
+          @include mq-down(lg) {
+            max-width: 100%;
+            padding: 0;
+          }
+        }
+
+        &-chevron {
+          @extend .form-cart-checkout__delivery-select-chevron;
+          right: 5px;
+        }
+      }
+
+      &__checkbox {
+        width: 0;
+        height: 0;
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+
+        &-label {
+          position: relative;
+          user-select: none;
+          padding-left: 30px;
+          font-size: rem(15);
+          font-weight: 500;
+          line-height: 1.47;
+          color: #000;
+          cursor: pointer;
+
+          &:hover {
+            .form-cart-delivery__checkbox {
+              ~.form-cart-delivery__checkbox-checkmark {
+                border-color: #4489ff;
+              }
+            }
+          }
+
+          .form-cart-delivery__checkbox {
+            &:checked {
+              ~.form-cart-delivery__checkbox-checkmark {
+                border-color: #4489ff;
+                background-color: #4489ff;
+
+                &::after {
+                  position: absolute;
+                  content: "";
+                  left: 6px;
+                  top: 2px;
+                  width: 6px;
+                  height: 12px;
+                  border: solid #fff;
+                  border-width: 0 2px 2px 0;
+                  transform: rotate(45deg);
+                }
+              }
+            }
+          }
+        }
+
+        &-checkmark {
+          width: 22px;
+          height: 22px;
+          border: 2px solid #ebeff4;
+          border-radius: 4px;
+          position: absolute;
+          left: 0;
+          top: 0;
+          background: #fff;
+        }
+      }
+
+      &__radio {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+        z-index: -1;
+
+        &-wrapper {
+          width: 100%;
+        }
+
+        &-label {
+          position: relative;
+          cursor: pointer;
+          user-select: none;
+          padding-left: 35px;
+          font-size: rem(15);
+          font-weight: 500;
+          line-height: 1.5;
+          color: #000;
+
+          &::first-line {
+            line-height: 1.25;
+          }
+
+          &:hover {
+            .form-cart-delivery__radio {
+              ~.form-cart-delivery__radio-checkmark {
+                border-color: #00b54b;
+              }
+            }
+          }
+
+          .form-cart-delivery__radio {
+            &:checked {
+              ~.form-cart-delivery__radio-checkmark {
+                border-color: #00b54b;
+                border-width: 8px;
+              }
+            }
+          }
+        }
+
+        &-checkmark {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 22px;
+          height: 22px;
+          background: #fff;
+          border-radius: 50%;
+          border: solid 2px #e8e8e8;
+        }
+      }
+    }
+  }
+}

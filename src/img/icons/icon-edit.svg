@@ -1,11 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: sketchtool 53.2 (72643) - https://sketchapp.com -->
-    <title>23D2BEE1-183E-44DF-AA04-32389995BC60</title>
-    <desc>Created with sketchtool.</desc>
-    <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="icon/pencil-white-16" fill="#FFFFFF">
-            <path d="M7.09497475,13.1050253 L2.89497475,8.90502525 L10.8,1 L15,5.2 L7.09497475,13.1050253 Z M6.10502525,14.0949747 L5.2,15 L1,15 L1,10.8 L1.90502525,9.89497475 L6.10502525,14.0949747 Z" id="Combined-Shape"></path>
-        </g>
-    </g>
-</svg>
+<svg width="16" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M7.095 13.105l-4.2-4.2L10.8 1 15 5.2l-7.905 7.905zm-.99.99L5.2 15H1v-4.2l.905-.905 4.2 4.2z" fill="#FFF" fill-rule="evenodd"/></svg>

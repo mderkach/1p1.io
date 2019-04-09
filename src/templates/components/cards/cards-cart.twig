@@ -1,0 +1,55 @@
+{% if cartItems %}
+  {% for card in cartItems %}
+    {% if card.isDeleted != true %}
+      <div class="cart-card{% if card.isAviable != true %}--unaviable{% endif %}">
+        {% if card.isAviable != true %}
+          <div class="--unaviable">
+            <p class="cart-info--unaviable">Товар недоступен</p>
+          </div>
+        {% endif %}
+        <img alt="" class="cart-img" src="{{ card.img }}">
+        <div class="cart-card-body">
+          <p class="cart-name">{{ card.name }}</p>
+          <div class="cart-info">
+            {% if card.isAviable == true %}
+              <div class="cart-inputNumberMini-outer">
+                <label class="cart-inputNumberMini-outer-label" for="qanity">Количество</label>
+                <div class="cart-inputNumberMini-wrapper">
+                  <input class="cart-inputNumberMini inputNumberMini" data-type="number" min="1" name="qanity" type="number" value="{{card.amount}}">
+                  <div class="cart-inputNumberMini-controls-wrapper">
+                    <button class="cart-inputNumberMini-controls inputNumberMini-controls" data-action="increase" type="button">
+                      <img alt="" src="/assets/img/icons/icon-button-inputNumber-control.svg">
+                    </button>
+                    <button class="cart-inputNumberMini-controls inputNumberMini-controls" data-action="decrease" type="button">
+                      <img alt="" src="/assets/img/icons/icon-button-inputNumber-control.svg">
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <p class="cart-price">{{card.price}}
+                {{card.priceTag}}</p>
+            {% endif %}
+          </div>
+          <button class="btn__cart-remove">
+            <svg height="14px" version="1.1" viewbox="0 0 14 14" width="14px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+              <g fill-rule="evenodd" fill="none" stroke-width="1" stroke="none">
+                <g fill="#e1e5ee" transform="translate(-11.000000, -11.000000)">
+                  <g>
+                    <g transform="translate(10.000000, 10.000000)">
+                      <polygon points="9.33333333 6.66666667 16 6.66666667 16 9.33333333 9.33333333 9.33333333 9.33333333 16 6.66666667 16 6.66666667 9.33333333 0 9.33333333 1.6328624e-16 6.66666667 6.66666667 6.66666667 6.66666667 0 9.33333333 0" transform="translate(8.000000, 8.000000) rotate(45.000000) translate(-8.000000, -8.000000) "></polygon>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </svg>
+          </button>
+        </div>
+      </div>
+    {% else %}
+      <div class="cart-card--deleted">
+        <p class="cart-card--deleted-descr">Товар был удален из корзины.</p>
+        <a class="cart-card--deleted-decline" href="#">Отменить</a>
+      </div>
+    {% endif %}
+  {% endfor %}
+{% endif %}

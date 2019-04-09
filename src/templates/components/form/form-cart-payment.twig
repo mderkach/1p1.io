@@ -1,0 +1,77 @@
+{% import "../form/form-cart-macro.twig" as inputs %}
+<form action="#" class="form-cart-payment">
+  <div class="form-cart-payment__header">
+    <p class="form-cart-payment__header-descr">Данные карты:</p>
+  </div>
+  <div class="form-cart-payment-body">
+    {% for user in accountInfo %}
+      {% if user.payment == false %}
+        <div class="form-cart-payment__input-outer">
+          <div class="form-cart-payment__input-wrapper">
+            {{ inputs.input('Номер карты', 'card-number', 'text', '1111 2222 3333 4444')}}
+          </div>
+          <div class="form-cart-payment__input-wrapper">
+            <div class="form-cart-payment__input-inline">
+              {{ inputs.input('Срок действия', 'card-validity', 'text', '00 / 00')}}
+            </div>
+            <div class="form-cart-payment__input-inline">
+              {{ inputs.input('CVV / CVC', 'card-cvc-cvv', 'password', '***')}}
+            </div>
+          </div>
+        </div>
+        <div class="form-cart-payment__input-outer">
+          {{ inputs.input('Имя на карте', 'card-owner', 'text', 'ИМЯ ФАМИЛИЯ')}}
+          <div class="form-cart-payment__checkbox-outer">
+            <label class="form-cart-payment__checkbox-label" for="checkbox-save-card">
+              <input checked="" class="form-cart-payment__checkbox" id="checkbox-save-card" name="checkbox-save-card" type="checkbox">
+              Сохранить данные для использования в будущем
+              <span class="form-cart-payment__checkbox-checkmark"></span>
+            </label>
+          </div>
+        </div>
+      {% else %}
+        <div class="form-cart-payment__info">
+          {% for card in user.payment if user.payment.length == 1 %}
+            <p class="form-cart-payment__info-descr">
+              Карта номер
+              {{ card.cardNumberPlaceholder }}
+            </p>
+            <p class="form-cart-payment__info-descr">
+              {{ card.cardOwner }}
+            </p>
+            <p class="form-cart-payment__info-descr">
+              {{ card.cardValidity }},
+              {{ card.cardCVVPlaceholder }}
+            </p>
+            <input type="hidden" name="card-number" value="{{ card.cardNumberValue }}">
+            <input type="hidden" name="card-owner" value="{{ card.cardOwner }}">
+            <input type="hidden" name="card-validity" value="{{ card.cardValidity }}">
+            <input type="hidden" name="card-cvc-cvv" value="{{ card.cardCVV }}">
+          {% endfor %}
+          {% if user.payment.length > 1 %}
+            <div class="form-cart-payment__radio-outer" >
+          {% endif %}
+          {% for card in user.payment if user.payment.length > 1 %}
+            <div class="form-cart-delivery__radio-wrapper">
+              <label class="form-cart-delivery__radio-label" for="radio-adress-{{ loop.index }}">
+                <input class="form-cart-delivery__radio" id="radio-adress-{{ loop.index }}" name="radio-card" type="radio">
+                Карта номер
+                {{ card.cardNumberPlaceholder }}
+                <br>
+                 {{ card.cardOwner }}
+                <br>
+                {{ card.cardValidity }},
+                {{ card.cardCVVPlaceholder }}
+                <span class="form-cart-delivery__radio-checkmark"></span>
+              </label>
+            </div>
+          {% endfor %}
+          {% if user.payment.length > 1 %}
+            </div>
+          {% endif %}
+          <button class="btn-edit-adress" role="button">Использовать другую карту</button>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</form>

@@ -48,6 +48,15 @@
 @import "../templates/components/form/form__marketplace-search.scss";
 @import "../templates/components/cards//cards-marketplace.scss";
 @import "../templates/components/pagination/pagination.scss";
+@import "../templates/components/screen/screen__cart.scss";
+@import "../templates/components/cards/cards-cart.scss";
+@import "../templates/components/form/form-cart-checkout.scss";
+@import "../templates/components/form/form-cart-delivery.scss";
+@import "../templates/components/dropdown/dropdown-cart.scss";
+@import "../templates/components/cards/cards-cart--dropdown.scss";
+@import "../templates/components/form/form-cart-payment.scss";
+@import "../templates/components/breadcrumbs/breadcrumbs.scss";
+
 
 // comon
 ::placeholder {

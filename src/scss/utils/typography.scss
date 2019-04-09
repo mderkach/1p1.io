@@ -21,6 +21,9 @@
     }
 
     &-regular {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
       padding-left: 0;
       padding-right: 0;
       text-align: left;
@@ -106,9 +109,10 @@
       margin-bottom: 0;
       margin-right: 10px;
     }
+
     &-count {
       font-size: rem(30);
-      font-weight: 500;
+      font-weight: 300;
       line-height: normal;
       color: #79879e;
       margin-bottom: 0;
