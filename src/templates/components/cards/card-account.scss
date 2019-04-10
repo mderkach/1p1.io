@@ -19,7 +19,7 @@
         background: #fff;
         display: flex;
         flex-direction: row;
-        border-bottom: 1px solid #d8d8d8;
+        border-bottom: 1px solid rgba($color: #d8d8d8, $alpha: .3);
       }
     }
 
@@ -121,11 +121,11 @@
   }
 
   &-donations {
-    border-bottom: 1px solid #d8d8d8;
+    border-bottom: 1px solid rgba($color: #d8d8d8, $alpha: .3);
 
     @include mq-down(lg) {
       border-bottom: none;
-      border-right: 1px solid #d8d8d8;
+      border-right: 1px solid rgba($color: #d8d8d8, $alpha: .3);
     }
   }
 
@@ -166,7 +166,7 @@
     &-mobile {
       padding: 35px 20px 0;
       background: #fff;
-      border-bottom: 1px solid #d8d8d8;
+      border-bottom: 1px solid rgba($color: #d8d8d8, $alpha: .3);
 
       @include mq-up(lg) {
         display: none;
