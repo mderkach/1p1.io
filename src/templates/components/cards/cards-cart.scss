@@ -12,7 +12,11 @@
     padding: 30px;
 
     &:nth-last-child(1) {
-      border-bottom: none
+      border-bottom: none;
+
+      @include mq-down(lg) {
+        border-bottom: 1px solid #d9deea;
+      }
     }
 
     @include mq-down(lg) {
@@ -30,6 +34,11 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+
+      @include mq-down(lg) {
+        height: auto;
+        min-height: 80px;
+      }
 
       @include mq-down(sm) {
         margin-left: 15px;
@@ -56,6 +65,7 @@
         @include mq-down(lg) {
           font-size: rem(15);
           text-align: center;
+          margin-top: 0;
         }
       }
 
@@ -65,6 +75,7 @@
         @include mq-down(lg) {
           font-size: rem(15);
           text-align: center;
+          margin-bottom: 0;
         }
       }
     }
@@ -118,6 +129,10 @@
       line-height: normal;
       margin: 0 0 0 auto;
       color: #79879e;
+
+      @include mq-down(lg) {
+        margin-right: 30px;
+      }
 
       @include mq-down(sm) {
         font-size: rem(13);
@@ -195,6 +210,6 @@
   background: rgba($color: #000, $alpha: .05);
 
   @include mq-down(lg) {
-    padding: 20px 50px 20px 20px;
+    padding: 20px;
   }
 }

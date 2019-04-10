@@ -312,6 +312,11 @@
         color: #fff;
         border-color: #3880fb;
       }
+
+      @include mq-down(lg) {
+        margin-top: 20px;
+        max-width: 100%;
+      }
     }
 
     &-adress {
@@ -531,7 +536,7 @@
 
       @include mq-down(lg) {
         top: auto;
-        bottom: 3px;
+        bottom: 5px;
       }
     }
   }

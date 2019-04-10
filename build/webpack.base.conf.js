@@ -171,6 +171,18 @@ module.exports = {
       template: `${PATHS.src}/templates/pages/cart--mobile.twig`,
     }),
     new HtmlWebpackPlugin({
+      filename: 'cart--mobile--has-contacts.html',
+      template: `${PATHS.src}/templates/pages/cart--mobile--has-contacts.twig`,
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'cart--mobile--has-address--single.html',
+      template: `${PATHS.src}/templates/pages/cart--mobile--has-address--single.twig`,
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'cart--mobile--has-address--multiple.html',
+      template: `${PATHS.src}/templates/pages/cart--mobile--has-address--multiple.twig`,
+    }),
+    new HtmlWebpackPlugin({
       filename: 'cart-payment.html',
       template: `${PATHS.src}/templates/pages/cart-payment.twig`,
     }),

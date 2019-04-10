@@ -11,39 +11,37 @@ var callers = document.querySelectorAll('.popup--toggle');
 var popups = document.querySelectorAll('.popup--target');
 var closers = document.querySelectorAll('.btn--close-popup');
 
-window.addEventListener("load", function () {
-  callers.forEach(function (btn) {
-    btn.addEventListener('click', openPopup);
-  });
-
-  closers.forEach(function (btn) {
-    btn.addEventListener('click', closePopup);
-  });
-
-  function openPopup(popupCaller) {
-    popupCaller.preventDefault();
-    checkMobile();
-    document.body.classList.add('modal-open');
-    popups.forEach(function (close) {
-      close.classList.remove('is-active');
-    });
-    popupActiveId = popupCaller.target.getAttribute('href');
-
-    if (popupActiveId == null) { //detect click nested objects
-      var id = popupCaller.target.parentElement.getAttribute('href'); // get href of parent
-      popupActiveId = id; // set href
-    }
-    var popupActive = document.querySelector(popupActiveId);
-    popupActive.classList.add('is-active');
-  }
-
-  function closePopup(popupCloser) {
-    document.body.classList.remove('modal-open', '--scrollbar-hidden');
-    popups.forEach(function (close) {
-      close.classList.remove('is-active');
-    });
-  }
+callers.forEach(function (btn) {
+  btn.addEventListener('click', openPopup);
 });
+
+closers.forEach(function (btn) {
+  btn.addEventListener('click', closePopup);
+});
+
+function openPopup(popupCaller) {
+  popupCaller.preventDefault();
+  checkMobile();
+  document.body.classList.add('modal-open');
+  popups.forEach(function (close) {
+    close.classList.remove('is-active');
+  });
+  popupActiveId = popupCaller.target.getAttribute('href');
+
+  if (popupActiveId == null) { //detect click nested objects
+    var id = popupCaller.target.parentElement.getAttribute('href'); // get href of parent
+    popupActiveId = id; // set href
+  }
+  var popupActive = document.querySelector(popupActiveId);
+  popupActive.classList.add('is-active');
+}
+
+function closePopup(popupCloser) {
+  document.body.classList.remove('modal-open', '--scrollbar-hidden');
+  popups.forEach(function (close) {
+    close.classList.remove('is-active');
+  });
+}
 
 
 // popup edit modal
