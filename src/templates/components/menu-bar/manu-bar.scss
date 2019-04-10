@@ -10,10 +10,17 @@
     @include mq-down(sm) {
       height: 55px;
     }
-    
+
     @include mq-down(lg) {
       position: relative;
       padding: 0 20px;
+    }
+
+    &--show {
+      @extend .menu-bar__account;
+      @include mq-up(lg) {
+        display: none;
+      }
     }
   }
 
@@ -39,9 +46,11 @@
       margin-right: 25px;
       padding: 16px 0 17px;
     }
+
     span {
       color: #79879e;
     }
+
     &.is-active {
       &::after {
         display: block;
@@ -53,11 +62,96 @@
         background-image: linear-gradient(268deg, #9c5eff, #4489ff);
       }
     }
+
+    &:hover {
+      color: #4489ff;
+    }
   }
 
   &__color {
     @extend .menu-bar__account;
     padding-left: 240px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    height: auto;
+
+    @include mq-down(lg) {
+      display: none;
+    }
+
+    ~.accountInfo__content  {
+      @include mq-between(lg, xl) {
+        margin-top: 205px;
+      }
+    }
+  }
+
+  &__regular {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    margin-top: 70px;
+    border: 1px solid #d9deea;
+    border-left: none;
+    border-right: none;
+
+    @include mq-down(sm) {
+      margin-top: 50px;
+    }
+
+    &-container {
+      position: relative;
+      @include make-container();
+      @include make-container-max-widths($max-widths: $container-max-widths, $breakpoints: $grid-breakpoints);
+
+      @include mq-up(xl) {
+        max-width: 1200px;
+      }
+
+      @include mq-between(md, lg) {
+        padding: 0 10px;
+      }
+
+      @include mq-between(sm, md) {
+        padding: 0 20px;
+      }
+
+      @include mq-down(sm) {
+        padding: 0 0 0 20px;
+      }
+    }
+
+    &-wrapper {
+      @include make-row();
+      @extend .menu-bar__scroll-cont;
+      flex-wrap: nowrap;
+
+      @include mq-down(lg) {
+        margin: 0;
+      }
+    }
+
+    &-popup {
+      display: none;
+
+      @include mq-down(lg) {
+        position: absolute;
+        right: 0;
+        top: 6px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 36px;
+        height: 36px;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1);
+        background-color: #fff;
+        border-radius: 50%;
+      }
+
+      @include mq-down(sm) {
+        right: 20px !important;
+      }
+    }
   }
 
   &__regular {

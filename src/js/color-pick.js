@@ -1,6 +1,7 @@
 var buttons = document.querySelectorAll('.form-button-color__btn');
 var inputColor = document.querySelector('[name=color-paste]');
 var banner = document.querySelector('.banner');
+
 buttons.forEach(
   function (btn) {
     var dataColor = btn.getAttribute('data-color');
@@ -8,9 +9,9 @@ buttons.forEach(
       btn.style.backgroundColor = dataColor;
       inputColor.value = dataColor;
     });
-    btn.addEventListener('click', function(){
+    btn.addEventListener('click', function () {
       buttons.forEach(
-        function(btn) {
+        function (btn) {
           btn.classList.remove('is-picked');
         }
       );
@@ -20,3 +21,15 @@ buttons.forEach(
     });
   }
 );
+
+
+if (inputColor) {
+  inputColor.addEventListener('input', function () {
+    var color = new RegExp(/^#(([0-9a-fA-F]{2}){3}|([0-9a-fA-F]){3})$/);
+    var value = this.value;
+    if (color !== '') {
+      banner.style.backgroundColor = value;
+    }
+    console.log(value);
+  });
+}
