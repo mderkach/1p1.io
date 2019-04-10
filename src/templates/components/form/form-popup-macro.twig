@@ -153,18 +153,10 @@
 
 {% macro photos(label, tooltipTrigger, tooltipDescr) %}
 <div class="inline-inputs">
-  <label for="" class="form__popup-label-sell">{{ label }}</label>
+  <label for="" class="form__popup-label-sell photos">{{ label }}</label>
   <div class="form__popup-upload-photo-container">
     <div class="form__popup-upload-photo-wrapper">
-      <div class="fineuploader">
-        {% include "../fineuploader/fineuploader.twig" %}
-      </div>
-      <div class="fineuploader">
-        {% include "../fineuploader/fineuploader.twig" %}
-      </div>
-      <div class="fineuploader">
-        {% include "../fineuploader/fineuploader.twig" %}
-      </div>
+      {% include "../fineuploader/fineuploader.twig" %}
     </div>
     <div class="form__popup-tip__wrapper">
       <p class="form__popup-tip"></p>
