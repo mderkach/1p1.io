@@ -7,8 +7,6 @@ function checkMobile() {
   }
 }
 // popup transition
-
-
 var callers = document.querySelectorAll('.popup--toggle');
 var popups = document.querySelectorAll('.popup--target');
 var closers = document.querySelectorAll('.btn--close-popup');
@@ -30,7 +28,11 @@ window.addEventListener("load", function () {
       close.classList.remove('is-active');
     });
     popupActiveId = popupCaller.target.getAttribute('href');
-    console.log(popupActiveId);
+
+    if (popupActiveId == null) { //detect click nested objects
+      var id = popupCaller.target.parentElement.getAttribute('href'); // get href of parent
+      popupActiveId = id; // set href
+    }
     var popupActive = document.querySelector(popupActiveId);
     popupActive.classList.add('is-active');
   }

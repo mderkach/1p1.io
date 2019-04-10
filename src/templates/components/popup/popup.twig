@@ -174,7 +174,60 @@
   {% endblock %}
 
   {% block popupCart %}
+    {# Переменные аналогичны указанным в cart.twig и т.п.  #}
+    {% set checkoutInfo = {
+      priceTag: 'Р.',
+      orderValue: '12 083',
+      } 
+    %}
+    {% set cartItems = [
+      {
+        name: 'Картина «Сергей» Ольги Молчановой-Пермяковой (арт-аукцион «Всякое добро»)',
+        img: '/assets/img/cart/item-1.jpg',
+        price: '5 085',
+        amount: '10',
+        priceTag: 'Р.',
+        isAviable: true,
+        isDeleted: true,
+      },
+      {
+        name: 'Картина «Сергей» Ольги Молчановой-Пермяковой (арт-аукцион «Всякое добро»)',
+        img: '/assets/img/cart/item-1.jpg',
+        price: '6 085',
+        amount: '2',
+        priceTag: 'Р.',
+        isAviable: false,
+        isDeleted: false,
+      },
+      {
+        name: 'Картина «Сергей» Ольги Молчановой-Пермяковой (арт-аукцион «Всякое добро»)',
+        img: '/assets/img/cart/item-1.jpg',
+        price: '7 085',
+        amount: '1',
+        priceTag: 'Р.',
+        isAviable: true,
+        isDeleted: false,
+      },
+    ] 
+  %}
     <div class="popup__cart popup--target" id="popup-cart">
+      <div class="popup__cart-header-wrapper">
+        <h4 class="popup__cart-header-descr">Корзина</h4>
+        <p class="popup__cart-header-count">{{ cartItems.length }}</p>
+        <p class="popup__cart-header-value">
+          {{ checkoutInfo.orderValue }}
+          {{ checkoutInfo.priceTag }}
+        </p>
+        <button class="popup__cart-close btn--close-popup" data-modal="popup-cart">
+          <img alt="" src="/assets/img/icons/icon-close-back-black.svg">
+        </button>
+      </div>
+      <div class="popup__cart-cards-wrapper">
+         {% include "../cards/cards-cart.twig" %}
+      </div>
+      <div class="popup__cart-footer-wrapper">
+        <a href="#" class="btn-xlg popup__cart-btn">Оформить заказ</a>
+      </div> 
     </div>
   {% endblock %}
 {% endblock %}

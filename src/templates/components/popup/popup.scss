@@ -209,5 +209,78 @@
     &.is-active {
       transform: translate3d(0, 0, 0);
     }
+
+    &-header {
+      &-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 15px 20px;
+        display: flex;
+        flex-direction: row;
+        background: #fff;
+        border-bottom: 1px solid #d9deea;
+      }
+
+      &-descr,
+      &-value {
+        font-size: rem(18);
+        font-weight: bold;
+        line-height: normal;
+        color: #000;
+        margin-bottom: 0;
+        margin-right: 10px;
+      }
+
+      &-count {
+        font-size: rem(18);
+        font-weight: 300;
+        line-height: normal;
+        color: #79879e;
+        margin-bottom: 0;
+      }
+
+      &-value {
+        margin-left: auto;
+      }
+    }
+
+    &-close {
+      width: 20px;
+      height: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: none;
+      background: transparent;
+      padding: 0;
+      margin-left: 10px;
+      margin-right: 0;
+    }
+
+    &-cards {
+      &-wrapper {
+        padding-top: 53px;
+        padding-bottom: 80px;
+        height: 100%;
+        overflow-y: auto;
+      }
+    }
+
+    &-footer {
+      &-wrapper {
+        @extend .popup__cart-header-wrapper;
+        top: auto;
+        bottom: 0;
+        border-top: 1px solid #d9deea;
+        border-bottom: none;
+      }
+    }
+
+    &-btn {
+      max-width: 280px;
+      margin: 0 auto;
+    }
   }
 }

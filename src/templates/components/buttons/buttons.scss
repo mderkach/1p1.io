@@ -528,6 +528,11 @@
       right: 0;
       width: 15px;
       height: 15px;
+
+      @include mq-down(lg) {
+        top: auto;
+        bottom: 3px;
+      }
     }
   }
 
