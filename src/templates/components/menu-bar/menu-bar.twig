@@ -36,6 +36,12 @@
           {% endfor %}
         </div>
         {% include "../dropdown/dropdown.twig" %}
+        <a class="menu-bar__regular-popup popup--toggle" data-modal="popup-cart" href="#popup-cart">
+          <img alt="" src="/assets/img/icons/icon-cart-color.svg">
+          {% if cartItems.length > 0 %}
+            <span class="dropdown__cart-counter">{{ cartItems.length }}</span>
+          {% endif %}
+        </a>
       </div>
     </div>
   {% endfor %}

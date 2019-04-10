@@ -1,74 +1,74 @@
 {% import "../form/form-popup-macro.twig" as inputs %}
 {% block popupRegistration %}
-<div class="popup__fullscreen popup--target" id="registration">
-  <div class="popup__fullscreen-wrapper">
-    <button class="popup__close btn--close-popup" data-modal="registration">
-      <img src="/assets/img/icons/icon-close-blue.svg" alt="">
-    </button>
-    <div class="row">
-      <div class="header__wrapper-popup">
-        <h2 class="header__h2 header__popup">Регистрация</h2>
-      </div>
-      <form action="#" method="POST" class="form__popup validate" novalidate>
-        {{ inputs.inputRegistration('name', 'text', 'Имя', 'Иван', 'Заполните поле' ) }}
-        {{ inputs.inputRegistration('second-name', 'text', 'Фамилия', 'Петров', 'Заполните поле' ) }}
-        {{ inputs.inputRegistration('email', 'email', 'Email', 'Ваша@почта', 'Неверный формат Email' ) }}
-        {{ inputs.inputRegistration('password', 'password', 'Пароль', 'Не менее 8 символов', 'Не менее 8 символов' ) }}
-        {{ inputs.inputRegistration('phone', 'tel', 'Телефон', '+7 ( ) - - -', 'Заполните поле' ) }}
-        {{ inputs.checkboxRegistration('checkbox', 'Я ознакомился и подтверждаю согласие с Офертой и
-        Условиями пользовательского соглашения.', 'Примите условия' ) }}
-        {{ inputs.submitRegistration('Зарегистрироваться') }}
-      </form>
-    </div>
-  </div>
-</div>
-{% endblock %}
-
-{% block popupLogin %}
-<div class="popup__fullscreen popup--target" id="login">
-  <div class="popup__fullscreen-wrapper">
-    <button class="popup__close btn--close-popup" data-modal="login">
-      <img src="/assets/img/icons/icon-close-blue.svg" alt="">
-    </button>
-    <div class="row">
-      <div class="header__wrapper-popup">
-        <h2 class="header__h2 header__popup">Вход</h2>
-      </div>
-      <form action="#" method="GET" class="form__popup validate" novalidate>
-        {{ inputs.inputRegistration('email-login', 'email', 'Email', 'Ваша@почта', 'Email не найден' ) }}
-        {{ inputs.inputRegistration('password-login', 'password', 'Пароль', 'Пароль', 'Неверный пароль' ) }}
-        {{ inputs.loginButtons() }}
-        {{ inputs.submitRegistration('Войти') }}
-      </form>
-    </div>
-  </div>
-</div>
-{% endblock %}
-
-{% block popupSellItem %}
-<div class="popup__fullscreen popup__sell-item popup--target" id="sell-item">
-  <div class="popup__fullscreen-outer">
+  <div class="popup__fullscreen popup--target" id="registration">
     <div class="popup__fullscreen-wrapper">
-      <button class="popup__close btn--close-popup" data-modal="sell-item">
-        <img src="/assets/img/icons/icon-close-blue.svg" alt="">
+      <button class="popup__close btn--close-popup" data-modal="registration">
+        <img alt="" src="/assets/img/icons/icon-close-blue.svg">
       </button>
       <div class="row">
         <div class="header__wrapper-popup">
-          <h2 class="header__h2 header__popup">Sell your item for a charity</h2>
+          <h2 class="header__h2 header__popup">Регистрация</h2>
         </div>
+        <form action="#" class="form__popup validate" method="POST" novalidate>
+          {{ inputs.inputRegistration('name', 'text', 'Имя', 'Иван', 'Заполните поле' ) }}
+          {{ inputs.inputRegistration('second-name', 'text', 'Фамилия', 'Петров', 'Заполните поле' ) }}
+          {{ inputs.inputRegistration('email', 'email', 'Email', 'Ваша@почта', 'Неверный формат Email' ) }}
+          {{ inputs.inputRegistration('password', 'password', 'Пароль', 'Не менее 8 символов', 'Не менее 8 символов' ) }}
+          {{ inputs.inputRegistration('phone', 'tel', 'Телефон', '+7 ( ) - - -', 'Заполните поле' ) }}
+          {{ inputs.checkboxRegistration('checkbox', 'Я ознакомился и подтверждаю согласие с Офертой и
+        Условиями пользовательского соглашения.', 'Примите условия' ) }}
+          {{ inputs.submitRegistration('Зарегистрироваться') }}
+        </form>
       </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block popupLogin %}
+  <div class="popup__fullscreen popup--target" id="login">
+    <div class="popup__fullscreen-wrapper">
+      <button class="popup__close btn--close-popup" data-modal="login">
+        <img alt="" src="/assets/img/icons/icon-close-blue.svg">
+      </button>
       <div class="row">
-        <form class="form__popup-sell-fieldset-wrapper" action="#" method="POST">
-          <fieldset class="form__popup-sell-fieldset is-active" data-step="footer-step-1" id="step-1">
-            {% set titleTooltip = "Before you get into the nitty-gritty of coming up with a perfect title, start with a rough draft: your working title. What is that, exactly? A lot of people confuse working titles with topics. Let's clear that up:
+        <div class="header__wrapper-popup">
+          <h2 class="header__h2 header__popup">Вход</h2>
+        </div>
+        <form action="#" class="form__popup validate" method="GET" novalidate>
+          {{ inputs.inputRegistration('email-login', 'email', 'Email', 'Ваша@почта', 'Email не найден' ) }}
+          {{ inputs.inputRegistration('password-login', 'password', 'Пароль', 'Пароль', 'Неверный пароль' ) }}
+          {{ inputs.loginButtons() }}
+          {{ inputs.submitRegistration('Войти') }}
+        </form>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block popupSellItem %}
+  <div class="popup__fullscreen popup__sell-item popup--target" id="sell-item">
+    <div class="popup__fullscreen-outer">
+      <div class="popup__fullscreen-wrapper">
+        <button class="popup__close btn--close-popup" data-modal="sell-item">
+          <img alt="" src="/assets/img/icons/icon-close-blue.svg">
+        </button>
+        <div class="row">
+          <div class="header__wrapper-popup">
+            <h2 class="header__h2 header__popup">Sell your item for a charity</h2>
+          </div>
+        </div>
+        <div class="row">
+          <form action="#" class="form__popup-sell-fieldset-wrapper" method="POST">
+            <fieldset class="form__popup-sell-fieldset is-active" data-step="footer-step-1" id="step-1">
+              {% set titleTooltip = "Before you get into the nitty-gritty of coming up with a perfect title, start with a rough draft: your working title. What is that, exactly? A lot of people confuse working titles with topics. Let's clear that up:
                 <br><br>
                 Topics are very general and could yield several different blog posts. Think 'raising healthy kids,' or 'kitchen storage.' A writer might look at either of those topics and choose to take them in very, very different directions.
                 <br><br>
                 A working title, on the other hand, is very specific and guides the creation of a single blog post. For example, from the topic 'raising healthy kids,' you could derive the following working titles:
                 <br><br>
                 A working title, on the other hand, is very specific and guides the creation of a single blog post. For example, from the topic 'raising healthy kids,' you could derive the following working titles:" %}
-            {{ inputs.textarea('Title','Title', 'e. g. Gucci Black Leather Jacket', 'How to write a good title', titleTooltip) }}
-            {% set optsCategory = [
+              {{ inputs.textarea('Title','Title', 'e. g. Gucci Black Leather Jacket', 'How to write a good title', titleTooltip) }}
+              {% set optsCategory = [
                 { 
                   key: 'Jewelry',
                   value: 'Jewelry',
@@ -81,10 +81,10 @@
                 },
                 ],
               %}
-            {{ inputs.selectSimple('Category','Category', optsCategory) }}
-            {{ inputs.textarea('Description','Description', 'Up to 500 words, describing your item', 'How to write a good description', titleTooltip) }}
-            {{ inputs.photos('images', 'How to make a killer images of your items', titleTooltip) }}
-            {% set priceType = [
+              {{ inputs.selectSimple('Category','Category', optsCategory) }}
+              {{ inputs.textarea('Description','Description', 'Up to 500 words, describing your item', 'How to write a good description', titleTooltip) }}
+              {{ inputs.photos('images', 'How to make a killer images of your items', titleTooltip) }}
+              {% set priceType = [
                 {
                   key: 'fixed',
                   value: 'Fixed',
@@ -96,22 +96,22 @@
                   selected: false,
                 },
               ] %}
-            {{ inputs.selectMiniTrio('Price, ₽', 'type', priceType, 'Starting price', 0, 'Buyout price', 0) }}
-            {% set donateTo = [
+              {{ inputs.selectMiniTrio('Price, ₽', 'type', priceType, 'Starting price', 0, 'Buyout price', 0) }}
+              {% set donateTo = [
                 {
                   key: 'first',
                   value :'first',
                 }
               ] %}
-            {{ inputs.selectSimpleDual('Donation','donate', donateTo, 50, 'percent' ) }}
-          </fieldset>
-          <fieldset class="form__popup-sell-fieldset" data-step="footer-step-2" id="step-2">
-            {% set accountCreateOrLoginTabs = '1' %}
-            {{ inputs.loginTabs('account', 'Create new', 'Log in to existing account') }}
-            <div class="form__popup-tabs-wrapper">
-              <div class="form__popup-tabs tab__content is-active" id="create-user-tab">
-                {{ inputs.inputCreate('login-create-user', 'text', 'name',  'Jake McDowell') }}
-                {% set zip = [
+              {{ inputs.selectSimpleDual('Donation','donate', donateTo, 50, 'percent' ) }}
+            </fieldset>
+            <fieldset class="form__popup-sell-fieldset" data-step="footer-step-2" id="step-2">
+              {% set accountCreateOrLoginTabs = '1' %}
+              {{ inputs.loginTabs('account', 'Create new', 'Log in to existing account') }}
+              <div class="form__popup-tabs-wrapper">
+                <div class="form__popup-tabs tab__content is-active" id="create-user-tab">
+                  {{ inputs.inputCreate('login-create-user', 'text', 'name',  'Jake McDowell') }}
+                  {% set zip = [
                       {
                         key: '1',
                         value: '1'
@@ -121,7 +121,7 @@
                         value: '83011'
                       },
                     ] %}
-                {% set state = [
+                  {% set state = [
                       {
                         key: 'washington',
                         value: 'Washington D.C.'
@@ -131,41 +131,50 @@
                         value: 'Moscow'
                       },
                     ] %}
-                {{ inputs.inputCreateDoubleSelectMini('location', 'ZIP', 'ZIP', zip, 'State', 'State', state, 'text', 'create-use-city', 'City') }}
-                {{ inputs.inputCreate('adress-create-user',  'text', 'Address Line 1', 'Address') }}
-                {{ inputs.inputCreate('phone-create-user', 'tel', 'Phone',  'Phone number') }}
-                {{ inputs.inputCreate('email-create-user', 'email', 'Email',  'your@mail.com') }}
-                {{ inputs.inputCreate('password-create-user', 'password', 'Password',  'Minimum 6 symbols') }}
-              </div>
-              <div class="form__popup-tabs tab__content" id="login-tab">
-                {{ inputs.inputCreate('email-login-user', 'email', 'Email',  'your@mail.com') }}
-                {{ inputs.inputCreate('password-login-user', 'password', 'Password',  'Minimum 6 symbols') }}
-                <div class="inline-inputs">
-                  <label for="" class="form__popup-label"></label>
-                  <div class="form__popup-input-create-wrapper form__popup-login-anchors">
-                    <a class="form__popup-login-anchor" href="#">Forgot password?</a>
+                  {{ inputs.inputCreateDoubleSelectMini('location', 'ZIP', 'ZIP', zip, 'State', 'State', state, 'text', 'create-use-city', 'City') }}
+                  {{ inputs.inputCreate('adress-create-user',  'text', 'Address Line 1', 'Address') }}
+                  {{ inputs.inputCreate('phone-create-user', 'tel', 'Phone',  'Phone number') }}
+                  {{ inputs.inputCreate('email-create-user', 'email', 'Email',  'your@mail.com') }}
+                  {{ inputs.inputCreate('password-create-user', 'password', 'Password',  'Minimum 6 symbols') }}
+                </div>
+                <div class="form__popup-tabs tab__content" id="login-tab">
+                  {{ inputs.inputCreate('email-login-user', 'email', 'Email',  'your@mail.com') }}
+                  {{ inputs.inputCreate('password-login-user', 'password', 'Password',  'Minimum 6 symbols') }}
+                  <div class="inline-inputs">
+                    <label class="form__popup-label" for=""></label>
+                    <div class="form__popup-input-create-wrapper form__popup-login-anchors">
+                      <a class="form__popup-login-anchor" href="#">Forgot password?</a>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </fieldset>
-        </form>
+            </fieldset>
+          </form>
+        </div>
       </div>
-    </div>
-    <div class="popup__fullscreen-footer-wrapper">
-      <div class="popup__fullscreen-footer is-active" data-step="step-1" id="footer-step-1">
-        <p class="popup__fullscreen-footer-descr">Step 1. Describe your item</p>
-        <a class="btn-sell-item-continue swith__fieldset" data-step="footer-step-2" href="#step-2">Continue</a>
-      </div>
-      <div class="popup__fullscreen-footer"  data-step="step-2" id="footer-step-2">
-        <p class="popup__fullscreen-footer-descr">Step 2. Login or create new user</p>
-        {# КЛАСС sell-sucess ТОЛЬКО ДЛЯ ДЕМОНСТРАЦИИ ОКНА SUCESS #}
-        <a class="btn-sell-item-continue" href="javascript:void(0);">Submit item</a>
+      <div class="popup__fullscreen-footer-wrapper">
+        <div class="popup__fullscreen-footer is-active" data-step="step-1" id="footer-step-1">
+          <p class="popup__fullscreen-footer-descr">Step 1. Describe your item</p>
+          <a class="btn-sell-item-continue swith__fieldset" data-step="footer-step-2" href="#step-2">Continue</a>
+        </div>
+        <div class="popup__fullscreen-footer" data-step="step-2" id="footer-step-2">
+          <p class="popup__fullscreen-footer-descr">Step 2. Login or create new user</p>
+          {# КЛАСС sell-sucess ТОЛЬКО ДЛЯ ДЕМОНСТРАЦИИ ОКНА SUCESS #}
+          <a class="btn-sell-item-continue" href="javascript:void(0);">Submit item</a>
+        </div>
       </div>
     </div>
   </div>
-</div>
-{% block script %}
-  <script src="/assets/js/sellItem.js"></script>
-{% endblock %}
+  {% block script %}
+    <script src="/assets/js/sellItem.js">
+
+
+
+</script>
+  {% endblock %}
+
+  {% block popupCart %}
+    <div class="popup__cart popup--target" id="popup-cart">
+    </div>
+  {% endblock %}
 {% endblock %}
