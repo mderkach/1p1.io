@@ -1,10 +1,16 @@
 <script id="qq-template-gallery" type="text/template">
   <div class="fineuploader__wrapper qq-uploader-selector qq-uploader qq-gallery qq-upload-drop-area-selector qq-upload-drop-area">
     <span class="fineuploader__wrapper-drop">drop files here</span>
+    <div class="fineuploader__button qq-upload-button-selector qq-upload-button">
+      <div class="fineuploader__button-inner">
+        <svg height="24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M12 16.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zM9 3h6l1.83 2H20c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V7c0-1.1.9-2 2-2h3.17L9 3zm3 15c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5z" fill-rule="nonzero" fill="#000" opacity=".2" /></svg>
+        <span>Click to upload or drag from your computer</span>
+      </div>
+    </div>
     <ul class="fineuploader__list qq-upload-list-selector">
       <li>
         <div class="fineuploader__progressbar-container qq-progress-bar-container-selector">
-          <div class="fineuploader__progressbar progress-bar progress-bar-striped progress-bar-animated qq-progress-bar-selector" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+          <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="0" class="fineuploader__progressbar progress-bar progress-bar-striped progress-bar-animated qq-progress-bar-selector" role="progressbar"></div>
         </div>
         <div class="fineuploader__placeholder-wrapper qq-thumbnail-wrapper">
           <img class="fineuploader__placeholder qq-thumbnail-selector">
@@ -20,12 +26,6 @@
         </button>
       </li>
     </ul>
-    <div class="fineuploader__button qq-upload-button-selector qq-upload-button">
-      <div class="fineuploader__button-inner">
-        <svg height="24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M12 16.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zM9 3h6l1.83 2H20c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V7c0-1.1.9-2 2-2h3.17L9 3zm3 15c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5z" fill-rule="nonzero" fill="#000" opacity=".2" /></svg>
-        <span>Click to upload or drag from your computer</span>
-      </div>
-    </div>
   </div>
 </script>
 

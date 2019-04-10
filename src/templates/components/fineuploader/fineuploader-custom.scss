@@ -1,11 +1,11 @@
 .fineuploader {
-  height: 180px;
+  height: 120px;
   width: auto;
 
   &__wrapper {
     position: relative;
     width: 580px;
-    height: 180px;
+    height: 120px;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -14,6 +14,7 @@
 
     .fineuploader__wrapper-drop {
       display: none;
+      color: #4489ff;
     }
 
     &.qq-upload-drop-area-active {
@@ -77,15 +78,16 @@
   // }
 
   &__button {
-    width: 180px;
-    height: 180px;
+    width: 120px;
+    height: 120px;
     background-color: #f3f3f3;
     flex-shrink: 0;
+    margin-right: 20px;
 
     &-inner {
       width: 100%;
       height: 100%;
-      padding: 45px 30px;
+      //padding: 45px 30px;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -135,13 +137,18 @@
     display: flex;
     padding: 0;
     margin: 0;
+    flex-direction: row-reverse;
 
     li {
       position: relative;
       list-style: none;
-      width: 180px;
-      height: 180px;
+      width: 120px;
+      height: 120px;
       margin-right: 20px;
+
+      &:first-child {
+        margin-right: 0;
+      }
 
       &.qq-upload-fail {
         &::after {
