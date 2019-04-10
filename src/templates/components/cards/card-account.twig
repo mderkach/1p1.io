@@ -2,27 +2,34 @@
   <div class="account-card">
     {% for user in accountInfo %}
       <div class="account-avatar__wrapper">
-        <img  class="account-avatar img-responsive" src="{{ user.avatar }}" alt="">
+        <img class="account-avatar img-responsive" src="{{ user.avatar }}" alt="">
         {% if user.editable == true and editMode != 'photo' %}
           <button class="btn-edit-avatar">
-              <img src="/assets/img/icons/icon-camera.svg" alt="">
-              Изменить аватар
+            <img alt="" src="/assets/img/icons/icon-camera.svg">
+            Изменить аватар
           </button>
         {% elseif editMode == 'photo' %}
           <button class="btn-edit-avatar">
-            <img src="/assets/img/icons/icon-drag.svg" alt="">
+            <img alt="" src="/assets/img/icons/icon-drag.svg">
           </button>
         {% endif %}
       </div>
+      {% if user.editable == true and editMode == 'color' %}
+        <div class="account__pickColor-mobile">
+          {% include "../form/form-button-color.twig" %}
+        </div>
+      {% endif %}
       <div class="account-card-body">
         {% if user.editable == true and editMode == 'photo' %}
-        <div class="account-edit-controls">
-          <button class="account-edit-controls-submit" disabled>Сохранить изменения</button>
-          <button class="account-edit-controls-reset">Отменить</button>
-        </div>
+          <div class="account-edit-controls">
+            <button class="account-edit-controls-submit" disabled>Сохранить изменения</button>
+            <button class="account-edit-controls-reset">Отменить</button>
+          </div>
         {% else %}
           <div class="account-donations">
-            <p class="account-donations-total">{{ user.donations }} <span>₽</span></p>
+            <p class="account-donations-total">{{ user.donations }}
+              <span>₽</span>
+            </p>
             <p class="account-donations-descr">пожертвовано</p>
           </div>
         {% endif %}
@@ -33,7 +40,7 @@
       </div>
       {% if userStatus == '--authorised' %}
         <div class="account-sell__wrapper">
-          <a href="#" class="btn btn-mid btn-account-sell">Продать и помочь</a>
+          <a class="btn btn-mid btn-account-sell" href="#">Продать и помочь</a>
         </div>
       {% endif %}
     {% endfor %}

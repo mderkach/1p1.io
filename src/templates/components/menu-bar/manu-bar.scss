@@ -15,6 +15,13 @@
       position: relative;
       padding: 0 20px;
     }
+
+    &--show {
+      @extend .menu-bar__account;
+      @include mq-up(lg) {
+        display: none;
+      }
+    }
   }
 
   &__scroll-cont {
@@ -64,6 +71,19 @@
   &__color {
     @extend .menu-bar__account;
     padding-left: 240px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    height: auto;
+
+    @include mq-down(lg) {
+      display: none;
+    }
+
+    ~.accountInfo__content  {
+      @include mq-between(lg, xl) {
+        margin-top: 205px;
+      }
+    }
   }
 
   &__regular {

@@ -8,6 +8,16 @@
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
+
+      @include mq-between(lg, xl) {
+        max-width: 720px;
+        flex-wrap: wrap;
+      }
+
+      @include mq-down(lg) {
+        flex-direction: column;
+      }
+
       &__btn {
         &.is-picked {
           border: solid 2px #4489ff;
@@ -20,13 +30,17 @@
         flex-direction: row;
         justify-content: flex-start;
         align-items: center;
+
+        @include mq-down(lg) {
+          flex-wrap: wrap;
+        }
       }
-  
+
       &__wrapper {
         display: flex;
         align-items: center;
       }
-  
+
       &-info {
         z-index: 0;
         margin-left: -30px;
@@ -40,13 +54,19 @@
         color: #000;
         text-transform: uppercase;
       }
+
       &__btn {
         z-index: 1;
         width: 30px;
         height: 30px;
         border: 1px solid #ebeff4;
         border-radius: 4px;
-        margin-right: 8px; 
+        margin-right: 8px;
+
+        @include mq-down(lg) {
+          margin-right: 10px;
+          margin-bottom: 10px;
+        }
       }
 
       &-reset {
@@ -74,6 +94,24 @@
 
         &:disabled {
           opacity: .5;
+        }
+      }
+
+      &__controls {
+        @include mq-down(xl) {
+          margin: 25px 0;
+        }
+
+        @include mq-down(lg) {
+          width: 100%;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+
+          input {
+            width: 135px;
+            font-size: rem(14);
+          }
         }
       }
     }
