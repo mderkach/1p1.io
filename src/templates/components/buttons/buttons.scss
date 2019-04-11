@@ -533,6 +533,7 @@
       right: 0;
       width: 15px;
       height: 15px;
+      cursor: pointer;
 
       @include mq-down(lg) {
         top: auto;
@@ -597,7 +598,7 @@
       font-size: rem(19);
       font-weight: 500;
       line-height: normal;
-      padding: 15px 35px;
+      padding: 11px 35px;
       display: flex;
       justify-content: center;
       align-items: center;

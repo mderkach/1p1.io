@@ -362,11 +362,23 @@
         max-height: 320px;
         overflow-y: auto;
 
-        > [class^='cart-card'] {
+        >[class^='cart-card'] {
+          padding-top: 25px;
+          padding-bottom: 25px;
+          padding-left: 0;
+          padding-right: 0;
           border-top: 1px solid #d9deea !important;
 
           &:nth-last-child(1) {
             border-bottom: 1px solid #d9deea !important;
+          }
+
+          .cart-card--deleted-decline {
+            margin-bottom: 15px;
+          }
+
+          &.--unaviable {
+            padding: 25px 10px;
           }
         }
 
