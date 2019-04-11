@@ -208,8 +208,7 @@
         isAviable: true,
         isDeleted: false,
       },
-    ] 
-  %}
+    ] %}
     <div class="popup__cart popup--target" id="popup-cart">
       <div class="popup__cart-header-wrapper">
         <h4 class="popup__cart-header-descr">Корзина</h4>
@@ -223,11 +222,37 @@
         </button>
       </div>
       <div class="popup__cart-cards-wrapper">
-         {% include "../cards/cards-cart.twig" %}
+        {% include "../cards/cards-cart.twig" %}
       </div>
       <div class="popup__cart-footer-wrapper">
-        <a href="#" class="btn-xlg popup__cart-btn">Оформить заказ</a>
-      </div> 
+        <a class="btn-xlg popup__cart-btn" href="#">Оформить заказ</a>
+      </div>
+    </div>
+  {% endblock %}
+
+  {% block popupCartItems %}
+    <div class="popup__cart-items popup--target" id="cart-items">
+      <div class="popup__cart-items-container">
+        <div class="popup__cart-items-wrapper">
+          <div class="popup__cart-items-outer">
+            <div class="popup__cart-items-header">
+              <h4 class="popup__cart-items-header-descr">Корзина</h4>
+              <p class="popup__cart-items-header-count">{{ cartItems.length }} товара</p>
+              <p class="popup__cart-items-header-value">
+                {{ checkoutInfo.orderValue }}
+                {{ checkoutInfo.priceTag }}
+              </p>
+            </div>
+            <div class="popup__cart-items-body">
+              {% include "../cards/cards-cart.twig" %}
+            </div>
+            <div class="popup__cart-items-footer">
+            <a class="btn__popup-white btn--close-popup" href="#cart-items">Закрыть</a>
+            <a class="btn__popup-blue" href="#">Оформить заказ</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   {% endblock %}
 {% endblock %}

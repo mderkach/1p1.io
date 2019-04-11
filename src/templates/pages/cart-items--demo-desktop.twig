@@ -1,0 +1,161 @@
+{% extends "../layout/cart.twig" %}
+{% set page_title = "cart" %}
+{% set headerType = "--white --no-toggle" %}
+{% set userStatus = "--unauthorised" %}
+{% set pageType = 'private' %}
+{% set screenHeader = 'Корзина' %}
+{% set mobileMenu = [
+	{
+	link: '#',
+	description: 'Объявления'
+	}, 
+	{
+		link: '#',
+		description: 'Как это работает'
+	},
+	{
+		link: '#',
+		description: 'Фонды'
+	},
+	{
+		link: '#',
+		description: 'Новости'
+	},
+	{
+		link: '#',
+		description: 'Инвесторам'
+	},
+] %}
+{% set menubar = [  
+	{
+		type: 'regular',
+		items: [
+			{
+				link: '#categories',
+				isActive: false,
+				descr: 'All categories',
+			},
+			{
+				link: '#fashion',
+				isActive: true,
+				descr: 'Fashion',
+			},
+			{
+				link: '#arts',
+				isActive: false,
+				descr: 'Arts',
+			},
+			{
+				link: '#Electronics',
+				isActive: false,
+				descr: 'Electronics',
+			},
+			{
+				link: '#Tickets',
+				isActive: false,
+				descr: 'Tickets',
+			},
+			{
+				link: '#celebs',
+				isActive: false,
+				descr: 'Goods from celebrities',
+			},
+			{
+				link: '#private',
+				isActive: false,
+				descr: 'Private offers',
+			},
+		],
+	}
+] %}
+{% set cartItems = [
+	{
+		name: 'Картина «Сергей» Ольги Молчановой-Пермяковой (арт-аукцион «Всякое добро»)',
+		img: '/assets/img/cart/item-1.jpg',
+		price: '5 085',
+		amount: '10',
+		priceTag: 'Р.',
+		isAviable: true,
+		isDeleted: true,
+	},
+	{
+		name: 'Картина «Сергей» Ольги Молчановой-Пермяковой (арт-аукцион «Всякое добро»)',
+		img: '/assets/img/cart/item-1.jpg',
+		price: '6 085',
+		amount: '2',
+		priceTag: 'Р.',
+		isAviable: false,
+		isDeleted: false,
+	},
+	{
+		name: 'Картина «Сергей» Ольги Молчановой-Пермяковой (арт-аукцион «Всякое добро»)',
+		img: '/assets/img/cart/item-1.jpg',
+		price: '7 085',
+		amount: '1',
+		priceTag: 'Р.',
+		isAviable: true,
+		isDeleted: false,
+	},
+] %}
+{% set checkoutInfo = {
+	priceTag: 'Р.',
+	orderValue: '12 083',
+	supportValue: '1 416.60',
+	funds: [
+		{
+			name: 'Фонд помощи детям в Фонд «Дедморозим» и проекта "Школа семьи" - подготовка к семейной жизни',
+		}, 
+		{
+			name: 'БФ "Бюро добрых дел"',
+		}
+	],
+	delivery: [
+		{
+			name: 'Стандартная доставка',
+			duration: '14 дней',
+			value: 'standart',
+		},
+		{
+			name: 'Нестандартная доставка',
+			duration: 'сюрприз :)',
+			value: 'non-standart',
+		}
+	],
+	deliveryValue: '85',
+	totalValue: '12 168',
+} %}
+{% set countries = [
+	{
+		name: 'Выберите страну',
+		value: '',
+		hidden: true
+	},
+	{
+		name: 'Russia',
+		value: 'russia'
+	}
+] 
+%}
+{% set regions  = [
+	{
+		name: 'Выберите область',
+		value: '',
+		hidden: true
+	},
+	{
+		name: 'Moscow',
+		value: 'Moscow',
+	}
+] %}
+
+{# демо модалка #}
+{% block video %}
+  <script>
+    var popup = document.querySelector('#cart-items');
+    console.log(popup);
+    document.addEventListener('DOMContentLoaded', function () {
+			document.body.classList.add('modal-open');
+      popup.classList.add('is-active');
+    });
+  </script>
+{% endblock %}

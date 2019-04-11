@@ -24,6 +24,9 @@
           </div>
         {% else %}
           <div class="cart-items__wrapper">
+            <div class="form-cart-payment__header">
+              <p class="form-cart-payment__header-descr">Данные карты:</p>
+            </div>
             {% include "../form/form-cart-payment.twig" %}
           </div>
         {% endif %}

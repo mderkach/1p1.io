@@ -1,11 +1,18 @@
 .form {
   &-cart {
     &-payment {
+
       &__header {
         @extend .form-cart-checkout__header;
 
         &-descr {
           @extend .form-cart-checkout__header-descr;
+        }
+
+        &-wrapper {
+          &-mobile {
+            padding: 15px 20px 0;
+          }
         }
       }
 
@@ -14,6 +21,11 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+
+        @include mq-down(lg) {
+          flex-wrap: wrap;
+          padding: 15px 20px;
+        }
       }
 
       &__input {
@@ -24,8 +36,16 @@
           justify-content: flex-start;
           align-items: flex-start;
 
+          @include mq-down(lg) {
+            max-width: 100%;
+          }
+
           &:nth-of-type(1) {
             max-width: 250px;
+
+            @include mq-down(lg) {
+              max-width: 100%;
+            }
           }
 
           &:nth-of-type(2) {
@@ -43,6 +63,10 @@
 
         &-inline {
           max-width: 115px;
+
+          @include mq-down(lg) {
+            max-width: 135px;
+          }
         }
       }
 
@@ -106,7 +130,7 @@
         width: 100%;
 
         &-descr {
-          
+
           @extend .form-cart-delivery__contacts-info-descr;
         }
       }
