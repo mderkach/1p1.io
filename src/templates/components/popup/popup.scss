@@ -380,6 +380,10 @@
           &.--unaviable {
             padding: 25px 10px;
           }
+
+          .cart-name, .cart-info--unaviable {
+            font-size: rem(16);
+          }
         }
 
         &::-webkit-scrollbar {
