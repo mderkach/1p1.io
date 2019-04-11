@@ -7,12 +7,16 @@
     justify-content: flex-start;
     align-items: center;
     border: none;
-    border-bottom: 1px solid #ebebeb;
+    border-bottom: 1px solid #d9deea;
     border-radius: 0;
     padding: 30px;
 
     &:nth-last-child(1) {
-      border-bottom: none
+      border-bottom: none;
+
+      @include mq-down(lg) {
+        border-bottom: 1px solid #d9deea;
+      }
     }
 
     @include mq-down(lg) {
@@ -31,6 +35,11 @@
       flex-direction: column;
       justify-content: space-between;
 
+      @include mq-down(lg) {
+        height: auto;
+        min-height: 80px;
+      }
+
       @include mq-down(sm) {
         margin-left: 15px;
         margin-top: 0;
@@ -44,6 +53,7 @@
       align-items: center;
       background: rgba($color: #000, $alpha: .05);
       padding: 30px;
+      border-bottom: 1px solid #d9deea;
 
       &-descr {
         margin: 30px 0 15px;
@@ -55,6 +65,7 @@
         @include mq-down(lg) {
           font-size: rem(15);
           text-align: center;
+          margin-top: 0;
         }
       }
 
@@ -64,10 +75,11 @@
         @include mq-down(lg) {
           font-size: rem(15);
           text-align: center;
+          margin-bottom: 0;
         }
       }
     }
-    
+
     &--unaviable {
       @extend .cart-card;
 
@@ -118,6 +130,10 @@
       margin: 0 0 0 auto;
       color: #79879e;
 
+      @include mq-down(lg) {
+        margin-right: 30px;
+      }
+
       @include mq-down(sm) {
         font-size: rem(13);
       }
@@ -132,6 +148,11 @@
     color: #4489ff;
     margin-bottom: 0;
 
+
+    @include mq-down(lg) {
+      margin-right: 35px;
+    }
+
     @include mq-down(sm) {
       font-size: rem(13);
     }
@@ -145,6 +166,10 @@
     &-outer {
       @extend .form__popup-inputNumberMini-outer;
       max-width: 110px;
+
+      @include mq-down(lg) {
+        height: auto;
+      }
 
       &-label {
         @extend .form__popup-inputNumberMini-outer-label;
@@ -185,6 +210,6 @@
   background: rgba($color: #000, $alpha: .05);
 
   @include mq-down(lg) {
-    padding: 20px 50px 20px 20px;
+    padding: 20px;
   }
 }

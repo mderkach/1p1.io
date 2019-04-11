@@ -1,8 +1,32 @@
 {% extends "../layout/cart--mobile.twig" %}
-{% set page_title = "cart" %}
+{% set page_title = "cart ADDRESS" %}
 {% set headerType = "--white --no-toggle" %}
-{% set userStatus = "--unauthorised" %}
-{% set pageType = 'public' %}
+{% set userStatus = "--authorised" %}
+{% set pageType = 'private' %}
+{% set accountInfo = [
+  {
+    avatar: '/assets/img/account/account-avatar.jpg',
+    link: '#',
+    name: 'Квартет И',
+    donations: '0',
+    totalFunds: '0',
+    editable: false,
+    contacts: {
+      number: '+8 (953) 505-31-67',
+      email: 'lubomir.frolov@mail.com',
+    },
+		address: [
+			{
+				country: 'Россия',
+				region: 'Московская область',
+				cityPrefix: 'г.',
+				city: 'Троицкое',
+				index: '102184',
+				address: 'ул. Буженинова, дом 20, квартира 253',
+			},
+		]
+  }
+] %}
 {% set cartItems = [
 	{
 		name: 'Картина «Сергей» Ольги Молчановой-Пермяковой (арт-аукцион «Всякое добро»)',
