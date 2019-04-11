@@ -1,8 +1,5 @@
 {% import "../form/form-cart-macro.twig" as inputs %}
 <form action="#" class="form-cart-payment">
-  <div class="form-cart-payment__header">
-    <p class="form-cart-payment__header-descr">Данные карты:</p>
-  </div>
   <div class="form-cart-payment-body">
     {% for user in accountInfo %}
       {% if user.payment == false %}

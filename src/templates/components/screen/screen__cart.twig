@@ -1,21 +1,21 @@
 <section class="screen__cart">
   <div class="cart__container">
     <div class="cart__wrapper">
-    {% if breadcrumbs %}
-      {% include "../breadcrumbs/breadcrumbs.twig" %}
-    {% endif %}
-    {% if screenHeader %}
-      <div class="cart-header__outer">
-        <div class="cart-header__wrapper">
-          <h1 class="header__h1 regular__h1">{{ screenHeader }}</h1>
-          {% if checkoutMode != 'payment' %}
-            <span class="cart-header__count">
-              {{cartItems.length}}
-              товара
-            </span>
-          {% endif %}
+      {% if breadcrumbs %}
+        {% include "../breadcrumbs/breadcrumbs.twig" %}
+      {% endif %}
+      {% if screenHeader %}
+        <div class="cart-header__outer">
+          <div class="cart-header__wrapper">
+            <h1 class="header__h1 regular__h1">{{ screenHeader }}</h1>
+            {% if checkoutMode != 'payment' %}
+              <span class="cart-header__count">
+                {{cartItems.length}}
+                товара
+              </span>
+            {% endif %}
+          </div>
         </div>
-      </div>
       {% endif %}
       <main class="cart-items__container">
         {% if checkoutMode != 'payment' %}
@@ -24,11 +24,17 @@
           </div>
         {% else %}
           <div class="cart-items__wrapper">
+            <div class="form-cart-payment__header">
+              <p class="form-cart-payment__header-descr">Данные карты:</p>
+            </div>
             {% include "../form/form-cart-payment.twig" %}
           </div>
         {% endif %}
         {% if checkoutMode != 'payment' %}
           <div class="cart-delivery__wrapper">
+            <div class="form-cart-delivery__header">
+              <p class="form-cart-delivery__header-descr">Адрес доставки</p>
+            </div>
             {% include "../form/form-cart-delivery.twig" %}
           </div>
         {% endif %}

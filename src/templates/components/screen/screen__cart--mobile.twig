@@ -1,0 +1,70 @@
+<div class="screen__cart--mobile {% if checkoutMode == 'success' %}success{% endif %}">
+  {% if checkoutMode == 'payment' %}
+    <div class="cart__item" id="cart__Checkout">
+      <a aria-controls="Checkout-mobile" aria-expanded="false" class="cart__item-head collapsed" data-toggle="collapse" href="#Checkout-mobile" role="button">
+        <span class="cart__name">Оплата</span>
+        <svg class="cart__chevron" height="9px" version="1.1" viewbox="0 0 14 9" width="14px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+          <g fill-rule="evenodd" fill="none" stroke-width="1" stroke="none">
+            <g class="cart__chevron-fill" fill-rule="nonzero" transform="translate(-260.000000, -21.000000)">
+              <polygon id="dropdown-arrow" points="272.646447 21 274.06066 22.4142136 267.353553 29.1213203 260.646447 22.4142136 262.06066 21 267.353553 26.2928932"></polygon>
+            </g>
+          </g>
+        </svg>
+      </a>
+      <div aria-labelledby="cart__Checkout" class="collapse cart__dropdown" id="Checkout-mobile">
+        <div class="form-cart-payment__header-wrapper-mobile">
+          <p class="form-cart-delivery__contacts-header">Данные карты:</p>
+        </div>
+        {% include "../form/form-cart-payment.twig" %}
+      </div>
+    </div>
+  {% elseif checkoutMode != 'success'  %}
+    <div class="cart__item" id="cart__Cart">
+      <a aria-controls="Cart-mobile" aria-expanded="false" class="cart__item-head collapsed" data-toggle="collapse" href="#Cart-mobile" role="button">
+        <span class="cart__name">Корзина</span>
+        <span class="popup__cart-header-count">{{ cartItems.length }}</span>
+        <svg class="cart__chevron" height="9px" version="1.1" viewbox="0 0 14 9" width="14px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+          <g fill-rule="evenodd" fill="none" stroke-width="1" stroke="none">
+            <g class="cart__chevron-fill" fill-rule="nonzero" transform="translate(-260.000000, -21.000000)">
+              <polygon id="dropdown-arrow" points="272.646447 21 274.06066 22.4142136 267.353553 29.1213203 260.646447 22.4142136 262.06066 21 267.353553 26.2928932"></polygon>
+            </g>
+          </g>
+        </svg>
+      </a>
+      <div aria-labelledby="cart__Cart" class="collapse cart__dropdown" id="Cart-mobile">
+        {% include "../cards/cards-cart.twig" %}
+      </div>
+    </div>
+    <div class="cart__item" id="cart__Delivery">
+      <a aria-controls="Delivery-mobile" aria-expanded="false" class="cart__item-head collapsed" data-toggle="collapse" href="#Delivery-mobile" role="button">
+        <span class="cart__name">Адрес доставки</span>
+        <svg class="cart__chevron" height="9px" version="1.1" viewbox="0 0 14 9" width="14px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+          <g fill-rule="evenodd" fill="none" stroke-width="1" stroke="none">
+            <g class="cart__chevron-fill" fill-rule="nonzero" transform="translate(-260.000000, -21.000000)">
+              <polygon id="dropdown-arrow" points="272.646447 21 274.06066 22.4142136 267.353553 29.1213203 260.646447 22.4142136 262.06066 21 267.353553 26.2928932"></polygon>
+            </g>
+          </g>
+        </svg>
+      </a>
+      <div aria-labelledby="cart__Delivery" class="collapse cart__dropdown" id="Delivery-mobile">
+        {% include "../form/form-cart-delivery.twig" %}
+      </div>
+    </div>
+  {% else %}
+    <div class="screen__cart-success-wrapper">
+      <div class="screen__cart-success-inner">
+        <h3 class="popup-edit-header">Заказ размещен!</h3>
+        <p class="popup-edit-ads">
+          Ваш заказ был успешно размещен и теперь вы можете просматривать подробности, управлять заказом и отслеживать его доставку на странице История заказов.
+        </p>
+        <p class="popup-edit-ads">
+          Часть суммы пошла на поддержку благотворительных фондов, спасибо за вашу помощь!
+        </p>
+      </div>
+      <a class="btn__cart-success" href="#">Понятно</a>
+    </div>
+  {% endif %}
+  {% if checkoutMode != 'success' %}
+    {% include "../form/form-cart-checkout.twig" %}
+  {% endif %}
+</div>
