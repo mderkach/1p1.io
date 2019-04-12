@@ -11,6 +11,10 @@
     height: calc(100% - 120px);
     z-index: 2;
 
+    .account__pickColor-mobile {
+      margin-bottom: 0;
+    }
+
     &-body {
       @extend .card-body;
       padding: 0;
@@ -19,6 +23,7 @@
         background: #fff;
         display: flex;
         flex-direction: row;
+        flex-wrap: wrap;
         border-bottom: 1px solid rgba($color: #d8d8d8, $alpha: .3);
       }
     }
@@ -95,7 +100,7 @@
 
     @include mq-down(lg) {
       display: flex;
-      width: 100%;
+      width: 50%;
       padding: 15px 0;
       flex-direction: column;
       justify-content: center;
@@ -157,6 +162,11 @@
       display: flex;
       flex-direction: column;
       padding: 20px;
+
+      @include mq-down(lg) {
+        padding: 15px 10px;
+        width: 50%;
+      }
 
       &-submit {
         @extend .form-button-color-submit;
