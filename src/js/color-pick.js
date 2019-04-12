@@ -1,9 +1,9 @@
 var buttons = document.querySelectorAll('.form-button-color__btn');
-var inputColor = document.querySelector('[name=color-paste]');
+var inputColor = document.querySelectorAll('[name=color-paste]');
 var banner = document.querySelector('.banner');
 
 buttons.forEach(
-  function (btn) {
+  function (btn, index) {
     var dataColor = btn.getAttribute('data-color');
     document.addEventListener('DOMContentLoaded', function () {
       btn.style.backgroundColor = dataColor;
@@ -24,12 +24,13 @@ buttons.forEach(
 
 
 if (inputColor) {
-  inputColor.addEventListener('input', function () {
-    var color = new RegExp(/^#(([0-9a-fA-F]{2}){3}|([0-9a-fA-F]){3})$/);
-    var value = this.value;
-    if (color !== '') {
-      banner.style.backgroundColor = value;
-    }
-    console.log(value);
+  inputColor.forEach(function(input) {
+    input.addEventListener('input', function () {
+      var color = new RegExp(/^#(([0-9a-fA-F]{2}){3}|([0-9a-fA-F]){3})$/);
+      var value = this.value;
+      if (color !== '') {
+        banner.style.backgroundColor = value;
+      }
+    });
   });
 }

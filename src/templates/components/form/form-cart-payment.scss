@@ -1,7 +1,6 @@
 .form {
   &-cart {
     &-payment {
-
       &__header {
         @extend .form-cart-checkout__header;
 
@@ -130,7 +129,6 @@
         width: 100%;
 
         &-descr {
-
           @extend .form-cart-delivery__contacts-info-descr;
         }
       }
