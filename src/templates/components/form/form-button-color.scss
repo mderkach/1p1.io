@@ -95,6 +95,10 @@
         &:disabled {
           opacity: .5;
         }
+
+        @include mq-down(lg) {
+          width: 100%;
+        }
       }
 
       &__controls {

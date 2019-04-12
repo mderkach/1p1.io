@@ -76,7 +76,13 @@
     height: auto;
 
     @include mq-down(lg) {
-      display: none;
+      height: 100%;
+
+      .form-button-color {
+        .form-button-color__container {
+            display: none;
+        }
+      }
     }
 
     ~.accountInfo__content  {
