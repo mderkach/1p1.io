@@ -214,6 +214,18 @@ module.exports = {
       filename: 'cart-items--demo-desktop.html',
       template: `${PATHS.src}/templates/pages/cart-items--demo-desktop.twig`,
     }),
+    new HtmlWebpackPlugin({
+      filename: 'account-private-photo--mobile.html',
+      template: `${PATHS.src}/templates/pages/account-private-photo--mobile.twig`,
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'account-private-color--mobile.html',
+      template: `${PATHS.src}/templates/pages/account-private-color--mobile.twig`,
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'account-private-avatar--mobile.html',
+      template: `${PATHS.src}/templates/pages/account-private-avatar--mobile.twig`,
+    }),
     new CopyWebpackPlugin([
       { from: `${PATHS.src}/img`, to: `${PATHS.assets}img` },
       { from: `${PATHS.src}/fonts`, to: `${PATHS.assets}fonts` },

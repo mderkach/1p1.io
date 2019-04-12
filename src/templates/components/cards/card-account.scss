@@ -73,6 +73,18 @@
         padding: 0;
         max-width: 80px;
       }
+
+      &-mobile {
+        @extend .banner__wrapper-edit-mobile;
+
+        .account-avatar {
+          margin: 0 5px;
+          width: calc(100% -10px);
+          height: auto;
+          object-fit: contain;
+          border-radius: 4px;
+        }
+      }
     }
   }
 
@@ -164,11 +176,16 @@
 
   &__pickColor {
     &-mobile {
-      padding: 35px 20px 0;
+      padding: 20px;
       background: #fff;
       border-bottom: 1px solid rgba($color: #d8d8d8, $alpha: .3);
+      margin-bottom: 96px;
 
       @include mq-up(lg) {
+        display: none;
+      }
+
+      .form-button-color__controls {
         display: none;
       }
     }

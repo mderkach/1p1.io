@@ -1,0 +1,21 @@
+<div class="screen__edit">
+  {% if editMode == 'photoMobile' %}
+    <div class="banner__wrapper-edit-mobile">
+      {% include "../banner/banner.twig" %}
+    </div>
+  {% elseif editMode == 'colorMobile' %}
+    {% include "../banner/banner.twig" %}
+    <div class="account__pickColor-mobile">
+      {% include "../form/form-button-color.twig" %}
+    </div>
+  {% elseif editMode == 'avatarMobile' %}
+    <div class="account-avatar__wrapper-mobile">
+      {% for user in accountInfo %}
+        <img class="account-avatar img-responsive" src="{{ user.avatar }}" alt="">
+      {% endfor %}
+    </div>
+  {% endif %}
+  <div class="screen__edit-save-wrapper">
+    <button class="btn-edit-banner">Сохранить изменения</button>
+  </div>
+</div>
