@@ -1,22 +1,24 @@
 {% if banner %}
   {% for banner in banner %}
-    {% if editMode != 'color' %}
+    {% if editMode != 'color' and editMode != 'colorMobile' %}
       <div class="banner">
-        <img src="/assets/img/banner/1.jpg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;" alt="">
-    {% elseif editMode == 'color' %}
-      <div class="banner" style="background-color: #ffc857;">
-    {% endif %}
-      <div class="banner__container">
-        <p class="banner__accountName">{{ banner.name }}</p>
-        {% if banner.editable == true and editMode != 'photo' %}
-          {% include "../dropdown/dropdown.twig" %}
-        {% elseif banner.editable == true and editMode == 'photo' %}
-          <p class="banner__move">
-            <img src="/assets/img/icons/icon-drag.svg" alt="">
-            Перетащите изображение, чтобы изменить его положение
-          </p>
+        <img alt="" src="/assets/img/banner/1.jpg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+      {% else %}
+        <div class="banner {% if editMode == 'colorMobile' %}banner__colorMobile{% endif %}" style="background-color: #ffc857;">
+        {% endif %}
+        {% if editMode != 'photoMobile' and editMode != 'colorMobile' %}
+          <div class="banner__container">
+            <p class="banner__accountName">{{ banner.name }}</p>
+            {% if banner.editable == true and editMode != 'photo' %}
+              {% include "../dropdown/dropdown.twig" %}
+            {% elseif banner.editable == true and editMode == 'photo' %}
+              <p class="banner__move">
+                <img alt="" src="/assets/img/icons/icon-drag.svg">
+                Перетащите изображение, чтобы изменить его положение
+              </p>
+            {% endif %}
+          </div>
         {% endif %}
       </div>
-    </div>
-  {% endfor %}
-{% endif %}
+    {% endfor %}
+  {% endif %}

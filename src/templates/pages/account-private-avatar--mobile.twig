@@ -1,0 +1,36 @@
+{% extends "../layout/account-edit-mobile.twig" %}
+{% set page_title = "acount private photo mobile" %}
+{% set headerType = "--white --no-toggle" %}
+{% set userStatus = "--authorised" %}
+{% set editMode = "avatarMobile" %}
+{% set accountInfo = [{
+	avatar: '/assets/img/account/account-avatar.jpg',
+	link: '#',
+	name: 'Квартет И',
+	donations: '0',
+	totalFunds: '0',
+	editable: true
+}] %}
+{% set dropdown = {
+  type: 'dropdown__account-wrapper',
+  imgClass: 'dropdown__account-avatar',
+  items: [
+  { link: '#', caption: 'Настройки профиля'},
+  { link: '#', caption: 'Изменить email'},
+  { link: '#', caption: 'Изменить пароль'},
+  { link: '#', caption: 'Выйти'},
+  ]
+}, {
+	type: 'dropdown__banner-edit',
+	items: [
+  { link: '#', caption: 'Выбрать цвет'},
+  { link: '#', caption: 'Выбрать фотографию'},
+  ]
+} %}
+{% set banner = [
+	{
+		name: 'Квартет И',
+		editable: true,
+	},
+	] 
+%}

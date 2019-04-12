@@ -14,11 +14,11 @@
           </button>
         {% endif %}
       </div>
-      {% if user.editable == true and editMode == 'color' %}
+      {# {% if user.editable == true and editMode == 'color' %}
         <div class="account__pickColor-mobile">
           {% include "../form/form-button-color.twig" %}
         </div>
-      {% endif %}
+      {% endif %} #}
       <div class="account-card-body">
         {% if user.editable == true and editMode == 'photo' %}
           <div class="account-edit-controls">

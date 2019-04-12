@@ -8,6 +8,7 @@
     margin-top: 50px;
     height: 120px;
   }
+
   &__container {
     position: relative;
     @include make-container-max-widths($max-widths: $container-max-widths, $breakpoints: $grid-breakpoints);
@@ -22,6 +23,7 @@
       max-width: 100%;
     }
   }
+
   &__accountName {
     font-size: rem(42);
     font-weight: 300;
@@ -31,7 +33,7 @@
     margin-bottom: 20px;
     margin-left: 270px;
 
-    @include mq-between(md,lg) {
+    @include mq-between(md, lg) {
       margin-left: 195px;
       margin-bottom: 10px;
     }
@@ -39,9 +41,10 @@
     @include mq-down(md) {
       margin-left: 95px;
       margin-bottom: 10px;
-      font-size:  rem(24);
+      font-size: rem(24);
     }
   }
+
   &__move {
     position: absolute;
     right: 0;
@@ -52,5 +55,26 @@
     line-height: normal;
     text-align: right;
     color: #fff;
+  }
+
+  &__wrapper {
+    &-edit {
+      &-mobile {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: calc(100% - 95px);
+
+        .banner {
+          margin-top: 0;
+          width: 100%;
+          min-height: 210px;
+        }
+      }
+    }
+  }
+
+  &__colorMobile {
+    height: 120px;
   }
 }

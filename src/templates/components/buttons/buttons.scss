@@ -323,6 +323,15 @@
       @extend .btn-edit-contacts;
       max-width: 240px;
     }
+
+    &-banner {
+      width: 100%;
+      border-radius: 96px;
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+      background-color: #84be46;
+      padding: 10px 0;
+      border: none;
+    }
   }
 
   &-remove {
