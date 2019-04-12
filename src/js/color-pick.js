@@ -1,5 +1,5 @@
 var buttons = document.querySelectorAll('.form-button-color__btn');
-var inputColor = document.querySelectorAll('[name=color-paste]');
+var inputColor = document.querySelector('[name=color-paste]');
 var banner = document.querySelector('.banner');
 
 buttons.forEach(
