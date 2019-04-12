@@ -4,6 +4,7 @@
   width: 100%;
   padding: 20px 30px;
   z-index: 10;
+
   @include mq-down(sm) {
     padding: 10px 20px;
   }
@@ -13,6 +14,7 @@
   display: flex;
   flex-direction: row;
   width: 100%;
+
   &--transparent {
     background: transparent;
   }
@@ -21,10 +23,12 @@
 .logo {
   &__wrapper {
     margin-right: 28px;
+
     @include mq-down(lg) {
       display: none;
     }
   }
+
   &__img {
     &-menu {
       width: 106px;
@@ -41,14 +45,17 @@
       flex-direction: row;
       justify-content: space-between;
       width: 100%;
+
       >[class^='nav-menu'] {
         display: flex;
         flex-direction: row;
         align-items: center;
         width: 100%;
+
         &[class*='--right'] {
           justify-content: flex-end;
         }
+
         &[class*='--left'] {
           @include mq-down(lg) {
             width: auto;
@@ -56,20 +63,25 @@
         }
       }
     }
+
     &-item {
       font-size: rem(13);
       font-weight: 300;
       margin: 0 15px;
+
       &:nth-child(1) {
         margin-left: 0;
       }
+
       &:nth-last-child(1) {
         margin-right: 0;
       }
+
       &:hover {
         text-decoration: none;
         cursor: pointer;
       }
+
       @include mq-down(lg) {
         display: none;
       }
@@ -79,6 +91,7 @@
 
 .btn--mobile--menu {
   display: none;
+
   @include mq-down(lg) {
     display: block;
   }
@@ -90,6 +103,7 @@
       fill: #fff
     }
   }
+
   .nav {
     &__menu {
       &-item {
@@ -97,9 +111,11 @@
       }
     }
   }
+
   .icon--search {
     fill: #fff;
   }
+
   .btn--mobile--menu {
     .mobile-menu__toggle-img {
       fill: #fff;
@@ -109,23 +125,27 @@
 
 .--white {
   background: #fff;
+
   .btn--mobile--menu {
     .mobile-menu__toggle-img {
       fill: #000;
     }
   }
+
   .logo {
     &__img {
       fill: #4489ff
     }
   }
+
   .nav {
     &__menu {
       &-item {
         color: #4489ff;
-        font-weight: 700;
+        font-weight: 500;
       }
     }
+
     &-menu {
       &--left {
         .nav__menu-item {
@@ -135,26 +155,32 @@
       }
     }
   }
+
   .icon--search {
     fill: #4489ff;
   }
+
   .btn-header {
     padding: 6px 10px;
     background-color: #4489ff;
     color: #fff;
     border: 2px solid #4489ff;
+
     &:hover {
       background: #4f90fe
     }
+
     &:focus {
       padding: 6px 10px;
       border-color: #e9ff00;
       background-color: #4489ff;
     }
   }
+
   .form__search-header-input {
     border-color: #4489ff;
     color: #4489ff;
+
     &::placeholder {
       color: #4489ff;
     }

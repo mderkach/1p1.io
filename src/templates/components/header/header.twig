@@ -36,7 +36,7 @@
               </button>
             {% else %}
               {# кнопка возврата к коризне, пока позывается только в окне мобильной корзины #}
-              <a href="#" class="hamburger hamburger--arrow is-active">
+              <a class="hamburger hamburger--arrow is-active" href="#">
                 <span class="hamburger-box">
                   <span class="hamburger-inner"></span>
                 </span>
@@ -45,11 +45,37 @@
           </div>
           <div class="nav-menu--right">
             {% include "../form/form-search-header.twig" %}
-            <a class="nav__menu-item" href="#">Объявления</a>
+            <div class="dropdown-wrapper dropdown__cart-wrapper">
+              <button class="dropdown__trigger">
+                <img alt="" src="/assets/img/icons/icon-cart-color.svg">
+                {% if cartItems.length > 0 %}
+                  <span class="dropdown__cart-counter">{{ cartItems.length }}</span>
+                {% endif %}
+              </button>
+              <div class="dropdown__menu">
+                {% if cartItems %}
+                  <div class="dropdown__cart-cards-wrapper">
+                    {% include "../cards/cards-cart--dropdown.twig" %}
+                  </div>
+                  <div class="cards-cart--dropdown-total-wrapper">
+                    <p class="cards-cart--dropdown-total">7 083 Р.</p>
+                    <a class="btn--dropdown-checkout" href="#" role="button">Оформить заказ</a>
+                  </div>
+                {% else %}
+                  empty
+                {% endif %}
+              </div>
+            </div>
             {% if userStatus == '--authorised' %}
               {% include "../dropdown/dropdown-account-header.twig" %}
             {% endif %}
             <a class="btn btn-mid btn-transparent btn-header popup--toggle" data-modal="sell-item" href="#sell-item">Продать и помочь</a>
+            <a class="menu-bar__regular-popup popup--toggle" data-modal="popup-cart" href="#popup-cart">
+              <img alt="" src="/assets/img/icons/icon-cart-color.svg">
+              {% if cartItems.length > 0 %}
+                <span class="dropdown__cart-counter">{{ cartItems.length }}</span>
+              {% endif %}
+            </a>
             {% if userStatus == '--unauthorised' %}
               <a class="nav__menu-item popup--toggle" data-modal="login" href="#login">Войти</a>
             {% endif %}
