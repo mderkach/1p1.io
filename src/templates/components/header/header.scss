@@ -2,11 +2,11 @@
   position: fixed;
   top: 0;
   width: 100%;
-  padding: 20px 30px;
+  padding: 17px 30px;
   z-index: 10;
 
   @include mq-down(sm) {
-    padding: 10px 20px;
+    padding: 7px 20px;
   }
 }
 
@@ -22,6 +22,8 @@
 
 .logo {
   &__wrapper {
+    display: flex;
+    align-items: center;
     margin-right: 28px;
 
     @include mq-down(lg) {
@@ -31,7 +33,7 @@
 
   &__img {
     &-menu {
-      width: 106px;
+      width: 100%;
       height: 28px;
       fill: #4489ff;
     }
@@ -40,31 +42,55 @@
 
 .nav {
   &__menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+
+    &:first-child {
+      align-items: stretch;
+
+      @include mq-down(lg) {
+        width: auto;
+      }
+    }
+
+    &:nth-last-child(1) {
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+
+
     &-wrapper {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
       width: 100%;
 
-      >[class^='nav-menu'] {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        width: 100%;
+      // >[class^='nav-menu'] {
+      //   display: flex;
+      //   flex-direction: row;
+      //   align-items: stretch;
+      //   width: 100%;
 
-        &[class*='--right'] {
-          justify-content: flex-end;
-        }
+      //   &[class*='--right'] {
+      //     justify-content: flex-end;
+      //   }
 
-        &[class*='--left'] {
-          @include mq-down(lg) {
-            width: auto;
-          }
-        }
-      }
+      //   &[class*='--left'] {
+      //     @include mq-down(lg) {
+      //       width: auto;
+      //     }
+      //   }
+      // }
     }
 
     &-item {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       font-size: rem(13);
       font-weight: 300;
       margin: 0 15px;
@@ -80,6 +106,30 @@
       &:hover {
         text-decoration: none;
         cursor: pointer;
+
+        &::after {
+          content: '';
+          display: block;
+          position: absolute;
+          bottom: -17px;
+          left: 0;
+          width: 100%;
+          height: 4px;
+          background-image: linear-gradient(265deg, #9c5eff, #4489ff);
+        }
+      }
+
+      &.is-active {
+        &::after {
+          content: '';
+          display: block;
+          position: absolute;
+          bottom: -17px;
+          left: 0;
+          width: 100%;
+          height: 4px;
+          background-image: linear-gradient(265deg, #9c5eff, #4489ff);
+        }
       }
 
       @include mq-down(lg) {
@@ -144,16 +194,23 @@
         color: #4489ff;
         font-weight: 500;
       }
-    }
 
-    &-menu {
-      &--left {
+      &:first-child {
         .nav__menu-item {
           font-weight: 500;
           color: #4b5769;
         }
       }
     }
+
+    // &-menu {
+    //   &--left {
+    //     .nav__menu-item {
+    //       font-weight: 500;
+    //       color: #4b5769;
+    //     }
+    //   }
+    // }
   }
 
   .icon--search {

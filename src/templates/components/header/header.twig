@@ -10,7 +10,8 @@
           </svg>
         </a>
         <div class="nav__menu-wrapper">
-          <div class="nav-menu--left">
+          <div class="nav__menu">
+            <a class="nav__menu-item dropdown-catalogue-trigger" href="#">Каталог</a>
             <a class="nav__menu-item" href="#">Как это работает</a>
             <a class="nav__menu-item" href="#">Фонды</a>
             {% if mobileMenu %}
@@ -43,7 +44,7 @@
               </a>
             {% endif %}
           </div>
-          <div class="nav-menu--right">
+          <div class="nav__menu">
             {% include "../form/form-search-header.twig" %}
             <div class="dropdown-wrapper dropdown__cart-wrapper">
               <button class="dropdown__trigger">
@@ -84,4 +85,5 @@
       </nav>
     </div>
   </div>
+  {% include "../dropdown/dropdown-catalogue-header.twig" %}
 </header>
