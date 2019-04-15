@@ -68,6 +68,16 @@
 
   &-header {
     padding: 7px 10px;
+    transition: width 0.4s ease;
+
+    &.is-hidden {
+      width: 0;
+      height: 0;
+      padding: 0;
+      overflow: hidden;
+      margin: 0;
+      border: none;
+    }
 
     &:focus {
       padding: 6px 10px;

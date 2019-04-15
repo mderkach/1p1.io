@@ -14,6 +14,7 @@ menuBtn.forEach(
   }
 );
 
+//catalogue mobile menu
 var mobileMenu = document.querySelectorAll('.mobile-menu--catalogue');
 var windowHeight = window.innerHeight;
 
@@ -36,11 +37,13 @@ if (mobileMenu.length > 0) {
 window.addEventListener('resize', function () {
   if (window.innerWidth < 992) {
     for (var i = 0; i <= mobileMenu.length; i++) {
-      var height = mobileMenu[i].clientHeight;
-      if (height < window.innerHeight) {
-        mobileMenu[i].style.height = window.innerHeight + 'px';
-      } else {
-        mobileMenu[i].style.height = 'auto' 
+      if (mobileMenu[i] !== undefined) {
+        var height = mobileMenu[i].clientHeight;
+        if (height < window.innerHeight) {
+          mobileMenu[i].style.height = window.innerHeight + 'px';
+        } else {
+          mobileMenu[i].style.height = 'auto'
+        }
       }
     }
   }

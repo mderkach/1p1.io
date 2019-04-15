@@ -239,7 +239,7 @@
     color: #4489ff;
 
     &::placeholder {
-      color: #4489ff;
+      color: rgba($color: #000000, $alpha: .3);
     }
   }
 }
