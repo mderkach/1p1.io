@@ -1,16 +1,19 @@
 var catalogueTrigger = document.querySelector('.dropdown-catalogue-trigger');
 var catalogue = document.querySelector('.dropdown-catalogue');
+var container = catalogue.querySelector('.dropdown-catalogue__container')
 var menuItem = document.querySelectorAll('.nav__menu-item');
 
 if (catalogueTrigger) {
   catalogueTrigger.addEventListener('click', function (event) {
     event.preventDefault();
   });
+
   catalogueTrigger.addEventListener('mouseover', function (event) {
     catalogueTrigger.classList.add('is-active');
     catalogue.classList.add('is-show');
   });
-  catalogue.addEventListener('mouseleave', function (event) {
+
+  container.addEventListener('mouseleave', function (event) {
     catalogueTrigger.classList.remove('is-active');
     catalogue.classList.remove('is-show');
   });
