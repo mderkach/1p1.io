@@ -59,7 +59,7 @@
     @include mq-down(md) {
       font-size: rem(28);
       padding-left: 8px;
-      line-height: 1;
+      line-height: 1.33;
     }
   }
 
@@ -84,6 +84,8 @@
       color: #4b5769;
 
       @include mq-down(md) {
+        padding-left: $gutter;
+        padding-right: $gutter;
         margin: 25px auto 45px auto;
         font-size: rem(15);
       }

@@ -6,6 +6,7 @@ footer {
   &-upper {
     border-top: 1px solid rgba(217, 228, 234, .5);
     padding: 35px 0 45px 0;
+
     &-wrapper {
       @include make-row();
     }
@@ -14,22 +15,25 @@ footer {
       display: none;
     }
   }
+
   &-lower {
     border-top: 1px solid rgba(217, 228, 234, .5);
     padding: 15px 0 50px 0;
+
     &-wrapper {
       @include make-row();
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
+
     &__links {
       @include make-col(4);
       padding-left: 30px;
       display: flex;
       justify-content: space-between;
 
-      @include mq-down(xl){
+      @include mq-down(xl) {
         padding-left: $gap;
       }
 
@@ -42,7 +46,7 @@ footer {
         flex: 0 0 100% !important;
         padding-right: $gap;
       }
-      
+
       &-item {
         font-size: rem(11);
         font-weight: 500;
@@ -54,15 +58,18 @@ footer {
       }
     }
   }
+
   &__socials {
     @include make-col (4);
     padding-right: $gap;
+
     &-title {
       font-size: rem(20);
       font-weight: 500;
       color: #222222;
       margin-bottom: 20px;
     }
+
     &-descr {
       font-size: rem(13);
       font-weight: 500;
@@ -70,18 +77,22 @@ footer {
       color: #696969;
       margin-bottom: 0;
     }
+
     &-icon {
       width: 36px;
       height: 36px;
       margin-right: 12px;
+
       img {
         object-fit: contain;
       }
+
       &-wrapper {
         display: flex;
       }
     }
   }
+
   &__about,
   &__advt,
   &__new-goods,
@@ -91,31 +102,41 @@ footer {
     padding-right: $gap;
     display: flex;
     flex-direction: column;
+
     &-howItWorks {
       margin-top: 30px;
       display: flex;
       flex-direction: column;
     }
   }
+
   &__link {
     &-item {
       font-size: rem(13);
       font-weight: 500;
       line-height: 1.54;
       color: #4b576a;
+
+      &:hover {
+        color: #4489ff;
+        cursor: pointer;
+      }
     }
   }
+
   &__title {
     font-size: rem(15);
     font-weight: 500;
     color: #222222;
     margin-bottom: 11px;
   }
+
   &__company-info {
     @include make-col(3);
     padding-right: $gap;
     display: flex;
     justify-content: space-between;
+
     &-descr {
       font-size: rem(11);
       font-weight: 500;
@@ -123,7 +144,7 @@ footer {
       margin-bottom: 0;
     }
 
-    @include mq-down (lg){
+    @include mq-down (lg) {
       @include make-col(6);
     }
 

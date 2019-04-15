@@ -83,6 +83,11 @@
         letter-spacing: normal;
         text-align: center;
         color: #4489ff;
+
+        &:hover {
+          background-color: #4489ff;
+          color: #fff;
+        }
       }
 
       &-submit {
@@ -92,8 +97,15 @@
         border-color: #84be46;
         color: #fff;
 
+        &:hover {
+          color: #fff;
+          background: #84be46;
+          cursor: pointer;
+        }
+
         &:disabled {
           opacity: .5;
+          cursor: default;
         }
 
         @include mq-down(lg) {

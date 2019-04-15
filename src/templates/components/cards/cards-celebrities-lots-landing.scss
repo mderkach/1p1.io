@@ -16,6 +16,7 @@
         justify-content: center;
       }
     }
+
     &-card {
       @extend .card;
       @include make-col(3);
@@ -24,6 +25,7 @@
       border-radius: 0;
       border: none;
       margin-bottom: 20px;
+
       &-body {
         @extend .card-body;
         padding: 15px 15px 10px 20px;
@@ -38,48 +40,73 @@
         &:nth-child(-n+4) {
           display: flex;
         }
+
         display: none;
       }
     }
+
     &-img {
       width: 280px;
       height: 280px;
       object-fit: contain;
     }
+
     &-name {
+      display: block;
       font-size: rem(16);
       font-weight: 500;
       line-height: 1.5;
       color: #000;
       margin-bottom: 10px;
     }
+
     &-place {
       font-size: rem(12);
       font-weight: 500;
       color: #000000;
       margin-bottom: 10px;
       margin-right: 10px;
+
       &__wrapper {
         display: flex;
         align-items: center;
       }
     }
+
     &-date {
       @extend .celebrities-lots-place;
     }
+
     &__owner {
       &-wrapper {
         display: flex;
         align-items: center;
         justify-content: space-between;
       }
+
       &-img {
         width: 30px;
         height: 30px;
         object-fit: contain;
         border-radius: 50%;
       }
+
+      &-link {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+      }
+
+      &-name {
+        font-size: rem(12);
+        font-weight: 500;
+        line-height: 2;
+        color: #000;
+        margin-bottom: 0;
+        margin-left: 5px;
+      }
     }
+
     &-link {
       &:hover {
         text-decoration: none;
@@ -87,6 +114,7 @@
       }
     }
   }
+
   &-profile {
     &-link {
       &:hover {
@@ -116,6 +144,7 @@
       color: #000;
     }
   }
+
   &-price {
     margin-bottom: 0;
     font-size: rem(16);

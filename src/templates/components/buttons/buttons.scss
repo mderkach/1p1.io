@@ -130,6 +130,7 @@
       @extend .btn-xlg;
       display: flex;
       justify-content: center;
+      align-items: center;
       margin: auto auto 50px auto;
 
       @include mq-down(md) {
@@ -151,6 +152,7 @@
       right: -30px;
       display: flex;
       justify-content: space-between;
+      align-items: center;
       padding-right: 30px;
       padding-left: 45px;
       width: 100%;
@@ -211,6 +213,7 @@
       @extend .btn-xlg;
       display: flex;
       justify-content: center;
+      align-items: center;
       margin: 50px auto 0;
 
       @include mq-down(md) {

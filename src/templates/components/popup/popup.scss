@@ -155,7 +155,7 @@
 
         @include mq-down(sm) {
           flex-direction: column;
-          padding: 0 10px;
+          padding: 0 $gutter;
         }
       }
     }

@@ -1,6 +1,11 @@
 .screen {
   &__marketplace {
+    padding-top: 70px;
     background-color: #fafafa;
+
+    @include mq-down(sm) {
+      padding-top: 50px;
+    }
   }
 }
 

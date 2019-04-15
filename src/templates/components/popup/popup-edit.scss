@@ -8,6 +8,7 @@
     @include make-col(12);
     padding: 20px;
   }
+
   &__background {
     overflow: auto;
     display: none;
@@ -17,15 +18,18 @@
     position: fixed;
     top: 0;
     z-index: 9000;
+
     &.is-active {
       display: block;
     }
   }
+
   &__container {
     @include make-container-max-widths($max-widths: $container-max-widths, $breakpoints: $grid-breakpoints);
     @include make-container();
     height: 100%;
   }
+
   &__wrapper {
     @include make-row();
     height: 100%;
@@ -37,6 +41,7 @@
       margin-right: 0;
     }
   }
+
   &__textarea {
     resize: none;
     overflow: auto;
@@ -53,6 +58,7 @@
       border-color: #4489ff;
     }
   }
+
   &__controls {
     margin-top: 50px;
     display: flex;
@@ -69,7 +75,9 @@
       flex-direction: column;
     }
   }
-  &-reset, &-submit {
+
+  &-reset,
+  &-submit {
     @extend .btn-mid;
     max-width: 160px;
     height: 50px;
@@ -81,14 +89,22 @@
       margin-top: 10px;
     }
   }
+
   &-reset {
     background: #fff;
     color: #4489ff;
+
+    &:hover {
+      background: #4489ff;
+      color: #fff;
+    }
   }
+
   &-submit {
     background: #4489ff;
     color: #fff;
   }
+
   &-ads {
     font-size: rem(15);
     font-weight: 500;

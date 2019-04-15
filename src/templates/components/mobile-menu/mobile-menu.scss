@@ -70,9 +70,18 @@
     }
 
     &-lower {
+
+      @include mq-down(lg) {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+
       &-link {
         font-size: rem(11);
         font-weight: 500;
+        line-height: 2;
         color: #4489ff;
       }
     }
