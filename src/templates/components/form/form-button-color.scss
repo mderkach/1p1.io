@@ -47,6 +47,12 @@
         line-height: 1.42;
         color: #000;
         text-transform: uppercase;
+
+        @include mq-down(sm) {
+          max-width: 115px;
+          font-size: rem(15);
+          
+        }
       }
 
       &__btn {
