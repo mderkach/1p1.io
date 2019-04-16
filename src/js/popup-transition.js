@@ -30,6 +30,9 @@ function openPopup(popupCaller) {
 
   if (popupActiveId == null) { //detect click nested objects
     var id = popupCaller.target.parentElement.getAttribute('href'); // get href of parent
+    if (popupCaller.target.classList.contains('hamburger-inner')) {
+      id = popupCaller.target.parentElement.parentElement.getAttribute('href');
+    }
     popupActiveId = id; // set href
   }
   var popupActive = document.querySelector(popupActiveId);

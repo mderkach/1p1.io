@@ -16,5 +16,24 @@
         padding: 20px 20px 30px;
       }
     }
+
+    &-description {
+      margin-top: 50px;
+      padding: 35px 20px 96px;
+      background: #fff;
+      border-top:  1px solid #d9deea;
+
+      h3 {
+        font-size: rem(28);
+        line-height: normal;
+        margin-bottom: 0;
+      }
+
+      textarea {
+        padding-left: 0;
+        padding-right: 0;
+        margin-top: 40px;
+      }
+    }
   }
 }

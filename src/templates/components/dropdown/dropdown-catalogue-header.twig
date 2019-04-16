@@ -1,0 +1,18 @@
+<div class="dropdown-catalogue">
+  <div class="dropdown-catalogue__container">
+    <div class="dropdown-catalogue__inner">
+      <div class="dropdown-catalogue__tab-wrapper">
+        {% for item in dropdownCatalogue %}
+          <a class="dropdown-catalogue__tab-item tab__switcher {% if loop.first %}is-active{% endif %}" href="#{{ item.link }}">{{ item.category  }}</a>
+        {% endfor %}
+      </div>
+      {% for item in dropdownCatalogue %}
+        <div class="dropdown-catalogue__tab-content tab__content {% if loop.first %}is-active{% endif %}" id="{{ item.link }}">
+          {% for content in item.content %}
+            <a class="dropdown-catalogue__tab-subitem" href="#{{ content.link }}">{{ content.category }}</a>
+          {% endfor %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>

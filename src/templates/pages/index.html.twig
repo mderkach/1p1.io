@@ -2,10 +2,240 @@
 {% set page_title = "1p1.io" %}
 {% set headerType = "--transparent --toggle" %}
 {% set userStatus = "--unauthorised" %}
+{% set dropdownCatalogue = [
+  {
+    category: 'Childen&apos;s goods',
+    link: 'children',
+    content: [
+      {
+        category: 'first',
+        link: 'first'
+      },
+      {
+        category: 'second',
+        link: 'second'
+      },
+      {
+        category: 'first',
+        link: 'first'
+      },
+      {
+        category: 'second',
+        link: 'second'
+      },
+      {
+        category: 'first',
+        link: 'first'
+      },
+      {
+        category: 'second',
+        link: 'second'
+      },
+      {
+        category: 'first',
+        link: 'first'
+      },
+      {
+        category: 'second',
+        link: 'second'
+      },
+      {
+        category: 'first',
+        link: 'first'
+      },
+      {
+        category: 'second',
+        link: 'second'
+      },
+      {
+        category: 'first',
+        link: 'first'
+      },
+      {
+        category: 'second',
+        link: 'second'
+      },
+      {
+        category: 'first',
+        link: 'first'
+      },
+      {
+        category: 'second',
+        link: 'second'
+      },
+      {
+        category: 'first',
+        link: 'first'
+      },
+      {
+        category: 'second',
+        link: 'second'
+      },
+      {
+        category: 'first',
+        link: 'first'
+      },
+      {
+        category: 'second',
+        link: 'second'
+      },
+      {
+        category: 'first',
+        link: 'first'
+      },
+      {
+        category: 'second',
+        link: 'second'
+      },
+    ]
+  },
+  {
+    category: 'Clothes and footwear',
+    link: 'clothes',
+    content: [
+      {
+        category: 'boots',
+        link: 'boots'
+      },
+      {
+        category: 'coat',
+        link: 'coat'
+      },
+      {
+        category: 'sweaters',
+        link: 'sweaters'
+      },
+      {
+        category: 'sweethshot',
+        link: 'sweethshot'
+      },
+      {
+        category: 't-shirt',
+        link: 't-shirt'
+      },
+      {
+        category: 'slip-on',
+        link: 'slip-on'
+      },
+      {
+        category: 'blablabla',
+        link: 'blablabla'
+      },
+    ]
+  },
+  {
+    category: 'Electronics',
+    link: 'electronics',
+    content: [
+      {
+        category: 'first',
+        link: 'first'
+      }
+    ]
+  },
+  {
+    category: 'Appliances',
+    link: 'appliancess',
+    content: [
+      {
+        category: 'first',
+        link: 'first'
+      }
+    ]
+  },
+  {
+    category: 'Pet supplies',
+    link: 'pet',
+    content: [
+      {
+        category: 'first',
+        link: 'first'
+      }
+    ]
+  },
+  {
+    category: 'House and Cottage',
+    link: 'house',
+    content: [
+      {
+        category: 'first',
+        link: 'first'
+      }
+    ]
+  },
+  {
+    category: 'Beauty and health',
+    link: 'beauty',
+    content: [
+      {
+        category: 'beuaty',
+        link: 'beauty'
+      },
+      {
+        category: 'health',
+        link: 'health'
+      }
+    ]
+  },
+  {
+    category: 'Auto',
+    link: 'Auto',
+    content: [
+      {
+        category: 'auto',
+        link: 'auto'
+      },
+      {
+        category: 'motors',
+        link: 'motors'
+      },
+      {
+        category: 'sound',
+        link: 'sound'
+      },
+    ]
+  },
+  {
+    category: 'Art',
+    link: 'art',
+    content: [
+      {
+        category: 'art',
+        link: 'art'
+      },
+      {
+        category: 'motors',
+        link: 'motors'
+      },
+      {
+        category: 'sound',
+        link: 'sound'
+      },
+    ]
+  },
+  {
+    category: 'Garden',
+    link: 'garden',
+    content: [
+      {
+        category: 'art',
+        link: 'art'
+      },
+      {
+        category: 'motors',
+        link: 'motors'
+      },
+      {
+        category: 'sound',
+        link: 'sound'
+      },
+    ]
+  },
+] %}
 {% set mobileMenu = [
 	{
-	link: '#',
-	description: 'Объявления'
+		link: '#',
+		description: 'Объявления'
 	}, 
 	{
 		link: '#',
@@ -77,7 +307,7 @@
 		и операций. Спасибо!',
 	},
 	] %}
-	{% set news_landing = [
+{% set news_landing = [
 		{
 			newsLink:'#',
 			newsPreview: '/assets/img/background/main-image-2.jpg',

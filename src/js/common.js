@@ -8,3 +8,4 @@ import './bookmark';
 import './color-pick';
 import './input-number-controls'
 //import './sell-item-transition'
+import './nabar-hover-catalogue-dropdown'

@@ -108,6 +108,14 @@
           border-radius: 2px;
           border: solid 2px rgba(93, 93, 93, .5);
         }
+
+        &:hover {
+          cursor: pointer;
+
+          &::before {
+            border-color: #4489ff;
+          }
+        }
       }
 
       &-sell {
@@ -152,8 +160,21 @@
 
         &:checked+.form__popup-label-checkbox {
           &::before {
-            background: url('/assets/img/icons/icon-checkmark.svg') no-repeat;
+            border-color: #4489ff;
+            background-color: #4489ff;
             background-size: contain;
+          }
+
+          &::after {
+            position: absolute;
+            content: "";
+            left: 16px;
+            top: 3px;
+            width: 4px;
+            height: 8px;
+            border: solid #fff;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
           }
         }
 
@@ -436,8 +457,12 @@
     &-chevronSelect {
       position: absolute;
       top: 40%;
-      right: 25px;
+      right: 5px;
       object-fit: contain;
+
+      @include mq-down(lg) {
+        right: 12px;
+      }
     }
 
     &-inputNumberMini {
@@ -593,7 +618,6 @@
             padding-right: 0 !important;
           }
 
-          
         }
 
         &-container {

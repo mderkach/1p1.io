@@ -68,6 +68,18 @@
 
   &-header {
     padding: 7px 10px;
+    transition: width 0.2s ease;
+    max-height: 30px;
+    overflow: hidden;
+
+    &.is-hidden {
+      width: 0 !important;
+      height: 0 !important;
+      padding: 0 !important;
+      overflow: hidden !important;
+      margin: 0 !important;
+      border: none !important;
+    }
 
     &:focus {
       padding: 6px 10px;
@@ -130,6 +142,7 @@
       @extend .btn-xlg;
       display: flex;
       justify-content: center;
+      align-items: center;
       margin: auto auto 50px auto;
 
       @include mq-down(md) {
@@ -151,6 +164,7 @@
       right: -30px;
       display: flex;
       justify-content: space-between;
+      align-items: center;
       padding-right: 30px;
       padding-left: 45px;
       width: 100%;
@@ -211,6 +225,7 @@
       @extend .btn-xlg;
       display: flex;
       justify-content: center;
+      align-items: center;
       margin: 50px auto 0;
 
       @include mq-down(md) {

@@ -18,12 +18,6 @@
         flex-direction: column;
       }
 
-      &__btn {
-        &.is-picked {
-          border: solid 2px #4489ff;
-        }
-      }
-
       &__container {
         height: 100%;
         display: flex;
@@ -53,6 +47,12 @@
         line-height: 1.42;
         color: #000;
         text-transform: uppercase;
+
+        @include mq-down(sm) {
+          max-width: 115px;
+          font-size: rem(15);
+          
+        }
       }
 
       &__btn {
@@ -66,6 +66,16 @@
         @include mq-down(lg) {
           margin-right: 10px;
           margin-bottom: 10px;
+        }
+
+        @include mq-down(md) {
+          width: 38px;
+          height: 38px;
+          margin-right: 8px !important;
+        }
+
+        &.is-picked {
+          border: solid 2px #4489ff;
         }
       }
 
@@ -83,6 +93,11 @@
         letter-spacing: normal;
         text-align: center;
         color: #4489ff;
+
+        &:hover {
+          background-color: #4489ff;
+          color: #fff;
+        }
       }
 
       &-submit {
@@ -92,8 +107,37 @@
         border-color: #84be46;
         color: #fff;
 
+        &:hover {
+          color: #fff;
+          background: #84be46;
+          cursor: pointer;
+        }
+
         &:disabled {
           opacity: .5;
+          cursor: default;
+        }
+
+        @include mq-down(lg) {
+          width: 100%;
+        }
+      }
+
+      &__controls {
+        @include mq-down(xl) {
+          margin: 25px 0;
+        }
+
+        @include mq-down(lg) {
+          width: 100%;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+
+          input {
+            width: 135px;
+            font-size: rem(14);
+          }
         }
 
         @include mq-down(lg) {
