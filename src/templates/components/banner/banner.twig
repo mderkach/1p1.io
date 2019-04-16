@@ -4,7 +4,7 @@
       <div class="banner">
         <img alt="" src="/assets/img/banner/1.jpg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
       {% else %}
-        <div class="banner {% if editMode == 'colorMobile' %}banner__colorMobile{% endif %}" style="background-color: #ffc857;">
+        <div class="banner {% if editMode == 'color'%} banner__colorPick {% endif %} {% if editMode == 'colorMobile' %}banner__colorMobile{% endif %}" style="background-color: {% if editMode == 'colorMobile' %}{{ colors|slice(0,10)|last.color }}{% else %}{{ colors|last.color }}{% endif %};">
         {% endif %}
         {% if editMode != 'photoMobile' and editMode != 'colorMobile' %}
           <div class="banner__container">

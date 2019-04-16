@@ -1,9 +1,11 @@
 var catalogueTrigger = document.querySelector('.dropdown-catalogue-trigger');
-var catalogue = document.querySelector('.dropdown-catalogue');
-var container = catalogue.querySelector('.dropdown-catalogue__container')
-var menuItem = document.querySelectorAll('.nav__menu-item');
+
 
 if (catalogueTrigger) {
+  var catalogue = document.querySelector('.dropdown-catalogue');
+  var container = catalogue.querySelector('.dropdown-catalogue__container')
+  var menuItem = document.querySelectorAll('.nav__menu-item');
+  
   catalogueTrigger.addEventListener('click', function (event) {
     event.preventDefault();
   });

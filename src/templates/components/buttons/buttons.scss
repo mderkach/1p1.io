@@ -68,15 +68,17 @@
 
   &-header {
     padding: 7px 10px;
-    transition: width 0.4s ease;
+    transition: width 0.2s ease;
+    max-height: 30px;
+    overflow: hidden;
 
     &.is-hidden {
-      width: 0;
-      height: 0;
-      padding: 0;
-      overflow: hidden;
-      margin: 0;
-      border: none;
+      width: 0 !important;
+      height: 0 !important;
+      padding: 0 !important;
+      overflow: hidden !important;
+      margin: 0 !important;
+      border: none !important;
     }
 
     &:focus {

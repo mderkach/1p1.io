@@ -3,6 +3,7 @@
   height: 350px;
   margin-top: 70px;
   position: relative;
+  transition: height 0.3s ease;
 
   @include mq-down(sm) {
     margin-top: 50px;
@@ -77,5 +78,9 @@
 
   &__colorMobile {
     height: 120px;
+  }
+
+  &__colorPick {
+    height: 230px;
   }
 }

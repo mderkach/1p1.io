@@ -457,8 +457,12 @@
     &-chevronSelect {
       position: absolute;
       top: 40%;
-      right: 25px;
+      right: 5px;
       object-fit: contain;
+
+      @include mq-down(lg) {
+        right: 12px;
+      }
     }
 
     &-inputNumberMini {
