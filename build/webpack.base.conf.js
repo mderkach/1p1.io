@@ -226,6 +226,10 @@ module.exports = {
       filename: 'account-private-avatar--mobile.html',
       template: `${PATHS.src}/templates/pages/account-private-avatar--mobile.twig`,
     }),
+    new HtmlWebpackPlugin({
+      filename: 'account-private-edit--mobile.html',
+      template: `${PATHS.src}/templates/pages/account-private-edit--mobile.twig`,
+    }),
     new CopyWebpackPlugin([
       { from: `${PATHS.src}/img`, to: `${PATHS.assets}img` },
       { from: `${PATHS.src}/fonts`, to: `${PATHS.assets}fonts` },

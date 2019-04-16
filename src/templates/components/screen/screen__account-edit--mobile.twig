@@ -1,21 +1,32 @@
-<div class="screen__edit">
-  {% if editMode == 'photoMobile' %}
-    <div class="banner__wrapper-edit-mobile">
+{% if editMode != 'desriptionMobile' %}
+  <div class="screen__edit-description">
+  {% else %}
+    <div class="screen__edit">
+    {% endif %}
+    {% if editMode == 'photoMobile' %}
+      <div class="banner__wrapper-edit-mobile">
+        {% include "../banner/banner.twig" %}
+      </div>
+    {% elseif editMode == 'colorMobile' %}
       {% include "../banner/banner.twig" %}
-    </div>
-  {% elseif editMode == 'colorMobile' %}
-    {% include "../banner/banner.twig" %}
-    <div class="account__pickColor-mobile">
-      {% include "../form/form-button-color.twig" %}
-    </div>
-  {% elseif editMode == 'avatarMobile' %}
-    <div class="account-avatar__wrapper-mobile">
-      {% for user in accountInfo %}
-        <img class="account-avatar img-responsive" src="{{ user.avatar }}" alt="">
-      {% endfor %}
+      <div class="account__pickColor-mobile">
+        {% include "../form/form-button-color.twig" %}
+      </div>
+    {% elseif editMode == 'avatarMobile' %}
+      <div class="account-avatar__wrapper-mobile">
+        {% for user in accountInfo %}
+          <img class="account-avatar img-responsive" src="{{ user.avatar }}" alt="">
+        {% endfor %}
+      </div>
+    {% elseif editMode == 'descriptionMobile' %}
+      <form>
+        <h3 class="popup-edit-header">Редактирование описания</h3>
+        <textarea class="popup-edit__textarea" name="about-edit" rows="1">Комедии "Квартета И" знают почти наизусть и политики, и олигархи, и студенты, и врачи, и даже гламурные барышни с маленькими собачками под мышкой. Искренний чистый юмор стирает границы между богатым и бедным, неудачником и тем, кому постоянно везет. На спектаклях "Квартета И" все равны. "День радио", "День выборов", "Разговоры мужчин среднего возраста о женщинах, кино и алюминиевых вилках" - современные хиты не только театра, но жизни в целом. А герои Леонида Бараца, Ростислава Хаита, Александра Демидова и Камиля Ларина давно стали нарицательными. Им подражают, на них равняются, их любят - как любят только настоящих заядлых друзей. Им доверяют и ждут каждой премьеры как события.</textarea>
+      </form>
     </div>
   {% endif %}
   <div class="screen__edit-save-wrapper">
-    <button class="btn-edit-banner">Сохранить изменения</button>
+    <button {% if editMode == 'descriptionMobile' %}style="background-color: #4489ff;"{% endif %}
+     class="btn-edit-banner">Сохранить изменения</button>
   </div>
 </div>
