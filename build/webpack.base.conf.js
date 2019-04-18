@@ -230,6 +230,10 @@ module.exports = {
       filename: 'account-private-edit--mobile.html',
       template: `${PATHS.src}/templates/pages/account-private-edit--mobile.twig`,
     }),
+    new HtmlWebpackPlugin({
+      filename: 'item-auction.html',
+      template: `${PATHS.src}/templates/pages/item-auction.twig`,
+    }),
     new CopyWebpackPlugin([
       { from: `${PATHS.src}/img`, to: `${PATHS.assets}img` },
       { from: `${PATHS.src}/fonts`, to: `${PATHS.assets}fonts` },

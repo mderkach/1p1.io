@@ -1,0 +1,15 @@
+.screen {
+  &__item {
+    margin-top: 70px;
+    border-top: 1px solid #d9deea;
+
+    &-container {
+      @include make-container();
+      @include make-container-max-widths($max-widths: $container-max-widths, $breakpoints: $grid-breakpoints);
+    }
+
+    &-wrapper {
+      @include make-row();
+    }
+  }
+}

@@ -1,0 +1,78 @@
+.lot {
+  &__wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 880px;
+    margin-top: 25px;
+    margin-right: $gap;
+  }
+
+  &__charity-wrapper {
+    width: 280px;
+    margin-top: 25px;
+    margin-left: $gap;
+  }
+
+  &__img {
+    &-wrapper {
+      width: 100%;
+      max-width: 380px;
+      margin-right: 10px;
+      overflow: hidden;
+    }
+
+    &-main {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+
+      &-wrapper {
+        display: block;
+      }
+    }
+
+    &-additional {
+      @extend .lot__img-main;
+
+      &-outer {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-top: 10px;
+      }
+
+      &-wrapper {
+        @extend .lot__img-main-wrapper;
+        margin-right: 10px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+  &__info {
+    &-wrapper {
+      width: 100%;
+      margin-left: 10px;
+      padding: 0 25px;
+    }
+
+    &-location {
+      font-size: rem(13);
+      font-weight: 500;
+      line-height: 1.31;
+      color: #4b5769;
+      margin-bottom: 0;
+
+      .separator {
+        &::before {
+          content: '\2022';
+          color: #c0d1dd;
+        }
+      }
+
+    }
+  }
+}
