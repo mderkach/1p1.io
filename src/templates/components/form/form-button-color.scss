@@ -139,6 +139,46 @@
             font-size: rem(14);
           }
         }
+
+        @include mq-down(lg) {
+          width: 100%;
+        }
+      }
+
+      &__controls {
+        @include mq-down(xl) {
+          margin: 25px 0;
+        }
+
+        @include mq-down(lg) {
+          width: 100%;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+
+          input {
+            width: 135px;
+            font-size: rem(14);
+          }
+        }
+      }
+
+      &__controls {
+        @include mq-down(xl) {
+          margin: 25px 0;
+        }
+
+        @include mq-down(lg) {
+          width: 100%;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+
+          input {
+            width: 135px;
+            font-size: rem(14);
+          }
+        }
       }
     }
   }

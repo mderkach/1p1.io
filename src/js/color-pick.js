@@ -5,7 +5,7 @@ var btnPaste = document.querySelectorAll('.btn__paste');
 
 
 buttons.forEach(
-  function (btn) {
+  function (btn, index) {
     var dataColor = btn.getAttribute('data-color');
     document.addEventListener('DOMContentLoaded', function () {
       btn.style.backgroundColor = dataColor;
