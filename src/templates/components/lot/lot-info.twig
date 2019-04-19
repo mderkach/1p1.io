@@ -1,3 +1,45 @@
 <div class="lot__info-wrapper">
-  {% include "./lot-header.twig" %}
+    {% include "./lot-header.twig" %}
+    <div class="lot__bet-wrapper">
+        <p class="lot__bet-descr">Самая высокая ставка</p>
+        <div class="lot__bet-price">
+            <p class="lot__bet">
+                {{ lot.bet.current}}
+                {{ lot.bet.priceTag}}
+            </p>
+            <div class="lot__safe-deal">
+                <img alt="" src="/assets/img/icons/icon-shield-color.svg">
+                <a class="form-cart-checkout__addInfo-link" href="#">Безопасная сделка</a>
+            </div>
+        </div>
+        <div class="lot__bet-details">
+            <div class="lot__bet-count-wrapper">
+                <span class="lot__bet-count-descr">Ставок</span>
+                <div class="lot__bet-count">{{ lot.bet.count }}</div>
+            </div>
+            <div class="lot__bet-blitz-wrapper">
+                <span class="lot__bet-blitz-descr">Блиц-цена</span>
+                <div class="lot__bet-blitz">
+                    {{ lot.bet.blitz }}
+                    {{ lot.bet.priceTag}}
+                </div>
+            </div>
+            <div class="lot__bet-start-wrapper">
+                <span class="lot__bet-start-descr">Начальная цена</span>
+                <div class="lot__bet-start">
+                    {{ lot.bet.start }}
+                    {{ lot.bet.priceTag}}
+                </div>
+            </div>
+            <div class="lot__bet-timer-wrapper">
+                <span class="lot__bet-timer-descr">До конца торгов</span>
+                <div class="lot__bet-timer">
+                    {{ lot.bet.timer }}
+                </div>
+            </div>
+        </div>
+        <div class="lot__bet--place">
+       
+        </div>
+    </div>
 </div>
