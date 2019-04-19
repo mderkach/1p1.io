@@ -1,0 +1,26 @@
+<div class="lot__bet-details">
+  <div class="lot__bet-count-wrapper">
+    <span class="lot__bet-count-descr">Ставок</span>
+    <div class="lot__bet-count">{{ lot.bet.count }}</div>
+  </div>
+  <div class="lot__bet-blitz-wrapper">
+    <span class="lot__bet-blitz-descr">Блиц-цена</span>
+    <div class="lot__bet-blitz">
+      {{ lot.bet.blitz }}
+      {{ lot.bet.priceTag}}
+    </div>
+  </div>
+  <div class="lot__bet-start-wrapper">
+    <span class="lot__bet-start-descr">Начальная цена</span>
+    <div class="lot__bet-start">
+      {{ lot.bet.start }}
+      {{ lot.bet.priceTag}}
+    </div>
+  </div>
+  <div class="lot__bet-timer-wrapper">
+    <span class="lot__bet-timer-descr">До конца торгов</span>
+    <div class="lot__bet-timer">
+      {{ lot.bet.timer }}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="9px" height="12px" viewBox="0 0 9 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 54.1 (76490) - https://sketchapp.com -->
+    <title>EF183C85-AF41-4D3D-BB11-46914AC1449F</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <linearGradient x1="78.125%" y1="0%" x2="23.4579281%" y2="97.1859056%" id="linearGradient-1">
+            <stop stop-color="#9C5EFF" offset="0%"></stop>
+            <stop stop-color="#4489FF" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Item" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Item-Auction-0-no-bets" transform="translate(-562.000000, -825.000000)" fill="url(#linearGradient-1)" fill-rule="nonzero">
+            <g id="icon/ico-pin" transform="translate(562.000000, 825.000000)">
+                <path d="M0,4.5 C3.70335782e-08,2.0147186 2.01471865,-1.52179601e-16 4.5,0 C6.98528135,1.52179601e-16 8.99999996,2.0147186 9,4.5 C9,7.5 4.5,12 4.5,12 C4.5,12 0,7.5 0,4.5 L0,4.5 Z M2.625,4.49999996 C2.625,5.53553387 3.46446609,6.37499997 4.5,6.37499997 C5.53553391,6.37499997 6.375,5.53553387 6.375,4.49999996 C6.375,3.46446605 5.53553391,2.62499995 4.5,2.62499995 C3.46446609,2.62499995 2.625,3.46446605 2.625,4.49999996 L2.625,4.49999996 Z" id="Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>

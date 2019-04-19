@@ -1,45 +1,41 @@
 <div class="lot__info-wrapper">
-    {% include "./lot-header.twig" %}
-    <div class="lot__bet-wrapper">
-        <p class="lot__bet-descr">Самая высокая ставка</p>
-        <div class="lot__bet-price">
-            <p class="lot__bet">
-                {{ lot.bet.current}}
-                {{ lot.bet.priceTag}}
-            </p>
-            <div class="lot__safe-deal">
-                <img alt="" src="/assets/img/icons/icon-shield-color.svg">
-                <a class="form-cart-checkout__addInfo-link" href="#">Безопасная сделка</a>
-            </div>
-        </div>
-        <div class="lot__bet-details">
-            <div class="lot__bet-count-wrapper">
-                <span class="lot__bet-count-descr">Ставок</span>
-                <div class="lot__bet-count">{{ lot.bet.count }}</div>
-            </div>
-            <div class="lot__bet-blitz-wrapper">
-                <span class="lot__bet-blitz-descr">Блиц-цена</span>
-                <div class="lot__bet-blitz">
-                    {{ lot.bet.blitz }}
-                    {{ lot.bet.priceTag}}
-                </div>
-            </div>
-            <div class="lot__bet-start-wrapper">
-                <span class="lot__bet-start-descr">Начальная цена</span>
-                <div class="lot__bet-start">
-                    {{ lot.bet.start }}
-                    {{ lot.bet.priceTag}}
-                </div>
-            </div>
-            <div class="lot__bet-timer-wrapper">
-                <span class="lot__bet-timer-descr">До конца торгов</span>
-                <div class="lot__bet-timer">
-                    {{ lot.bet.timer }}
-                </div>
-            </div>
-        </div>
-        <div class="lot__bet--place">
-       
-        </div>
+  {% include "./lot-header.twig" %}
+  <div class="lot__bet-wrapper">
+    <p class="lot__bet-descr">Самая высокая ставка</p>
+    <div class="lot__bet-price">
+      <p class="lot__bet">
+        {{ lot.bet.current}}
+        {{ lot.bet.priceTag}}
+      </p>
+      <div class="lot__safe-deal">
+        <img alt="" src="/assets/img/icons/icon-shield-color.svg">
+        <a class="form-cart-checkout__addInfo-link" href="#">Безопасная сделка</a>
+      </div>
     </div>
+    {% include "./lot-bet-details.twig" %}
+    {% include "./lot-bet-place.twig" %}
+    <div class="lot__info--add-wrapper">
+      <div class="lot__info--add-outer">
+        <img class="lot__info--add-icon" src="/assets/img/icons/icon-truck.svg" alt="">
+        <div class="lot__info--add-inner">
+          <h4 class="lot__info--add-head">Самовывоз от продавца</h4>
+          <p class="lot__info--add-descr">Вы можете забрать товар у продавца, договорившись с ним по телефону или в чате.</p>
+        </div>
+      </div>
+      <div class="lot__info--add-outer">
+        <img class="lot__info--add-icon" src="/assets/img/icons/icon-pin.svg" alt="">
+        <div class="lot__info--add-inner">
+          <h4 class="lot__info--add-head">Место встречи</h4>
+          <p class="lot__info--add-descr">Место встречи: {{lot.location.city}},{{lot.location.place}}, в любое время с 12 до 20 по рабочим дням. Можно договориться о другом месте.</p>
+        </div>
+      </div>
+      <div class="lot__info--add-outer">
+        <img class="lot__info--add-icon" src="/assets/img/icons/icon-phone.svg" alt="">
+        <div class="lot__info--add-inner">
+          <h4 class="lot__info--add-head">Контакты</h4>
+          <p class="lot__info--add-descr">Телефон и Email продавца станут доступны покупателю после бронирования товара.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
