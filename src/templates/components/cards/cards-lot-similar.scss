@@ -10,6 +10,7 @@
 
   &__wrapper {
     @include make-row();
+    overflow: hidden;
   }
 }
 
@@ -18,16 +19,32 @@
     &__similar {
       width: 100%;
       max-width: 220px;
+      flex: 0 0 100%;
+      margin-right: 20px;
       border-radius: 4px;
       box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
       background-color: #fff;
       overflow: hidden;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      @include mq-down(xl) {
+        margin-right: 10px;
+      }
 
       &-wrapper {
         width: 100%;
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+
+        :-webkit-scrollbar {
+          display: none;
+        }
       }
 
       &-img {

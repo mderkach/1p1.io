@@ -242,6 +242,22 @@ module.exports = {
       filename: 'item-auction--solded.html',
       template: `${PATHS.src}/templates/pages/item-auction--solded.twig`,
     }),
+    new HtmlWebpackPlugin({
+      filename: 'item-fixed.html',
+      template: `${PATHS.src}/templates/pages/item-fixed.twig`,
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'item-fixed--bookmarked.html',
+      template: `${PATHS.src}/templates/pages/item-fixed--bookmarked.twig`,
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'item-fixed--canceled.html',
+      template: `${PATHS.src}/templates/pages/item-fixed--canceled.twig`,
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'item-fixed--delivered.html',
+      template: `${PATHS.src}/templates/pages/item-fixed--delivered.twig`,
+    }),
     new CopyWebpackPlugin([
       { from: `${PATHS.src}/img`, to: `${PATHS.assets}img` },
       { from: `${PATHS.src}/fonts`, to: `${PATHS.assets}fonts` },

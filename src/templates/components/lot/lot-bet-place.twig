@@ -1,22 +1,24 @@
-{% if lot.isAviable == true %}
+{% if lot.isAviable == true and lot.isBookmarked == false %}
 <div class="lot__bet--place">
   <div class="lot__bet--place-input-outer">
-    <label class="lot__bet--place-input-label" for="bet">Ваша ставка (шаг {{ lot.bet.step }} {{ lot.bet.priceTag }})</label>
-    <input name="bet" id="bet" type="number" min="{{ lot.bet.start|number_format(0,'','') }}" data-minimum="{{ lot.bet.start|number_format(0,'','') }}"
-      value="{{ lot.bet.current|number_format(0,'','') + lot.bet.step }}" step="{{ lot.bet.step }}" data-step="{{ lot.bet.step }}" class="lot__bet--place-input">
+    <label class="lot__bet--place-input-label" for="bet">Ваша ставка (шаг {{ lot.bet.step }}
+      {{ lot.bet.priceTag }})</label>
+    <input name="bet" id="bet" type="number" min="{{ lot.bet.start|number_format(0,'','') }}"
+      data-minimum="{{ lot.bet.start|number_format(0,'','') }}"
+      value="{{ lot.bet.current|number_format(0,'','') + lot.bet.step }}" step="{{ lot.bet.step }}"
+      data-step="{{ lot.bet.step }}" class="lot__bet--place-input">
     <p class="lot__bet--place--error">Ваша ставка должна быть выше, чем самая высокая ставка</p>
   </div>
   <div class="lot__bet-buttons-wrapper">
     <button class="btn-lot-place">Сделать ставку</button>
-    <button class="btn-lot-fav">
+    <button data-modal="#bookmark-sucess" class="btn-lot-fav">
       <img alt="" src="/assets/img/icons/icon-fav.svg">
       В избранное
     </button>
   </div>
 </div>
-{% else %}
+{% elseif lot.isAviable == false and lot.isBookmarked == false %}
   <div class="lot__solded">
     Товар продан
   </div>
 {% endif %}
-

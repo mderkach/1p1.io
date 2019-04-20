@@ -5,6 +5,12 @@
     width: 880px;
     margin-top: 25px;
     margin-right: $gap;
+
+    @include mq-down(xl) {
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+    }
   }
 
   &__charity {
@@ -15,6 +21,12 @@
       margin-left: $gap;
       border-radius: 4px;
       box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.05);
+
+      @include mq-down(xl) {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+      }
     }
 
     &-summary {
@@ -132,6 +144,12 @@
           width: 8px;
           height: 8px;
           object-fit: contain;
+        }
+
+        br {
+          @include mq-down(xl) {
+            display: none;
+          }
         }
       }
     }
@@ -440,6 +458,15 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+
+        &.--standalone {
+          justify-content: flex-start;
+
+          .btn-lot-place {
+            margin-right: 10px;
+            width: 150px;
+          }
+        }
       }
     }
   }
@@ -457,6 +484,13 @@
       width: 100%;
       max-width: 880px;
       margin-bottom: 55px;
+
+      @include mq-down(xl) {
+        width: 100%;
+        margin-top: 25px;
+        margin-left: 0;
+        margin-right: 0;
+      }
 
       &-item {
         position: relative;
@@ -518,5 +552,61 @@
     line-height: normal;
     text-align: center;
     color: #4489ff;
+  }
+
+  &__bookmarked {
+    &-head {
+      display: flex;
+      align-items: center;
+    }
+
+    &-header {
+      font-size: rem(17);
+      font-weight: bold;
+      line-height: normal;
+      color: #000;
+      margin-left: 15px;
+      margin-bottom: 0;
+
+      &.--canceled {
+        color: #ec5700
+      }
+    }
+
+    &-icon {
+      object-fit: contain;
+    }
+
+    &-descr {
+      font-size: rem(13);
+      font-weight: 500;
+      line-height: 1.31;
+      color: #4b5769;
+      margin: 15px 0;
+    }
+
+    &-buttons {
+      &-confirm {
+        &-wrapper {
+          display: flex;
+          justify-content: flex-start;
+
+          >[class^="btn"] {
+            padding: 10px;
+            margin-bottom: 0;
+            font-size: rem(14);
+
+            &:first-child {
+              width: 210px;
+              margin-right: 10px;
+            }
+
+            &:last-child {
+              width: 180px;
+            }
+          }
+        }
+      }
+    }
   }
 }

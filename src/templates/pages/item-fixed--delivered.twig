@@ -1,9 +1,9 @@
 {% extends "../layout/item--desktop.twig" %}
 
-{% set page_title = "item auction has bet" %}
+{% set page_title = "item fixed delivered" %}
 {% set headerType = "--white --no-toggle" %}
 {% set userStatus = "--authorised" %}
-{% set sellType = "auction" %}
+{% set sellType = "fixed" %}
 {% set accountInfo = [{
 	avatar: '/assets/img/background/main-image-2.jpg',
 	link: '#',
@@ -297,29 +297,10 @@
     },
     img: ["/assets/img/lot/item-big.jpg", "/assets/img/lot/item-small-1.jpg", "/assets/img/lot/item-small-2.jpg", "/assets/img/lot/item-small-3.jpg"],
     bet: {
-      count: [
-        {
-          name: 'Дарья Сумникова',
-          bet: '4 460',
-          priceTag: 'р.',
-          link: '#'
-        },
-        {
-          name: 'Дарья',
-          bet: '4 340',
-          priceTag: 'р.',
-          link: '#'
-        },
-        {
-          name: 'Сумникова',
-          bet: '3 520',
-          priceTag: 'р.',
-          link: '#'
-        },
-      ],
+      count: false,
       start: '3 400',
       blitz: '40 000',
-      current: '4 460',
+      current: '3 400',
       timer: '5 дней (12 октября 15:34)',
       priceTag: 'р.',
       step: 60,
@@ -341,8 +322,9 @@
       }
     },
     descr: 'The OnePlus 3T stays true to our Never Settle approach. Impressive specs mean nothing if you don’t have a great experience every time you pick up your phone. The OnePlus 3T delivers the best user experience, thanks to the latest hardware upgrades and carefully tested software enhancements. It was developed with care, craftsmanship and in collaboration with our community.',
-    isAviable: false,
-    isBookmarked: false,
+    isAviable: true,
+    isBookmarked: true,
+    bookmarkStatus: 'delivered',
     similar: [
       {
         name: 'Кроссовки NIKE AIR ',

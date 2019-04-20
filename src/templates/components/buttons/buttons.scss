@@ -243,6 +243,51 @@
     padding: 0;
     border: none;
     background: transparent;
+
+    &-confirm {
+      width: auto;
+      padding: 15px 25px;
+      margin-bottom: 25px;
+      border-radius: 96px;
+      border: 2px solid #84be46;
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+      background-color: #84be46;
+      font-size: rem(19);
+      font-weight: 500;
+      line-height: normal;
+      color: #fff;
+
+      &:hover {
+        border-color: #8bc54d;
+        background-color: #8bc54d;
+      }
+
+      &:focus {
+        border-color: #e9ff00;
+        background-color: #84be46;
+      }
+    }
+
+    &-cancel {
+      width: auto;
+      padding: 10px 25px;
+      background: #fff;
+      border-radius: 96px;
+      border: solid 1px #ff6e63;
+      font-size: rem(14);
+      font-weight: 500;
+      line-height: normal;
+      color: #ff6e63;
+
+      &:hover {
+        color: #fff;
+        background-color: #fb756b;
+      }
+
+      &:focus {
+        border-color: #e9ff00;
+      }
+    }
   }
 
   &-edit {
