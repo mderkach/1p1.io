@@ -1,3 +1,4 @@
+{% if lot.isAviable == true %}
 <div class="lot__bet--place">
   <div class="lot__bet--place-input-outer">
     <label class="lot__bet--place-input-label" for="bet">Ваша ставка (шаг {{ lot.bet.step }} {{ lot.bet.priceTag }})</label>
@@ -13,3 +14,9 @@
     </button>
   </div>
 </div>
+{% else %}
+  <div class="lot__solded">
+    Товар продан
+  </div>
+{% endif %}
+
