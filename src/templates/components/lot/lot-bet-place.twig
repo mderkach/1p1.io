@@ -2,7 +2,7 @@
   <div class="lot__bet--place-input-outer">
     <label class="lot__bet--place-input-label" for="bet">Ваша ставка (шаг {{ lot.bet.step }} {{ lot.bet.priceTag }})</label>
     <input name="bet" id="bet" type="number" min="{{ lot.bet.start|number_format(0,'','') }}" data-minimum="{{ lot.bet.start|number_format(0,'','') }}"
-      value="{{ lot.bet.start|number_format(0,'','') + lot.bet.step }}" step="{{ lot.bet.step }}" data-step="{{ lot.bet.step }}" class="lot__bet--place-input">
+      value="{{ lot.bet.current|number_format(0,'','') + lot.bet.step }}" step="{{ lot.bet.step }}" data-step="{{ lot.bet.step }}" class="lot__bet--place-input">
     <p class="lot__bet--place--error">Ваша ставка должна быть выше, чем самая высокая ставка</p>
   </div>
   <div class="lot__bet-buttons-wrapper">

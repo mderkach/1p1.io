@@ -282,6 +282,20 @@
       &-descr {
         @extend .lot__bet-count;
       }
+
+      &-more {
+        display: none;
+        margin-bottom: 15px;
+
+        &.is-active {
+          display: block;
+          height: auto;
+        }
+
+        &-descr {
+          margin-bottom: 0;
+        }
+      }
     }
 
     &-blitz {
@@ -317,6 +331,45 @@
 
       &-descr {
         @extend .lot__bet-count;
+      }
+    }
+
+    &-leader {
+      @extend .lot__bet-count;
+
+      &-wrapper {
+        @extend .lot__bet-count-wrapper;
+      }
+
+      &-descr {
+        @extend .lot__bet-count;
+      }
+    }
+
+    &-link {
+      font-size: rem(15);
+      font-weight: 500;
+      line-height: 1.33;
+      color: #4489ff;
+
+      &:hover {
+        cursor: pointer;
+        color: #4489ff;
+      }
+
+      .alt-text {
+        display: none;
+      }
+
+      &.is-toggled {
+        
+        .alt-text {
+          display: inline;
+        }
+
+        .prim-text {
+          display: none;
+        }
       }
     }
 

@@ -1,6 +1,6 @@
 {% extends "../layout/item--desktop.twig" %}
 
-{% set page_title = "item auction" %}
+{% set page_title = "item auction has bet" %}
 {% set headerType = "--white --no-toggle" %}
 {% set userStatus = "--authorised" %}
 {% set sellType = "auction" %}
@@ -297,10 +297,29 @@
     },
     img: ["/assets/img/lot/item-big.jpg", "/assets/img/lot/item-small-1.jpg", "/assets/img/lot/item-small-2.jpg", "/assets/img/lot/item-small-3.jpg"],
     bet: {
-      count: false,
+      count: [
+        {
+          name: 'Дарья Сумникова',
+          bet: '4 460',
+          priceTag: 'р.',
+          link: '#'
+        },
+        {
+          name: 'Дарья',
+          bet: '4 340',
+          priceTag: 'р.',
+          link: '#'
+        },
+        {
+          name: 'Сумникова',
+          bet: '3 520',
+          priceTag: 'р.',
+          link: '#'
+        },
+      ],
       start: '3 400',
       blitz: '40 000',
-      current: '3 400',
+      current: '4 460',
       timer: '5 дней (12 октября 15:34)',
       priceTag: 'р.',
       step: 60,

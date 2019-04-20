@@ -234,6 +234,10 @@ module.exports = {
       filename: 'item-auction.html',
       template: `${PATHS.src}/templates/pages/item-auction.twig`,
     }),
+    new HtmlWebpackPlugin({
+      filename: 'item-auction--has-bet.html',
+      template: `${PATHS.src}/templates/pages/item-auction--has-bet.twig`,
+    }),
     new CopyWebpackPlugin([
       { from: `${PATHS.src}/img`, to: `${PATHS.assets}img` },
       { from: `${PATHS.src}/fonts`, to: `${PATHS.assets}fonts` },
