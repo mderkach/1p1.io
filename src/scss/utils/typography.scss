@@ -28,6 +28,8 @@
       padding-right: 0;
       text-align: left;
     }
+
+    
   }
 
   &__h1 {
@@ -75,6 +77,14 @@
     line-height: normal;
     color: #000;
     margin-bottom: 5px;
+
+    &-similar {
+      font-size: rem(25);
+      font-weight: bold;
+      line-height: normal;
+      color: #000;
+      margin-bottom: 30px;
+    }
   }
 }
 
