@@ -10,6 +10,10 @@
 
     &-wrapper {
       @include make-row();
+
+      @include mq-down(sm) {
+        padding: 0 20px;
+      }
     }
   }
 }

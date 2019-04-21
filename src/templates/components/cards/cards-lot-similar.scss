@@ -11,6 +11,10 @@
   &__wrapper {
     @include make-row();
     overflow: hidden;
+
+    @include mq-down(sm) {
+      padding: 0 20px;
+    }
   }
 }
 

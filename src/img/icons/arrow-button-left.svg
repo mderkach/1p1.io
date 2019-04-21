@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="36px" viewBox="0 0 30 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 54.1 (76490) - https://sketchapp.com -->
+    <title>1B2EEA41-5C04-4175-8E38-21693498065F</title>
+    <desc>Created with sketchtool.</desc>
+    <g id="Item" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Item-Auction-0-no-bets" transform="translate(-140.000000, -326.000000)">
+            <g id="items" transform="translate(130.000000, 140.000000)">
+                <g id="Elements/arrow-button-left" transform="translate(10.000000, 186.000000)">
+                    <g id="arrow-buttons">
+                        <rect id="Rectangle-2" fill="#FFFFFF" opacity="0.8" x="0" y="0" width="30" height="36" rx="2"></rect>
+                        <g id="icon/ico-arrow-left" transform="translate(6.000000, 9.000000)" stroke="#8F8670" stroke-width="2">
+                            <polyline id="Arrow-B" transform="translate(8.250000, 8.967846) rotate(90.000000) translate(-8.250000, -8.967846) " points="3.78215362 6.78215362 8.21784638 11.2178464 12.7178464 6.71784638"></polyline>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

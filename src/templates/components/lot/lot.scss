@@ -11,6 +11,10 @@
       margin-left: 0;
       margin-right: 0;
     }
+
+    @include mq-down(md) {
+      flex-wrap: wrap;
+    }
   }
 
   &__charity {
@@ -155,50 +159,17 @@
     }
   }
 
-  &__img {
-    &-wrapper {
-      width: 100%;
-      max-width: 380px;
-      margin-right: 10px;
-      overflow: hidden;
-    }
-
-    &-main {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-
-      &-wrapper {
-        display: block;
-      }
-    }
-
-    &-additional {
-      @extend .lot__img-main;
-
-      &-outer {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        margin-top: 10px;
-      }
-
-      &-wrapper {
-        @extend .lot__img-main-wrapper;
-        margin-right: 10px;
-
-        &:last-child {
-          margin-right: 0;
-        }
-      }
-    }
-  }
 
   &__info {
     &-wrapper {
       width: 100%;
       margin-left: 10px;
       padding: 0 25px;
+
+      @include mq-down(md) {
+        margin: 0;
+        padding: 0;
+      }
     }
 
     &-location {

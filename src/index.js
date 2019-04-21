@@ -43,6 +43,7 @@ import './templates/components/filter/filter';
 import './templates/components/cards/cards-marketplace'
 import './templates/components/lot/lot-bet-place'
 import './templates/components/lot/lot-bet-details'
+import './templates/components/slider/slider-lot-img'
 //pages
 // var landing = require('./index.twig');
 // var loginMobile = require('./templates/pages/login-mobile.twig');

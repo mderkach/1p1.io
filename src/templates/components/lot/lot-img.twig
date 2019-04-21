@@ -1,19 +1,15 @@
 {% if lot %}
-    <div class="lot__img-wrapper">
-        {% for img in lot.img if loop.first %}
-            <a class="lot__img-main-wrapper" data-fancybox="gallery" href="{{ img }}">
-                <img alt="" class="lot__img-main" src="{{ img }}">
-            </a>
-        {% endfor %}
-        <div class="lot__img-additional-outer">
-            {% for img in lot.img %}
-                {% if loop.first %}
-                {% else %}
-                    <a class="lot__img-additional-wrapper" data-fancybox="gallery" href="{{ img }}">
-                        <img alt="" class="lot__img-additional" src="{{ img }}">
-                    </a>
-                {% endif %}
-            {% endfor %}
-        </div>
-    </div>
+<div class="lot__img-wrapper">
+	{% include "../slider/slider-lot-img.twig" %}
+	<div class="lot__img-additional-outer">
+		{% for img in lot.img %}
+		{% if loop.first %}
+		{% else %}
+		<a class="lot__img-additional-wrapper" data-fancybox="gallery" href="{{ img }}">
+			<img alt="" class="lot__img-additional" src="{{ img }}">
+		</a>
+		{% endif %}
+		{% endfor %}
+	</div>
+</div>
 {% endif %}
