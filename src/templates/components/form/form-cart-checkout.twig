@@ -56,8 +56,7 @@
     </div>
     {% if checkoutMode != 'payment' %}
       <div class="form-cart-checkout__addInfo">
-        <img alt="" src="/assets/img/icons/icon-shield-color.svg">
-        <a class="form-cart-checkout__addInfo-link" href="#">Безопасная сделка</a>
+        {% include "../tooltip/tooltip-lot-safe.twig" %}
         <p class="form-cart-checkout__addInfo-descr">Нажимая кнопку Оформить заказ - вы подтверждаете согласие с Офертой и Условиями пользовательского соглашения.</p>
       </div>
     {% endif %}

@@ -3,9 +3,18 @@
     margin-top: 70px;
     border-top: 1px solid #d9deea;
 
+    &--mobile {
+      &.--dark {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        background-color: #fafafa;
+      }
+    }
+
     &-container {
       @include make-container();
       @include make-container-max-widths($max-widths: $container-max-widths, $breakpoints: $grid-breakpoints);
+
     }
 
     &-wrapper {

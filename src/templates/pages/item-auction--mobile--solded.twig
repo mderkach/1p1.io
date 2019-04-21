@@ -1,0 +1,413 @@
+{% extends "../layout/item--mobile.twig" %}
+
+{% set page_title = "item auction has bet" %}
+{% set headerType = "--white --no-toggle" %}
+{% set userStatus = "--authorised" %}
+{% set sellType = "auction" %}
+{% set accountInfo = [{
+	avatar: '/assets/img/background/main-image-2.jpg',
+	link: '#',
+	name: 'Алиса Романова',
+	donations: '0',
+	totalFunds: '0'
+}] %}
+{% set dropdown = {
+  type: 'dropdown__account-wrapper',
+  imgClass: 'dropdown__account-avatar',
+  items: [
+  { link: '#', caption: 'Настройки профиля'},
+  { link: '#', caption: 'Изменить email'},
+  { link: '#', caption: 'Изменить пароль'},
+  { link: '#', caption: 'Выйти'},
+  ]
+} %}
+{% set dropdownCatalogue = [
+  {
+    category: 'Childen&apos;s goods',
+    link: 'children',
+    content: [
+      {
+        category: 'first',
+        link: 'first'
+      },
+      {
+        category: 'second',
+        link: 'second'
+      },
+      {
+        category: 'first',
+        link: 'first'
+      },
+      {
+        category: 'second',
+        link: 'second'
+      },
+      {
+        category: 'first',
+        link: 'first'
+      },
+      {
+        category: 'second',
+        link: 'second'
+      },
+      {
+        category: 'first',
+        link: 'first'
+      },
+      {
+        category: 'second',
+        link: 'second'
+      },
+      {
+        category: 'first',
+        link: 'first'
+      },
+      {
+        category: 'second',
+        link: 'second'
+      },
+      {
+        category: 'first',
+        link: 'first'
+      },
+      {
+        category: 'second',
+        link: 'second'
+      },
+      {
+        category: 'first',
+        link: 'first'
+      },
+      {
+        category: 'second',
+        link: 'second'
+      },
+      {
+        category: 'first',
+        link: 'first'
+      },
+      {
+        category: 'second',
+        link: 'second'
+      },
+      {
+        category: 'first',
+        link: 'first'
+      },
+      {
+        category: 'second',
+        link: 'second'
+      },
+      {
+        category: 'first',
+        link: 'first'
+      },
+      {
+        category: 'second',
+        link: 'second'
+      },
+    ]
+  },
+  {
+    category: 'Clothes and footwear',
+    link: 'clothes',
+    content: [
+      {
+        category: 'boots',
+        link: 'boots'
+      },
+      {
+        category: 'coat',
+        link: 'coat'
+      },
+      {
+        category: 'sweaters',
+        link: 'sweaters'
+      },
+      {
+        category: 'sweethshot',
+        link: 'sweethshot'
+      },
+      {
+        category: 't-shirt',
+        link: 't-shirt'
+      },
+      {
+        category: 'slip-on',
+        link: 'slip-on'
+      },
+      {
+        category: 'blablabla',
+        link: 'blablabla'
+      },
+    ]
+  },
+  {
+    category: 'Electronics',
+    link: 'electronics',
+    content: [
+      {
+        category: 'first',
+        link: 'first'
+      }
+    ]
+  },
+  {
+    category: 'Appliances',
+    link: 'appliancess',
+    content: [
+      {
+        category: 'first',
+        link: 'first'
+      }
+    ]
+  },
+  {
+    category: 'Pet supplies',
+    link: 'pet',
+    content: [
+      {
+        category: 'first',
+        link: 'first'
+      }
+    ]
+  },
+  {
+    category: 'House and Cottage',
+    link: 'house',
+    content: [
+      {
+        category: 'first',
+        link: 'first'
+      }
+    ]
+  },
+  {
+    category: 'Beauty and health',
+    link: 'beauty',
+    content: [
+      {
+        category: 'beuaty',
+        link: 'beauty'
+      },
+      {
+        category: 'health',
+        link: 'health'
+      }
+    ]
+  },
+  {
+    category: 'Auto',
+    link: 'Auto',
+    content: [
+      {
+        category: 'auto',
+        link: 'auto'
+      },
+      {
+        category: 'motors',
+        link: 'motors'
+      },
+      {
+        category: 'sound',
+        link: 'sound'
+      },
+    ]
+  },
+  {
+    category: 'Art',
+    link: 'art',
+    content: [
+      {
+        category: 'art',
+        link: 'art'
+      },
+      {
+        category: 'motors',
+        link: 'motors'
+      },
+      {
+        category: 'sound',
+        link: 'sound'
+      },
+    ]
+  },
+  {
+    category: 'Garden',
+    link: 'garden',
+    content: [
+      {
+        category: 'art',
+        link: 'art'
+      },
+      {
+        category: 'motors',
+        link: 'motors'
+      },
+      {
+        category: 'sound',
+        link: 'sound'
+      },
+    ]
+  },
+] %}
+{% set mobileMenu = [
+	{
+	link: '#',
+	description: 'Объявления'
+	}, 
+	{
+		link: '#',
+		description: 'Как это работает'
+	},
+	{
+		link: '#',
+		description: 'Фонды'
+	},
+	{
+		link: '#',
+		description: 'Новости'
+	},
+	{
+		link: '#',
+		description: 'Инвесторам'
+	},
+] %}
+{% set breadcrumbs = [
+	{
+		name: 'Brand products',
+		link: '#'
+	},
+	{
+		name: 'Clothes',
+		link: '#'
+	},
+  {
+		name: 'Jimmy Choo',
+		link: '#'
+	}
+] %}
+
+{% set lot = {
+    name: 'Dior Crystal Antrocite',
+    location: {
+      country: 'Россия',
+      city: 'Москва',
+      place: 'м. Кропоткинская',
+    },
+    img: ["/assets/img/lot/item-big.jpg", "/assets/img/lot/item-small-1.jpg", "/assets/img/lot/item-small-2.jpg", "/assets/img/lot/item-small-3.jpg"],
+    bet: {
+      count: [
+        {
+          name: 'Дарья Сумникова',
+          bet: '4 460',
+          priceTag: 'р.',
+          link: '#'
+        },
+        {
+          name: 'Дарья',
+          bet: '4 340',
+          priceTag: 'р.',
+          link: '#'
+        },
+        {
+          name: 'Сумникова',
+          bet: '3 520',
+          priceTag: 'р.',
+          link: '#'
+        },
+      ],
+      start: '3 400',
+      blitz: '40 000',
+      current: '4 460',
+      timer: '5 дней (12 октября 15:34)',
+      priceTag: 'р.',
+      step: 60,
+    },
+    charity: {
+      percent: 30,
+      value: '1 789',
+      descr: 'помощь детям и взрослым с врожденной хрупкостью костей в Благотворительный фонд
+      “Хрупкие люди”',
+      from: {
+        img: '/assets/img/charity/logo.jpg',
+        name: 'Dior RUSSIA',
+        count: 24,
+        total: '23 986',
+      },
+      to: {
+        img: '/assets/img/charity/foundation.jpg',
+        name: 'Благотворительный фонд Кораблик основанный именем Москвовского Ленинского Комсомола',
+      }
+    },
+    descr: 'The OnePlus 3T stays true to our Never Settle approach. Impressive specs mean nothing if you don’t have a great experience every time you pick up your phone. The OnePlus 3T delivers the best user experience, thanks to the latest hardware upgrades and carefully tested software enhancements. It was developed with care, craftsmanship and in collaboration with our community.',
+    isAviable: false,
+    isBookmarked: false,
+    similar: [
+      {
+        name: 'Кроссовки NIKE AIR ',
+        img: '/assets/img/lot--similar/1.jpg',
+        price: '3 490',
+        priceTag: 'р.',
+        link: '#',
+        seller: {
+          name: 'Rachel Gilbert',
+          img: '/assets/img/lots/celebrities-profile-avatar.png',
+          place: 'м. Кропоткинская',
+          date: 'вчера',
+        }
+      },
+      {
+        name: 'Кожаные ботинки с ремешками',
+        img: '/assets/img/lot--similar/2.jpg',
+        price: '3 490',
+        priceTag: 'р.',
+        link: '#',
+        seller: {
+          name: 'Rachel Gilbert',
+          img: '/assets/img/lots/celebrities-profile-avatar.png',
+          place: 'м. Кропоткинская',
+          date: 'вчера',
+        }
+      },
+      {
+        name: 'Кроссовки NIKE AIR ',
+        img: '/assets/img/lot--similar/3.jpg',
+        price: '3 490',
+        priceTag: 'р.',
+        link: '#',
+        seller: {
+          name: 'Rachel Gilbert',
+          img: '/assets/img/lots/celebrities-profile-avatar.png',
+          place: 'м. Кропоткинская',
+          date: 'вчера',
+        }
+      },
+      {
+        name: 'Кожаные ботинки с ремешками',
+        img: '/assets/img/lot--similar/4.jpg',
+        price: '3 490',
+        priceTag: 'р.',
+        link: '#',
+        seller: {
+          name: 'Rachel Gilbert',
+          img: '/assets/img/lots/celebrities-profile-avatar.png',
+          place: 'м. Кропоткинская',
+          date: 'вчера',
+        }
+      },
+      {
+        name: 'Кожаные ботинки Creepers с ремешками',
+        img: '/assets/img/lot--similar/5.jpg',
+        price: '3 490',
+        priceTag: 'р.',
+        link: '#',
+        seller: {
+          name: 'Rachel Gilbert',
+          img: '/assets/img/lots/celebrities-profile-avatar.png',
+          place: 'м. Кропоткинская',
+          date: 'вчера',
+        }
+      },
+    ],
+} %}

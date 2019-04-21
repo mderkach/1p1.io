@@ -7,10 +7,7 @@
         {{ lot.bet.current}}
         {{ lot.bet.priceTag}}
       </p>
-      <div class="lot__safe-deal">
-        <img alt="" src="/assets/img/icons/icon-shield-color.svg">
-        <a class="form-cart-checkout__addInfo-link" href="#">Безопасная сделка</a>
-      </div>
+      {% include "../tooltip/tooltip-lot-safe.twig" %}
     </div>
     {% if sellType == 'auction' %}
     {% include "./lot-bet-details.twig" %}
@@ -62,31 +59,6 @@
     </div>
     {% endif %}
     {% endif %}
-    <div class="lot__info--add-wrapper">
-      <div class="lot__info--add-outer">
-        <img class="lot__info--add-icon" src="/assets/img/icons/icon-truck.svg" alt="">
-        <div class="lot__info--add-inner">
-          <h4 class="lot__info--add-head">Самовывоз от продавца</h4>
-          <p class="lot__info--add-descr">Вы можете забрать товар у продавца, договорившись с ним по телефону или в
-            чате.</p>
-        </div>
-      </div>
-      <div class="lot__info--add-outer">
-        <img class="lot__info--add-icon" src="/assets/img/icons/icon-pin.svg" alt="">
-        <div class="lot__info--add-inner">
-          <h4 class="lot__info--add-head">Место встречи</h4>
-          <p class="lot__info--add-descr">Место встречи: {{lot.location.city}},{{lot.location.place}}, в любое время с
-            12 до 20 по рабочим дням. Можно договориться о другом месте.</p>
-        </div>
-      </div>
-      <div class="lot__info--add-outer">
-        <img class="lot__info--add-icon" src="/assets/img/icons/icon-phone.svg" alt="">
-        <div class="lot__info--add-inner">
-          <h4 class="lot__info--add-head">Контакты</h4>
-          <p class="lot__info--add-descr">Телефон и Email продавца станут доступны покупателю после бронирования товара.
-          </p>
-        </div>
-      </div>
-    </div>
+    {% include "./lot-info--additional.twig" %}
   </div>
 </div>

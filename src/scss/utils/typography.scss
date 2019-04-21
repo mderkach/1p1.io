@@ -78,12 +78,23 @@
     color: #000;
     margin-bottom: 5px;
 
+    @include mq-down(md) {
+      margin-top: 20px;
+      margin-bottom: 10px;
+      font-size: rem(23);
+    }
+
     &-similar {
       font-size: rem(25);
       font-weight: bold;
       line-height: normal;
       color: #000;
       margin-bottom: 30px;
+
+      @include mq-down(md) {
+        font-size: rem(19);
+        margin-bottom: 20px;
+      }
     }
   }
 }
