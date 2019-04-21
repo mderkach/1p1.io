@@ -1,0 +1,116 @@
+.lot-similar {
+  padding: 60px 0 65px;
+  background-color: #fafafa;
+
+  &__container {
+    @include make-container();
+    @include make-container-max-widths($max-widths: $container-max-widths, $breakpoints: $grid-breakpoints);
+
+  }
+
+  &__wrapper {
+    @include make-row();
+    overflow: hidden;
+
+    @include mq-down(sm) {
+      padding: 0 20px;
+    }
+  }
+}
+
+.card {
+  &-lot {
+    &__similar {
+      width: 100%;
+      max-width: 220px;
+      flex: 0 0 100%;
+      margin-right: 20px;
+      border-radius: 4px;
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+      background-color: #fff;
+      overflow: hidden;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      @include mq-down(xl) {
+        margin-right: 10px;
+      }
+
+      &-wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+
+        :-webkit-scrollbar {
+          display: none;
+        }
+      }
+
+      &-img {
+        width: 100%;
+        max-width: 220px;
+        object-fit: contain;
+      }
+
+      &-body {
+        padding: 0 20px 25px;
+      }
+
+      &-price {
+        font-size: rem(19);
+        font-weight: bold;
+        line-height: 1.37;
+        color: #4489ff;
+        margin-bottom: 5px;
+      }
+
+      &-name {
+        display: block;
+        font-size: rem(15);
+        font-weight: 500;
+        line-height: 1.33;
+        color: #444a59;
+        margin-bottom: 20px;
+
+        &:hover {
+          cursor: pointer;
+          color: #444a59;
+        }
+      }
+
+      &-seller {
+        &-wrapper {
+          display: flex;
+          align-items: center;
+        }
+
+        &-img {
+          width: 30px;
+          height: 30px;
+          border-radius: 15px;
+          border: solid 1px rgba(0, 0, 0, 0.1);
+          object-fit: contain;
+          margin-right: 10px;
+        }
+
+        &-info {
+          font-size: rem(12);
+          font-weight: 500;
+          line-height: normal;
+          color: #89a1b3;
+          margin-bottom: 0;
+        }
+
+        &-name {
+          @extend .card-lot__similar-seller-info;
+          color: #4b5769;
+        }
+      }
+    }
+  }
+}

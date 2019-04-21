@@ -1,0 +1,31 @@
+<div class="lot__charity-summary">
+  <div class="lot__charity-summary-percent-wrapper">
+    <div class="lot__charity-summary-percent-inner">
+      <img src="/assets/img/icons/icon-heart-color.svg" alt="" class="lot-cahity-summary-percent-icon">
+      <p class="lot__charity-summary-percent">{{ lot.charity.percent }} %</p>
+    </div>
+    <p class="lot__charity-summary-descr">
+      <span>{{ lot.charity.value}} {{ lot.bet.priceTag}}</span> из суммы покупки идет на {{ lot.charity.descr }}
+    </p>
+  </div>
+  <div class="lot__charity-from-wrapper">
+    <img class="lot__charity-from-img" src="{{ lot.charity.from.img }}" alt="">
+    <div class="lot__charity-from-inner">
+      <p class="lot__charity-from">Жертвователь</p>
+      <p class="lot__charity-from-descr">{{ lot.charity.from.name }}, уже пожертвовал {{ lot.charity.from.count}} вещей
+        на сумму {{ lot.charity.from.total }} руб.</p>
+    </div>
+
+  </div>
+  <div class="lot__charity-to-wrapper">
+    <img class="lot__charity-to-img" src="{{ lot.charity.to.img }}" alt="">
+    <div class="lot__charity-to-inner">
+      <p class="lot__charity-to">Получатель пожертвования</p>
+      <p class="lot__charity-to-descr">{{ lot.charity.to.name }}</p>
+      <a class="lot__charity-to-change" href="#">Изменить</a>
+    </div>
+  </div>
+  <div class="lot__charity-footer">
+    <a href="#" class="lot__charity-footer-link">Благотворительная распродажа<br> {{ lot.charity.from.name }} <img src="/assets/img/icons/icon-chevron-right-blue.svg" alt=""></a>
+  </div>
+</div>

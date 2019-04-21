@@ -1,0 +1,49 @@
+<div class="lot__bet-details">
+  {% if lot.bet.count == false %}
+
+  {% else %}
+  <div class="lot__bet-leader-wrapper">
+    <span class="lot__bet-leader-descr">Лидер торгов</span>
+    {% for participant in lot.bet.count if loop.first %}
+    <a class="lot__bet-link" href="{{ participant.link}}">{{ participant.name }}</a>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  <div class="lot__bet-count-wrapper">
+    <span class="lot__bet-count-descr">Ставок</span>
+    <span class="lot__bet-count">
+      {% if lot.bet.count == false %}
+      0
+      {% else %}
+      {{ lot.bet.count.length }}
+      <a class="lot__bet-link bet-details-toggle" href="#bet-details"><span class="prim-text">Все</span><span class="alt-text">Скрыть все ставки</span></a>
+      <div class="lot__bet-count-more" id="bet-details">
+      {% for participant in lot.bet.count %}
+        <p class="lot__bet-count-more-descr">{{ participant.bet }} {{ participant.priceTag }} от <a class="lot__bet-link" href="{{ participant.link}}">{{ participant.name }}</a></p>
+      {% endfor %}
+      </div>
+      {% endif %}
+    </span>
+  </div>
+  <div class="lot__bet-blitz-wrapper">
+    <span class="lot__bet-blitz-descr">Блиц-цена</span>
+    <span class="lot__bet-blitz">
+      {{ lot.bet.blitz }}
+      {{ lot.bet.priceTag}}
+    </span>
+  </div>
+  <div class="lot__bet-start-wrapper">
+    <span class="lot__bet-start-descr">Начальная цена</span>
+    <span class="lot__bet-start">
+      {{ lot.bet.start }}
+      {{ lot.bet.priceTag}}
+    </span>
+  </div>
+  <div class="lot__bet-timer-wrapper">
+    <span class="lot__bet-timer-descr">До конца торгов</span>
+    <span class="lot__bet-timer">
+      {{ lot.bet.timer }}
+    </span>
+  </div>
+</div>

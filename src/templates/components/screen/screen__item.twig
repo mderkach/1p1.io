@@ -1,0 +1,16 @@
+<section class="screen__item">
+  <div class="screen__item-container">
+    <div class="screen__item-wrapper">
+      {% if breadcrumbs %}
+        {% include "../breadcrumbs/breadcrumbs.twig" %}
+      {% endif %}
+      <main class="lot__wrapper">
+        {% include "../lot/lot.twig" %} 
+      </main>
+      <aside class="lot__charity-wrapper">
+        {% include "../lot/lot-charity-info.twig" %}
+      </aside>
+      {% include "../tabs/tabs-lot.twig" %}
+    </div>
+  </div>
+</section>

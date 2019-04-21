@@ -1,0 +1,30 @@
+{% if lot.similar %}
+<section class="lot-similar">
+  <div class="lot-similar__container">
+    <div class="lot-similar__wrapper">
+      <div class="header__wrapper-lot-similar">
+        <h3 class="header__lot-similar text-left">Покупка товара</h3>
+      </div>
+      <div class="card-lot__similar-wrapper">
+        {% for similar in lot.similar|slice(0,5) %}
+        <div class="card-lot__similar">
+          <img class="card-lot__similar-img" src="{{ similar.img }}" alt="">
+          <div class="card-lot__similar-body">
+            <p class="card-lot__similar-price">{{ similar.price }} {{ similar.priceTag }}</p>
+            <a class="card-lot__similar-name" href="{{ similar.link }}">{{ similar.name }}</a>
+            <div class="card-lot__similar-seller-wrapper">
+              <img class="card-lot__similar-seller-img" src="{{ similar.seller.img }}" alt="">
+              <p class="card-lot__similar-seller-info">
+                <span class="card-lot__similar-seller-name"> {{ similar.seller.name }} </span>,
+                <span>{{ similar.seller.date }}</span>,<br>
+                <span>{{ similar.seller.place }}</span>
+              </p>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+{% endif %}

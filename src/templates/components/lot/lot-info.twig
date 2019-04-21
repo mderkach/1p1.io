@@ -1,0 +1,64 @@
+<div class="lot__info-wrapper">
+  {% include "./lot-header.twig" %}
+  <div class="lot__bet-wrapper">
+    <p class="lot__bet-descr">Самая высокая ставка</p>
+    <div class="lot__bet-price">
+      <p class="lot__bet">
+        {{ lot.bet.current}}
+        {{ lot.bet.priceTag}}
+      </p>
+      {% include "../tooltip/tooltip-lot-safe.twig" %}
+    </div>
+    {% if sellType == 'auction' %}
+    {% include "./lot-bet-details.twig" %}
+    {% include "./lot-bet-place.twig" %}
+    {% else %}
+    {% if lot.isBookmarked == false %}
+    <div class="lot__bet-buttons-wrapper --standalone">
+      <button class="btn-lot-place">Купить</button>
+      <button data-modal="#bookmark-sucess" class="btn-lot-fav">
+        <img alt="" src="/assets/img/icons/icon-fav.svg">
+        В избранное
+      </button>
+    </div>
+    {% else %}
+    <div class="lot__bookmarked">
+      {% if lot.bookmarkStatus == 'canceled' %}
+      <div class="lot__bookmarked-head">
+        <img src="/assets/img/icons/icon-cross-red.svg" alt="" class="lot__bokkmarked-icon">
+        <h4 class="lot__bookmarked-header --canceled">Бронь отменена</h4>
+      </div>
+      <p class="lot__bookmarked-descr">Вы отменили бронирование товара. Если продавец не опротестует это в течение
+        суток, то деньги будут возвращены на вашу карту.</p>
+      {% elseif lot.bookmarkStatus == 'bookmarked' %}
+      <div class="lot__bookmarked-head">
+        <img src="/assets/img/icons/icon-checkmark-dashed.svg" alt="" class="lot__bokkmarked-icon">
+        <h4 class="lot__bookmarked-header">Товар забронирован</h4>
+      </div>
+      <p class="lot__bookmarked-descr">Вы забронировали товар, деньги списаны с вашей карты. Свяжитесь с продавцом и
+        заберите товар. Бронь действует в течение 10 дней, по истечении которых автоматически снимается. Как только
+        получите товар, нажмите кнопку ниже.</p>
+      <button class="btn-bookmark-confirm">Подтвердить получение</button>
+      <p class="lot__bookmarked-descr">Если вы передумали забирать товар, или продавец не выходит на связь, или продавец
+        отметил, что товар передан, а на самом деле нет, отмените бронь. Мы вернем полную сумму покупки на вашу карту.
+      </p>
+      <button class="btn-bookmark-cancel">Отменить бронь</button>
+      {% elseif lot.bookmarkStatus == 'delivered' %}
+      <div class="lot__bookmarked-head">
+        <img src="/assets/img/icons/icon-checkmark-green.svg" alt="" class="lot__bokkmarked-icon">
+        <h4 class="lot__bookmarked-header">Товар передан</h4>
+      </div>
+      <p class="lot__bookmarked-descr">Продавец отметил, что передал вам товар. Если это на самом деле не так, вы можете
+        опротестовать это в течение суток. Деньги не будут переданы в фонд-получатель, а мы будем разбираться, что
+        случилось.</p>
+      <div class="lot__bookmarked-buttons-confirm-wrapper">
+        <button class="btn-bookmark-confirm">Подтвердить получение</button>
+        <button class="btn-bookmark-cancel">Я не получал товар</button>
+      </div>
+      {% endif %}
+    </div>
+    {% endif %}
+    {% endif %}
+    {% include "./lot-info--additional.twig" %}
+  </div>
+</div>

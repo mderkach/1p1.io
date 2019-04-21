@@ -1,0 +1,15 @@
+<div class="lot__img-main-slider-container">
+  <div class="lot__img-main-slider-wrapper">
+    {% for img in lot.img %}
+    <a class="lot__img-main-wrapper" data-fancybox="gallery" href="{{ img }}">
+      <img alt="" class="lot__img-main" src="{{ img }}">
+    </a>
+    {% endfor %}
+  </div>
+  <div class="lot__img-button-prev">
+    <img src="/assets/img/icons/arrow-button-left.svg" alt="">
+  </div>
+  <div class="lot__img-button-next">
+    <img src="/assets/img/icons/arrow-button-right.svg" alt="">
+  </div>
+</div>

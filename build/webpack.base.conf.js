@@ -230,6 +230,62 @@ module.exports = {
       filename: 'account-private-edit--mobile.html',
       template: `${PATHS.src}/templates/pages/account-private-edit--mobile.twig`,
     }),
+    new HtmlWebpackPlugin({
+      filename: 'item-auction.html',
+      template: `${PATHS.src}/templates/pages/item-auction.twig`,
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'item-auction--has-bet.html',
+      template: `${PATHS.src}/templates/pages/item-auction--has-bet.twig`,
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'item-auction--solded.html',
+      template: `${PATHS.src}/templates/pages/item-auction--solded.twig`,
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'item-fixed.html',
+      template: `${PATHS.src}/templates/pages/item-fixed.twig`,
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'item-fixed--bookmarked.html',
+      template: `${PATHS.src}/templates/pages/item-fixed--bookmarked.twig`,
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'item-fixed--canceled.html',
+      template: `${PATHS.src}/templates/pages/item-fixed--canceled.twig`,
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'item-fixed--delivered.html',
+      template: `${PATHS.src}/templates/pages/item-fixed--delivered.twig`,
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'item-auction--mobile.html',
+      template: `${PATHS.src}/templates/pages/item-auction--mobile.twig`,
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'item-auction--mobile--has-bet.html',
+      template: `${PATHS.src}/templates/pages/item-auction--mobile--has-bet.twig`,
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'item-auction--mobile--solded.html',
+      template: `${PATHS.src}/templates/pages/item-auction--mobile--solded.twig`,
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'item-fixed--mobile.html',
+      template: `${PATHS.src}/templates/pages/item-fixed--mobile.twig`,
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'item-fixed--mobile--bookmarked.html',
+      template: `${PATHS.src}/templates/pages/item-fixed--mobile--bookmarked.twig`,
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'item-fixed--mobile--canceled.html',
+      template: `${PATHS.src}/templates/pages/item-fixed--mobile--canceled.twig`,
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'item-fixed--mobile--delivered.html',
+      template: `${PATHS.src}/templates/pages/item-fixed--mobile--delivered.twig`,
+    }),
     new CopyWebpackPlugin([
       { from: `${PATHS.src}/img`, to: `${PATHS.assets}img` },
       { from: `${PATHS.src}/fonts`, to: `${PATHS.assets}fonts` },

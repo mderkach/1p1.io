@@ -118,3 +118,20 @@ if (filterPopup && closeFilterPopup && openFilterPopup) {
     }
   });
 }
+
+//bookmark items popup
+var button = document.querySelector('.btn-lot-fav');
+if (button) {
+  var modal = document.querySelector(button.dataset.modal);
+  var close = modal.querySelector('.popup-bookmark-close');
+  
+  button.addEventListener('click', function(event){
+    event.preventDefault();
+    modal.classList.add('is-active');
+  });
+
+  close.addEventListener('click', function(event){
+    event.preventDefault();
+    modal.classList.remove('is-active');
+  });
+}

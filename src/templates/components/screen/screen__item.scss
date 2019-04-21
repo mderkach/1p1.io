@@ -1,0 +1,32 @@
+.screen {
+  &__item {
+    margin-top: 70px;
+    border-top: 1px solid #d9deea;
+
+    @include mq-down(sm) {
+      margin-top: 50px;
+    }
+
+    &--mobile {
+      &.--dark {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        background-color: #fafafa;
+      }
+    }
+
+    &-container {
+      @include make-container();
+      @include make-container-max-widths($max-widths: $container-max-widths, $breakpoints: $grid-breakpoints);
+
+    }
+
+    &-wrapper {
+      @include make-row();
+
+      @include mq-down(sm) {
+        padding: 0 20px;
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="19px" height="19px" viewBox="0 0 19 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 54.1 (76490) - https://sketchapp.com -->
+    <title>69EABDCD-F2D2-4F64-A876-8BDC3F6F1AC6</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <linearGradient x1="100%" y1="2.36832254%" x2="2.81409439%" y2="94.9508767%" id="linearGradient-1">
+            <stop stop-color="#9C5EFF" offset="0%"></stop>
+            <stop stop-color="#4489FF" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Buttons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="⌘/Button/M/white+icon/default" transform="translate(-30.000000, -16.000000)" stroke="url(#linearGradient-1)" stroke-width="1.70000005">
+            <g id="Group" transform="translate(31.000000, 14.000000)">
+                <polygon id="Shape" points="8.64924246 3.55671863 11.1629575 8.78325915 16.7842427 9.62651888 12.7167426 13.6925336 13.6766726 19.4367187 8.64924246 16.7232592 3.62181232 19.4367187 4.58174234 13.6925336 0.514242228 9.62651888 6.13552739 8.78325915"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

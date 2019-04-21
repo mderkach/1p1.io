@@ -2,7 +2,11 @@
   position: fixed;
   top: 0;
   width: 100%;
+  max-height: 70px;
   padding: 17px 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   z-index: 10;
 
   @include mq-down(sm) {
@@ -112,7 +116,7 @@
           content: '';
           display: block;
           position: absolute;
-          bottom: -17px;
+          bottom: -14px;
           left: 0;
           width: 100%;
           height: 4px;
@@ -125,7 +129,7 @@
           content: '';
           display: block;
           position: absolute;
-          bottom: -17px;
+          bottom: -14px;
           left: 0;
           width: 100%;
           height: 4px;
@@ -225,7 +229,8 @@
     border: 2px solid #4489ff;
 
     &:hover {
-      background: #4f90fe
+      background: #4f90fe;
+      border-color: #4f90fe;
     }
 
     &:focus {
@@ -233,6 +238,12 @@
       border-color: #e9ff00;
       background-color: #4489ff;
     }
+
+    // &:focus-within{
+    //   box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+    //   background: #4f90fe;
+    //   border-color: #4f90fe;
+    // }
   }
 
   .form__search-header-input {
