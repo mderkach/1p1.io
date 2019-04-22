@@ -4,9 +4,9 @@
     background-color: #fafafa;
     border-top: 1px solid #d9deea;
 
-    @include mq-down(sm) {
-      padding-top: 50px;
-    }
+    // @include mq-down(sm) {
+    //   padding-top: 50px;
+    // }
   }
 }
 

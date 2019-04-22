@@ -1,4 +1,34 @@
+.screen {
+  &__order {
+    padding: 70px 0 40px;
+    background-color: #fafafa;
+
+    @include mq-down(sm) {
+      padding-top: 50px;
+    }
+  }
+}
+
 .order {
+  &__container {
+    @extend .cart__container;
+  }
+
+  &__wrapper {
+    @extend .cart__wrapper;
+
+    @include mq-down(sm) {
+      padding: 0 20px;
+    }
+  }
+
+  &-header {
+    &__wrapper {
+      @extend .cart-header__wrapper;
+      flex-wrap: wrap;
+    }
+  }
+
   &__badge {
     padding: 8px 15px;
     border-radius: 4px;
@@ -9,8 +39,34 @@
     line-height: normal;
     color: #fff;
 
+    &.--mobile {
+      display: block;
+      margin: 10px auto 0;
+      text-align: center;
+
+      @include mq-up(md) {
+        display: none;
+      }
+    }
+
     &.--sent {
       background-color: #4489ff;
+    }
+
+    &.--canceled {
+      background-color: #ff6e63;
+    }
+
+    &.--delivered {
+      background-color: #00b54b;
+    }
+
+    &.--placed {
+      background-color: #79879e;
+    }
+
+    @include mq-down(md) {
+      display: none;
     }
   }
 
@@ -34,6 +90,10 @@
       line-height: 1.33;
       color: #79879e;
 
+      @include mq-down(md) {
+        flex: 0 1 100%;
+      }
+
       &--black {
         @extend .order__details-timestamp;
         color: #000;
@@ -46,6 +106,10 @@
 
       &-wrapper {
         display: flex;
+
+        @include mq-down(md) {
+          flex-wrap: wrap;
+        }
       }
     }
 
@@ -60,9 +124,47 @@
         &-body {
           display: flex;
           padding: 20px 30px 30px;
+
+          @include mq-down(md) {
+            flex-wrap: wrap;
+          }
         }
+
         &-outer {
-          flex:  0 1 50%;
+          flex: 0 1 50%;
+
+          @include mq-down(md) {
+            flex: 0 1 100%;
+          }
+        }
+      }
+    }
+
+    &-link {
+      display: block;
+      font-size: rem(15);
+      font-weight: 500;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.33;
+      letter-spacing: normal;
+      color: #4489ff;
+      margin-bottom: 10px;
+
+      &:nth-last-child(1) {
+        margin-bottom: 0;
+      }
+
+      &:hover {
+        cursor: pointer;
+        color: #4489ff;
+      }
+
+      &-wrapper {
+        padding: 0 30px 25px;
+
+        @include mq-down(lg) {
+          padding: 0 20px 15px;
         }
       }
     }

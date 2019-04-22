@@ -764,6 +764,48 @@
       // }
     }
   }
+
+  &__order {
+    &-track {
+      @extend .btn__form-checkout-submit;
+      text-align: center;
+
+      @include mq-down(sm) {
+        max-width: 260px;
+      }
+    }
+
+    &-cancel {
+      width: 100%;
+      max-width: 320px;
+      margin: 25px auto;
+      padding: 11px 0;
+      border-radius: 96px;
+      border: solid 2px #ff6e63;
+      background-color: #fff;
+      color: #ff6e63;
+      text-align: center;
+
+      &:hover {
+        border-color: #fb756b;
+        background-color: #fb756b;
+        color: #fff;
+      }
+
+      &:focus {
+        border-color: #e9ff00;
+      }
+
+      @include mq-down(sm) {
+        margin: 0 auto 20px;
+        max-width: 260px;
+      }
+
+      &:disabled {
+        opacity: .5;
+      }
+    }
+  }
 }
 
 .hamburger {

@@ -287,8 +287,20 @@ module.exports = {
       template: `${PATHS.src}/templates/pages/item-fixed--mobile--delivered.twig`,
     }),
     new HtmlWebpackPlugin({
-      filename: 'order-details.html',
-      template: `${PATHS.src}/templates/pages/order-details.twig`,
+      filename: 'order--sended.html',
+      template: `${PATHS.src}/templates/pages/order--sended.twig`,
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'order--canceled.html',
+      template: `${PATHS.src}/templates/pages/order--canceled.twig`,
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'order--placed.html',
+      template: `${PATHS.src}/templates/pages/order--placed.twig`,
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'order--delivered.html',
+      template: `${PATHS.src}/templates/pages/order--delivered.twig`,
     }),
     new CopyWebpackPlugin([
       { from: `${PATHS.src}/img`, to: `${PATHS.assets}img` },
