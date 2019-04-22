@@ -1,0 +1,70 @@
+.order {
+  &__badge {
+    padding: 8px 15px;
+    border-radius: 4px;
+    align-self: center;
+    margin-left: auto;
+    font-size: rem(14);
+    font-weight: bold;
+    line-height: normal;
+    color: #fff;
+
+    &.--sent {
+      background-color: #4489ff;
+    }
+  }
+
+  &__details {
+    &__wrapper {
+      @extend .cart-items__wrapper;
+    }
+
+    &-header {
+      @extend .form-cart-delivery__header;
+
+      &-descr {
+        @extend .form-cart-delivery__header-descr;
+      }
+    }
+
+    &-timestamp {
+      flex: 0 1 50%;
+      font-size: rem(15);
+      font-weight: 500;
+      line-height: 1.33;
+      color: #79879e;
+
+      &--black {
+        @extend .order__details-timestamp;
+        color: #000;
+      }
+
+      &-outer {
+        padding: 25px 30px 20px;
+        border-bottom: 1px solid #ebeff4;
+      }
+
+      &-wrapper {
+        display: flex;
+      }
+    }
+
+    &-reciever {
+      &-info {
+        font-size: rem(15);
+        font-weight: 500;
+        line-height: 1.33;
+        color: #000000;
+        margin-bottom: 10px;
+
+        &-body {
+          display: flex;
+          padding: 20px 30px 30px;
+        }
+        &-outer {
+          flex:  0 1 50%;
+        }
+      }
+    }
+  }
+}

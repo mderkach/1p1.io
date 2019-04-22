@@ -286,6 +286,10 @@ module.exports = {
       filename: 'item-fixed--mobile--delivered.html',
       template: `${PATHS.src}/templates/pages/item-fixed--mobile--delivered.twig`,
     }),
+    new HtmlWebpackPlugin({
+      filename: 'order-details.html',
+      template: `${PATHS.src}/templates/pages/order-details.twig`,
+    }),
     new CopyWebpackPlugin([
       { from: `${PATHS.src}/img`, to: `${PATHS.assets}img` },
       { from: `${PATHS.src}/fonts`, to: `${PATHS.assets}fonts` },

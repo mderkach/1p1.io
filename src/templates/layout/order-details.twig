@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+  <meta
+  charset="utf-8">
+  <!-- <base href="/"> -->
+  <title>{{ page_title }}</title>
+  <meta content="" name="description">
+
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta
+  content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
+
+  <!-- Template Basic Images Start -->
+  <meta content="path/to/image.jpg" property="og:image">
+  <link href="#" rel="icon">
+  <link href="#" rel="apple-touch-icon" sizes="180x180">
+  <!-- Template Basic Images End -->
+
+  <!-- Custom Browsers Color Start -->
+<meta
+  content="#4489ff" name="theme-color"> <!-- Custom Browsers Color End -->
+</head>
+
+<body>
+  {% block header %}
+    {% include "../components/header/header.twig" %}
+  {% endblock %}
+  {% block body %}
+    {% block cart %}
+      {% include "../components/screen/screen__order.twig" %}
+    {% endblock %}
+  {% endblock %}
+  {% block footerMain %}
+    {% block blockchain %}{% endblock %}
+    {% block footer %}
+      {% include "../components/footer/footer.twig" %}
+    {% endblock %}
+    {% block mobileMenu %}
+      {% include "../components/mobile-menu/mobile-menu.twig" %}
+    {% endblock %}
+    {% block popup %}
+      {% include "../components/popup/popup.twig" %}
+      {% include "../components/popup/popup-sucess.twig" %}
+      {% include "../components/popup/popup-sucess--order.twig" %}
+    {% endblock %}
+    {% block video %}{% endblock %}
+  {% endblock %}
+</body>
+
+</html>
