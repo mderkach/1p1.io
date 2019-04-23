@@ -1,0 +1,37 @@
+<section class="screen__order">
+  <div class="order__container">
+    <div class="order__wrapper">
+      {% if screenHeader %}
+      <div class="cart-header__outer">
+        <div class="order-header__wrapper">
+          <h1 class="header__h1 regular__h1">
+            {{ screenHeader }}
+          </h1>
+        </div>
+      </div>
+      {% endif %}
+      <aside class="order__list-menu-wrapper">
+        <div class="order__list-menu-header-wrapper">
+          <h3 class="order__list-menu-header">Период:</h3>
+        </div>
+        <ul class="order__list-menu">
+          <li class="order__list-item is-selected">
+            <a href="#" class="order__list-link">За всё время</a>
+          </li>
+          <li class="order__list-item">
+            <a href="#" class="order__list-link">За последний месяц</a>
+          </li>
+          <li class="order__list-item">
+            <a href="#" class="order__list-link">За последние 6 месяцев</a>
+          </li>
+          <li class="order__list-item">
+            <a href="#" class="order__list-link">За последний год</a>
+          </li>
+        </ul>
+      </aside>
+      <main class="order__list-cards-wrapper">
+        {% include "../cards/cards-order-list.twig" %}
+      </main>
+    </div>
+  </div>
+</section>

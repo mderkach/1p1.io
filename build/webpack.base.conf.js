@@ -302,6 +302,10 @@ module.exports = {
       filename: 'order--delivered.html',
       template: `${PATHS.src}/templates/pages/order--delivered.twig`,
     }),
+    new HtmlWebpackPlugin({
+      filename: 'order-list.html',
+      template: `${PATHS.src}/templates/pages/order-list.twig`,
+    }),
     new CopyWebpackPlugin([
       { from: `${PATHS.src}/img`, to: `${PATHS.assets}img` },
       { from: `${PATHS.src}/fonts`, to: `${PATHS.assets}fonts` },
