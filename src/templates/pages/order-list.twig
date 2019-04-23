@@ -1,0 +1,454 @@
+{% extends "../layout/order-list.twig" %}
+{% set page_title = "order list" %}
+{% set headerType = "--white --no-toggle" %}
+{% set userStatus = "--authorised" %}
+{% set pageType = 'private' %}
+{% set screenHeader = 'История заказов' %}
+
+{% set accountInfo = [
+  {
+    avatar: '/assets/img/account/account-avatar.jpg',
+    link: '#',
+    name: 'Квартет И',
+    donations: '0',
+    totalFunds: '0',
+    editable: false,
+    contacts: {
+      number: '+8 (953) 505-31-67',
+      email: 'lubomir.frolov@mail.com',
+    },
+		address: [
+			{
+				country: 'Россия',
+				region: 'Московская область',
+				cityPrefix: 'г.',
+				city: 'Троицкое',
+				index: '102184',
+				address: 'ул. Буженинова, дом 20, квартира 253',
+			},
+			{
+				country: 'Россия',
+				region: 'Новосибирская область',
+				cityPrefix: 'с.',
+				city: 'Троицкое',
+				index: '632842',
+				address: 'ул. Буженинова, дом 20, квартира 253',
+			}
+		],
+    payment: [ 
+			{
+				cardNumberPlaceholder: '1111 *** 4444',
+				cardNumberValue: '1111 2222 3333 4444',
+				cardOwner: 'Lubomir Frolov',
+				cardValidity: '00 / 00',
+				cardCVVPlaceholder: '***',
+				cardCVV: '123',
+			},
+			{
+				cardNumberPlaceholder: '1111 *** 4444',
+				cardNumberValue: '1111 2222 3333 4444',
+				cardOwner: 'Lubomir Frolov',
+				cardValidity: '00 / 00',
+				cardCVVPlaceholder: '***',
+				cardCVV: '123',
+			},
+		],
+    orders: [
+      {
+        link: '#',
+        id: 1234567,
+        date: '12 декабря 2018',
+        deliveryApprx: '26 декабря 2018',
+        status: 'placed',
+        items: [
+          {
+            price: 5000,
+            img: '/assets/img/cart/item-1.jpg'
+          },
+          {
+            price: 4000,
+            img: '/assets/img/cart/item-1.jpg'
+          },
+          {
+            price: 3000,
+            img: '/assets/img/cart/item-1.jpg'
+          },
+          {
+            price: 100,
+            img: '/assets/img/cart/item-1.jpg'
+          },
+        ]
+      },
+      {
+        link: '#',
+        id: 9379992,
+        date: '21 декабря 2017',
+        deliveryApprx: '26 декабря 2018',
+        status: 'delivered',
+        items: [
+          {
+            price: 100,
+            img: '/assets/img/cart/item-1.jpg'
+          },
+          {
+            price: 600,
+            img: '/assets/img/lot/11.jpg'
+          },
+          {
+            price: 900,
+            img: '/assets/img/lot/10.jpg'
+          },
+          {
+            price: 5100,
+            img: '/assets/img/cart/item-1.jpg'
+          },
+        ]
+      },
+      {
+        link: '#',
+        id: 88005553535,
+        date: '21 декабря 2017',
+        deliveryApprx: '26 декабря 2018',
+        status: 'canceled',
+        items: [
+          {
+            price: 1200,
+            img: '/assets/img/lot/3.jpg'
+          },
+          {
+            price: 600,
+            img: '/assets/img/lot/8.jpg'
+          },
+          {
+            price: 900,
+            img: '/assets/img/lot/2.jpg'
+          },
+          {
+            price: 5100,
+            img: '/assets/img/cart/item-1.jpg'
+          },
+        ]
+      },
+      {
+        link: '#',
+        id: 27091994,
+        date: '21 июня 2017',
+        deliveryApprx: '26 декабря 2018',
+        status: 'sended',
+        items: [
+          {
+            price: 200,
+            img: '/assets/img/lot/5.jpg'
+          },
+          {
+            price: 2600,
+            img: '/assets/img/lot/2.jpg'
+          },
+          {
+            price: 900,
+            img: '/assets/img/lot/7.jpg'
+          },
+          {
+            price: 100,
+            img: '/assets/img/cart/item-1.jpg'
+          },
+        ]
+      },
+    ],
+  }
+] %}
+
+{% set dropdownCatalogue = [
+  {
+    category: 'Childen&apos;s goods',
+    link: 'children',
+    content: [
+      {
+        category: 'first',
+        link: 'first'
+      },
+      {
+        category: 'second',
+        link: 'second'
+      },
+      {
+        category: 'first',
+        link: 'first'
+      },
+      {
+        category: 'second',
+        link: 'second'
+      },
+      {
+        category: 'first',
+        link: 'first'
+      },
+      {
+        category: 'second',
+        link: 'second'
+      },
+      {
+        category: 'first',
+        link: 'first'
+      },
+      {
+        category: 'second',
+        link: 'second'
+      },
+      {
+        category: 'first',
+        link: 'first'
+      },
+      {
+        category: 'second',
+        link: 'second'
+      },
+      {
+        category: 'first',
+        link: 'first'
+      },
+      {
+        category: 'second',
+        link: 'second'
+      },
+      {
+        category: 'first',
+        link: 'first'
+      },
+      {
+        category: 'second',
+        link: 'second'
+      },
+      {
+        category: 'first',
+        link: 'first'
+      },
+      {
+        category: 'second',
+        link: 'second'
+      },
+      {
+        category: 'first',
+        link: 'first'
+      },
+      {
+        category: 'second',
+        link: 'second'
+      },
+      {
+        category: 'first',
+        link: 'first'
+      },
+      {
+        category: 'second',
+        link: 'second'
+      },
+    ]
+  },
+  {
+    category: 'Clothes and footwear',
+    link: 'clothes',
+    content: [
+      {
+        category: 'boots',
+        link: 'boots'
+      },
+      {
+        category: 'coat',
+        link: 'coat'
+      },
+      {
+        category: 'sweaters',
+        link: 'sweaters'
+      },
+      {
+        category: 'sweethshot',
+        link: 'sweethshot'
+      },
+      {
+        category: 't-shirt',
+        link: 't-shirt'
+      },
+      {
+        category: 'slip-on',
+        link: 'slip-on'
+      },
+      {
+        category: 'blablabla',
+        link: 'blablabla'
+      },
+    ]
+  },
+  {
+    category: 'Electronics',
+    link: 'electronics',
+    content: [
+      {
+        category: 'first',
+        link: 'first'
+      }
+    ]
+  },
+  {
+    category: 'Appliances',
+    link: 'appliancess',
+    content: [
+      {
+        category: 'first',
+        link: 'first'
+      }
+    ]
+  },
+  {
+    category: 'Pet supplies',
+    link: 'pet',
+    content: [
+      {
+        category: 'first',
+        link: 'first'
+      }
+    ]
+  },
+  {
+    category: 'House and Cottage',
+    link: 'house',
+    content: [
+      {
+        category: 'first',
+        link: 'first'
+      }
+    ]
+  },
+  {
+    category: 'Beauty and health',
+    link: 'beauty',
+    content: [
+      {
+        category: 'beuaty',
+        link: 'beauty'
+      },
+      {
+        category: 'health',
+        link: 'health'
+      }
+    ]
+  },
+  {
+    category: 'Auto',
+    link: 'Auto',
+    content: [
+      {
+        category: 'auto',
+        link: 'auto'
+      },
+      {
+        category: 'motors',
+        link: 'motors'
+      },
+      {
+        category: 'sound',
+        link: 'sound'
+      },
+    ]
+  },
+  {
+    category: 'Art',
+    link: 'art',
+    content: [
+      {
+        category: 'art',
+        link: 'art'
+      },
+      {
+        category: 'motors',
+        link: 'motors'
+      },
+      {
+        category: 'sound',
+        link: 'sound'
+      },
+    ]
+  },
+  {
+    category: 'Garden',
+    link: 'garden',
+    content: [
+      {
+        category: 'art',
+        link: 'art'
+      },
+      {
+        category: 'motors',
+        link: 'motors'
+      },
+      {
+        category: 'sound',
+        link: 'sound'
+      },
+    ]
+  },
+] %}
+{% set mobileMenu = [
+	{
+	link: '#',
+	description: 'Объявления'
+	}, 
+	{
+		link: '#',
+		description: 'Как это работает'
+	},
+	{
+		link: '#',
+		description: 'Фонды'
+	},
+	{
+		link: '#',
+		description: 'Новости'
+	},
+	{
+		link: '#',
+		description: 'Инвесторам'
+	},
+] %}
+{% set menubar = [  
+	{
+		type: 'regular',
+		items: [
+			{
+				link: '#categories',
+				isActive: false,
+				descr: 'All categories',
+			},
+			{
+				link: '#fashion',
+				isActive: true,
+				descr: 'Fashion',
+			},
+			{
+				link: '#arts',
+				isActive: false,
+				descr: 'Arts',
+			},
+			{
+				link: '#Electronics',
+				isActive: false,
+				descr: 'Electronics',
+			},
+			{
+				link: '#Tickets',
+				isActive: false,
+				descr: 'Tickets',
+			},
+			{
+				link: '#celebs',
+				isActive: false,
+				descr: 'Goods from celebrities',
+			},
+			{
+				link: '#private',
+				isActive: false,
+				descr: 'Private offers',
+			},
+		],
+	}
+] %}

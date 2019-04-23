@@ -1,0 +1,49 @@
+{% for user in accountInfo %}
+  {% if user.orders %}
+    {% for order in user.orders %}
+      <div class="card-order__list">
+        <div class="card-order__list-head">
+          <h3 class="card-order__list-heading">Заказ номер {{ order.id }}</h3>
+          <span class="card-order__list-date">{{ order.date }}</span>
+          {% if order.status == 'placed' %}
+            <span class="card-order__list-status --placed">Размещен</span>
+          {% elseif order.status == 'canceled' %}
+            <span class="card-order__list-status --canceled">Отменен</span>
+          {% elseif order.status == 'delivered' %}
+            <span class="card-order__list-status --delivered">Доставлен</span>
+          {% elseif order.status == 'sended' %}
+            <span class="card-order__list-status --sended">В пути</span>
+          {% endif %}
+        </div>
+        <div class="card-order__list-body">
+          <div class="card-order__list-info-wrapper">
+            {% set totalPrice = 0 %}
+            {% for item in order.items %}
+              {% set totalPrice = totalPrice + item.price %}
+            {% endfor %}
+            <h5 class="card-order__list-info-items">{{ order.items.length }} товара на сумму {{ totalPrice|number_format(0,'', ' ') }} Р.</h5>
+            <p class="card-order__list-info-date">Ориентировочная дата доставки:</p>
+            <p class="card-order__list-info-date-descr">{{ order.deliveryApprx }}</p>
+          </div>
+          <div class="card-order__list-img-wrapper">
+          {% for item in order.items|slice(0,3) %}
+            <img class="card-order__list-img" src="{{ item.img }}" alt="">
+          {% endfor %}
+          </div>
+          <div class="card-order__list-button-wrapper">
+            <a href="{{ order.link }}" class="card-order__list-button --blue">Подробности заказа</a>
+            {% if order.status == 'placed' %}
+              <a href="#" class="card-order__list-button --red">Отменить заказ</a>
+            {% elseif order.status == 'canceled' %}
+              <a href="#" class="card-order__list-button --red --disabled">Отменить заказ</a>
+            {% elseif order.status == 'delivered' %}
+              <a href="#" class="card-order__list-button --blue --disabled">Отменить заказ</a>
+            {% elseif order.status == 'sended' %}
+              <a href="#" class="card-order__list-button --blue">Отследить заказ</a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  {% endif %}
+{% endfor %}
