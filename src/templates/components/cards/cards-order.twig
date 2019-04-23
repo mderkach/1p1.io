@@ -1,0 +1,16 @@
+{% if order %}
+  {% for card in order.items %}
+      <div class="cart-card">
+        <img alt="" class="cart-img" src="{{ card.img }}">
+        <div class="cart-card-body">
+          <p class="cart-name">{{ card.name }}</p>
+          <div class="cart-info">
+              <p class="cart-price">
+                {{card.price}}
+                {{card.priceTag}}
+              </p>
+          </div>
+        </div>
+      </div>
+  {% endfor %}
+{% endif %}

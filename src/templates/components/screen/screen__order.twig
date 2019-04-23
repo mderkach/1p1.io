@@ -1,0 +1,161 @@
+<section class="screen__order">
+	<div class="order__container">
+		<div class="order__wrapper">
+			{% if breadcrumbs %}
+			{% include "../breadcrumbs/breadcrumbs.twig" %}
+			{% endif %}
+			{% if screenHeader %}
+			<div class="cart-header__outer">
+				<div class="order-header__wrapper">
+					<h1 class="header__h1 regular__h1">
+						{{ screenHeader }}
+						{{ order.id }}
+					</h1>
+					{% if order.status == 'sended' %}
+					<span class="order__badge --sent">Заказ в пути</span>
+				</div>
+				<span class="order__badge --mobile --sent">Заказ в пути</span>
+				{% elseif order.status == 'canceled'%}
+					<span class="order__badge --canceled">Заказ отменен</span>
+				</div>
+				<span class="order__badge --mobile --canceled">Заказ отменен</span>
+				{% elseif order.status == 'placed'%}
+					<span class="order__badge --placed">Заказ размещен</span>
+				</div>
+				<span class="order__badge --mobile --placed">Заказ размещен</span>
+				{% elseif order.status == 'delivered'%}
+					<span class="order__badge --delivered">Заказ доставлен</span>
+				</div>
+				<span class="order__badge --mobile --delivered">Заказ доставлен</span>
+				{% endif %}
+			</div>
+			{% endif %}
+			<main class="cart-items__container">
+				<div class="order__details__wrapper">
+					<div class="order__details-header">
+						<p class="order__details-header-descr">Подробности заказа</p>
+					</div>
+					<div class="order__details-body">
+						<div class="order__details-timestamp-outer">
+							<div class="order__details-timestamp-wrapper">
+								<span class="order__details-timestamp">Дата размещения:</span>
+								<span class="">{{ order.time.placed }}</span>
+							</div>
+							<div class="order__details-timestamp-wrapper">
+								<span class="order__details-timestamp">Дата отправки: </span>
+								<span class="">{{ order.time.sended }}</span>
+							</div>
+							<div class="order__details-timestamp-wrapper">
+								<span class="order__details-timestamp">Ориентировочная дата доставки:</span>
+								<span class="order__details-timestamp--black">{{ order.time.recieveAppr }}</span>
+							</div>
+						</div>
+					</div>
+					<div class="order__details-reciever-info-body">
+						<div class="order__details-reciever-info-outer">
+							<p class="form-cart-delivery__contacts-header">
+								Контакты получателя:
+							</p>
+							<p class="order__details-reciever-info">
+								{{ order.reciever.name }}
+							</p>
+							<p class="order__details-reciever-info">
+								{{ order.reciever.place.country }}, {{ order.reciever.place.region }}
+							</p>
+							<p class="order__details-reciever-info">
+								{{ order.reciever.place.cityType }} {{ order.reciever.place.city }}, индекс
+								{{ order.reciever.place.index }}
+							</p>
+							<p class="order__details-reciever-info">
+								{{ order.reciever.place.street }}
+							</p>
+							</p>
+						</div>
+						<div class="order__details-reciever-info-outer">
+							<p class="form-cart-delivery__contacts-header">
+								Информация об оплате:
+							</p>
+							<p class="order__details-reciever-info">
+								Карта номер {{ order.reciever.payment.card }}
+							</p>
+							<p class="order__details-reciever-info">
+								{{ order.reciever.payment.cardholder }}
+							</p>
+							<p class="order__details-reciever-info">
+								{{ order.reciever.payment.validity }}, {{ order.reciever.payment.CVV }}
+							</p>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="cart-items__wrapper">
+					<div class="order__details-header">
+						<p class="order__details-header-descr">Состав заказа</p>
+					</div>
+					{% include "../cards/cards-order.twig" %}
+				</div>
+			</main>
+			<aside class="cart-items__aside">
+				<div class="form-cart-checkout__header">
+					<p class="form-cart-checkout__header-descr">Сумма заказа:</p>
+					<span class="form-cart-checkout__header-value">
+						{{ order.itemsValue }}
+						<span>{{ order.priceTag }}</span>
+					</span>
+				</div>
+				{% if order.status != 'canceled' %}
+					<div class="form-cart-checkout__support">
+						<div class="form-cart-checkout__support-wrapper">
+							<img alt="" src="/assets/img/icons/icon-heart-color.svg">
+							<p class="form-cart-checkout__support-value">
+								{{ order.supportValue }}
+								<span>{{ order.priceTag }}</span>
+							</p>
+						</div>
+						<p class="form-cart-checkout__support-descr">пошли на поддержку
+							{% for fund in order.funds %}
+							<span>{{ fund.name }}</span>
+							{% if loop.last == false %},{% else %}.
+							{% endif %}
+							{% endfor %}
+						</p>
+					</div>
+				{% endif %}
+				<div class="form-cart-checkout__delivery">
+					<div class="form-cart-checkout__delivery-info">
+						<p class="form-cart-checkout__delivery-descr">Доставка:</p>
+						<span class="form-cart-checkout__delivery-value">
+							{{ order.deliveryValue }}
+							<span>{{ order.priceTag }}</span>
+						</span>
+					</div>
+					<p class="form-cart-checkout__support-descr">{{ order.deliveryType }}</p>
+				</div>
+				<div class="form-cart-checkout__total">
+					<div class="form-cart-checkout__total-wrapper">
+						<p class="form-cart-checkout__total-descr">Итого:</p>
+						<span class="form-cart-checkout__total-value">
+							{{ order.totalValue }}
+							<span>{{ order.priceTag }}</span>
+						</span>
+					</div>
+					{% if order.status == 'sended' %}
+						<a href="#" class="btn__order-track">Отследить заказ</a>
+					{% elseif order.status == 'placed' %}
+						<a href="#" class="btn__order-cancel">Отменить заказ</a>
+					{% else %}	
+					{% endif %}
+				</div>
+				<div class="form-cart-checkout__delivery">
+					<div class="form-cart-checkout__delivery-info">
+						<p class="form-cart-checkout__delivery-descr">Ответы на возможные вопросы:</p>
+					</div>
+					<div class="order__details-link-wrapper">
+							<a class="order__details-link" href="#">Часто задаваемые вопросы</a>
+							<a class="order__details-link" href="#">Проблемы с заказом</a>
+							<a class="order__details-link" href="#">Информация о доставке</a>
+						</div>
+			</aside>
+		</div>
+	</div>
+</section>
