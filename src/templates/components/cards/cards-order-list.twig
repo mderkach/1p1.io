@@ -27,7 +27,9 @@
           </div>
           <div class="card-order__list-img-wrapper">
           {% for item in order.items|slice(0,3) %}
-            <img class="card-order__list-img" src="{{ item.img }}" alt="">
+            <a class="card-order__list-img-inner" href="{{ order.link }}">
+              <img class="card-order__list-img" src="{{ item.img }}" alt="">
+            </a>
           {% endfor %}
           </div>
           <div class="card-order__list-button-wrapper">
