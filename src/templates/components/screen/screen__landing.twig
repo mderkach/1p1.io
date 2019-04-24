@@ -1,27 +1,35 @@
 <section class="screen__landing">
   <div class="container">
     <div class="row">
-      <div class="safety">
-        <img src="assets/img/icons/icon--shield.svg" alt="" class="safety-img img-responsive">
-        <p class="safety__descr">Надежность <span>Blockchain</span>
-        </p>
-      </div>
-      <div class="header__wrapper landing__header-wrapper">
-        <h1 class="header__h1 landing__header">{{ landing_h1 }}</h1>
-      </div>
-      <button class="btn btn-video" data-fancybox data-src="#video">
-        <span>Посмотреть видео</span>
-        <img src="assets/img/icons/play-button.svg" class="btn-video__img" alt="">
-      </button>
-      <div class="w-100"></div>
-      <form action="#" class="search-form">
-        <div class="inline-inputs">
-          <input type="text" class="search-form_input" placeholder="Что вас интересует?">
-          <button type="submit" class="search-form_submit">
-            <img src="assets/img/icons/icon--search.svg" alt="" class="img-responsive search-form_submit-img">
-          </button>
+      {% block safety %}
+        <div class="safety">
+          <img src="assets/img/icons/icon--shield.svg" alt="" class="safety-img img-responsive">
+          <p class="safety__descr">Надежность <span>Blockchain</span>
+          </p>
         </div>
-      </form>
+      {% endblock %}
+      {% block header %}
+        <div class="header__wrapper landing__header-wrapper">
+          <h1 class="header__h1 landing__header">{{ landing_h1 }}</h1>
+        </div>
+      {% endblock %}
+      {% block video %}
+        <button class="btn btn-video" data-fancybox data-src="#video">
+          <span>Посмотреть видео</span>
+          <img src="assets/img/icons/play-button.svg" class="btn-video__img" alt="">
+        </button>
+      {% endblock %}
+      <div class="w-100"></div>
+      {% block search %}
+        <form action="#" class="search-form">
+          <div class="inline-inputs">
+            <input type="text" class="search-form_input" placeholder="Что вас интересует?">
+            <button type="submit" class="search-form_submit">
+              <img src="assets/img/icons/icon--search.svg" alt="" class="img-responsive search-form_submit-img">
+            </button>
+          </div>
+        </form>
+      {% endblock %}
     </div>
   </div>
 </section>

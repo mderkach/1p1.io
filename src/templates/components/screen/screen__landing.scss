@@ -9,6 +9,7 @@
   @include mq-down (sm) {
     display: none;
   }
+
   &__descr {
     color: #fff;
     font-size: rem(25);
@@ -19,11 +20,13 @@
     letter-spacing: normal;
     max-width: 173px;
     margin-bottom: 0;
+
     span {
       text-transform: uppercase;
       letter-spacing: 1.2px;
     }
   }
+
   &-img {
     width: 12px;
     height: 15px;
@@ -48,5 +51,9 @@
     max-width: 450px;
     margin: 20px auto 45px auto;
     color: #fff;
+
+    &.--celeb-more {
+      margin: 65px auto 0;
+    }
   }
 }

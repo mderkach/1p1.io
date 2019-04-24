@@ -233,6 +233,15 @@
         margin-top: 10px;
       }
 
+      &.--celeb-more {
+        margin-bottom: 50px;
+
+        @include mq-down(md) {
+          margin-top: 25px;
+          margin-bottom: 25px;
+        }
+      }
+
       img {
         margin-left: 15px;
       }

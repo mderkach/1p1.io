@@ -1,11 +1,13 @@
 {% if celebrities %}
 <section class="celebrities">
   <div class="container">
-    <div class="row">
-      <div class="header__wrapper-celeb">
-        <h3 class="header__h3 text-left">Звезды Один<sup>+1</sup></h3>
+    {% block cardHeader %}
+      <div class="row">
+        <div class="header__wrapper-celeb">
+          <h3 class="header__h3 text-left">Звезды Один<sup>+1</sup></h3>
+        </div>
       </div>
-    </div>
+    {% endblock %}
     <div class="celebrities-card__wrapper">
       {% for celebrity in celebrities %}
       <div class="celebrities-card">
@@ -27,8 +29,12 @@
       {% endfor %}
     </div>
     <div class="row">
-      <a href="#" class="btn btn-celebrities-more">Больше звезд <img
-          src="/assets/img/icons/icon-chevron-right-white.svg" alt="" class="img-responsive"></a>
+    {% block button %}
+      <a href="#" class="btn btn-celebrities-more">
+        Больше звезд 
+        <img src="/assets/img/icons/icon-chevron-right-white.svg" alt="" class="img-responsive">
+      </a>
+    {% endblock %}
     </div>
   </div>
 </section>

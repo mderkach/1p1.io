@@ -1,6 +1,14 @@
 .pagination {
   &__wrapper {
     @include make-col(12);
+
+    &--standalone {
+      width: 100%;
+
+      @include mq-down(sm) {
+        padding: 0 20px;
+      }
+    }
   }
 
   &__button {
