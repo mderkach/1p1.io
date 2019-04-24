@@ -33,7 +33,9 @@
 				{% include "../components/slider/slider-bg.twig" %}
 			{% endblock %}
 	</main>
-		{% include "../components/bullets/bullets-numeric.twig" %}
+		{% block numeric %}
+			{% include "../components/bullets/bullets-numeric.twig" %}
+		{% endblock %}
 		{% block celebrities1p1 %}{% endblock %}
 		{% block celebritiesLots %}{% endblock %}
 		{% block categories %}
