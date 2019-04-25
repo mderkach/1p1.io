@@ -314,6 +314,10 @@ module.exports = {
       filename: 'news.html',
       template: `${PATHS.src}/templates/pages/news.twig`,
     }),
+    new HtmlWebpackPlugin({
+      filename: 'article.html',
+      template: `${PATHS.src}/templates/pages/article.twig`,
+    }),
     new CopyWebpackPlugin([
       { from: `${PATHS.src}/img`, to: `${PATHS.assets}img` },
       { from: `${PATHS.src}/fonts`, to: `${PATHS.assets}fonts` },

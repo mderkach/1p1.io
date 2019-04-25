@@ -69,6 +69,7 @@
 @import "../templates/components/screen/screen__order-list.scss";
 @import "../templates/components/cards/cards-order-list.scss";
 @import "../templates/components/cards/cards-news.scss";
+@import "../templates/components/article/article-content.scss";
 
 
 // comon
@@ -180,5 +181,17 @@ main {
 .--solo-mobile {
   @include mq-down(sm) {
     flex: 1 0 100% !important;
+  }
+}
+
+.--hide-desktop {
+  @include mq-up(md) {
+    display: none;
+  }
+}
+
+.--hide-mobile {
+  @include mq-down(md) {
+    display: none;
   }
 }
