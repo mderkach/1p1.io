@@ -310,6 +310,10 @@ module.exports = {
       filename: 'landing-celebrities-more.html',
       template: `${PATHS.src}/templates/pages/landing-celebrities-more.twig`,
     }),
+    new HtmlWebpackPlugin({
+      filename: 'news.html',
+      template: `${PATHS.src}/templates/pages/news.twig`,
+    }),
     new CopyWebpackPlugin([
       { from: `${PATHS.src}/img`, to: `${PATHS.assets}img` },
       { from: `${PATHS.src}/fonts`, to: `${PATHS.assets}fonts` },

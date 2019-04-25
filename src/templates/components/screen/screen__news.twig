@@ -1,0 +1,14 @@
+<section class="screen__marketplace">
+  <div class="marketplace__container">
+    <div class="marketplace__wrapper">
+    {% if screenHeader %}
+      <div class="header__wrapper header__wrapper-regular">
+        <h1 class="header__h1 regular__h1">{{ screenHeader }}</h1>
+      </div>
+    {% endif %}
+      <main class="card-news__wrapper">
+        {% include "../cards/cards-news.twig" %}
+      </main>
+    </div>
+  </div>
+</div>

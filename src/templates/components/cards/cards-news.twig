@@ -1,0 +1,17 @@
+{% if news %}
+  {% for item in news %}
+    <div class="card-news">
+      <a href="{{ item.link }}" class="card-news-img__wrapper">
+        <img class="card-news-img" alt="" src="{{ item.preview }}">
+      </a>
+      <div class="card-news-body">
+        <a class="card-news-header" href="{{ item.link }}">{{ item.heading }}</a>
+        <p class="card-news-excerpt">{{ item.excerpt }}</p>
+        <p class="card-news-date">{{ item.date }}</p>
+      </div>
+    </div>
+  {% endfor %}
+{% endif %}
+
+
+

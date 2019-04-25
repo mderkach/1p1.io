@@ -432,18 +432,17 @@
     {% endblock %}
 </main>
 		{% block numeric %}{% endblock %}
-		{% block celebrities1p1 %}{% endblock %}
 		{% block celebritiesLots %}{% endblock %}
 		{% block categories %}{% endblock %}
 		{% block sliderReviews %}{% endblock %}
 		{% block news %}{% endblock %}
-    {% block celebrities %}
+    {% block celebrities1p1 %}
       {% embed "../components/cards/cards-celebrities.twig" %}
         {% block cardHeader %}{% endblock %}
         {% block button %}
-        <a href="#" class="btn btn-celebrities-more --celeb-more">
-          Загрузить больше
-        </a>
+          <a href="#" class="btn btn-celebrities-more --celeb-more">
+            Загрузить больше
+          </a>
         {% block pagination %}
           <div class="pagination__wrapper--standalone">
             {% include "../components/pagination/pagination.twig" %}
@@ -471,7 +470,5 @@
 			{% include "../components/popup/popup-sucess.twig" %}
 			{% include "../components/popup/sell-item-sucess.twig" %}
 		{% endblock %}
-		{% block video %}
-			{% include "../components/video/video-landing.twig" %}
-		{% endblock %}
+		{% block video %}{% endblock %}
 	{% endblock %}
