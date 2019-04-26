@@ -1,0 +1,197 @@
+.article {
+  margin-top: 70px;
+  background: #fff;
+  border-top: 1px solid #d9deea;
+  position: relative;
+
+  @include mq-down(sm) {
+    margin-top: 50px;
+  }
+
+  &__container {
+    position: relative;
+    @include make-container();
+    @include make-container-max-widths($max-widths: $container-max-widths, $breakpoints: $grid-breakpoints);
+  }
+
+  &__wrapper {
+    @include make-row();
+    position: relative;
+  }
+
+  &__content {
+    font-size: rem(17);
+    font-weight: 300;
+    line-height: 1.35;
+    color: #4b5769;
+
+    @include mq-down(sm) {
+      font-size: rem(15)
+    }
+
+    &-wrapper {
+      @include make-col(10);
+      margin-left: auto;
+      margin-right: auto;
+
+      @include mq-down(md) {
+        @include make-col(12);
+      }
+    }
+
+    &-inner {
+      margin: 20px 0 50px;
+      padding: 0 100px;
+
+      @include mq-between(sm, lg) {
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      @include mq-down(sm) {
+        margin-top: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+    }
+  }
+
+  &__banner {
+    width: 100%;
+    height: 480px;
+
+    @include mq-down(sm) {
+      height: 160px;
+    }
+
+    &-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+
+      @include mq-down(sm) {
+        object-position: top;
+      }
+    }
+  }
+
+  &__header {
+    font-size: rem(34);
+    font-weight: 500;
+    line-height: normal;
+
+    @include mq-down(sm) {
+      font-size: rem(17);
+    }
+
+    &-wrapper {
+      padding: 50px 100px 10px;
+
+      @include mq-between(sm, lg) {
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      @include mq-down(sm) {
+        padding-top: 25px;
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+    }
+  }
+
+  &__subheader {
+    font-size: rem(24);
+    font-weight: 300;
+    line-height: normal;
+    color: #000;
+
+    @include mq-down(sm) {
+      font-size: rem(14);
+    }
+
+    &-wrapper {
+      padding: 10px 100px 20px;
+
+      @include mq-between(sm, lg) {
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      @include mq-down(sm) {
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+    }
+  }
+
+  &__photo {
+    width: 100%;
+    height: auto;
+    margin: 10px 0;
+
+    &-wrapper {
+      margin-top: 10px;
+      margin-bottom: 50px;
+    }
+  }
+
+  &__social {
+    position: sticky;
+    top: 100px;
+    width: auto;
+    height: 100%;
+    margin-left: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    @include mq-down(md) {
+      position: fixed;
+      top: unset;
+      left: 0;
+      bottom: 0;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      height: 50px;
+      margin: 0;
+      padding: 0 20px;
+      background: #fff;
+      box-shadow: 0 -1px 4px 0 rgba(0, 0, 0, 0.1);
+    }
+
+    span {
+      font-size: rem(14);
+      font-weight: 300;
+      line-height: normal;
+      color: #79879e;
+    }
+
+    &-link {
+      display: flex;
+      width: 36px;
+      height: 36px;
+      justify-content: center;
+      align-items: center;
+
+      &-img {
+        width: 100%;
+        height: 100%;
+      }
+
+      &-wrapper {
+        display: flex;
+        flex-direction: column;
+        width: auto;
+
+        @include mq-down(md) {
+          flex-direction: row;
+          align-items: center;
+          align-items: flex-end;
+        }
+      }
+    }
+  }
+}

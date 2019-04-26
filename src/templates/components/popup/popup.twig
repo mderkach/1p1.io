@@ -166,11 +166,7 @@
     </div>
   </div>
   {% block script %}
-    <script src="/assets/js/sellItem.js">
-
-
-
-</script>
+  <script src="/assets/js/sellItem.js"></script>
   {% endblock %}
 
   {% block popupCart %}
@@ -255,4 +251,16 @@
       </div>
     </div>
   {% endblock %}
+{% endblock %}
+
+{% block popupProfilePrivateSettings %}
+  <div class="popup-edit__background popup--target" id="profile-settings">
+    <div class="popup-edit__container">
+      <div class="popup-edit__wrapper">
+        <div class="profile-settings-wrapper">
+          {% include "../form/form-profile-edit-settings.twig" %}
+        </div>
+      </div>
+    </div>
+  </div>
 {% endblock %}

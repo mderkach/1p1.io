@@ -1,0 +1,424 @@
+{% extends "../layout/account.twig" %}
+{% set page_title = "profile private settings" %}
+{% set headerType = "--white --no-toggle" %}
+{% set userStatus = "--authorised" %}
+{% set pageType = 'private' %}
+{% set editMode = "none" %}
+{% set dropdownCatalogue = [
+  {
+    category: 'Childen&apos;s goods',
+    link: 'children',
+    content: [
+      {
+        category: 'first',
+        link: 'first'
+      },
+      {
+        category: 'second',
+        link: 'second'
+      },
+      {
+        category: 'first',
+        link: 'first'
+      },
+      {
+        category: 'second',
+        link: 'second'
+      },
+      {
+        category: 'first',
+        link: 'first'
+      },
+      {
+        category: 'second',
+        link: 'second'
+      },
+      {
+        category: 'first',
+        link: 'first'
+      },
+      {
+        category: 'second',
+        link: 'second'
+      },
+      {
+        category: 'first',
+        link: 'first'
+      },
+      {
+        category: 'second',
+        link: 'second'
+      },
+      {
+        category: 'first',
+        link: 'first'
+      },
+      {
+        category: 'second',
+        link: 'second'
+      },
+      {
+        category: 'first',
+        link: 'first'
+      },
+      {
+        category: 'second',
+        link: 'second'
+      },
+      {
+        category: 'first',
+        link: 'first'
+      },
+      {
+        category: 'second',
+        link: 'second'
+      },
+      {
+        category: 'first',
+        link: 'first'
+      },
+      {
+        category: 'second',
+        link: 'second'
+      },
+      {
+        category: 'first',
+        link: 'first'
+      },
+      {
+        category: 'second',
+        link: 'second'
+      },
+    ]
+  },
+  {
+    category: 'Clothes and footwear',
+    link: 'clothes',
+    content: [
+      {
+        category: 'boots',
+        link: 'boots'
+      },
+      {
+        category: 'coat',
+        link: 'coat'
+      },
+      {
+        category: 'sweaters',
+        link: 'sweaters'
+      },
+      {
+        category: 'sweethshot',
+        link: 'sweethshot'
+      },
+      {
+        category: 't-shirt',
+        link: 't-shirt'
+      },
+      {
+        category: 'slip-on',
+        link: 'slip-on'
+      },
+      {
+        category: 'blablabla',
+        link: 'blablabla'
+      },
+    ]
+  },
+  {
+    category: 'Electronics',
+    link: 'electronics',
+    content: [
+      {
+        category: 'first',
+        link: 'first'
+      }
+    ]
+  },
+  {
+    category: 'Appliances',
+    link: 'appliancess',
+    content: [
+      {
+        category: 'first',
+        link: 'first'
+      }
+    ]
+  },
+  {
+    category: 'Pet supplies',
+    link: 'pet',
+    content: [
+      {
+        category: 'first',
+        link: 'first'
+      }
+    ]
+  },
+  {
+    category: 'House and Cottage',
+    link: 'house',
+    content: [
+      {
+        category: 'first',
+        link: 'first'
+      }
+    ]
+  },
+  {
+    category: 'Beauty and health',
+    link: 'beauty',
+    content: [
+      {
+        category: 'beuaty',
+        link: 'beauty'
+      },
+      {
+        category: 'health',
+        link: 'health'
+      }
+    ]
+  },
+  {
+    category: 'Auto',
+    link: 'Auto',
+    content: [
+      {
+        category: 'auto',
+        link: 'auto'
+      },
+      {
+        category: 'motors',
+        link: 'motors'
+      },
+      {
+        category: 'sound',
+        link: 'sound'
+      },
+    ]
+  },
+  {
+    category: 'Art',
+    link: 'art',
+    content: [
+      {
+        category: 'art',
+        link: 'art'
+      },
+      {
+        category: 'motors',
+        link: 'motors'
+      },
+      {
+        category: 'sound',
+        link: 'sound'
+      },
+    ]
+  },
+  {
+    category: 'Garden',
+    link: 'garden',
+    content: [
+      {
+        category: 'art',
+        link: 'art'
+      },
+      {
+        category: 'motors',
+        link: 'motors'
+      },
+      {
+        category: 'sound',
+        link: 'sound'
+      },
+    ]
+  },
+] %}
+{% set accountInfo = [{
+	avatar: '/assets/img/account/account-avatar.jpg',
+	link: '#',
+	name: 'Квартет И',
+	donations: '0',
+	totalFunds: '0',
+	editable: true
+}] %}
+{% set mobileMenu = [
+	{
+	link: '#',
+	description: 'Объявления'
+	}, 
+	{
+		link: '#',
+		description: 'Как это работает'
+	},
+	{
+		link: '#',
+		description: 'Фонды'
+	},
+	{
+		link: '#',
+		description: 'Новости'
+	},
+	{
+		link: '#',
+		description: 'Инвесторам'
+	},
+] %}
+{% set dropdown = {
+  type: 'dropdown__account-wrapper',
+  imgClass: 'dropdown__account-avatar',
+  items: [
+  { link: '#', caption: 'Настройки профиля'},
+  { link: '#', caption: 'Изменить email'},
+  { link: '#', caption: 'Изменить пароль'},
+  { link: '#', caption: 'Выйти'},
+  ]
+}, {
+	type: 'dropdown__banner-edit',
+	items: [
+  { link: '#', caption: 'Выбрать цвет'},
+  { link: '#', caption: 'Выбрать фотографию'},
+  ]
+} %}
+{% set banner = [
+	{
+		name: 'Квартет И',
+		editable: true,
+	},
+	] 
+%}
+{% set ads = [ 
+] %}
+
+{% set menubar = [  
+	{
+		type: 'account',
+		items: [
+			{
+				link: '#ads',
+				isActive: true,
+				descr: 'Объявления',
+				isAds: true,
+				adsCount: ads.length,
+			},
+			{
+				link: '#about',
+				isActive: false,
+				descr: 'О звезде',
+				isAds: false,
+				adsCount: ads.length,
+			},
+			{
+				link: '#funds',
+				isActive: false,
+				descr: 'Благотворительные фонды',
+				isAds: false,
+				adsCount: ads.length,
+			},
+		],
+	}
+] %}
+
+{% set tabs = [
+	{
+		type: 'accountInfo__content',
+		id: 'ads',
+		setActive: true
+	},
+	{
+		type: 'accountInfo__content',
+		id: 'about',
+		setActive: false
+	},
+	{
+		type: 'accountInfo__content',
+		id: 'funds',
+		setActive: false
+	},
+] %}
+{% set aboutStar = {
+	descr: 'Комедии "Квартета И" знают почти наизусть и политики, и олигархи, и студенты, и врачи, и даже гламурные барышни с
+	маленькими собачками под мышкой. Искренний чистый юмор стирает границы между богатым и бедным, неудачником и тем,
+	кому постоянно везет. На спектаклях "Квартета И" все равны. "День радио", "День выборов", "Разговоры мужчин среднего
+	возраста о женщинах, кино и алюминиевых вилках" - современные хиты не только театра, но жизни в целом. А герои
+	Леонида Бараца, Ростислава Хаита, Александра Демидова и Камиля Ларина давно стали нарицательными. Им подражают, на
+	них равняются, их любят - как любят только настоящих заядлых друзей. Им доверяют и ждут каждой премьеры как события.',
+	editable: true,
+}
+%}
+
+{% set cardsFoundations = [
+	{
+		logo: '/assets/img/funds/foundation.jpg',
+		name: 'Charitable foundation Masonic',
+		descr: 'Помощь больным несовершенным остеогенезом и другой костной патологией',
+		donations: '2 736',
+	},
+	{
+		logo: '/assets/img/funds/foundation.jpg',
+		name: 'Charitable foundation Masonic',
+		descr: 'Помощь больным несовершенным остеогенезом и другой костной патологией',
+		donations: '2 736',
+	},
+	{
+		logo: '/assets/img/funds/foundation.jpg',
+		name: 'Charitable foundation Masonic',
+		descr: 'Помощь больным несовершенным остеогенезом и другой костной патологией',
+		donations: '2 736',
+	},
+	{
+		logo: '/assets/img/funds/foundation.jpg',
+		name: 'Charitable foundation Masonic',
+		descr: 'Помощь больным несовершенным остеогенезом и другой костной патологией',
+		donations: '2 736',
+	},
+	{
+		logo: '/assets/img/funds/foundation.jpg',
+		name: 'Charitable foundation Masonic',
+		descr: 'Помощь больным несовершенным остеогенезом и другой костной патологией',
+		donations: '2 736',
+	},
+	{
+		logo: '/assets/img/funds/foundation.jpg',
+		name: 'Charitable foundation Masonic',
+		descr: 'Помощь больным несовершенным остеогенезом и другой костной патологией',
+		donations: '2 736',
+	},
+	{
+		logo: '/assets/img/funds/foundation.jpg',
+		name: 'Charitable foundation Masonic',
+		descr: 'Помощь больным несовершенным остеогенезом и другой костной патологией',
+		donations: '2 736',
+	},
+	{
+		logo: '/assets/img/funds/foundation.jpg',
+		name: 'Charitable foundation Masonic',
+		descr: 'Помощь больным несовершенным остеогенезом и другой костной патологией',
+		donations: '2 736',
+	},
+	{
+		logo: '/assets/img/funds/foundation.jpg',
+		name: 'Charitable foundation Masonic',
+		descr: 'Помощь больным несовершенным остеогенезом и другой костной патологией',
+		donations: '2 736',
+	},
+	{
+		logo: '/assets/img/funds/foundation.jpg',
+		name: 'Charitable foundation Masonic',
+		descr: 'Помощь больным несовершенным остеогенезом и другой костной патологией',
+		donations: '2 736',
+	},
+	]
+%}
+
+{% block video %}
+<script>
+  var popup = document.querySelector('#profile-settings');
+  
+  document.addEventListener('DOMContentLoaded', function(){
+    document.body.classList.add('modal-open');
+    popup.classList.add('is-active');
+  });
+  
+</script>
+{% endblock %}

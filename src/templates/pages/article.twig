@@ -1,0 +1,285 @@
+{% extends "../layout/article.twig" %}
+{% set page_title = "article" %}
+{% set headerType = "--white --no-toggle" %}
+{% set userStatus = "--unauthorised" %}
+{% set pageType = 'public' %}
+{% set dropdownCatalogue = [
+  {
+    category: 'Childen&apos;s goods',
+    link: 'children',
+    content: [
+      {
+        category: 'first',
+        link: 'first'
+      },
+      {
+        category: 'second',
+        link: 'second'
+      },
+      {
+        category: 'first',
+        link: 'first'
+      },
+      {
+        category: 'second',
+        link: 'second'
+      },
+      {
+        category: 'first',
+        link: 'first'
+      },
+      {
+        category: 'second',
+        link: 'second'
+      },
+      {
+        category: 'first',
+        link: 'first'
+      },
+      {
+        category: 'second',
+        link: 'second'
+      },
+      {
+        category: 'first',
+        link: 'first'
+      },
+      {
+        category: 'second',
+        link: 'second'
+      },
+      {
+        category: 'first',
+        link: 'first'
+      },
+      {
+        category: 'second',
+        link: 'second'
+      },
+      {
+        category: 'first',
+        link: 'first'
+      },
+      {
+        category: 'second',
+        link: 'second'
+      },
+      {
+        category: 'first',
+        link: 'first'
+      },
+      {
+        category: 'second',
+        link: 'second'
+      },
+      {
+        category: 'first',
+        link: 'first'
+      },
+      {
+        category: 'second',
+        link: 'second'
+      },
+      {
+        category: 'first',
+        link: 'first'
+      },
+      {
+        category: 'second',
+        link: 'second'
+      },
+    ]
+  },
+  {
+    category: 'Clothes and footwear',
+    link: 'clothes',
+    content: [
+      {
+        category: 'boots',
+        link: 'boots'
+      },
+      {
+        category: 'coat',
+        link: 'coat'
+      },
+      {
+        category: 'sweaters',
+        link: 'sweaters'
+      },
+      {
+        category: 'sweethshot',
+        link: 'sweethshot'
+      },
+      {
+        category: 't-shirt',
+        link: 't-shirt'
+      },
+      {
+        category: 'slip-on',
+        link: 'slip-on'
+      },
+      {
+        category: 'blablabla',
+        link: 'blablabla'
+      },
+    ]
+  },
+  {
+    category: 'Electronics',
+    link: 'electronics',
+    content: [
+      {
+        category: 'first',
+        link: 'first'
+      }
+    ]
+  },
+  {
+    category: 'Appliances',
+    link: 'appliancess',
+    content: [
+      {
+        category: 'first',
+        link: 'first'
+      }
+    ]
+  },
+  {
+    category: 'Pet supplies',
+    link: 'pet',
+    content: [
+      {
+        category: 'first',
+        link: 'first'
+      }
+    ]
+  },
+  {
+    category: 'House and Cottage',
+    link: 'house',
+    content: [
+      {
+        category: 'first',
+        link: 'first'
+      }
+    ]
+  },
+  {
+    category: 'Beauty and health',
+    link: 'beauty',
+    content: [
+      {
+        category: 'beuaty',
+        link: 'beauty'
+      },
+      {
+        category: 'health',
+        link: 'health'
+      }
+    ]
+  },
+  {
+    category: 'Auto',
+    link: 'Auto',
+    content: [
+      {
+        category: 'auto',
+        link: 'auto'
+      },
+      {
+        category: 'motors',
+        link: 'motors'
+      },
+      {
+        category: 'sound',
+        link: 'sound'
+      },
+    ]
+  },
+  {
+    category: 'Art',
+    link: 'art',
+    content: [
+      {
+        category: 'art',
+        link: 'art'
+      },
+      {
+        category: 'motors',
+        link: 'motors'
+      },
+      {
+        category: 'sound',
+        link: 'sound'
+      },
+    ]
+  },
+  {
+    category: 'Garden',
+    link: 'garden',
+    content: [
+      {
+        category: 'art',
+        link: 'art'
+      },
+      {
+        category: 'motors',
+        link: 'motors'
+      },
+      {
+        category: 'sound',
+        link: 'sound'
+      },
+    ]
+  },
+] %}
+{% set accountInfo = [{
+	avatar: '/assets/img/account/account-avatar.jpg',
+	link: '#',
+	name: 'Квартет И',
+	donations: '0',
+	totalFunds: '0',
+	editable: false
+}] %}
+{% set mobileMenu = [
+	{
+	link: '#',
+	description: 'Объявления'
+	}, 
+	{
+		link: '#',
+		description: 'Как это работает'
+	},
+	{
+		link: '#',
+		description: 'Фонды'
+	},
+	{
+		link: '#',
+		description: 'Новости'
+	},
+	{
+		link: '#',
+		description: 'Инвесторам'
+	},
+] %}
+
+{% set article = {
+  link: '#',
+  banner: '/assets/img/article/main-pic.jpg',
+  header: 'Михаил Палей организовал круглый стол для обсуждения вопросов благотворительной сферы',
+  subheader: 'Совместно были намечены шаги по взаимодействию и систематизации работы в сфере благотворительной деятельности.',
+  content: [
+    'Михаил Палей организовал круглый стол для обсуждения вопросов благотворительной сферы с участием руководителей ключевых благотворительных фондов и представителей Правительства Московской области.',
+    'В мероприятии приняли участие: министр социальных коммуникаций Ирина Плещева, уполномоченной по правам ребёнка в Московской области Ксения Мишонова, руководитель Аппарата общественной палаты Анна Краснолуцкая, и основатель благотворительной торговой площадки "Один+Один" Михаил Палей совместно с представителями благотворительных фондов: "Дорога вместе" (Юлия Прилепская), "Фонд борьбы с лейкемией" (Анастасия Кафланова), "Живой. Фонд помощи взрослым" (Анастасия Антонова) и "Хрупкие люди" (Елена Мещерякова).',
+    'Совместно были намечены шаги по взаимодействию и систематизации работы в сфере благотворительной деятельности.',
+    'Встреча прошла в медиацентре "АСИ - Благосфера".',
+    'Директорами благотворительных организаций было озвучено несколько системных предложений по повышению эффективности сектора и принято решение о регулярном проведении аналогичных встреч.',
+  ],
+  photos: [
+    '/assets/img/article/pic-1.jpg',
+    '/assets/img/article/pic-2.jpg',
+    '/assets/img/article/pic-3.jpg',
+  ]
+
+} %}
