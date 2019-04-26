@@ -322,6 +322,10 @@ module.exports = {
       filename: 'profile-private-settings.html',
       template: `${PATHS.src}/templates/pages/profile-private-settings.twig`,
     }),
+    new HtmlWebpackPlugin({
+      filename: 'profile-private-settings--mobile.html',
+      template: `${PATHS.src}/templates/pages/profile-private-settings--mobile.twig`,
+    }),
     new CopyWebpackPlugin([
       { from: `${PATHS.src}/img`, to: `${PATHS.assets}img` },
       { from: `${PATHS.src}/fonts`, to: `${PATHS.assets}fonts` },

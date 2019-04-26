@@ -1,90 +1,99 @@
+{% import "../form/form-popup-macro.twig" as inputs %}
 {% import "../form/form-cart-macro.twig" as inputs2 %}
 
 <form action="#" class="profile-settings__form">
-  <fieldset class="profile-settings-fieldset">
-    <h3 class="popup-edit-header">Настройки профиля</h3>
-    <div class="profile-settings-input-outer">
-      {{ inputs.inputRegistration('name', 'text', 'Имя', 'Ваше имя', ' ' ) }}
-    </div>
-    <div class="profile-settings-input-outer">
-      {{ inputs.inputRegistration('surname', 'text', 'Фамилия', 'Ваша Фамилия', ' ' ) }}
-    </div>
-    <div class="profile-settings-input-outer">
-      {{ inputs.inputRegistration('birthday', 'text', 'Дата рождения', 'Введите дату рождения в формате ДД.ММ.ГГГГ', ' ' ) }}
-    </div>
-    <div class="profile-settings-input-outer">
-      <div class="inline-inputs">
-        <label for="gender" class="form__popup-label">Пол</label>
-        <div class="form__popup-input-wrapper">
-          <label class="profile-settings-input-radio-label" for="radio-gender-male">
-            <input class="profile-settings-input-radio" id="radio-gender-male" name="radio-gender" type="radio">
-            Мужской
-            <span class="profile-settings-input-radio-checkmark"></span>
-          </label>
-          <label class="profile-settings-input-radio-label" for="radio-gender-female">
-            <input class="profile-settings-input-radio" id="radio-gender-female" name="radio-gender" type="radio">
-            Женский
-            <span class="profile-settings-input-radio-checkmark"></span>
-          </label>
-        </div>
+  {% block usetSeeting %}
+    <fieldset class="profile-settings-fieldset">
+      <h3 class="popup-edit-header">Настройки профиля</h3>
+      <div class="profile-settings-input-outer">
+        {{ inputs.inputRegistration('name', 'text', 'Имя', 'Ваше имя', ' ' ) }}
       </div>
-    </div>
-    <div class="profile-settings-input-outer">
-      {{ inputs.inputRegistration('phone', 'tel', 'Номер телефона', '+7 ( ) - - -', ' ' ) }}
-    </div>
-  </fieldset>
-  <fieldset class="profile-settings-fieldset">
-    <h3 class="popup-edit-header">Данные продавца</h3>
-    <div class="profile-settings-input-outer">
-      {{ inputs.inputRegistration('contact-name', 'text', 'Контактное лицо', 'Введите имя', ' ' ) }}
-    </div>
-    <div class="profile-settings-input-outer">
-      {{ inputs.inputRegistration('contact-phone', 'tel', 'Номер телефона', '+7 ( ) - - -', ' ' ) }}
-    </div>
-    <div class="profile-settings-input-outer">
-      <div class="inline-inputs">
-        <label for="place" class="form__popup-label">Местонахождение</label>
-        <div class="form__popup-input-wrapper">
-          <div class="profile-settings-input-wrapper-mini">
-            <input type="text" name="ZIP" class="form__popup-input" id="ZIP" onfocus="this.placeholder = ''"
-              onblur="this.placeholder = 'Индекс'" placeholder="Индекс" required>
+      <div class="profile-settings-input-outer">
+        {{ inputs.inputRegistration('surname', 'text', 'Фамилия', 'Ваша Фамилия', ' ' ) }}
+      </div>
+      <div class="profile-settings-input-outer">
+        {{ inputs.inputRegistration('birthday', 'text', 'Дата рождения', 'ДД.ММ.ГГГГ', ' ' ) }}
+      </div>
+      <div class="profile-settings-input-outer">
+        <div class="inline-inputs">
+          <label for="gender" class="form__popup-label">Пол</label>
+          <div class="form__popup-input-wrapper">
+            <label class="profile-settings-input-radio-label" for="radio-gender-male">
+              <input class="profile-settings-input-radio" id="radio-gender-male" name="radio-gender" type="radio">
+              Мужской
+              <span class="profile-settings-input-radio-checkmark"></span>
+            </label>
+            <label class="profile-settings-input-radio-label" for="radio-gender-female">
+              <input class="profile-settings-input-radio" id="radio-gender-female" name="radio-gender" type="radio">
+              Женский
+              <span class="profile-settings-input-radio-checkmark"></span>
+            </label>
           </div>
-          <div class="profile-settings-input-wrapper-mini">
-              <select class="form__popup-select" name="region" required>
-                <option disabled selected hidden value="">Область</option>
-                <option value="рас">рас</option>
-              </select>
-              <img class="form__popup-chevronSelect" src="/assets/img/icons/icon-chevron-down.svg" alt="">
-            </div>
-          <input type="text" name="city" class="form__popup-input" id="city" onfocus="this.placeholder = ''"
-            onblur="this.placeholder = 'Город'" placeholder="Город" required>
         </div>
       </div>
       <div class="profile-settings-input-outer">
-        {{ inputs.inputRegistration('contact-address', 'text', 'Адрес', 'Введите адрес', ' ' ) }}
+        {{ inputs.inputRegistration('phone', 'tel', 'Номер телефона', '+7 ( ) - - -', ' ' ) }}
       </div>
-  </fieldset>
-  <fieldset class="profile-settings-fieldset">
-    <h3 class="popup-edit-header">Благотворительный проект по умолчанию</h3>
-    <div class="profile-settings-input-outer">
-      {% set optsFunds = [
-        { 
-          key: 'адын',
-          value: 'адын',
-          selected: true,
-        },
-        { 
-          key: 'рас',
-          value: 'рас',
-          selected: false,
-        },
-        ],
-      %}
-      {{ inputs.selectSimple('defaultFund','Фонд', optsFunds) }}
+    </fieldset>
+  {% endblock %}
+  {% block sellerSettings %}
+    <fieldset class="profile-settings-fieldset">
+      <h3 class="popup-edit-header">Данные продавца</h3>
+      <div class="profile-settings-input-outer">
+        {{ inputs.inputRegistration('contact-name', 'text', 'Контактное лицо', 'Введите имя', ' ' ) }}
+      </div>
+      <div class="profile-settings-input-outer">
+        {{ inputs.inputRegistration('contact-phone', 'tel', 'Номер телефона', '+7 ( ) - - -', ' ' ) }}
+      </div>
+      <div class="profile-settings-input-outer">
+        <div class="inline-inputs">
+          <label for="place" class="form__popup-label">Местонахождение</label>
+          <div class="form__popup-input-wrapper">
+            <div class="profile-settings-input-wrapper-mini">
+              <input type="text" name="ZIP" class="form__popup-input" id="ZIP" onfocus="this.placeholder = ''"
+                onblur="this.placeholder = 'Индекс'" placeholder="Индекс" required>
+            </div>
+            <div class="profile-settings-input-wrapper-mini">
+                <select class="form__popup-select" name="region" required>
+                  <option disabled selected hidden value="">Область</option>
+                  <option value="рас">рас</option>
+                </select>
+                <img class="form__popup-chevronSelect" src="/assets/img/icons/icon-chevron-down.svg" alt="">
+              </div>
+            <input type="text" name="city" class="form__popup-input" id="city" onfocus="this.placeholder = ''"
+              onblur="this.placeholder = 'Город'" placeholder="Город" required>
+          </div>
+        </div>
+        <div class="profile-settings-input-outer">
+          {{ inputs.inputRegistration('contact-address', 'text', 'Адрес', 'Введите адрес', ' ' ) }}
+        </div>
+    </fieldset>
+  {% endblock %}
+  {% block daefaultFunds %}
+    <fieldset class="profile-settings-fieldset">
+      <h3 class="popup-edit-header">Благотворительный проект по умолчанию</h3>
+      <div class="profile-settings-input-outer">
+        {% set optsFunds = [
+          { 
+            key: 'адын',
+            value: 'адын',
+            selected: true,
+          },
+          { 
+            key: 'рас',
+            value: 'рас',
+            selected: false,
+          },
+          ],
+        %}
+        {{ inputs.selectSimple('defaultFund','Фонд', optsFunds) }}
+      </div>
+    </fieldset>
+  {% endblock %}
+  {% block controls %}
+    <div class="popup-edit__controls">
+      <button class="popup-edit-reset">Отменить</button>
+      <input class="popup-edit-submit" type="submit" value="Сохранить">
     </div>
-  </fieldset>
-  <div class="popup-edit__controls">
-    <button class="popup-edit-reset">Отменить</button>
-    <input class="popup-edit-submit" type="submit" value="Сохранить">
-  </div>
+  {% endblock %}
 </form>

@@ -1,0 +1,431 @@
+{% set page_title = "profile private settings" %}
+{% set headerType = "--white --no-toggle" %}
+{% set userStatus = "--authorised" %}
+{% set pageType = 'private' %}
+{% set dropdownCatalogue = [
+  {
+    category: 'Childen&apos;s goods',
+    link: 'children',
+    content: [
+      {
+        category: 'first',
+        link: 'first'
+      },
+      {
+        category: 'second',
+        link: 'second'
+      },
+      {
+        category: 'first',
+        link: 'first'
+      },
+      {
+        category: 'second',
+        link: 'second'
+      },
+      {
+        category: 'first',
+        link: 'first'
+      },
+      {
+        category: 'second',
+        link: 'second'
+      },
+      {
+        category: 'first',
+        link: 'first'
+      },
+      {
+        category: 'second',
+        link: 'second'
+      },
+      {
+        category: 'first',
+        link: 'first'
+      },
+      {
+        category: 'second',
+        link: 'second'
+      },
+      {
+        category: 'first',
+        link: 'first'
+      },
+      {
+        category: 'second',
+        link: 'second'
+      },
+      {
+        category: 'first',
+        link: 'first'
+      },
+      {
+        category: 'second',
+        link: 'second'
+      },
+      {
+        category: 'first',
+        link: 'first'
+      },
+      {
+        category: 'second',
+        link: 'second'
+      },
+      {
+        category: 'first',
+        link: 'first'
+      },
+      {
+        category: 'second',
+        link: 'second'
+      },
+      {
+        category: 'first',
+        link: 'first'
+      },
+      {
+        category: 'second',
+        link: 'second'
+      },
+    ]
+  },
+  {
+    category: 'Clothes and footwear',
+    link: 'clothes',
+    content: [
+      {
+        category: 'boots',
+        link: 'boots'
+      },
+      {
+        category: 'coat',
+        link: 'coat'
+      },
+      {
+        category: 'sweaters',
+        link: 'sweaters'
+      },
+      {
+        category: 'sweethshot',
+        link: 'sweethshot'
+      },
+      {
+        category: 't-shirt',
+        link: 't-shirt'
+      },
+      {
+        category: 'slip-on',
+        link: 'slip-on'
+      },
+      {
+        category: 'blablabla',
+        link: 'blablabla'
+      },
+    ]
+  },
+  {
+    category: 'Electronics',
+    link: 'electronics',
+    content: [
+      {
+        category: 'first',
+        link: 'first'
+      }
+    ]
+  },
+  {
+    category: 'Appliances',
+    link: 'appliancess',
+    content: [
+      {
+        category: 'first',
+        link: 'first'
+      }
+    ]
+  },
+  {
+    category: 'Pet supplies',
+    link: 'pet',
+    content: [
+      {
+        category: 'first',
+        link: 'first'
+      }
+    ]
+  },
+  {
+    category: 'House and Cottage',
+    link: 'house',
+    content: [
+      {
+        category: 'first',
+        link: 'first'
+      }
+    ]
+  },
+  {
+    category: 'Beauty and health',
+    link: 'beauty',
+    content: [
+      {
+        category: 'beuaty',
+        link: 'beauty'
+      },
+      {
+        category: 'health',
+        link: 'health'
+      }
+    ]
+  },
+  {
+    category: 'Auto',
+    link: 'Auto',
+    content: [
+      {
+        category: 'auto',
+        link: 'auto'
+      },
+      {
+        category: 'motors',
+        link: 'motors'
+      },
+      {
+        category: 'sound',
+        link: 'sound'
+      },
+    ]
+  },
+  {
+    category: 'Art',
+    link: 'art',
+    content: [
+      {
+        category: 'art',
+        link: 'art'
+      },
+      {
+        category: 'motors',
+        link: 'motors'
+      },
+      {
+        category: 'sound',
+        link: 'sound'
+      },
+    ]
+  },
+  {
+    category: 'Garden',
+    link: 'garden',
+    content: [
+      {
+        category: 'art',
+        link: 'art'
+      },
+      {
+        category: 'motors',
+        link: 'motors'
+      },
+      {
+        category: 'sound',
+        link: 'sound'
+      },
+    ]
+  },
+] %}
+{% set accountInfo = [{
+	avatar: '/assets/img/account/account-avatar.jpg',
+	link: '#',
+	name: 'Квартет И',
+	donations: '0',
+	totalFunds: '0',
+	editable: true
+}] %}
+{% set dropdown = {
+  type: 'dropdown__account-wrapper',
+  imgClass: 'dropdown__account-avatar',
+  items: [
+  { link: '#', caption: 'Настройки профиля'},
+  { link: '#', caption: 'Изменить email'},
+  { link: '#', caption: 'Изменить пароль'},
+  { link: '#', caption: 'Выйти'},
+  ]
+}, {
+	type: 'dropdown__banner-edit',
+	items: [
+  { link: '#', caption: 'Выбрать цвет'},
+  { link: '#', caption: 'Выбрать фотографию'},
+  ]
+} %}
+{% set banner = [
+	{
+		name: 'Квартет И',
+		editable: true,
+	},
+	] 
+%}
+{% set ads = [ 
+] %}
+
+{% set menubar = [  
+	{
+		type: 'account',
+		items: [
+			{
+				link: '#ads',
+				isActive: true,
+				descr: 'Объявления',
+				isAds: true,
+				adsCount: ads.length,
+			},
+			{
+				link: '#about',
+				isActive: false,
+				descr: 'О звезде',
+				isAds: false,
+				adsCount: ads.length,
+			},
+			{
+				link: '#funds',
+				isActive: false,
+				descr: 'Благотворительные фонды',
+				isAds: false,
+				adsCount: ads.length,
+			},
+		],
+	}
+] %}
+
+{% set tabs = [
+	{
+		type: 'accountInfo__content',
+		id: 'ads',
+		setActive: true
+	},
+	{
+		type: 'accountInfo__content',
+		id: 'about',
+		setActive: false
+	},
+	{
+		type: 'accountInfo__content',
+		id: 'funds',
+		setActive: false
+	},
+] %}
+{% set aboutStar = {
+	descr: 'Комедии "Квартета И" знают почти наизусть и политики, и олигархи, и студенты, и врачи, и даже гламурные барышни с
+	маленькими собачками под мышкой. Искренний чистый юмор стирает границы между богатым и бедным, неудачником и тем,
+	кому постоянно везет. На спектаклях "Квартета И" все равны. "День радио", "День выборов", "Разговоры мужчин среднего
+	возраста о женщинах, кино и алюминиевых вилках" - современные хиты не только театра, но жизни в целом. А герои
+	Леонида Бараца, Ростислава Хаита, Александра Демидова и Камиля Ларина давно стали нарицательными. Им подражают, на
+	них равняются, их любят - как любят только настоящих заядлых друзей. Им доверяют и ждут каждой премьеры как события.',
+	editable: true,
+}
+%}
+
+{% set cardsFoundations = [
+	{
+		logo: '/assets/img/funds/foundation.jpg',
+		name: 'Charitable foundation Masonic',
+		descr: 'Помощь больным несовершенным остеогенезом и другой костной патологией',
+		donations: '2 736',
+	},
+	{
+		logo: '/assets/img/funds/foundation.jpg',
+		name: 'Charitable foundation Masonic',
+		descr: 'Помощь больным несовершенным остеогенезом и другой костной патологией',
+		donations: '2 736',
+	},
+	{
+		logo: '/assets/img/funds/foundation.jpg',
+		name: 'Charitable foundation Masonic',
+		descr: 'Помощь больным несовершенным остеогенезом и другой костной патологией',
+		donations: '2 736',
+	},
+	{
+		logo: '/assets/img/funds/foundation.jpg',
+		name: 'Charitable foundation Masonic',
+		descr: 'Помощь больным несовершенным остеогенезом и другой костной патологией',
+		donations: '2 736',
+	},
+	{
+		logo: '/assets/img/funds/foundation.jpg',
+		name: 'Charitable foundation Masonic',
+		descr: 'Помощь больным несовершенным остеогенезом и другой костной патологией',
+		donations: '2 736',
+	},
+	{
+		logo: '/assets/img/funds/foundation.jpg',
+		name: 'Charitable foundation Masonic',
+		descr: 'Помощь больным несовершенным остеогенезом и другой костной патологией',
+		donations: '2 736',
+	},
+	{
+		logo: '/assets/img/funds/foundation.jpg',
+		name: 'Charitable foundation Masonic',
+		descr: 'Помощь больным несовершенным остеогенезом и другой костной патологией',
+		donations: '2 736',
+	},
+	{
+		logo: '/assets/img/funds/foundation.jpg',
+		name: 'Charitable foundation Masonic',
+		descr: 'Помощь больным несовершенным остеогенезом и другой костной патологией',
+		donations: '2 736',
+	},
+	{
+		logo: '/assets/img/funds/foundation.jpg',
+		name: 'Charitable foundation Masonic',
+		descr: 'Помощь больным несовершенным остеогенезом и другой костной патологией',
+		donations: '2 736',
+	},
+	{
+		logo: '/assets/img/funds/foundation.jpg',
+		name: 'Charitable foundation Masonic',
+		descr: 'Помощь больным несовершенным остеогенезом и другой костной патологией',
+		donations: '2 736',
+	},
+	]
+%}
+
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+	<meta charset="utf-8">
+	<!-- <base href="/"> -->
+	<title>{{ page_title }}</title>
+	<meta name="description" content="">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- Template Basic Images Start -->
+	<meta property="og:image" content="path/to/image.jpg">
+	<link rel="icon" href="#">
+	<link rel="apple-touch-icon" sizes="180x180" href="#">
+	<!-- Template Basic Images End -->
+
+	<!-- Custom Browsers Color Start -->
+	<meta name="theme-color" content="#4489ff">
+	<!-- Custom Browsers Color End -->
+</head>
+
+<body>
+	<main>
+		{% block header %}
+		{% include "../components/header/header.twig" %}
+		{% endblock %}
+    {% block form %}
+			<div class="sell-item-mobile">
+      	{% embed "../components/form/form-profile-edit-settings.twig" %}
+					{% block controls %}
+						<div class="form__popup-input-wrapper">
+							<input class="form__popup-submit" type="submit" value="Сохранить">
+						</div>
+					{% endblock %}
+				{% endembed %}
+			</div>
+		{% endblock %}
+	</main>
+</html>
