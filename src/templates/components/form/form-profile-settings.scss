@@ -15,38 +15,6 @@
     }
 
     &-input {
-      &-outer {
-        width: 100%;
-        margin: 15px 0;
-        padding: 15px 0;
-
-        >.inline-inputs {
-
-          .form__popup-label {
-            max-width: 200px;
-          }
-
-          .form__popup-input {
-            max-width: 100%;
-
-            &-wrapper {
-              @include mq-down(md) {
-                flex-wrap: wrap;
-              }
-            }
-          }
-
-          .form__popup-selectSimple-wrapper {
-            @include mq-down(md) {
-              padding: 0 10px;
-            }
-          }
-
-          @include mq-down(lg) {
-            flex-direction: column;
-          }
-        }
-      }
 
       &-wrapper {
         &-mini {
@@ -113,6 +81,14 @@
         }
       }
 
+      &:last-child {
+        margin-bottom: 120px;
+
+        @include mq-down(sm) {
+          margin-bottom: 70px;
+        }
+      }
+
       h3 {
         @include mq-down(md) {
           font-size: rem(22);
@@ -121,10 +97,26 @@
         }
       }
 
+      input {
+        max-width: 100%;
+      }
+
       input,
       select {
         @include mq-down(md) {
           font-size: rem(19);
+        }
+      }
+
+      .form__popup-input-wrapper {
+        @include mq-down(md) {
+          flex-wrap: wrap;
+        }
+      }
+
+      .form__popup-selectSimple-wrapper {
+        @include mq-down(md) {
+          padding-left: 10px;
         }
       }
     }

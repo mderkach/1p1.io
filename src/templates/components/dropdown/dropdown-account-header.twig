@@ -3,11 +3,11 @@
   img: '/assets/img/background/main-image-2.jpg',
   imgClass: 'dropdown__account-avatar',
   items: [
-  { link: '#', caption: 'Настройки профиля'},
-  { link: '#', caption: 'Изменить email'},
-  { link: '#', caption: 'Изменить пароль'},
-  { link: '#', caption: 'Выйти'},
-  ]
+    { link: '#profile-settings', caption: 'Настройки профиля', isModalTrigger: true,},
+    { link: '#', caption: 'Изменить email'},
+    { link: '#', caption: 'Изменить пароль'},
+    { link: '#', caption: 'Выйти'},
+  ],
 } %}
 
 {% include "../dropdown/dropdown.twig" %}

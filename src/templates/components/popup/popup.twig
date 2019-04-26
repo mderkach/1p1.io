@@ -254,13 +254,22 @@
 {% endblock %}
 
 {% block popupProfilePrivateSettings %}
-  <div class="popup-edit__background popup--target" id="profile-settings">
-    <div class="popup-edit__container">
-      <div class="popup-edit__wrapper">
-        <div class="profile-settings-wrapper">
-          {% include "../form/form-profile-edit-settings.twig" %}
-        </div>
+<div class="popup__fullscreen popup__sell-item popup--target" id="profile-settings">
+  <div class="popup__fullscreen-outer">
+    <div class="popup__fullscreen-wrapper">
+      <button class="popup__close btn--close-popup" data-modal="profile-settings">
+        <img alt="" src="/assets/img/icons/icon-close-blue.svg">
+      </button>
+      <div class="row">
+        {% include "../form/form-profile-edit-settings.twig" %}
+      </div>
+    </div>
+    <div class="popup__fullscreen-footer-wrapper">
+      <div class="popup__fullscreen-footer is-active">
+        <a class="popup-edit-reset" href="#">Отменить</a>
+        <a class="popup-edit-submit" href="#">Сохранить</a>
       </div>
     </div>
   </div>
+</div>
 {% endblock %}

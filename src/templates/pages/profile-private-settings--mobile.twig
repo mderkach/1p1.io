@@ -244,7 +244,7 @@
   type: 'dropdown__account-wrapper',
   imgClass: 'dropdown__account-avatar',
   items: [
-  { link: '#', caption: 'Настройки профиля'},
+  { link: '#profile-settings', caption: 'Настройки профиля', isModalTrigger: true},
   { link: '#', caption: 'Изменить email'},
   { link: '#', caption: 'Изменить пароль'},
   { link: '#', caption: 'Выйти'},
@@ -418,14 +418,18 @@
 		{% endblock %}
     {% block form %}
 			<div class="sell-item-mobile">
-      	{% embed "../components/form/form-profile-edit-settings.twig" %}
-					{% block controls %}
-						<div class="form__popup-input-wrapper">
-							<input class="form__popup-submit" type="submit" value="Сохранить">
-						</div>
-					{% endblock %}
-				{% endembed %}
-			</div>
+        <div class="popup__fullscreen-outer">
+          <div class="popup__fullscreen-wrapper">
+            {% import "../components/form/form-popup-macro.twig" as inputs %}
+            {% include "../components/form/form-profile-edit-settings.twig" %}
+          </div>
+          <div class="popup__fullscreen-footer-wrapper">
+            <div class="popup__fullscreen-footer is-active">
+              <a class="btn-sell-item-continue" href="#">Сохранить</a>
+            </div>
+          </div>
+        </div>
+      </div>
 		{% endblock %}
 	</main>
 </html>

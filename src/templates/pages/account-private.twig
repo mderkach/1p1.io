@@ -268,18 +268,20 @@
   type: 'dropdown__account-wrapper',
   imgClass: 'dropdown__account-avatar',
   items: [
-  { link: '#', caption: 'Настройки профиля'},
-  { link: '#', caption: 'Изменить email'},
-  { link: '#', caption: 'Изменить пароль'},
-  { link: '#', caption: 'Выйти'},
-  ]
-}, {
-	type: 'dropdown__banner-edit',
-	items: [
-  { link: '#', caption: 'Выбрать цвет'},
-  { link: '#', caption: 'Выбрать фотографию'},
-  ]
-} %}
+    { link: '#profile-settings', caption: 'Настройки профиля', isModalTrigger: true,},
+    { link: '#', caption: 'Изменить email'},
+    { link: '#', caption: 'Изменить пароль'},
+    { link: '#', caption: 'Выйти'},
+  ],
+  }, 
+  {
+    type: 'dropdown__banner-edit',
+    items: [
+      { link: '#', caption: 'Выбрать цвет'},
+      { link: '#', caption: 'Выбрать фотографию'},
+    ]
+  } 
+%}
 {% set banner = [
 	{
 		name: 'Квартет И',
