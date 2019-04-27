@@ -7,6 +7,8 @@
         {% include "../cards/cards-account-about.twig" %}
       {% elseif tab.id == 'funds' %}
         {% include "../cards/cards-account-funds.twig" %}
+      {% elseif tab.id == 'deals' %}
+        {% include "./tabs-deals.twig" %}
       {% endif %}
     </div>
   {% endfor %}

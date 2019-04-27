@@ -1,0 +1,155 @@
+.deals {
+  &-img {
+    @extend .ads-img;
+  }
+
+  &__badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 10px 15px;
+    width: auto;
+    border-radius: 4px;
+    font-size: rem(14);
+    font-weight: bold;
+    line-height: normal;
+    color: #fff;
+    text-transform: uppercase;
+
+    &.--sended {
+      background-color: #4489ff;
+    }
+
+    &.--canceled {
+      background-color: #ff6e63;
+    }
+
+    &.--delivered {
+      background-color: #00b54b;
+    }
+
+    &.--placed {
+      background-color: #79879e;
+    }
+
+  }
+
+  &-card {
+    @extend .ads-card;
+
+    @include mq-down(lg) {
+      height: 100%;
+    }
+
+    &-body {
+      @extend .ads-card-body;
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__type {
+      font-size: rem(15);
+      font-weight: bold;
+      line-height: 1.47;
+      text-transform: uppercase;
+      color: #000;
+      margin-bottom: 0;
+
+      &-wrapper {
+        padding: 15px 20px;
+        border-bottom: 1px solid #ebeff4;
+      }
+    }
+
+    &__details {
+      &-outer {
+        @extend .deals-card__type-wrapper;
+
+        &:nth-of-type(3) {
+          border-bottom: none;
+        }
+      }
+    }
+
+    &__buyer {
+      &-img {
+        width: 36px;
+        height: 36px;
+        object-fit: contain;
+        border-radius: 52px;
+        border: solid 1px rgba(0, 0, 0, 0.1);
+        margin-right: 14px;
+      }
+
+      &-descr {
+        font-size: rem(14);
+        font-weight: 500;
+        line-height: 1.29;
+        color: #4b5769;
+        margin-bottom: 0;
+      }
+
+      &-outer {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 0 20px 25px;
+        margin-top: auto;
+        margin-bottom: 0;
+
+        @include mq-down(lg) {
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+
+  &-price {
+    @extend .ads-price;
+
+    &__wrapper {
+      @extend .ads-price__wrapper;
+    }
+  }
+
+  &-name {
+    @extend .ads-name;
+
+    a {
+      @extend .ads-name;
+
+      &:hover {
+        color: #000;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &-bet {
+    &-start {
+      @extend .ads-bet-start;
+    }
+
+    &__current {
+      &-descr {
+        @extend .ads-bet-start;
+      }
+
+      &-info {
+        @extend .ads-bet__current-info;
+        margin-bottom: 0;
+
+        &-amount {
+          @extend .ads-bet__current-info-amount;
+        }
+      }
+    }
+
+    &__fundTo {
+
+      &-name {
+        @extend .ads-bet__fundTo-name;
+      }
+    }
+  }
+}

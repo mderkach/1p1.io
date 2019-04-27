@@ -1,0 +1,71 @@
+.tabs {
+  &-deals {
+    &-select {
+      @extend .form__popup-select;
+      background: transparent;
+
+      @include mq-down(sm) {
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      &-container {
+        @extend .form__popup-input-container;
+
+        @include mq-down(sm) {
+          padding: 0;
+        }
+      }
+
+      &-wrapper {
+        display: flex;
+        width: 100%;
+        align-items: center;
+
+        @include mq-between(sm, lg) {
+          flex-wrap: wrap;
+          padding: 0 20px;
+        }
+
+        @include mq-down(sm) {
+          flex-wrap: wrap;
+          padding: 0;
+        }
+      }
+
+      &-outer {
+        @extend .form__popup-select-outer;
+        max-width: 220px;
+
+        @include mq-down(lg) {
+          max-width: 100%;
+        }
+      }
+
+      &-descr {
+        flex: 1 0 auto;
+        font-size: rem(19);
+        font-weight: bold;
+        line-height: 1.58;
+        color: #000;
+        margin-bottom: 0;
+        margin-right: 20px;
+
+        @include mq-down(md) {
+          font-size: rem(15);
+          line-height: 1.73;
+          margin-bottom: 5px;
+        }
+      }
+    }
+
+    &-cards {
+      &-wrapper {
+        margin-top: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+      }
+    }
+  }
+}

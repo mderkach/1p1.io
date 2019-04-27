@@ -234,14 +234,85 @@
     ]
   },
 ] %}
+
 {% set accountInfo = [{
 	avatar: '/assets/img/account/account-avatar.jpg',
 	link: '#',
 	name: 'Квартет И',
 	donations: '0',
 	totalFunds: '0',
-	editable: true
+	editable: true,
+  deals: [
+    {
+      status: 'delivered',
+      isDonation: true,
+      img: '/assets/img/lot/mb.jpg',
+      price: 5000,
+      name: 'Motherboard',
+      donation: {
+        amount: 5000,
+        fundName: 'Фонд Борьбы с Лейкемией',
+      },
+      date: '12 декабря 2018',
+      buyer: {
+        img: '/assets/img/lots/celebrities-profile-avatar-2.jpg',
+        name: 'Имя Фамилия',
+      }
+    },
+    {
+      status: 'canceled',
+      isDonation: false,
+      type: 'buy',
+      img: '/assets/img/lot/mb.jpg',
+      price: 5000,
+      name: 'Motherboard',
+      donation: {
+        amount: 5000,
+        fundName: 'Фонд Борьбы с Лейкемией',
+      },
+      date: '12 декабря 2018',
+      buyer: {
+        img: '/assets/img/lots/celebrities-profile-avatar-2.jpg',
+        name: 'Имя Фамилия',
+      }
+    },
+    {
+      status: 'placed',
+      isDonation: false,
+      type: 'sell',
+      img: '/assets/img/lot/mb.jpg',
+      price: 5000,
+      name: 'Motherboard',
+      donation: {
+        amount: 5000,
+        fundName: 'Фонд Борьбы с Лейкемией',
+      },
+      date: '12 декабря 2018',
+      buyer: {
+        img: '/assets/img/lots/celebrities-profile-avatar-2.jpg',
+        name: 'Имя Фамилия',
+      }
+    },
+    {
+      status: 'sended',
+      isDonation: false,
+      type: 'sell',
+      img: '/assets/img/lot/mb.jpg',
+      price: 5000,
+      name: 'Motherboard',
+      donation: {
+        amount: 5000,
+        fundName: 'Фонд Борьбы с Лейкемией',
+      },
+      date: '12 декабря 2018',
+      buyer: {
+        img: '/assets/img/lots/celebrities-profile-avatar-2.jpg',
+        name: 'Имя Фамилия',
+      }
+    },
+  ]
 }] %}
+
 {% set mobileMenu = [
 	{
 	link: '#',
@@ -264,6 +335,7 @@
 		description: 'Инвесторам'
 	},
 ] %}
+
 {% set dropdown = {
   type: 'dropdown__account-wrapper',
   imgClass: 'dropdown__account-avatar',
@@ -282,6 +354,7 @@
     ]
   } 
 %}
+
 {% set banner = [
 	{
 		name: 'Квартет И',
@@ -289,7 +362,30 @@
 	},
 	] 
 %}
-{% set ads = [ 
+
+{% set ads = [
+	{
+		img: '/assets/img/lots/account-public-ads-1.jpg',
+		price: '3 000',
+		name: 'Афиша фильма «День выборов 2» с автографами',
+		place: 'Москва',
+		fundDonation: '3 000',
+		fundName: 'БФ "Бюро добрых дел"',
+		onauction: true,
+		bookmarked: false,
+		editable: true
+	},
+	{
+		img: '/assets/img/lots/account-public-ads-1.jpg',
+		price: '78 000',
+		name: 'Афиша',
+		place: 'Кукуево',
+		fundDonation: '3 000',
+		fundName: 'БФ "Бюро добрых дел"',
+		onauction: false,
+		bookmarked: true,
+		editable: true
+	},
 ] %}
 
 {% set menubar = [  
@@ -298,24 +394,40 @@
 		items: [
 			{
 				link: '#ads',
-				isActive: true,
+				isActive: false,
 				descr: 'Объявления',
 				isAds: true,
 				adsCount: ads.length,
 			},
 			{
-				link: '#about',
+				link: '#good',
 				isActive: false,
-				descr: 'О звезде',
+				descr: 'Добрые дела',
 				isAds: false,
-				adsCount: ads.length,
+			},
+      {
+				link: '#reviews',
+				isActive: false,
+				descr: 'Отзывы',
+				isAds: false,
 			},
 			{
 				link: '#funds',
 				isActive: false,
 				descr: 'Благотворительные фонды',
 				isAds: false,
-				adsCount: ads.length,
+			},
+      {
+				link: '#deals',
+				isActive: true,
+				descr: 'Сделки и операции',
+				isAds: false,
+			},
+      {
+				link: '#bookmarks',
+				isActive: false,
+				descr: 'Закладки',
+				isAds: false,
 			},
 		],
 	}
@@ -325,19 +437,35 @@
 	{
 		type: 'accountInfo__content',
 		id: 'ads',
-		setActive: true
-	},
-	{
-		type: 'accountInfo__content',
-		id: 'about',
 		setActive: false
 	},
 	{
+		type: 'accountInfo__content',
+		id: 'good',
+		setActive: false
+	},
+	{
+		type: 'accountInfo__content',
+		id: 'reviews',
+		setActive: false
+	},
+  {
 		type: 'accountInfo__content',
 		id: 'funds',
 		setActive: false
 	},
+	{
+		type: 'accountInfo__content',
+		id: 'deals',
+		setActive: true
+	},
+  {
+		type: 'accountInfo__content',
+		id: 'bookmarks',
+		setActive: false
+	},
 ] %}
+
 {% set aboutStar = {
 	descr: 'Комедии "Квартета И" знают почти наизусть и политики, и олигархи, и студенты, и врачи, и даже гламурные барышни с
 	маленькими собачками под мышкой. Искренний чистый юмор стирает границы между богатым и бедным, неудачником и тем,

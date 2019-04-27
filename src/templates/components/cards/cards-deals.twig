@@ -1,0 +1,63 @@
+{% for user in accountInfo %}
+  {% if user.deals %}
+    {% for deal in user.deals %}
+      <div class="deals-card">
+        <img src="{{ deal.img }}" alt="" class="deals-img">
+        {% if deal.status == 'delivered' %}
+          <span class="deals__badge --delivered">Доставлен</span>
+        {% elseif deal.status == 'sended' %}
+          <span class="deals__badge --sended">Отправлен</span>
+        {% elseif deal.status == 'placed' %}
+          <span class="deals__badge --placed">Размещен</span>
+        {% elseif deal.status == 'canceled' %}
+          <span class="deals__badge --canceled">Отменен</span>
+        {% endif %}
+        <div class="deals-card-body">
+          <div class="deals-card__type-wrapper">
+            {% if deal.isDonation %}
+              <p class="deals-card__type">Пожертвование</p>
+            {% elseif deal.type == 'sell' %}
+              <p class="deals-card__type">Продажа</p>
+            {% elseif deal.type == 'buy' %}
+              <p class="deals-card__type">Покупка</p>
+            {% endif %}
+            <p class="deals-bet__current-descr">{{ deal.date }}</p>
+          </div>
+          {% if deal.isDonation %}
+            <div class="deals-card__details-outer">
+              <p class="deals-price__wrapper">
+                <span class="deals-price">{{ deal.donation.amount|number_format(0,' ',' ') }}</span> ₽
+              </p>
+              <p class="deals-name">{{ deal.donation.fundName }}</p>
+            </div>
+          {% else %}
+            <div class="deals-card__details-outer">
+              <p class="deals-price__wrapper">
+                <span class="deals-price">{{ deal.price|number_format(0,' ',' ') }}</span> ₽
+              </p>
+              <p class="deals-name">{{ deal.name }}</p>
+            </div>
+            <div class="deals-card__details-outer">
+              <div class="deals-bet__current-wrapper">
+                <p class="deals-bet__current-descr">Пожертвование</p>
+                <p class="deals-bet__current-info">
+                  <span class="deals-bet__current-info-amount">{{ deal.donation.amount|number_format(0,' ',' ') }}</span> ₽
+                </p>
+              </div>
+              <div class="deals-bet__fundTo-wrapper">
+                <p class="deals-bet__fundTo-name">{{ deal.donation.fundName }}</p>
+              </div>
+            </div>
+          {% endif %}
+          <div class="deals-card__buyer-outer">
+            <img class="deals-card__buyer-img" src="{{ deal.buyer.img }}" alt="">
+            <div class="deals-card__buyer-wrapper">
+              <p class="deals-bet__current-descr">Пожертвование</p>
+              <p class="deals-card__buyer-descr">{{ deal.buyer.name }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  {% endif %}
+{% endfor %}

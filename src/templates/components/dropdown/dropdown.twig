@@ -17,7 +17,7 @@
     </button>
     <div class="dropdown__menu">
       {% for item in dropdown.items if dropdown.type != 'dropdown__cart-wrapper' %}
-        <a href="{{item.link}}" class="dropdown__menu-item">{{item.caption}}</a> 
+        <a href="{{item.link}}" class="dropdown__menu-item  {% if item.isModalTrigger == true %}popup--toggle{% endif %}">{{item.caption}}</a> 
       {% endfor %}
       {% if dropdown.type == 'dropdown__cart-wrapper' %}
         <div class="dropdown__cart-cards-wrapper">
