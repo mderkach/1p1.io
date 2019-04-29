@@ -6,7 +6,6 @@ var sliderBookmarks = document.querySelectorAll('.card-bookmarks__slider-contain
 if (sliderBookmarks) {
   sliderBookmarks.forEach(function(slider) {
     var cardBookmarksSLider = new Swiper(slider, {
-      slidesPerView: 1,
       wrapperClass: 'card-bookmarks__slider-wrapper',
       slideClass: 'card-bookmarks-img',
       navigation: {
