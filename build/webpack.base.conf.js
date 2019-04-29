@@ -330,6 +330,10 @@ module.exports = {
       filename: 'profile-private.html',
       template: `${PATHS.src}/templates/pages/profile-private.twig`,
     }),
+    new HtmlWebpackPlugin({
+      filename: 'foundations.html',
+      template: `${PATHS.src}/templates/pages/foundations.twig`,
+    }),
     new CopyWebpackPlugin([
       { from: `${PATHS.src}/img`, to: `${PATHS.assets}img` },
       { from: `${PATHS.src}/fonts`, to: `${PATHS.assets}fonts` },

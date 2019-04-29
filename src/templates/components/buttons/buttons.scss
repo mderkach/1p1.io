@@ -815,6 +815,36 @@
       }
     }
   }
+
+  &-fund {
+    margin-left: auto;
+    margin-right: 20px;
+    width: 100%;
+    max-width: 220px;
+    padding: 15px 30px;
+    border-radius: 96px;
+    border: none;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+    background-color: #4489ff;
+    font-size: rem(19);
+    font-weight: 500;
+    line-height: normal;
+    text-align: center;
+    color: #fff;
+
+    &:hover {
+      background: #4f90fe;
+    }
+
+    @include mq-down(sm) {
+      flex: 1 0 100%;
+      width: 100%;
+      max-width: 100%;
+      margin-top: 20px;
+      padding: 10px 0;
+      font-size: rem(14);
+    }
+  }
 }
 
 .hamburger {
