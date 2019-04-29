@@ -9,6 +9,8 @@
         {% include "../cards/cards-account-funds.twig" %}
       {% elseif tab.id == 'deals' %}
         {% include "./tabs-deals.twig" %}
+      {% elseif tab.id == 'bookmarks' %}
+        {% include "./tabs-bookmarks.twig" %}
       {% endif %}
     </div>
   {% endfor %}

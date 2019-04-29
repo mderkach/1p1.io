@@ -310,7 +310,33 @@
         name: 'Имя Фамилия',
       }
     },
-  ]
+  ],
+  bookmarks: [
+    {
+      link: '#',
+      name: 'Нарядный голубой свитер',
+      price: 736,
+      charity: 90,
+      images: ["/assets/img/lot/1.jpg","/assets/img/lot/1.jpg","/assets/img/lot/1.jpg"],
+      buyer: {
+        img: '/assets/img/lots/celebrities-profile-avatar-2.jpg',
+        name: 'NAME',
+        place: 'MSK',
+      }
+    },
+    {
+      link: '#',
+      name: 'Нарядный голубой свитер',
+      price: 736,
+      charity: 90,
+      images: ["/assets/img/lot/item-big.jpg","/assets/img/lot/3.jpg","/assets/img/lot/4.jpg"],
+      buyer: {
+        img: '/assets/img/lots/celebrities-profile-avatar-2.jpg',
+        name: 'NAME',
+        place: 'MSK',
+      }
+    },
+  ],
 }] %}
 
 {% set mobileMenu = [
@@ -419,13 +445,13 @@
 			},
       {
 				link: '#deals',
-				isActive: true,
+				isActive: false,
 				descr: 'Сделки и операции',
 				isAds: false,
 			},
       {
 				link: '#bookmarks',
-				isActive: false,
+				isActive: true,
 				descr: 'Закладки',
 				isAds: false,
 			},
@@ -457,12 +483,12 @@
 	{
 		type: 'accountInfo__content',
 		id: 'deals',
-		setActive: true
+		setActive: false
 	},
   {
 		type: 'accountInfo__content',
 		id: 'bookmarks',
-		setActive: false
+		setActive: true
 	},
 ] %}
 

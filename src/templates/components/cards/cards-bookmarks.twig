@@ -1,0 +1,50 @@
+{% for user in accountInfo %}
+  {% if user.bookmarks %}
+    {% for bookmark in user.bookmarks %}
+      <div class="card-bookmarks">
+        {% embed "../slider/slider-card-bookmarks.twig" %}
+          {% block slides %}
+            {% for item in bookmark.images %}
+              <img alt="" class="card-bookmarks-img" src="{{ item }}">
+            {% endfor %}
+          {% endblock %}
+        {% endembed %}
+        <div class="ads__buttons-wrapper">
+          <button class="btn-bookmark">
+            <svg class="ads__bookmark-img is-bookmarked" height="14px" version="1.1" viewbox="0 0 11 14" width="11px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+              <g fill-rule="evenodd" stroke-width="1" stroke="none">
+                <g stroke="#4489FF" transform="translate(-1284.000000, -510.000000)">
+                  <g transform="translate(850.000000, 495.000000)">
+                    <g transform="translate(434.000000, 15.000000)">
+                      <path d="M10.5,12.5539306 L10.5,1.5 C10.5,0.94771525 10.0522847,0.5 9.5,0.5 L1.5,0.5 C0.94771525,0.5 0.5,0.94771525 0.5,1.5 L0.5,12.5539306 L5.5,9.14483968 L10.5,12.5539306 Z"></path>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </svg>
+          </button>
+        </div>
+        <div class="card-bookmarks-body">
+          <div class="card-bookmarks__name-wrapper">
+            <a class="card-bookmarks__name" href="{{ bookmark.link }}">{{ bookmark.name }}</a>
+          </div>
+          <div class="card-bookmarks__buyer-outer">
+            <img alt="" class="card-bookmarks__buyer-img" src="{{ bookmark.buyer.img }}">
+            <div class="card-bookmarks__buyer-wrapper">
+              <p class="card-bookmarks__buyer-name">{{ bookmark.buyer.name }}</p>
+              <p class="card-bookmarks__buyer-place">{{ bookmark.buyer.place }}</p>
+            </div>
+          </div>
+          <div class="card-bookmarks__price-info">
+            <span class="card-bookmarks__price">{{ bookmark.price|number_format(0, ' ', ' ') }}
+              Р.</span>
+            <span class="card-bookmarks__charity">
+              <span class="card-bookmarks__charity-value">{{ bookmark.charity }}%</span>
+              на добрые дела
+            </span>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  {% endif %}
+{% endfor %}
