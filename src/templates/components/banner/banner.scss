@@ -45,6 +45,10 @@
       margin-bottom: 10px;
       font-size: rem(24);
     }
+
+    @include mq-down(sm) {
+      font-size: rem(17);
+    }
   }
 
   &__move {

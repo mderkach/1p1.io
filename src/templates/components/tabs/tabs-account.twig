@@ -4,13 +4,17 @@
       {% if tab.id == 'ads' %}
         {% include "../cards/cards-ads.twig" %}
       {% elseif tab.id == 'about' %}
-        {% include "../cards/cards-account-about.twig" %}
+        {% block about %}
+          {% include "../cards/cards-account-about.twig" %}
+        {% endblock %}
       {% elseif tab.id == 'funds' %}
         {% include "../cards/cards-account-funds.twig" %}
       {% elseif tab.id == 'deals' %}
         {% include "./tabs-deals.twig" %}
       {% elseif tab.id == 'bookmarks' %}
         {% include "./tabs-bookmarks.twig" %}
+      {% elseif tab.id == 'projects' %}
+        {% include "../cards/cards-foundation-projects.twig" %}
       {% endif %}
     </div>
   {% endfor %}

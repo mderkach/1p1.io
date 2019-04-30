@@ -845,6 +845,33 @@
       font-size: rem(14);
     }
   }
+
+  &-foundationSite {
+    margin-top: 25px;
+    width: 100%;
+    max-width: 160px;
+    border-radius: 96px;
+    border: solid 1px #4489ff;
+    background-color: #fff;
+    font-size: rem(14);
+    font-weight: 500;
+    line-height: normal;
+    text-align: center;
+    color: #4489ff;
+    padding: 10px 20px;
+
+    &:hover {
+      text-decoration: none;
+      background-color: #4f90fe;
+      border-color: #4f90fe;
+      color: #fff;
+    }
+
+
+    @include mq-down(sm) {
+      min-width: 100%;
+    }
+  }
 }
 
 .hamburger {

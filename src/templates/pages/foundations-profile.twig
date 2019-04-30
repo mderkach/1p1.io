@@ -1,0 +1,378 @@
+{% extends "../layout/account.twig" %}
+{% set page_title = "acount private" %}
+{% set headerType = "--white --no-toggle" %}
+{% set userStatus = "--authorised" %}
+{% set pageType = 'private' %}
+{% set editMode = "none" %}
+{% set dropdownCatalogue = [
+  {
+    category: 'Childen&apos;s goods',
+    link: 'children',
+    content: [
+      {
+        category: 'first',
+        link: 'first'
+      },
+      {
+        category: 'second',
+        link: 'second'
+      },
+      {
+        category: 'first',
+        link: 'first'
+      },
+      {
+        category: 'second',
+        link: 'second'
+      },
+      {
+        category: 'first',
+        link: 'first'
+      },
+      {
+        category: 'second',
+        link: 'second'
+      },
+      {
+        category: 'first',
+        link: 'first'
+      },
+      {
+        category: 'second',
+        link: 'second'
+      },
+      {
+        category: 'first',
+        link: 'first'
+      },
+      {
+        category: 'second',
+        link: 'second'
+      },
+      {
+        category: 'first',
+        link: 'first'
+      },
+      {
+        category: 'second',
+        link: 'second'
+      },
+      {
+        category: 'first',
+        link: 'first'
+      },
+      {
+        category: 'second',
+        link: 'second'
+      },
+      {
+        category: 'first',
+        link: 'first'
+      },
+      {
+        category: 'second',
+        link: 'second'
+      },
+      {
+        category: 'first',
+        link: 'first'
+      },
+      {
+        category: 'second',
+        link: 'second'
+      },
+      {
+        category: 'first',
+        link: 'first'
+      },
+      {
+        category: 'second',
+        link: 'second'
+      },
+    ]
+  },
+  {
+    category: 'Clothes and footwear',
+    link: 'clothes',
+    content: [
+      {
+        category: 'boots',
+        link: 'boots'
+      },
+      {
+        category: 'coat',
+        link: 'coat'
+      },
+      {
+        category: 'sweaters',
+        link: 'sweaters'
+      },
+      {
+        category: 'sweethshot',
+        link: 'sweethshot'
+      },
+      {
+        category: 't-shirt',
+        link: 't-shirt'
+      },
+      {
+        category: 'slip-on',
+        link: 'slip-on'
+      },
+      {
+        category: 'blablabla',
+        link: 'blablabla'
+      },
+    ]
+  },
+  {
+    category: 'Electronics',
+    link: 'electronics',
+    content: [
+      {
+        category: 'first',
+        link: 'first'
+      }
+    ]
+  },
+  {
+    category: 'Appliances',
+    link: 'appliancess',
+    content: [
+      {
+        category: 'first',
+        link: 'first'
+      }
+    ]
+  },
+  {
+    category: 'Pet supplies',
+    link: 'pet',
+    content: [
+      {
+        category: 'first',
+        link: 'first'
+      }
+    ]
+  },
+  {
+    category: 'House and Cottage',
+    link: 'house',
+    content: [
+      {
+        category: 'first',
+        link: 'first'
+      }
+    ]
+  },
+  {
+    category: 'Beauty and health',
+    link: 'beauty',
+    content: [
+      {
+        category: 'beuaty',
+        link: 'beauty'
+      },
+      {
+        category: 'health',
+        link: 'health'
+      }
+    ]
+  },
+  {
+    category: 'Auto',
+    link: 'Auto',
+    content: [
+      {
+        category: 'auto',
+        link: 'auto'
+      },
+      {
+        category: 'motors',
+        link: 'motors'
+      },
+      {
+        category: 'sound',
+        link: 'sound'
+      },
+    ]
+  },
+  {
+    category: 'Art',
+    link: 'art',
+    content: [
+      {
+        category: 'art',
+        link: 'art'
+      },
+      {
+        category: 'motors',
+        link: 'motors'
+      },
+      {
+        category: 'sound',
+        link: 'sound'
+      },
+    ]
+  },
+  {
+    category: 'Garden',
+    link: 'garden',
+    content: [
+      {
+        category: 'art',
+        link: 'art'
+      },
+      {
+        category: 'motors',
+        link: 'motors'
+      },
+      {
+        category: 'sound',
+        link: 'sound'
+      },
+    ]
+  },
+] %}
+
+{% set accountInfo = [{
+	avatar: '/assets/img/account/account-avatar.jpg',
+	link: '#',
+	name: 'Квартет И',
+	donations: '0',
+	totalFunds: '0',
+	editable: true,
+}] %}
+
+{% set foundationInfo = [{
+	avatar: '/assets/img/account/foundation-avatar.jpg',
+	link: '#',
+	name: 'Благотворительный фонд "Образ жизни"',
+	donations: 500,
+	totalFunds: 1,
+	editable: false,
+}] %}
+
+
+{% set mobileMenu = [
+	{
+	link: '#',
+	description: 'Объявления'
+	}, 
+	{
+		link: '#',
+		description: 'Как это работает'
+	},
+	{
+		link: '#',
+		description: 'Фонды'
+	},
+	{
+		link: '#',
+		description: 'Новости'
+	},
+	{
+		link: '#',
+		description: 'Инвесторам'
+	},
+] %}
+{% set dropdown = {
+  type: 'dropdown__account-wrapper',
+  imgClass: 'dropdown__account-avatar',
+  items: [
+    { link: '#profile-settings', caption: 'Настройки профиля', isModalTrigger: true,},
+    { link: '#', caption: 'Изменить email'},
+    { link: '#', caption: 'Изменить пароль'},
+    { link: '#', caption: 'Выйти'},
+  ],
+  }, 
+  {
+    type: 'dropdown__banner-edit',
+    items: [
+      { link: '#', caption: 'Выбрать цвет'},
+      { link: '#', caption: 'Выбрать фотографию'},
+    ]
+  } 
+%}
+{% set banner = [
+	{
+		name: 'Благотворительный фонд <br>"Образ жизни"',
+		editable: true,
+	},
+	] 
+%}
+{% set ads = [ 
+] %}
+
+{% set menubar = [  
+	{
+		type: 'account',
+		items: [
+			{
+				link: '#about',
+				isActive: true,
+				descr: 'Описание',
+				isAds: false,
+			},
+			{
+				link: '#projects',
+				isActive: false,
+				descr: 'Проекты',
+				isAds: false,
+			},
+      {
+				link: '#bookmarks',
+				isActive: false,
+				descr: 'Вещи в пользу фонда',
+				isAds: false,
+			},
+		],
+	}
+] %}
+
+{% set tabs = [
+	{
+		type: 'accountInfo__content',
+		id: 'about',
+		setActive: true
+	},
+	{
+		type: 'accountInfo__content',
+		id: 'projects',
+		setActive: false
+	},
+  {
+		type: 'accountInfo__content',
+		id: 'bookmarks',
+		setActive: false
+	},
+] %}
+
+{% set aboutStar = {
+	descr: 'БФ "Образ жизни" развивает в людях добрые привычки: донорство, зоозащита, помощь нуждающимся, просвещение и ЗОЖ. Помимо адресной помощи у нас много системных проектов, которые помогают изменить ситуацию коренным образом. Делать добрые дела очень просто и естественно для человека, для этого не нужно сверхусилий или сверхвозможностей! Присоединяйтесь к нам!',
+	editable: false,
+  isFoundation: true,
+  link: '#',
+}
+%}
+
+{% set projects = [
+  {
+    header: '"ПРОФЛАБ"',
+    descr: 'Взврывное повышение квалификации специалистов детских домов-интернатов и Центров содействия семейному воспитанию. Упор на практические действия, разрабатываемые для каждой конкретной организации. Мощное внедрение новейших технологий психолого-педагогического сопровождения особых детей, применение эффективного опыта ведущих специалистов и учреждений Москвы и Санкт-Петербурга. Отзывы прошедших разнятся от благодарных до восторженных. 40-50 специалистов – проходят профподготовку в рамках одной программы. 100-400 детей получают качественно иную помощь, после каждой программы ПРОФЛАБ',
+    link: '#',
+  },
+
+] %}
+
+{% block accountInfo %}
+  {% embed "../components/screen/screen__accountInfo.twig" %}
+    {% block accountProfileCard %}
+      {% include "../components/cards/card-account--foundation.twig" %}
+    {% endblock %}
+    {% block accountTabs %}
+      {% include "../components/menu-bar/menu-bar.twig" %}
+      {% include "../components/tabs/tabs-account.twig" %}
+    {% endblock %}
+  {% endembed %}
+{% endblock %}

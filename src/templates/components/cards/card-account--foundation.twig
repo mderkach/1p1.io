@@ -1,0 +1,49 @@
+{% if foundationInfo %}
+  <div class="account-card">
+    {% for foundation in foundationInfo %}
+      <div class="account-avatar__wrapper">
+        <img class="account-avatar img-responsive" src="{{ foundation.avatar }}" alt="">
+        {% if foundation.editable == true and editMode != 'photo' %}
+          <button class="btn-edit-avatar">
+            <img alt="" src="/assets/img/icons/icon-camera.svg">
+            Изменить аватар
+          </button>
+        {% elseif editMode == 'photo' %}
+          <button class="btn-edit-avatar">
+            <img alt="" src="/assets/img/icons/icon-drag.svg">
+          </button>
+        {% endif %}
+      </div>
+      {% if foundation.editable == true and editMode == 'color' %}
+        <div class="account__pickColor-mobile">
+          {% include "../form/form-button-color.twig" %}
+        </div>
+      {% endif %}
+      <div class="account-card-body">
+        {% if foundation.editable == true and editMode == 'photo' %}
+          <div class="account-edit-controls">
+            <button class="account-edit-controls-submit" disabled>Сохранить</button>
+            <button class="account-edit-controls-reset">Отменить</button>
+          </div>
+        {% else %}
+          <div class="account-funds">
+            <p class="account-funds-total">{{ foundation.totalFunds }}</p>
+            <p class="account-funds-descr">пожертвованных вещей выкуплено</p>
+          </div>
+        {% endif %}
+        <div class="account-donations">
+          <p class="account-donations-total">{{ foundation.donations|number_format(2, '.', ' ') }}
+            <span>₽</span>
+          </p>
+          <p class="account-donations-descr">пожертвований собрано</p>
+        </div>
+
+      </div>
+      {% if foundationStatus == '--authorised' %}
+        <div class="account-sell__wrapper">
+          <a class="btn btn-mid btn-account-sell" href="#">Продать и помочь</a>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+{% endif %}
