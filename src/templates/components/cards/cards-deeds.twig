@@ -1,0 +1,38 @@
+{% if deeds %}
+  {% for item in deeds %}
+    <div class="card-deeds">
+      <div class="card-deeds-head">
+        <img alt="" class="card-deeds-img" src="{{ item.img }}">
+        <div class="card-deeds-donate">
+          <div class="card-deeds-donate-info">
+            <p class="card-deeds-donate-descr">Сумма пожертвования</p>
+            <p class="card-deeds-donate-value">
+              {{ item.value|number_format(0, '', ' ') }}
+              {{ item.priceTag }}
+            </p>
+          </div>
+          <div class="card-deeds-donate-owner">
+            <p class="card-deeds-donate-descr">Получатель</p>
+            <p class="card-deeds-donate-owner-name">{{ item.name }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="card-deeds-body">
+        <div class="card-deeds-fund">
+          <div class="card-deeds-fund-inner">
+            <div class="card-deeds-fund-logo-wrapper">
+              <img alt="" class="card-deeds-fund-logo" src="{{ item.fundImg }}">
+            </div>
+            <div class="card-deeds-fund-info">
+              <p class="card-deeds-fund-descr">Фонд</p>
+              <p class="card-deeds-fund-name">{{ item.fundName }}</p>
+            </div>
+          </div>
+          <div class="card-deeds-fund-button-wrapper">
+            <a class="card-deeds-fund-button" href="{{ item.link }}">Поддержать</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+{% endif %}

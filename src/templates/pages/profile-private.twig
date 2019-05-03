@@ -426,7 +426,7 @@
 				adsCount: ads.length,
 			},
 			{
-				link: '#good',
+				link: '#deeds',
 				isActive: false,
 				descr: 'Добрые дела',
 				isAds: false,
@@ -467,7 +467,7 @@
 	},
 	{
 		type: 'accountInfo__content',
-		id: 'good',
+		id: 'deeds',
 		setActive: false
 	},
 	{
@@ -566,3 +566,42 @@
 	},
 	]
 %}
+
+{% set deeds = [
+  {
+    img: '/assets/img/deeds/1.jpg',
+    value: 1600,
+    priceTag: 'P.',
+    name: 'Николай Староглинищевский',
+    fundImg: '/assets/img/funds/foundation.jpg',
+    fundName: 'Фонд Борьбы с Лейкемией',
+    link: '#',
+  },
+   {
+    img: '/assets/img/deeds/2.jpg',
+    value: 900,
+    priceTag: 'P.',
+    name: 'Николай Староглинищевский',
+    fundImg: '/assets/img/funds/foundation.jpg',
+    fundName: 'Фонд Борьбы с Лейкемией',
+    link: '#',
+  },
+   {
+    img: '/assets/img/deeds/3.jpg',
+    value: 20,
+    priceTag: 'P.',
+    name: 'Николай Староглинищевский',
+    fundImg: '/assets/img/funds/foundation.jpg',
+    fundName: 'Фонд Борьбы с Лейкемией',
+    link: '#',
+  },
+   {
+    img: '/assets/img/deeds/4.jpg',
+    value: 400,
+    priceTag: 'P.',
+    name: 'Николай Староглинищевский',
+    fundImg: '/assets/img/funds/foundation.jpg',
+    fundName: 'Фонд Борьбы с Лейкемией',
+    link: '#',
+  }
+] %}
