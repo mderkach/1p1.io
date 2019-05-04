@@ -373,6 +373,7 @@
       font-weight: 500;
       line-height: 1.58;
       color: #000;
+      padding-right: 20px;
 
       @include mq-down(sm) {
         font-size: rem(15)
