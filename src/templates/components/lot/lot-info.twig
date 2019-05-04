@@ -38,11 +38,11 @@
       <p class="lot__bookmarked-descr">Вы забронировали товар, деньги списаны с вашей карты. Свяжитесь с продавцом и
         заберите товар. Бронь действует в течение 10 дней, по истечении которых автоматически снимается. Как только
         получите товар, нажмите кнопку ниже.</p>
-      <button class="btn-bookmark-confirm">Подтвердить получение</button>
+      <a href="#" class="btn-bookmark-confirm">Подтвердить получение</a>
       <p class="lot__bookmarked-descr">Если вы передумали забирать товар, или продавец не выходит на связь, или продавец
         отметил, что товар передан, а на самом деле нет, отмените бронь. Мы вернем полную сумму покупки на вашу карту.
       </p>
-      <button class="btn-bookmark-cancel">Отменить бронь</button>
+      <a href="#" class="btn-bookmark-cancel">Отменить бронь</a>
       {% elseif lot.bookmarkStatus == 'delivered' %}
       <div class="lot__bookmarked-head">
         <img src="/assets/img/icons/icon-checkmark-green.svg" alt="" class="lot__bokkmarked-icon">
@@ -52,8 +52,8 @@
         опротестовать это в течение суток. Деньги не будут переданы в фонд-получатель, а мы будем разбираться, что
         случилось.</p>
       <div class="lot__bookmarked-buttons-confirm-wrapper">
-        <button class="btn-bookmark-confirm">Подтвердить получение</button>
-        <button class="btn-bookmark-cancel">Я не получал товар</button>
+        <a href="#" class="btn-bookmark-confirm">Подтвердить получение</a>
+        <a href="#" class="btn-bookmark-cancel">Я не получал товар</a>
       </div>
       {% endif %}
     </div>
