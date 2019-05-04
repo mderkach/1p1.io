@@ -722,11 +722,13 @@
 
     &-place,
     &-fav {
+      display: block;
       padding: 10px 25px;
       max-width: 180px;
       border-radius: 96px;
       box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
       border: 2px solid;
+      text-align: center;
     }
 
     &-place {
@@ -736,6 +738,7 @@
 
       &:hover {
         background: #4f90fe;
+        color: #fff;
         border-color: #4f90fe;
       }
 
