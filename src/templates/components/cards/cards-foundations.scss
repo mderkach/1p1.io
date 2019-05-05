@@ -1,0 +1,74 @@
+.card {
+  &-foundation {
+    @extend .card-news;
+    min-height: 240px;
+
+    @include mq-down(sm) {
+      max-width: 280px !important;
+      min-height: auto;
+    }
+
+    &-head {
+      display: flex;
+      align-items: center;
+      padding: 30px 30px 20px;
+      border-bottom: 1px solid #ebeff4;
+
+      @include mq-down(sm) {
+        padding: 25px 20px;
+      }
+    }
+
+    &-body {
+      @extend .card-news-body;
+      height: 100%;
+    }
+
+    &-img {
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+      border-radius: 50%;
+      border: solid 1px rgba(0, 0, 0, 0.1);
+      margin-right: 25px;
+
+      @include mq-down(sm) {
+        width: 60px;
+        height: 60px;
+        margin-right: 15px;
+      }
+    }
+
+    &-name {
+      font-size: rem(19);
+      font-weight: 500;
+      line-height: normal;
+      color: #000;
+
+      &:hover {
+        color: #000;
+      }
+
+      @include mq-down(sm) {
+        font-size: rem(15);
+      }
+    }
+
+    &-descr {
+      flex: 1 0 100%;
+      font-size: rem(14);
+      font-weight: 500;
+      line-height: normal;
+      color: #4b5769;
+      margin-bottom: 8px;
+    }
+
+    &-place {
+      font-size: rem(13);
+      font-weight: 500;
+      line-height: normal;
+      color: #79879e;
+      margin-bottom: 0;
+    }
+  }
+}

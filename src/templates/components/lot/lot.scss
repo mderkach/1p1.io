@@ -549,6 +549,11 @@
 
         &-content {
           padding: 25px 0 20px;
+          display: none;
+
+          &.is-active {
+            display: block;
+          }
         }
 
         &-descr {
@@ -557,6 +562,40 @@
           line-height: 1.33;
           color: #4b5769;
           margin-bottom: 0;
+        }
+      }
+    }
+
+    &--table {
+      padding: 0;
+      list-style: none;
+
+      &-item {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 10px;
+        border-bottom: 1px solid #ebeff4;
+
+        &-head,
+        &-descr {
+          display: block;
+          padding: 5px 0;
+          font-size: rem(15);
+          font-weight: 500;
+          line-height: 1.33;
+          color: #4b5769;
+
+          @include mq-down(md) {
+            flex: 1 0 100%;
+          }
+        }
+
+        &-head {
+          flex: 1 0 35%;
+        }
+
+        &-descr {
+          flex: 1 0 65%;
         }
       }
     }

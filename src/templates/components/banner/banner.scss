@@ -41,9 +41,13 @@
     }
 
     @include mq-down(md) {
-      margin-left: 95px;
+      margin-left: 90px;
       margin-bottom: 10px;
       font-size: rem(24);
+    }
+
+    @include mq-down(sm) {
+      font-size: rem(17);
     }
   }
 

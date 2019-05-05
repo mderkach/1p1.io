@@ -1,5 +1,5 @@
 {% extends "../layout/account.twig" %}
-{% set page_title = "profile private settings" %}
+{% set page_title = "acount private" %}
 {% set headerType = "--white --no-toggle" %}
 {% set userStatus = "--authorised" %}
 {% set pageType = 'private' %}
@@ -234,14 +234,26 @@
     ]
   },
 ] %}
+
 {% set accountInfo = [{
 	avatar: '/assets/img/account/account-avatar.jpg',
 	link: '#',
 	name: 'Квартет И',
 	donations: '0',
 	totalFunds: '0',
-	editable: true
+	editable: true,
 }] %}
+
+{% set foundationInfo = [{
+	avatar: '/assets/img/account/foundation-avatar.jpg',
+	link: '#',
+	name: 'Благотворительный фонд "Образ жизни"',
+	donations: 500,
+	totalFunds: 1,
+	editable: false,
+}] %}
+
+
 {% set mobileMenu = [
 	{
 	link: '#',
@@ -268,21 +280,23 @@
   type: 'dropdown__account-wrapper',
   imgClass: 'dropdown__account-avatar',
   items: [
-  { link: '#', caption: 'Настройки профиля'},
-  { link: '#', caption: 'Изменить email'},
-  { link: '#', caption: 'Изменить пароль'},
-  { link: '#', caption: 'Выйти'},
-  ]
-}, {
-	type: 'dropdown__banner-edit',
-	items: [
-  { link: '#', caption: 'Выбрать цвет'},
-  { link: '#', caption: 'Выбрать фотографию'},
-  ]
-} %}
+    { link: '#profile-settings', caption: 'Настройки профиля', isModalTrigger: true,},
+    { link: '#', caption: 'Изменить email'},
+    { link: '#', caption: 'Изменить пароль'},
+    { link: '#', caption: 'Выйти'},
+  ],
+  }, 
+  {
+    type: 'dropdown__banner-edit',
+    items: [
+      { link: '#', caption: 'Выбрать цвет'},
+      { link: '#', caption: 'Выбрать фотографию'},
+    ]
+  } 
+%}
 {% set banner = [
 	{
-		name: 'Квартет И',
+		name: 'Благотворительный фонд <br>"Образ жизни"',
 		editable: true,
 	},
 	] 
@@ -295,25 +309,22 @@
 		type: 'account',
 		items: [
 			{
-				link: '#ads',
-				isActive: true,
-				descr: 'Объявления',
-				isAds: true,
-				adsCount: ads.length,
-			},
-			{
 				link: '#about',
-				isActive: false,
-				descr: 'О звезде',
+				isActive: true,
+				descr: 'Описание',
 				isAds: false,
-				adsCount: ads.length,
 			},
 			{
-				link: '#funds',
+				link: '#projects',
 				isActive: false,
-				descr: 'Благотворительные фонды',
+				descr: 'Проекты',
 				isAds: false,
-				adsCount: ads.length,
+			},
+      {
+				link: '#bookmarks',
+				isActive: false,
+				descr: 'Вещи в пользу фонда',
+				isAds: false,
 			},
 		],
 	}
@@ -322,103 +333,46 @@
 {% set tabs = [
 	{
 		type: 'accountInfo__content',
-		id: 'ads',
+		id: 'about',
 		setActive: true
 	},
 	{
 		type: 'accountInfo__content',
-		id: 'about',
+		id: 'projects',
 		setActive: false
 	},
-	{
+  {
 		type: 'accountInfo__content',
-		id: 'funds',
+		id: 'bookmarks',
 		setActive: false
 	},
 ] %}
+
 {% set aboutStar = {
-	descr: 'Комедии "Квартета И" знают почти наизусть и политики, и олигархи, и студенты, и врачи, и даже гламурные барышни с
-	маленькими собачками под мышкой. Искренний чистый юмор стирает границы между богатым и бедным, неудачником и тем,
-	кому постоянно везет. На спектаклях "Квартета И" все равны. "День радио", "День выборов", "Разговоры мужчин среднего
-	возраста о женщинах, кино и алюминиевых вилках" - современные хиты не только театра, но жизни в целом. А герои
-	Леонида Бараца, Ростислава Хаита, Александра Демидова и Камиля Ларина давно стали нарицательными. Им подражают, на
-	них равняются, их любят - как любят только настоящих заядлых друзей. Им доверяют и ждут каждой премьеры как события.',
-	editable: true,
+	descr: 'БФ "Образ жизни" развивает в людях добрые привычки: донорство, зоозащита, помощь нуждающимся, просвещение и ЗОЖ. Помимо адресной помощи у нас много системных проектов, которые помогают изменить ситуацию коренным образом. Делать добрые дела очень просто и естественно для человека, для этого не нужно сверхусилий или сверхвозможностей! Присоединяйтесь к нам!',
+	editable: false,
+  isFoundation: true,
+  link: '#',
 }
 %}
 
-{% set cardsFoundations = [
-	{
-		logo: '/assets/img/funds/foundation.jpg',
-		name: 'Charitable foundation Masonic',
-		descr: 'Помощь больным несовершенным остеогенезом и другой костной патологией',
-		donations: '2 736',
-	},
-	{
-		logo: '/assets/img/funds/foundation.jpg',
-		name: 'Charitable foundation Masonic',
-		descr: 'Помощь больным несовершенным остеогенезом и другой костной патологией',
-		donations: '2 736',
-	},
-	{
-		logo: '/assets/img/funds/foundation.jpg',
-		name: 'Charitable foundation Masonic',
-		descr: 'Помощь больным несовершенным остеогенезом и другой костной патологией',
-		donations: '2 736',
-	},
-	{
-		logo: '/assets/img/funds/foundation.jpg',
-		name: 'Charitable foundation Masonic',
-		descr: 'Помощь больным несовершенным остеогенезом и другой костной патологией',
-		donations: '2 736',
-	},
-	{
-		logo: '/assets/img/funds/foundation.jpg',
-		name: 'Charitable foundation Masonic',
-		descr: 'Помощь больным несовершенным остеогенезом и другой костной патологией',
-		donations: '2 736',
-	},
-	{
-		logo: '/assets/img/funds/foundation.jpg',
-		name: 'Charitable foundation Masonic',
-		descr: 'Помощь больным несовершенным остеогенезом и другой костной патологией',
-		donations: '2 736',
-	},
-	{
-		logo: '/assets/img/funds/foundation.jpg',
-		name: 'Charitable foundation Masonic',
-		descr: 'Помощь больным несовершенным остеогенезом и другой костной патологией',
-		donations: '2 736',
-	},
-	{
-		logo: '/assets/img/funds/foundation.jpg',
-		name: 'Charitable foundation Masonic',
-		descr: 'Помощь больным несовершенным остеогенезом и другой костной патологией',
-		donations: '2 736',
-	},
-	{
-		logo: '/assets/img/funds/foundation.jpg',
-		name: 'Charitable foundation Masonic',
-		descr: 'Помощь больным несовершенным остеогенезом и другой костной патологией',
-		donations: '2 736',
-	},
-	{
-		logo: '/assets/img/funds/foundation.jpg',
-		name: 'Charitable foundation Masonic',
-		descr: 'Помощь больным несовершенным остеогенезом и другой костной патологией',
-		donations: '2 736',
-	},
-	]
-%}
+{% set projects = [
+  {
+    header: '"ПРОФЛАБ"',
+    descr: 'Взврывное повышение квалификации специалистов детских домов-интернатов и Центров содействия семейному воспитанию. Упор на практические действия, разрабатываемые для каждой конкретной организации. Мощное внедрение новейших технологий психолого-педагогического сопровождения особых детей, применение эффективного опыта ведущих специалистов и учреждений Москвы и Санкт-Петербурга. Отзывы прошедших разнятся от благодарных до восторженных. 40-50 специалистов – проходят профподготовку в рамках одной программы. 100-400 детей получают качественно иную помощь, после каждой программы ПРОФЛАБ',
+    link: '#',
+  },
 
-{% block video %}
-<script>
-  var popup = document.querySelector('#profile-settings');
-  
-  document.addEventListener('DOMContentLoaded', function(){
-    document.body.classList.add('modal-open');
-    popup.classList.add('is-active');
-  });
-  
-</script>
+] %}
+
+{% block accountInfo %}
+  {% embed "../components/screen/screen__accountInfo.twig" %}
+    {% block accountProfileCard %}
+      {% include "../components/cards/card-account--foundation.twig" %}
+    {% endblock %}
+    {% block accountTabs %}
+      {% include "../components/menu-bar/menu-bar.twig" %}
+      {% include "../components/tabs/tabs-account.twig" %}
+    {% endblock %}
+  {% endembed %}
 {% endblock %}

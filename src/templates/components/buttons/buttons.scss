@@ -254,6 +254,7 @@
     background: transparent;
 
     &-confirm {
+      display: inline-block;
       width: auto;
       padding: 15px 25px;
       margin-bottom: 25px;
@@ -269,15 +270,18 @@
       &:hover {
         border-color: #8bc54d;
         background-color: #8bc54d;
+        color: #fff;
       }
 
       &:focus {
         border-color: #e9ff00;
         background-color: #84be46;
+        color: #fff;
       }
     }
 
     &-cancel {
+      display: inline-block;
       width: auto;
       padding: 10px 25px;
       background: #fff;
@@ -718,11 +722,13 @@
 
     &-place,
     &-fav {
+      display: block;
       padding: 10px 25px;
       max-width: 180px;
       border-radius: 96px;
       box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
       border: 2px solid;
+      text-align: center;
     }
 
     &-place {
@@ -732,6 +738,7 @@
 
       &:hover {
         background: #4f90fe;
+        color: #fff;
         border-color: #4f90fe;
       }
 
@@ -813,6 +820,63 @@
       &:disabled {
         opacity: .5;
       }
+    }
+  }
+
+  &-fund {
+    margin-left: auto;
+    margin-right: 20px;
+    width: 100%;
+    max-width: 220px;
+    padding: 15px 30px;
+    border-radius: 96px;
+    border: none;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+    background-color: #4489ff;
+    font-size: rem(19);
+    font-weight: 500;
+    line-height: normal;
+    text-align: center;
+    color: #fff;
+
+    &:hover {
+      background: #4f90fe;
+    }
+
+    @include mq-down(sm) {
+      flex: 1 0 100%;
+      width: 100%;
+      max-width: 100%;
+      margin-top: 20px;
+      padding: 10px 0;
+      font-size: rem(14);
+    }
+  }
+
+  &-foundationSite {
+    margin-top: 25px;
+    width: 100%;
+    max-width: 160px;
+    border-radius: 96px;
+    border: solid 1px #4489ff;
+    background-color: #fff;
+    font-size: rem(14);
+    font-weight: 500;
+    line-height: normal;
+    text-align: center;
+    color: #4489ff;
+    padding: 10px 20px;
+
+    &:hover {
+      text-decoration: none;
+      background-color: #4f90fe;
+      border-color: #4f90fe;
+      color: #fff;
+    }
+
+
+    @include mq-down(sm) {
+      min-width: 100%;
     }
   }
 }

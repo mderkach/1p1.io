@@ -1,0 +1,15 @@
+<div class="card-bookmarks__slider-container">
+  <div class="card-bookmarks__slider-wrapper">
+    {% block slides %}
+      <img alt="" class="card-bookmarks-img" src="{{ item }}">
+    {% endblock %}
+  </div>
+  <div class="card-bookmarks__slider-navigation">
+    <div class="card-bookmarks__slider-button-prev">
+      <img alt="" src="/assets/img/icons/arrow-button-left.svg">
+    </div>
+    <div class="card-bookmarks__slider-button-next">
+      <img alt="" src="/assets/img/icons/arrow-button-right.svg">
+    </div>
+  </div>
+</div>

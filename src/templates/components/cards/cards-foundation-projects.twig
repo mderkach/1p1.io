@@ -1,0 +1,21 @@
+{% if projects %}
+  {% for project in projects %}
+    <div class="card-about">
+      <p class="card-about-header">
+        {{ project.header }}
+      </p>
+      <p class="card-about-descr">
+        {{ project.descr }}
+      </p>
+      <a class="card-about-link" href="{{ project.link }}">Подробнее</a>
+      {% if project.editable %}
+        <div class="ads__buttons-wrapper">
+          <button class="btn-edit-ads">
+            <img alt="" src="/assets/img/icons/icon-edit.svg">
+          </button>
+        </div>
+      {% endif %}
+    </div>
+  {% endfor %}
+
+{% endif %}

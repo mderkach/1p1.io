@@ -326,6 +326,18 @@ module.exports = {
       filename: 'profile-private-settings--mobile.html',
       template: `${PATHS.src}/templates/pages/profile-private-settings--mobile.twig`,
     }),
+    new HtmlWebpackPlugin({
+      filename: 'profile-private.html',
+      template: `${PATHS.src}/templates/pages/profile-private.twig`,
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'foundations.html',
+      template: `${PATHS.src}/templates/pages/foundations.twig`,
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'foundations-profile.html',
+      template: `${PATHS.src}/templates/pages/foundations-profile.twig`,
+    }),
     new CopyWebpackPlugin([
       { from: `${PATHS.src}/img`, to: `${PATHS.assets}img` },
       { from: `${PATHS.src}/fonts`, to: `${PATHS.assets}fonts` },

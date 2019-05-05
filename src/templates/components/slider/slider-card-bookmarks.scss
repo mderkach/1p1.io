@@ -1,0 +1,66 @@
+.card {
+  &-bookmarks {
+    &__slider {
+
+      &-container {
+        position: relative;
+        width: 100%;
+      }
+
+      &-wrapper {
+        display: flex;
+        width: 100%;
+        max-height: 235px;
+      }
+
+      &-navigation {
+        position: absolute;
+        left: 20px;
+        bottom: 20px;
+        display: flex;
+
+        @include mq-down(sm) {
+          width: calc(100% - 20px);
+          left: 10px;
+          right: 10px;
+          top: 50%;
+          bottom: unset;
+          justify-content: space-between;
+        }
+      }
+
+      &-button {
+
+        &-prev,
+        &-next {
+          width: 24px;
+          height: 24px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background: #fff;
+
+          img {
+            width: 20px;
+            height: 20px;
+          }
+
+          &.--disabled {
+            opacity: .5;
+            pointer-events: none;
+          }
+
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+    }
+
+    &-img {
+      display: block;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+}

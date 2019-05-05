@@ -1,7 +1,8 @@
-.card{
+.card {
   &-about {
     @extend .card;
     padding: 35px 50px 45px 40px;
+    margin-bottom: 20px;
     border: none;
     width: 100%;
     max-width: 740px;
@@ -11,12 +12,39 @@
       padding: 18px 20px;
       width: 100%;
     }
+
+    &-header {
+      font-size: rem(24);
+      font-weight: 500;
+      line-height: 0.92;
+      color: #4b5769;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+
+      @include mq-down(sm) {
+        font-size: rem(17);
+        margin-bottom: 10px;
+      }
+    }
+
     &-descr {
       font-size: rem(15);
       font-weight: 500;
       line-height: 1.33;
       color: #444a59;
       margin-bottom: 0;
+    }
+
+    &-link {
+      font-size: rem(15);
+      font-weight: 500;
+      line-height: 1.33;
+      color: #4489ff;
+      margin-top: 25px;
+
+      @include mq-down(sm) {
+        margin-top: 10px;
+      }
     }
   }
 }

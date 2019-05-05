@@ -1,0 +1,27 @@
+{% import "../form/form-popup-macro.twig" as inputs %}
+<div class="tabs-deals-select-wrapper">
+  <p class="tabs-deals-select-descr">Показать операции:</p>
+  <div class="tabs-deals-select-container">
+    <div class="tabs-deals-select-outer">
+      <select class="tabs-deals-select" name="sell-type">
+        <option value="all">Все</option>
+        <option selected value="buy">Покупки</option>
+        <option value="sell">Продажи</option>
+      </select>
+      <img class="form__popup-chevronSelect" src="/assets/img/icons/icon-chevron-down.svg" alt="">
+    </div>
+    <div class="tabs-deals-select-outer">
+      <select class="tabs-deals-select" name="status">
+        <option value="all">Все</option>
+        <option selected value="delivered">Завершенные</option>
+        <option value="placed">Размещенные</option>
+        <option value="sended">Отправленные</option>
+        <option value="canceled">Отмененные</option>
+      </select>
+      <img class="form__popup-chevronSelect" src="/assets/img/icons/icon-chevron-down.svg" alt="">
+    </div>
+  </div>
+</div>
+<div class="tabs-deals-cards-wrapper">
+  {% include "../cards/cards-deals.twig" %}
+</div>

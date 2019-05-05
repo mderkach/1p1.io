@@ -1,5 +1,5 @@
 {% extends "../layout/account.twig" %}
-{% set page_title = "profile private settings" %}
+{% set page_title = "acount private" %}
 {% set headerType = "--white --no-toggle" %}
 {% set userStatus = "--authorised" %}
 {% set pageType = 'private' %}
@@ -234,14 +234,111 @@
     ]
   },
 ] %}
+
 {% set accountInfo = [{
 	avatar: '/assets/img/account/account-avatar.jpg',
 	link: '#',
 	name: 'Квартет И',
 	donations: '0',
 	totalFunds: '0',
-	editable: true
+	editable: true,
+  deals: [
+    {
+      status: 'delivered',
+      isDonation: true,
+      img: '/assets/img/lot/mb.jpg',
+      price: 5000,
+      name: 'Motherboard',
+      donation: {
+        amount: 5000,
+        fundName: 'Фонд Борьбы с Лейкемией',
+      },
+      date: '12 декабря 2018',
+      buyer: {
+        img: '/assets/img/lots/celebrities-profile-avatar-2.jpg',
+        name: 'Имя Фамилия',
+      }
+    },
+    {
+      status: 'canceled',
+      isDonation: false,
+      type: 'buy',
+      img: '/assets/img/lot/mb.jpg',
+      price: 5000,
+      name: 'Motherboard',
+      donation: {
+        amount: 5000,
+        fundName: 'Фонд Борьбы с Лейкемией',
+      },
+      date: '12 декабря 2018',
+      buyer: {
+        img: '/assets/img/lots/celebrities-profile-avatar-2.jpg',
+        name: 'Имя Фамилия',
+      }
+    },
+    {
+      status: 'placed',
+      isDonation: false,
+      type: 'sell',
+      img: '/assets/img/lot/mb.jpg',
+      price: 5000,
+      name: 'Motherboard',
+      donation: {
+        amount: 5000,
+        fundName: 'Фонд Борьбы с Лейкемией',
+      },
+      date: '12 декабря 2018',
+      buyer: {
+        img: '/assets/img/lots/celebrities-profile-avatar-2.jpg',
+        name: 'Имя Фамилия',
+      }
+    },
+    {
+      status: 'sended',
+      isDonation: false,
+      type: 'sell',
+      img: '/assets/img/lot/mb.jpg',
+      price: 5000,
+      name: 'Motherboard',
+      donation: {
+        amount: 5000,
+        fundName: 'Фонд Борьбы с Лейкемией',
+      },
+      date: '12 декабря 2018',
+      buyer: {
+        img: '/assets/img/lots/celebrities-profile-avatar-2.jpg',
+        name: 'Имя Фамилия',
+      }
+    },
+  ],
+  bookmarks: [
+    {
+      link: '#',
+      name: 'Нарядный голубой свитер',
+      price: 736,
+      charity: 90,
+      images: ["/assets/img/bookmarks/1.jpg","/assets/img/bookmarks/2.jpg","/assets/img/bookmarks/3.jpg"],
+      buyer: {
+        img: '/assets/img/lots/celebrities-profile-avatar-2.jpg',
+        name: 'NAME',
+        place: 'MSK',
+      }
+    },
+    {
+      link: '#',
+      name: 'Нарядный голубой свитер',
+      price: 736,
+      charity: 90,
+      images: ["/assets/img/bookmarks/1.jpg","/assets/img/bookmarks/2.jpg","/assets/img/bookmarks/3.jpg"],
+      buyer: {
+        img: '/assets/img/lots/celebrities-profile-avatar-2.jpg',
+        name: 'NAME',
+        place: 'MSK',
+      }
+    },
+  ],
 }] %}
+
 {% set mobileMenu = [
 	{
 	link: '#',
@@ -264,22 +361,26 @@
 		description: 'Инвесторам'
 	},
 ] %}
+
 {% set dropdown = {
   type: 'dropdown__account-wrapper',
   imgClass: 'dropdown__account-avatar',
   items: [
-  { link: '#', caption: 'Настройки профиля'},
-  { link: '#', caption: 'Изменить email'},
-  { link: '#', caption: 'Изменить пароль'},
-  { link: '#', caption: 'Выйти'},
-  ]
-}, {
-	type: 'dropdown__banner-edit',
-	items: [
-  { link: '#', caption: 'Выбрать цвет'},
-  { link: '#', caption: 'Выбрать фотографию'},
-  ]
-} %}
+    { link: '#profile-settings', caption: 'Настройки профиля', isModalTrigger: true,},
+    { link: '#', caption: 'Изменить email'},
+    { link: '#', caption: 'Изменить пароль'},
+    { link: '#', caption: 'Выйти'},
+  ],
+  }, 
+  {
+    type: 'dropdown__banner-edit',
+    items: [
+      { link: '#', caption: 'Выбрать цвет'},
+      { link: '#', caption: 'Выбрать фотографию'},
+    ]
+  } 
+%}
+
 {% set banner = [
 	{
 		name: 'Квартет И',
@@ -287,7 +388,30 @@
 	},
 	] 
 %}
-{% set ads = [ 
+
+{% set ads = [
+	{
+		img: '/assets/img/lots/account-public-ads-1.jpg',
+		price: '3 000',
+		name: 'Афиша фильма «День выборов 2» с автографами',
+		place: 'Москва',
+		fundDonation: '3 000',
+		fundName: 'БФ "Бюро добрых дел"',
+		onauction: true,
+		bookmarked: false,
+		editable: true
+	},
+	{
+		img: '/assets/img/lots/account-public-ads-1.jpg',
+		price: '78 000',
+		name: 'Афиша',
+		place: 'Кукуево',
+		fundDonation: '3 000',
+		fundName: 'БФ "Бюро добрых дел"',
+		onauction: false,
+		bookmarked: true,
+		editable: true
+	},
 ] %}
 
 {% set menubar = [  
@@ -296,24 +420,40 @@
 		items: [
 			{
 				link: '#ads',
-				isActive: true,
+				isActive: false,
 				descr: 'Объявления',
 				isAds: true,
 				adsCount: ads.length,
 			},
 			{
-				link: '#about',
+				link: '#deeds',
 				isActive: false,
-				descr: 'О звезде',
+				descr: 'Добрые дела',
 				isAds: false,
-				adsCount: ads.length,
+			},
+      {
+				link: '#reviews',
+				isActive: false,
+				descr: 'Отзывы',
+				isAds: false,
 			},
 			{
 				link: '#funds',
 				isActive: false,
 				descr: 'Благотворительные фонды',
 				isAds: false,
-				adsCount: ads.length,
+			},
+      {
+				link: '#deals',
+				isActive: false,
+				descr: 'Сделки и операции',
+				isAds: false,
+			},
+      {
+				link: '#bookmarks',
+				isActive: true,
+				descr: 'Закладки',
+				isAds: false,
 			},
 		],
 	}
@@ -323,19 +463,35 @@
 	{
 		type: 'accountInfo__content',
 		id: 'ads',
-		setActive: true
-	},
-	{
-		type: 'accountInfo__content',
-		id: 'about',
 		setActive: false
 	},
 	{
+		type: 'accountInfo__content',
+		id: 'deeds',
+		setActive: false
+	},
+	{
+		type: 'accountInfo__content',
+		id: 'reviews',
+		setActive: false
+	},
+  {
 		type: 'accountInfo__content',
 		id: 'funds',
 		setActive: false
 	},
+	{
+		type: 'accountInfo__content',
+		id: 'deals',
+		setActive: false
+	},
+  {
+		type: 'accountInfo__content',
+		id: 'bookmarks',
+		setActive: true
+	},
 ] %}
+
 {% set aboutStar = {
 	descr: 'Комедии "Квартета И" знают почти наизусть и политики, и олигархи, и студенты, и врачи, и даже гламурные барышни с
 	маленькими собачками под мышкой. Искренний чистый юмор стирает границы между богатым и бедным, неудачником и тем,
@@ -411,14 +567,41 @@
 	]
 %}
 
-{% block video %}
-<script>
-  var popup = document.querySelector('#profile-settings');
-  
-  document.addEventListener('DOMContentLoaded', function(){
-    document.body.classList.add('modal-open');
-    popup.classList.add('is-active');
-  });
-  
-</script>
-{% endblock %}
+{% set deeds = [
+  {
+    img: '/assets/img/deeds/1.jpg',
+    value: 1600,
+    priceTag: 'P.',
+    name: 'Николай Староглинищевский',
+    fundImg: '/assets/img/funds/foundation.jpg',
+    fundName: 'Фонд Борьбы с Лейкемией',
+    link: '#',
+  },
+   {
+    img: '/assets/img/deeds/2.jpg',
+    value: 900,
+    priceTag: 'P.',
+    name: 'Николай Староглинищевский',
+    fundImg: '/assets/img/funds/foundation.jpg',
+    fundName: 'Фонд Борьбы с Лейкемией',
+    link: '#',
+  },
+   {
+    img: '/assets/img/deeds/3.jpg',
+    value: 20,
+    priceTag: 'P.',
+    name: 'Николай Староглинищевский',
+    fundImg: '/assets/img/funds/foundation.jpg',
+    fundName: 'Фонд Борьбы с Лейкемией',
+    link: '#',
+  },
+   {
+    img: '/assets/img/deeds/4.jpg',
+    value: 400,
+    priceTag: 'P.',
+    name: 'Николай Староглинищевский',
+    fundImg: '/assets/img/funds/foundation.jpg',
+    fundName: 'Фонд Борьбы с Лейкемией',
+    link: '#',
+  }
+] %}

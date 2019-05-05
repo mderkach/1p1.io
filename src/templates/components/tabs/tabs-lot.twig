@@ -1,10 +1,31 @@
 <div class="lot__details--tabs">
-    <div class="lot__details--tabs-item-wrapper">
-      <a href="#descr" class="lot__details--tabs-item tab__switcher is-active">
-        Описание
-      </a>
-    </div>
-    <div class="lot__details--tabs-item-content tab__content" id="descr">
-      <p class="lot__details--tabs-item-descr">{{ lot.descr }}</p>
-    </div>
+  <div class="lot__details--tabs-item-wrapper">
+    <a class="lot__details--tabs-item tab__switcher is-active" href="#descr">
+      Описание
+    </a>
+    {# admin tab link #}
+    <a class="lot__details--tabs-item tab__switcher" href="#admin">
+      Админ инфо
+    </a>
+    {# admin tab link #}
   </div>
+  <div class="lot__details--tabs-item-content tab__content is-active" id="descr">
+    <p class="lot__details--tabs-item-descr">{{ lot.descr }}</p>
+  </div>
+  {# admin tab #}
+  <div class="lot__details--tabs-item-content tab__content" id="admin">
+    {# admin table #}
+    <ul class="lot__details--table">
+      <li class="lot__details--table-item">
+        <span class="lot__details--table-item-head">Раз</span>
+        <span class="lot__details--table-item-descr">два</span>
+      </li>
+      <li class="lot__details--table-item">
+        <span class="lot__details--table-item-head">Раз</span>
+        <span class="lot__details--table-item-descr">два</span>
+      </li>
+    </ul>
+    {# admin table #}
+  </div>
+  {# admin tab #}
+</div>

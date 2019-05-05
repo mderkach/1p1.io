@@ -7,6 +7,10 @@
     // @include mq-down(sm) {
     //   padding-top: 50px;
     // }
+
+    @include mq-down(sm) {
+      margin-top: 50px;
+    }
   }
 }
 

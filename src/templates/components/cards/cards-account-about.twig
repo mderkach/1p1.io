@@ -3,6 +3,9 @@
     <p class="card-about-descr">
       {{ aboutStar.descr }}
     </p>
+    {% if aboutStar.isFoundation %}
+      <a href="{{ aboutStar.link }}" class="btn-foundationSite">Перейти на сайт</a>
+    {% endif %}
     {% if aboutStar.editable %}
       <div class="ads__buttons-wrapper">
         <button class="btn-edit-ads">

@@ -28,6 +28,10 @@ if (catalogueTrigger) {
         catalogueTrigger.classList.remove('is-active');
         catalogue.classList.remove('is-show');
       });
+      document.querySelector('.logo__wrapper').addEventListener('mouseover', function(){
+        catalogueTrigger.classList.remove('is-active');
+        catalogue.classList.remove('is-show');
+      });
     }
   }
 }
