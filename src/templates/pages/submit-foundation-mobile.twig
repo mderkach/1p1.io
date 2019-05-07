@@ -1,0 +1,75 @@
+{% set page_title = "sell item mobile" %}
+{% set headerType = "--white --no-toggle" %}
+{% set accountInfo = [{
+	avatar: '/assets/img/account/account-avatar.jpg',
+	link: '#',
+	name: 'Квартет И',
+	donations: '0',
+	totalFunds: '0',
+	editable: false
+}] %}
+{% set mobileMenu = [
+	{
+	link: '#',
+	description: 'Объявления'
+	}, 
+	{
+		link: '#',
+		description: 'Как это работает'
+	},
+	{
+		link: '#',
+		description: 'Фонды'
+	},
+	{
+		link: '#',
+		description: 'Новости'
+	},
+	{
+		link: '#',
+		description: 'Инвесторам'
+	},
+] %}
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+  <meta charset="utf-8">
+  <!-- <base href="/"> -->
+  <title>{{ page_title }}</title>
+  <meta name="description" content="">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- Template Basic Images Start -->
+  <meta property="og:image" content="path/to/image.jpg">
+  <link rel="icon" href="#">
+  <link rel="apple-touch-icon" sizes="180x180" href="#">
+  <!-- Template Basic Images End -->
+
+  <!-- Custom Browsers Color Start -->
+  <meta name="theme-color" content="#4489ff">
+  <!-- Custom Browsers Color End -->
+</head>
+
+<body>
+  {% block header %}
+    {% include "../components/header/header.twig" %}
+  {% endblock %}
+  {% block body %}
+    {% block popupSellItem %}
+      {% include "../components/form/form-foundation-mobile.twig" %}
+    {% endblock %}
+  {% endblock %}
+  {% block footerMain %}
+    {% block blockchain %}{% endblock %}
+    {% block footer %}{% endblock %}
+    {% block mobileMenu %}
+      {% include "../components/mobile-menu/mobile-menu.twig" %}
+    {% endblock %}
+    {% block popup %}{% endblock %}
+    {% block video %}{% endblock %}
+  {% endblock %}
+</body>

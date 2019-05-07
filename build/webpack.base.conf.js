@@ -338,6 +338,10 @@ module.exports = {
       filename: 'foundations-profile.html',
       template: `${PATHS.src}/templates/pages/foundations-profile.twig`,
     }),
+    new HtmlWebpackPlugin({
+      filename: 'submit-foundation-mobile.html',
+      template: `${PATHS.src}/templates/pages/submit-foundation-mobile.twig`,
+    }),
     new CopyWebpackPlugin([
       { from: `${PATHS.src}/img`, to: `${PATHS.assets}img` },
       { from: `${PATHS.src}/fonts`, to: `${PATHS.assets}fonts` },
