@@ -12,6 +12,7 @@
     {% if sellType == 'auction' %}
     {% include "./lot-bet-details.twig" %}
     {% include "./lot-bet-place.twig" %}
+    {% include "./lot-bet--notify.twig" %}
     {% else %}
     {% if lot.isBookmarked == false %}
     <div class="lot__bet-buttons-wrapper --standalone">

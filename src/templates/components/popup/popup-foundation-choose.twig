@@ -1,0 +1,113 @@
+{% set foundations = [
+  {
+    link: '#',
+    img: '/assets/img/funds/foundation.jpg',
+    name: 'Фонд "ОРБИ"',
+    descr: 'Помощь людям после инсульта, профилактика инсульта',
+    place: 'Москва',
+  },
+  {
+    link: '#',
+    img: '/assets/img/funds/foundation.jpg',
+    name: 'Благотворительный фонд "Арифметика добра"',
+    descr: 'Помощь детям-сиротам',
+    place: 'Москва',
+  },
+  {
+    link: '#',
+    img: '/assets/img/funds/foundation.jpg',
+    name: '"Бессмертный полк"',
+    descr: 'Культура',
+    place: 'Москва',
+  },
+  {
+    link: '#',
+    img: '/assets/img/funds/foundation.jpg',
+    name: 'Фонд "ОРБИ"',
+    descr: 'Помощь людям после инсульта, профилактика инсульта',
+    place: 'Москва',
+  },
+  {
+    link: '#',
+    img: '/assets/img/funds/foundation.jpg',
+    name: 'Благотворительный фонд "Арифметика добра"',
+    descr: 'Помощь детям-сиротам',
+    place: 'Москва',
+  },
+  {
+    link: '#',
+    img: '/assets/img/funds/foundation.jpg',
+    name: '"Бессмертный полк"',
+    descr: 'Культура',
+    place: 'Москва',
+  },
+  {
+    link: '#',
+    img: '/assets/img/funds/foundation.jpg',
+    name: '"Бессмертный полк"',
+    descr: 'Культура',
+    place: 'Москва',
+  },
+  {
+    link: '#',
+    img: '/assets/img/funds/foundation.jpg',
+    name: '"Бессмертный полк"',
+    descr: 'Культура',
+    place: 'Москва',
+  },
+] %}
+
+<div class="popup-edit__background" id="choose-fund">
+  <div class="popup-foundation-choose__wrapper">
+    <div class="popup-foundation-choose">
+      <div class="popup-foundation-choose__inner">
+        <h3 class="popup-edit-header">Благотворительный фонд</h3>
+        <form class="popup-foundation-choose__cards">
+          {% if foundations %}
+            {% for item in foundations %}
+              {# loop.index замените на необходиимую инфу!!!!!! #}
+              <label class="popup-foundation-choose__label" for="foundation-{{ loop.index }}">
+                <input class="popup-foundation-choose__checkbox" id="foundation-{{ loop.index }}" name="foundation" type="radio">
+                <div class="card-foundation">
+                  <div class="card-foundation-head">
+                    <a class="card-foundation-img__wrapper" href="{{ item.link }}">
+                      <img alt="" class="card-foundation-img" src="{{ item.img }}">
+                      <a class="card-foundation-name" href="{{ item.link }}">{{ item.name }}</a>
+                    </a>
+                  </div>
+                  <div class="card-foundation-body">
+                    <p class="card-foundation-descr">{{ item.descr}}</p>
+                    <p class="card-foundation-place">{{ item.place }}</p>
+                  </div>
+                </div>
+              </label>
+            {% endfor %}
+          {% endif %}
+        </form>
+      </div>
+      <div class="popup-foundation-choose__footer">
+        <a class="popup-edit-reset" href="#">Отменить</a>
+        <input class="popup-edit-submit" type="submit" value="Выбрать">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="popup-edit__background" id="choose-fund2">
+  <div class="popup-foundation-choose__wrapper">
+    <div class="popup-foundation-choose">
+      <div class="popup-foundation-choose__inner">
+        <h3 class="popup-edit-header">Благотворительный фонд</h3>
+        <form class="popup-foundation-choose__cards">
+          <div class="card-foundations--extended">
+          privet
+          </div>
+        </form>
+      </div>
+      <div class="popup-foundation-choose__footer">
+        <a class="popup-edit-reset" href="#">Отменить</a>
+        <input class="popup-edit-submit" type="submit" value="Выбрать">
+      </div>
+    </div>
+  </div>
+</div>

@@ -136,6 +136,29 @@
         color: #4489ff;
         margin-top: 10px;
       }
+
+      &-choose {
+        display: block;
+        width: 100%;
+        min-width: 160px;
+        padding: 7px 10px;
+        border-radius: 96px;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+        background-color: #4489ff;
+        font-size: rem(12);
+        font-weight: 500;
+        line-height: normal;
+        text-align: center;
+        color: #fff;
+
+        &:hover {
+          cursor: pointer;
+          color: #fff;
+          background-color: #4f90fe;
+          border-color: #4f90fe;
+          text-decoration: none;
+        }
+      }
     }
 
     &-footer {
@@ -469,6 +492,7 @@
 
         @include mq-down(md) {
           width: 100%;
+          flex-wrap: wrap;
 
           .btn-lot-place {
             min-width: 220px;

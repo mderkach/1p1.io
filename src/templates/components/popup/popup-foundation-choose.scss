@@ -1,0 +1,99 @@
+.popup {
+  &-foundation {
+    &-choose {
+      position: relative;
+      width: 100%;
+      max-width: 900px;
+      height: 100%;
+      max-height: 670px;
+      border-radius: 3px;
+      box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.1);
+      background-color: #ffffff;
+
+
+      &__wrapper {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      &__inner {
+        width: 100%;
+        height: 100%;
+        padding: 50px 50px 90px;
+
+        @include mq-down(lg) {
+          max-width: 760px;
+          padding: 20px 20px 90px;
+        }
+      }
+
+      &__cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        height: 100%;
+        overflow-y: auto;
+        scrollbar-width: none;
+        padding: 0 3px 50px;
+
+        &::-webkit-scrollbar {
+          display: none;
+        }
+      }
+
+      &__footer {
+        position: absolute;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #fff;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 90px;
+        padding: 0 50px;
+        box-shadow: 0 -2px 4px 0 rgba(0, 0, 0, 0.1);
+
+        @include mq-down(md) {
+          padding: 0 20px;
+        }
+      }
+
+      &__label {
+        display: block;
+        width: 100%;
+        max-width: 380px;
+        margin: 10px 0;
+
+        @include mq-down(lg) {
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        >.card-foundation {
+          margin: 0!important;
+          max-width: 100% !important;
+        }
+      }
+  
+      &__checkbox {
+        width: 0;
+        opacity: 0;
+        z-index: -1;
+        border: 0;
+        height: 0;
+
+        &:checked {
+          ~ .card-foundation {
+            box-shadow: 0 1px 4px 0 #4489ff;
+          }
+        }
+      }
+    }
+
+    
+  }
+}
