@@ -59,10 +59,10 @@
 
 <div class="popup-edit__background" id="choose-fund">
   <div class="popup-foundation-choose__wrapper">
-    <div class="popup-foundation-choose">
+    <form class="popup-foundation-choose">
       <div class="popup-foundation-choose__inner">
         <h3 class="popup-edit-header">Благотворительный фонд</h3>
-        <form class="popup-foundation-choose__cards">
+        <div class="popup-foundation-choose__cards">
           {% if foundations %}
             {% for item in foundations %}
               {# loop.index замените на необходиимую инфу!!!!!! #}
@@ -83,31 +83,38 @@
               </label>
             {% endfor %}
           {% endif %}
-        </form>
+        </div>
       </div>
       <div class="popup-foundation-choose__footer">
         <a class="popup-edit-reset" href="#">Отменить</a>
         <input class="popup-edit-submit" type="submit" value="Выбрать">
       </div>
-    </div>
+    </form>
   </div>
 </div>
 
 <div class="popup-edit__background" id="choose-fund2">
   <div class="popup-foundation-choose__wrapper">
-    <div class="popup-foundation-choose">
+    <form class="popup-foundation-choose">
       <div class="popup-foundation-choose__inner">
-        <h3 class="popup-edit-header">Благотворительный фонд</h3>
-        <form class="popup-foundation-choose__cards">
-          <div class="card-foundations--extended">
-          privet
+        <h3 class="popup-edit-header">Получатель пожертвования</h3>
+        <div class="popup-foundation-choose__cards">
+          <input type="hidden" name="foundation" value="{# необходимая инфа по фонду #}">
+          <div class="card-foundation--extended">
+            <img alt="" class="card-foundation--extended__img" src="/assets/img/funds/foundation.jpg">
+            <div class="card-foundation--extended-body">
+              <h4 class="card-foundation--extended-name">Благотворительный фонд "Бюро добрых дел"</h4>
+              <p class="card-foundation--extended-subhead">Помощь детям-отказникам и детям-сиротам</p>
+              <p class="card-foundation--extended-descr">Благотворительный фонд "Бюро Добрых Дел" занимается социальной адаптацией детей, оставшихся без попечения родителей. Мы уделяем большое внимание творческому и физическому развитию детей, обучаем их необходимыми для взрослой жизни социальным и бытовым навыкам. Обеспечиваем детей всем необходимым для жизни и учебы.</p>
+            </div>
           </div>
-        </form>
+        </div>
+        {% include "../tabs/tabs-foundation-choose.twig" %}
       </div>
       <div class="popup-foundation-choose__footer">
         <a class="popup-edit-reset" href="#">Отменить</a>
         <input class="popup-edit-submit" type="submit" value="Выбрать">
       </div>
-    </div>
+    </form>
   </div>
 </div>
