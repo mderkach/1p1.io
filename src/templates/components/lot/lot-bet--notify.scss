@@ -1,0 +1,42 @@
+.lot {
+  &-bet {
+    &--notify {
+      width: 100%;
+      margin-top: 10px;
+      padding: 25px 30px;
+      border-radius: 8px;
+      border: solid 2px;
+      background-color: #ffffff;
+
+      @include mq-down(md) {
+        padding: 20px;
+      }
+
+      &-descr {
+        font-size: rem(15);
+        font-weight: 500;
+        line-height: 1.33;
+        letter-spacing: normal;
+        color: #4b5769;
+      }
+
+      &-link {
+        @extend .lot-bet--notify-descr;
+        color: #4489ff;
+
+        &:hover {
+          cursor: pointer;
+          color: #4489ff;
+        }
+      }
+
+      &.--error {
+        border-color: #ff6e63;
+      }
+
+      &.--warning {
+        border-color: #ffcea1;
+      }
+    }
+  }
+}

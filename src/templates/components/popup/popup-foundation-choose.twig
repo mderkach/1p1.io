@@ -1,0 +1,145 @@
+{% set foundations = [
+  {
+    link: '#',
+    img: '/assets/img/funds/foundation.jpg',
+    name: 'Фонд "ОРБИ"',
+    descr: 'Помощь людям после инсульта, профилактика инсульта',
+    place: 'Москва',
+  },
+  {
+    link: '#',
+    img: '/assets/img/funds/foundation.jpg',
+    name: 'Благотворительный фонд "Арифметика добра"',
+    descr: 'Помощь детям-сиротам',
+    place: 'Москва',
+  },
+  {
+    link: '#',
+    img: '/assets/img/funds/foundation.jpg',
+    name: '"Бессмертный полк"',
+    descr: 'Культура',
+    place: 'Москва',
+  },
+  {
+    link: '#',
+    img: '/assets/img/funds/foundation.jpg',
+    name: 'Фонд "ОРБИ"',
+    descr: 'Помощь людям после инсульта, профилактика инсульта',
+    place: 'Москва',
+  },
+  {
+    link: '#',
+    img: '/assets/img/funds/foundation.jpg',
+    name: 'Благотворительный фонд "Арифметика добра"',
+    descr: 'Помощь детям-сиротам',
+    place: 'Москва',
+  },
+  {
+    link: '#',
+    img: '/assets/img/funds/foundation.jpg',
+    name: '"Бессмертный полк"',
+    descr: 'Культура',
+    place: 'Москва',
+  },
+  {
+    link: '#',
+    img: '/assets/img/funds/foundation.jpg',
+    name: '"Бессмертный полк"',
+    descr: 'Культура',
+    place: 'Москва',
+  },
+  {
+    link: '#',
+    img: '/assets/img/funds/foundation.jpg',
+    name: '"Бессмертный полк"',
+    descr: 'Культура',
+    place: 'Москва',
+  },
+] %}
+
+<div class="popup-edit__background popup--target" id="choose-fund">
+  <div class="popup-foundation-choose__wrapper">
+    <form class="popup-foundation-choose">
+      <div class="popup-foundation-choose__inner">
+        <h3 class="popup-edit-header">Благотворительный фонд</h3>
+        <div class="popup-foundation-choose__cards">
+          {% if foundations %}
+            {% for item in foundations %}
+              {# loop.index замените на необходиимую инфу!!!!!! #}
+              <label class="popup-foundation-choose__label" for="foundation-{{ loop.index }}">
+                <input class="popup-foundation-choose__checkbox" id="foundation-{{ loop.index }}" name="foundation" type="radio">
+                <div class="card-foundation">
+                  <div class="card-foundation-head">
+                    <a class="card-foundation-img__wrapper" href="{{ item.link }}">
+                      <img alt="" class="card-foundation-img" src="{{ item.img }}">
+                      <a class="card-foundation-name" href="{{ item.link }}">{{ item.name }}</a>
+                    </a>
+                  </div>
+                  <div class="card-foundation-body">
+                    <p class="card-foundation-descr">{{ item.descr}}</p>
+                    <p class="card-foundation-place">{{ item.place }}</p>
+                  </div>
+                </div>
+              </label>
+            {% endfor %}
+          {% endif %}
+        </div>
+      </div>
+      <div class="popup-foundation-choose__footer">
+        <a class="popup-edit-reset btn--close-popup" data-modal="choose-fund" href="#choose-fund">Отменить</a>
+        <input class="popup-edit-submit" type="submit" value="Выбрать">
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="popup-edit__background popup--target" id="choose-fund2">
+  <div class="popup-foundation-choose__wrapper">
+    <form class="popup-foundation-choose">
+      <div class="popup-foundation-choose__inner">
+        <h3 class="popup-edit-header">Получатель пожертвования</h3>
+        <div class="popup-foundation-choose__cards">
+          <input type="hidden" name="foundation" value="{# необходимая инфа по фонду #}">
+          <div class="card-foundation--extended">
+            <img alt="" class="card-foundation--extended__img" src="/assets/img/funds/foundation.jpg">
+            <div class="card-foundation--extended-body">
+              <h4 class="card-foundation--extended-name">Благотворительный фонд "Бюро добрых дел"</h4>
+              <p class="card-foundation--extended-subhead">Помощь детям-отказникам и детям-сиротам</p>
+              <p class="card-foundation--extended-descr">Благотворительный фонд "Бюро Добрых Дел" занимается социальной адаптацией детей, оставшихся без попечения родителей. Мы уделяем большое внимание творческому и физическому развитию детей, обучаем их необходимыми для взрослой жизни социальным и бытовым навыкам. Обеспечиваем детей всем необходимым для жизни и учебы.</p>
+            </div>
+          </div>
+        </div>
+        {% include "../tabs/tabs-foundation-choose.twig" %}
+      </div>
+      <div class="popup-foundation-choose__footer">
+        <a class="popup-edit-reset btn--close-popup" data-modal="choose-fund2" href="#choose-fund2">Отменить</a>
+        <input class="popup-edit-submit" type="submit" value="Выбрать">
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="popup-edit__background popup--target" id="choose-fund3">
+  <div class="popup-foundation-choose__wrapper">
+    <form class="popup-foundation-choose">
+      <div class="popup-foundation-choose__inner">
+        <h3 class="popup-edit-header">Получатель пожертвования</h3>
+        <div class="popup-foundation-choose__cards">
+          <input type="hidden" name="foundation" value="{# необходимая инфа по фонду #}">
+          <div class="card-foundation--extended">
+            <img alt="" class="card-foundation--extended__img" src="/assets/img/funds/foundation.jpg">
+            <div class="card-foundation--extended-body">
+              <h4 class="card-foundation--extended-name">Благотворительный фонд "Бюро добрых дел"</h4>
+              <p class="card-foundation--extended-subhead">Помощь детям-отказникам и детям-сиротам</p>
+              <p class="card-foundation--extended-descr">Благотворительный фонд "Бюро Добрых Дел" занимается социальной адаптацией детей, оставшихся без попечения родителей. Мы уделяем большое внимание творческому и физическому развитию детей, обучаем их необходимыми для взрослой жизни социальным и бытовым навыкам. Обеспечиваем детей всем необходимым для жизни и учебы.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="popup-foundation-choose__footer">
+        <a class="popup-edit-reset btn--close-popup" data-modal="choose-fund3" href="#choose-fund3">Отменить</a>
+        <input class="popup-edit-submit" type="submit" value="Выбрать">
+      </div>
+    </form>
+  </div>
+</div>
