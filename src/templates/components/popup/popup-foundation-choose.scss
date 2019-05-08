@@ -32,6 +32,10 @@
           max-width: 760px;
           padding: 20px 20px 90px;
         }
+
+        @include mq-down(md) {
+          max-height: 100vh;
+        }
       }
 
       &__cards {
@@ -59,7 +63,17 @@
           padding: 0 20px 10px;
           flex-wrap: wrap;
           height: auto;
-          justify-content: center;
+        }
+
+        >.popup-edit-reset,
+        .popup-edit-submit {
+          @include mq-down(md) {
+            max-width: 120px;
+            font-size: rem(15);
+            height: auto;
+            text-align: center;
+            padding: 10px 20px;
+          }
         }
       }
 
