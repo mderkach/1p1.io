@@ -42,6 +42,10 @@
       &.--info {
         border-color: #a1cbff;
       }
+
+      &.--small {
+        padding: 10px 30px;
+      }
     }
   }
 }
