@@ -13,16 +13,16 @@
       <div class="lot__img-main-slider-container">
         <div class="lot__img-main-slider-wrapper">
           {% for img in lot.img %}
-          <a class="lot__img-main-wrapper" data-fancybox="gallery" href="{{ img }}">
-            <img alt="" class="lot__img-main" src="{{ img }}">
-          </a>
+            <a class="lot__img-main-wrapper" data-fancybox="gallery" href="{{ img }}">
+              <img alt="" class="lot__img-main" src="{{ img }}">
+            </a>
           {% endfor %}
         </div>
         <div class="lot__img-button-prev">
-          <img src="/assets/img/icons/arrow-button-left.svg" alt="">
+          <img alt="" src="/assets/img/icons/arrow-button-left.svg">
         </div>
         <div class="lot__img-button-next">
-          <img src="/assets/img/icons/arrow-button-right.svg" alt="">
+          <img alt="" src="/assets/img/icons/arrow-button-right.svg">
         </div>
       </div>
     </div>
@@ -41,7 +41,7 @@
             {% include "../tooltip/tooltip-lot-safe.twig" %}
           </div>
           {% if sellType == 'auction' %}
-          {% include "./lot-bet-details.twig" %}
+            {% include "./lot-bet-details.twig" %}
           {% endif %}
         </div>
       </div>
@@ -52,54 +52,60 @@
   <div class="screen__item-container">
     <div class="screen__item-wrapper">
       {% if sellType == 'auction' %}
-      {% include "./lot-bet-place--mobile.twig" %}
+        {% include "./lot-bet-place--mobile.twig" %}
       {% else %}
-      {% if lot.isBookmarked == false %}
-      <div class="lot__bet-buttons-wrapper --standalone">
-        <button class="btn-lot-place">Купить</button>
-        <button data-modal="#bookmark-sucess" class="btn-lot-fav">
-          <img alt="" src="/assets/img/icons/icon-heart-border.svg">
-        </button>
-      </div>
-      {% else %}
-      <div class="lot__bookmarked">
-        {% if lot.bookmarkStatus == 'canceled' %}
-        <div class="lot__bookmarked-head">
-          <img src="/assets/img/icons/icon-cross-red.svg" alt="" class="lot__bokkmarked-icon">
-          <h4 class="lot__bookmarked-header --canceled">Бронь отменена</h4>
-        </div>
-        <p class="lot__bookmarked-descr">Вы отменили бронирование товара. Если продавец не опротестует это в течение
-          суток, то деньги будут возвращены на вашу карту.</p>
-        {% elseif lot.bookmarkStatus == 'bookmarked' %}
-        <div class="lot__bookmarked-head">
-          <img src="/assets/img/icons/icon-checkmark-dashed.svg" alt="" class="lot__bokkmarked-icon">
-          <h4 class="lot__bookmarked-header">Товар забронирован</h4>
-        </div>
-        <p class="lot__bookmarked-descr">Вы забронировали товар, деньги списаны с вашей карты. Свяжитесь с продавцом и
-          заберите товар. Бронь действует в течение 10 дней, по истечении которых автоматически снимается. Как только
-          получите товар, нажмите кнопку ниже.</p>
-        <button class="btn-bookmark-confirm">Подтвердить получение</button>
-        <p class="lot__bookmarked-descr">Если вы передумали забирать товар, или продавец не выходит на связь, или
-          продавец
-          отметил, что товар передан, а на самом деле нет, отмените бронь. Мы вернем полную сумму покупки на вашу карту.
-        </p>
-        <button class="btn-bookmark-cancel">Отменить бронь</button>
-        {% elseif lot.bookmarkStatus == 'delivered' %}
-        <div class="lot__bookmarked-head">
-          <img src="/assets/img/icons/icon-checkmark-green.svg" alt="" class="lot__bokkmarked-icon">
-          <h4 class="lot__bookmarked-header">Товар передан</h4>
-        </div>
-        <p class="lot__bookmarked-descr">Продавец отметил, что передал вам товар. Если это на самом деле не так, вы
-          можете
-          опротестовать это в течение суток. Деньги не будут переданы в фонд-получатель, а мы будем разбираться, что
-          случилось.</p>
-        <div class="lot__bookmarked-buttons-confirm-wrapper">
-          <button class="btn-bookmark-confirm">Подтвердить получение</button>
-          <button class="btn-bookmark-cancel">Я не получал товар</button>
-        </div>
+        {% if lot.isBookmarked == false %}
+          <div class="lot__bet-buttons-wrapper --standalone">
+            <button class="btn-lot-place">Купить</button>
+            <button class="btn-lot-fav" data-modal="#bookmark-sucess">
+              <svg height="24px" version="1.1" viewbox="0 0 24 24" width="24px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">title>
+                <g fill-rule="evenodd" fill="none" stroke-width="1" stroke="none">
+                  <g fill-rule="nonzero" fill="#4489FF">
+                    <path d="M16.5,3 C14.76,3 13.09,3.81 12,5.09 C10.91,3.81 9.24,3 7.5,3 C4.42,3 2,5.42 2,8.5 C2,12.28 5.4,15.36 10.55,20.04 L12,21.35 L13.45,20.03 C18.6,15.36 22,12.28 22,8.5 C22,5.42 19.58,3 16.5,3 Z M12.1,18.55 L12,18.65 L11.9,18.55 C7.14,14.24 4,11.39 4,8.5 C4,6.5 5.5,5 7.5,5 C9.04,5 10.54,5.99 11.07,7.36 L12.94,7.36 C13.46,5.99 14.96,5 16.5,5 C18.5,5 20,6.5 20,8.5 C20,11.39 16.86,14.24 12.1,18.55 Z" id="Shape"></path>
+                  </g>
+                </g>
+              </svg>
+            </button>
+          </div>
+        {% else %}
+          <div class="lot__bookmarked">
+            {% if lot.bookmarkStatus == 'canceled' %}
+              <div class="lot__bookmarked-head">
+                <img alt="" class="lot__bokkmarked-icon" src="/assets/img/icons/icon-cross-red.svg">
+                <h4 class="lot__bookmarked-header --canceled">Бронь отменена</h4>
+              </div>
+              <p class="lot__bookmarked-descr">Вы отменили бронирование товара. Если продавец не опротестует это в течение
+                          суток, то деньги будут возвращены на вашу карту.</p>
+            {% elseif lot.bookmarkStatus == 'bookmarked' %}
+              <div class="lot__bookmarked-head">
+                <img alt="" class="lot__bokkmarked-icon" src="/assets/img/icons/icon-checkmark-dashed.svg">
+                <h4 class="lot__bookmarked-header">Товар забронирован</h4>
+              </div>
+              <p class="lot__bookmarked-descr">Вы забронировали товар, деньги списаны с вашей карты. Свяжитесь с продавцом и
+                          заберите товар. Бронь действует в течение 10 дней, по истечении которых автоматически снимается. Как только
+                          получите товар, нажмите кнопку ниже.</p>
+              <button class="btn-bookmark-confirm">Подтвердить получение</button>
+              <p class="lot__bookmarked-descr">Если вы передумали забирать товар, или продавец не выходит на связь, или
+                          продавец
+                          отметил, что товар передан, а на самом деле нет, отмените бронь. Мы вернем полную сумму покупки на вашу карту.
+              </p>
+              <button class="btn-bookmark-cancel">Отменить бронь</button>
+            {% elseif lot.bookmarkStatus == 'delivered' %}
+              <div class="lot__bookmarked-head">
+                <img alt="" class="lot__bokkmarked-icon" src="/assets/img/icons/icon-checkmark-green.svg">
+                <h4 class="lot__bookmarked-header">Товар передан</h4>
+              </div>
+              <p class="lot__bookmarked-descr">Продавец отметил, что передал вам товар. Если это на самом деле не так, вы
+                          можете
+                          опротестовать это в течение суток. Деньги не будут переданы в фонд-получатель, а мы будем разбираться, что
+                          случилось.</p>
+              <div class="lot__bookmarked-buttons-confirm-wrapper">
+                <button class="btn-bookmark-confirm">Подтвердить получение</button>
+                <button class="btn-bookmark-cancel">Я не получал товар</button>
+              </div>
+            {% endif %}
+          </div>
         {% endif %}
-      </div>
-      {% endif %}
       {% endif %}
     </div>
   </div>
