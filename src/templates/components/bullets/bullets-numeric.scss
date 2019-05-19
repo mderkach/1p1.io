@@ -12,7 +12,7 @@
     &:hover {
       text-decoration: none;
       color: #000;
-      .numeric-info__item-descr {
+      .numeric-info__item-descr, .numeric-info__item-number {
         color: #4489ff;
       }
       .numeric-info__item-img {
@@ -21,9 +21,6 @@
       &:nth-child(2) {
         cursor: default;
         
-        .numeric-info__item-descr {
-          color: #000
-        }
         .numeric-info__item-img {
           transform: none
         }

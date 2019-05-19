@@ -57,6 +57,15 @@
   },
 ] %}
 
+{% set foundationPrograms = [
+  {
+    id: 'bla',
+    name: 'name',
+    img: '/assets/img/funds/programs/1.jpg',
+    descr: '«Окно в мир» – социальная адаптация детей',
+  },
+] %}
+
 <div class="popup-edit__background popup--target" id="choose-fund">
   <div class="popup-foundation-choose__wrapper">
     <form class="popup-foundation-choose">
@@ -111,7 +120,7 @@
         </div>
         {% include "../tabs/tabs-foundation-choose.twig" %}
       </div>
-      <div class="popup-foundation-choose__footer">
+      <div class="popup-foundation-choose__footer {% if foundationPrograms > 2 %}shadow{% endif %}">
         <a class="popup-edit-reset btn--close-popup" data-modal="choose-fund2" href="#choose-fund2">Отменить</a>
         <input class="popup-edit-submit" type="submit" value="Выбрать">
       </div>

@@ -274,7 +274,7 @@
       &-icon {
         width: 12px;
         height: 12px;
-        margin-top: 0;
+        margin-top: 3px;
         margin-right: 7px;
       }
 
@@ -304,7 +304,7 @@
   }
 
   &__bet {
-    font-size: rem(32);
+    font-size: rem(26);
     font-weight: bold;
     line-height: 0.91;
     color: #4489ff;
@@ -518,11 +518,12 @@
     &-buttons {
       &-wrapper {
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-start;
         align-items: center;
 
         @include mq-down(md) {
           width: 100%;
+          justify-content: space-between;
           flex-wrap: wrap;
 
           .btn-lot-place {

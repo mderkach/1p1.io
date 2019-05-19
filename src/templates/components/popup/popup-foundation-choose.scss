@@ -36,6 +36,10 @@
         @include mq-down(md) {
           max-height: 100vh;
         }
+
+        .popup-edit-header {
+          margin-bottom: 23px;
+        }
       }
 
       &__cards {
@@ -43,7 +47,7 @@
         flex-wrap: wrap;
         justify-content: space-between;
         height: 100%;
-        padding: 0 3px 50px;
+        padding: 0 3px 35px;
       }
 
       &__footer {
@@ -57,7 +61,10 @@
         width: 100%;
         height: 90px;
         padding: 0 50px;
-        box-shadow: 0 -2px 4px 0 rgba(0, 0, 0, 0.1);
+
+        &.shadow {
+          box-shadow: 0 -2px 4px 0 rgba(0, 0, 0, 0.1);
+        }
 
         @include mq-down(md) {
           padding: 0 20px 10px;

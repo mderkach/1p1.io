@@ -2,6 +2,11 @@
   &-foundation {
     @extend .card-news;
     min-height: 240px;
+    
+    &:hover {
+      cursor: pointer;
+      text-decoration: none;
+    }
 
     @include mq-down(sm) {
       max-width: 280px !important;
@@ -37,6 +42,11 @@
         height: 60px;
         margin-right: 15px;
       }
+
+      &__wrapper {
+        display: flex;
+        align-items: center;
+      }
     }
 
     &-name {
@@ -44,6 +54,8 @@
       font-weight: 500;
       line-height: normal;
       color: #000;
+      margin-bottom: 0;
+      text-decoration: none;
 
       &:hover {
         color: #000;
@@ -61,6 +73,7 @@
       line-height: normal;
       color: #4b5769;
       margin-bottom: 8px;
+      
     }
 
     &-place {
@@ -94,6 +107,7 @@
 
       &-body {
         width: 100%;
+        margin-top: 18px;
         margin-left: 25px;
 
         @include mq-down(sm) {
