@@ -13,6 +13,10 @@
     font-weight: 500;
     line-height: 1.31;
     color: #4b5769;
+
+    &:hover {
+      color: #4489FF;
+    }
   }
 
   &__separator {

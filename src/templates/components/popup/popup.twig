@@ -96,14 +96,14 @@
                   selected: false,
                 },
               ] %}
-              {{ inputs.selectMiniTrio('Price, ₽', 'type', priceType, 'Starting price', 0, 'Buyout price', 0) }}
+              {{ inputs.selectMiniTrio('Price, ₽', 'type', priceType, 'Starting price', 0, 500, 'Buyout price', 0, 500) }}
               {% set donateTo = [
                 {
                   key: 'first',
                   value :'first',
                 }
               ] %}
-              {{ inputs.selectSimpleDual('Donation','donate', donateTo, 50, 'percent' ) }}
+              {{ inputs.selectSimpleDual('Donation','donate', donateTo, 50, 'percent', 10 ) }}
             </fieldset>
             <fieldset class="form__popup-sell-fieldset" data-step="footer-step-2" id="step-2">
               {% set accountCreateOrLoginTabs = '1' %}

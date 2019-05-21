@@ -31,16 +31,17 @@
     background: #fff;
     border-top: 1px solid #d9deea;
     border-bottom: 1px solid #d9deea;
+    margin-bottom: 20px;
 
-    &:first-child {
-      &:not(:nth-last-of-type(1)) {
-        border-bottom: none;
-      }
-    }
+    // &:first-child {
+    //   &:not(:nth-last-of-type(1)) {
+    //     border-bottom: none;
+    //   }
+    // }
 
-    &:nth-last-of-type(1) {
-      margin-bottom: 20px;
-    }
+    // &:nth-last-of-type(1) {
+    //   margin-bottom: 20px;
+    // }
 
     &-head {
       display: flex;

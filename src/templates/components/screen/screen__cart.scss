@@ -8,8 +8,10 @@
 .cart {
   &__container {
     @include make-container();
-    @include make-container-max-widths($max-widths: $container-max-widths, $breakpoints: $grid-breakpoints);
-
+    @include make-container-max-widths(
+      $max-widths: $container-max-widths,
+      $breakpoints: $grid-breakpoints
+    );
   }
 
   &__wrapper {
@@ -17,7 +19,6 @@
   }
 
   &-items {
-
     &__container {
       width: 100%;
       max-width: 780px;
@@ -77,6 +78,89 @@
   &-delivery {
     &__wrapper {
       @extend .cart-items__wrapper;
+
+      &--mobile {
+        padding: 20px;
+      }
+    }
+
+    &__label {
+      position: relative;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      padding-left: 35px;
+      height: 28px;
+      user-select: none;
+      font-size: rem(15);
+      font-weight: 500;
+      line-height: 1.5;
+      color: #000;
+
+      &:first-child {
+        margin-bottom: 20px;
+      }
+
+      &:hover {
+        .cart-delivery__radio {
+          ~ .cart-delivery__radio-checkmark {
+            border-color: #00b54b;
+          }
+        }
+      }
+
+      &.--disabled {
+        opacity: 0.5;
+
+        &:hover {
+          cursor: default;
+
+          .cart-delivery__radio {
+            ~ .cart-delivery__radio-checkmark {
+              border-color: #e8e8e8;
+            }
+          }
+        }
+      }
+    }
+
+    &__radio {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      height: 0;
+      width: 0;
+      z-index: -1;
+
+      &:checked {
+        ~ .cart-delivery__radio-checkmark {
+          border-color: #00b54b;
+          border-width: 8px;
+        }
+      }
+
+      &-checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 28px;
+        height: 28px;
+        background: #fff;
+        border-radius: 50%;
+        border: solid 2px #e8e8e8;
+      }
+
+      &-wrapper {
+        padding: 25px 30px 30px;
+      }
+    }
+
+    &__descr {
+      font-size: rem(14);
+      font-weight: 500;
+      line-height: 1.43;
+      color: #000;
+      margin-bottom: 0;
     }
   }
 }

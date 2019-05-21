@@ -65,6 +65,16 @@
       @include mq-down(md) {
         flex-direction: column;
       }
+
+      .form__popup-input-wrapper {
+        input[type=submit] {
+          margin-top: 20px;
+        }
+
+        input[value='Войти'] {
+          max-width: 170px;
+        }
+      }
     }
 
     &-label {
@@ -242,7 +252,7 @@
         }
 
         &::placeholder {
-          font-size: rem(15);
+          font-size: rem(19);
           color: rgba($color: #5d5d5d, $alpha: 0.5);
         }
 

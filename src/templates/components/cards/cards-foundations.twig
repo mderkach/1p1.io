@@ -1,16 +1,16 @@
 {% if foundations %}
   {% for item in foundations %}
-    <div class="card-foundation">
+    <a href="{{ item.link }}" class="card-foundation">
       <div class="card-foundation-head">
-        <a class="card-foundation-img__wrapper" href="{{ item.link }}">
+        <div class="card-foundation-img__wrapper">
           <img alt="" class="card-foundation-img" src="{{ item.img }}">
-          <a class="card-foundation-name" href="{{ item.link }}">{{ item.name }}</a>
-        </a>
+          <p class="card-foundation-name">{{ item.name }}</p>
+        </div>
       </div>
       <div class="card-foundation-body">
         <p class="card-foundation-descr">{{ item.descr}}</p>
         <p class="card-foundation-place">{{ item.place }}</p>
       </div>
-    </div>
+    </a>
   {% endfor %}
 {% endif %}
