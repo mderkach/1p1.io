@@ -61,8 +61,14 @@
                     {% include "../cards/cards-cart--dropdown.twig" %}
                   </div>
                   <div class="cards-cart--dropdown-total-wrapper">
-                    <p class="cards-cart--dropdown-total">7 083 Р.</p>
-                    <a class="btn--dropdown-checkout" href="#" role="button">Оформить заказ</a>
+                    {# <p class="cards-cart--dropdown-total">7 083 Р.</p> #}
+                    {% for card in cartItems %}
+                      {% if card.isDeleted == false %}
+                        <a class="btn--dropdown-checkout" href="#" role="button">Оформить заказ</a>
+                      {% else %}
+                        <a class="btn--dropdown-checkout --disabled" href="#" role="button">Оформить заказ</a>
+                      {% endif %}
+                    {% endfor %}
                   </div>
                 {% else %}
                   <div class="cards-cart--dropdown--empty">
