@@ -342,6 +342,18 @@ module.exports = {
       filename: 'submit-foundation-mobile.html',
       template: `${PATHS.src}/templates/pages/submit-foundation-mobile.twig`,
     }),
+    new HtmlWebpackPlugin({
+      filename: 'cart--mobile--cancel-order.html',
+      template: `${PATHS.src}/templates/pages/cart--mobile--cancel-order.twig`,
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'cart--mobile--deleted.html',
+      template: `${PATHS.src}/templates/pages/cart--mobile--deleted.twig`,
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'cart--mobile--placed-order.html',
+      template: `${PATHS.src}/templates/pages/cart--mobile--placed-order.twig`,
+    }),
     new CopyWebpackPlugin([
       { from: `${PATHS.src}/img`, to: `${PATHS.assets}img` },
       { from: `${PATHS.src}/fonts`, to: `${PATHS.assets}fonts` },

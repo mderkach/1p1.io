@@ -78,6 +78,12 @@
           margin-bottom: 0;
         }
       }
+
+      &.--mobile {
+        width: 100%;
+        background: #fff;
+        border-bottom: none;
+      }
     }
 
     &--unaviable {
