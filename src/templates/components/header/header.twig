@@ -51,18 +51,24 @@
             <div class="dropdown-wrapper dropdown__cart-wrapper">
               <button class="dropdown__trigger">
                 <img alt="" src="/assets/img/icons/icon-cart-color.svg">
-                {% if cartItems.length > 0 %}
-                  <span class="dropdown__cart-counter">{{ cartItems.length }}</span>
+                {% if cartItem.length != 0 %}
+                  {# <span class="dropdown__cart-counter">{{ cartItems.length }}</span> #}
+                  <img class="dropdown__cart-counter" src="/assets/img/icons/icon-check-cart.svg" alt="">
                 {% endif %}
               </button>
               <div class="dropdown__menu">
-                {% if cartItems %}
+                {% if cartItem %}
                   <div class="dropdown__cart-cards-wrapper">
                     {% include "../cards/cards-cart--dropdown.twig" %}
                   </div>
                   <div class="cards-cart--dropdown-total-wrapper">
-                    <p class="cards-cart--dropdown-total">7 083 Р.</p>
-                    <a class="btn--dropdown-checkout" href="#" role="button">Оформить заказ</a>
+                    {# <p class="cards-cart--dropdown-total">7 083 Р.</p> #}
+                    {% set card = cartItem %}
+                      {% if card.isDeleted == false %}
+                        <a class="btn--dropdown-checkout" href="#" role="button">Оформить заказ</a>
+                      {% else %}
+                        <a class="btn--dropdown-checkout --disabled" href="#" role="button">Оформить заказ</a>
+                      {% endif %}
                   </div>
                 {% else %}
                   <div class="cards-cart--dropdown--empty">

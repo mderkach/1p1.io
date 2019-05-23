@@ -8,12 +8,12 @@
         <div class="cart-header__outer">
           <div class="cart-header__wrapper">
             <h1 class="header__h1 regular__h1">{{ screenHeader }}</h1>
-            {% if checkoutMode != 'payment' %}
+            {# {% if checkoutMode != 'payment' %}
               <span class="cart-header__count">
                 {{cartItems.length}}
                 товара
               </span>
-            {% endif %}
+            {% endif %} #}
           </div>
         </div>
       {% endif %}
@@ -32,10 +32,37 @@
         {% endif %}
         {% if checkoutMode != 'payment' %}
           <div class="cart-delivery__wrapper">
-            <div class="form-cart-delivery__header">
-              <p class="form-cart-delivery__header-descr">Адрес доставки</p>
+            <div
+              class="form-cart-delivery__header">
+              {# <p class="form-cart-delivery__header-descr">Адрес доставки</p> #}
+              <p class="form-cart-delivery__header-descr">Доставка</p>
             </div>
-            {% include "../form/form-cart-delivery.twig" %}
+            {# {% include "../form/form-cart-delivery.twig" %} #}
+            <div class="cart-delivery__radio-wrapper">
+              <label class="cart-delivery__label" for="radio">
+                <input class="cart-delivery__radio" id="radio" name="radio" type="radio">
+                Самовывоз от продавца
+                <span class="cart-delivery__radio-checkmark"></span>
+              </label>
+
+              <label class="cart-delivery__label --disabled" for="radio2">
+                <input class="cart-delivery__radio" disabled id="radio2" name="radio" type="radio">
+                Доставка курьером (скоро)
+                <span class="cart-delivery__radio-checkmark"></span>
+              </label>
+            </div>
+          </div>
+          <div class="cart-delivery__wrapper">
+            <div class="form-cart-delivery__header">
+              <p class="form-cart-delivery__header-descr">Как получить</p>
+            </div>
+            <div class="cart-delivery__radio-wrapper">
+              <p class="cart-delivery__descr">
+                Контактные данные продавца мы отправим Вам на почту после оформления заказа. Вам необходимо будет связаться с продавцом и договориться о способе получения вещи.
+                <br>
+                Только после того, как продавец подтвердит, что вещь была Вам передана - сделка будет завершена, а деньги отправлены в благотворительный фонд.
+              </p>
+            </div>
           </div>
         {% endif %}
       </main>

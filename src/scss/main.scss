@@ -205,3 +205,16 @@ main {
     display: none;
   }
 }
+
+.--mt50 {
+  margin-top: 50px;
+}
+
+.--mw200 {
+  width: 100%;
+  max-width: 200px;
+
+  @include mq-between(lg, xl) {
+    margin: 5px auto;
+  }
+}
