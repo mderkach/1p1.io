@@ -11,7 +11,8 @@
       {% elseif dropdown.type ==  'dropdown__cart-wrapper' %}
         <img src="/assets/img/icons/icon-cart-color.svg" alt="">
         {% if cartItems.length > 0 %}
-          <span class="dropdown__cart-counter">{{ cartItems.length }}</span>
+          {# <span class="dropdown__cart-counter">{{ cartItems.length }}</span> #}
+          <img class="dropdown__cart-counter" src="/assets/img/icons/icon-cart-check.svg" alt="">
         {% endif %}
       {% endif %}
     </button>
