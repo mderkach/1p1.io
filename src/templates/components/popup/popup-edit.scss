@@ -25,7 +25,10 @@
   }
 
   &__container {
-    @include make-container-max-widths($max-widths: $container-max-widths, $breakpoints: $grid-breakpoints);
+    @include make-container-max-widths(
+      $max-widths: $container-max-widths,
+      $breakpoints: $grid-breakpoints
+    );
     @include make-container();
     height: 100%;
   }
@@ -103,6 +106,10 @@
   &-submit {
     background: #4489ff;
     color: #fff;
+
+    &:focus {
+      color: #fff;
+    }
   }
 
   &-ads {
