@@ -1,9 +1,13 @@
 .banner {
   @include make-container();
-  height: 350px;
+  height: 230px;
   margin-top: 70px;
   position: relative;
   transition: height 0.3s ease;
+
+  &.is-celebrity {
+    height: 350px;
+  }
 
   @include mq-down(sm) {
     margin-top: 50px;
@@ -12,7 +16,10 @@
 
   &__container {
     position: relative;
-    @include make-container-max-widths($max-widths: $container-max-widths, $breakpoints: $grid-breakpoints);
+    @include make-container-max-widths(
+      $max-widths: $container-max-widths,
+      $breakpoints: $grid-breakpoints
+    );
     margin: 0 auto;
     height: 100%;
     display: flex;
