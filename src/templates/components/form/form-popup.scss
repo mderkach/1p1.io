@@ -13,9 +13,9 @@
         height: 0;
         position: relative;
         transform: scale(0);
-        transition: transform .5s ease;
+        transition: transform 0.5s ease;
 
-        &>* {
+        & > * {
           height: 0;
         }
 
@@ -43,7 +43,7 @@
             margin-bottom: 55px;
           }
 
-          >* {
+          > * {
             height: auto;
           }
         }
@@ -67,7 +67,7 @@
       }
 
       .form__popup-input-wrapper {
-        input[type=submit] {
+        input[type='submit'] {
           margin-top: 20px;
         }
 
@@ -116,7 +116,7 @@
           height: 16px;
           background: transparent;
           border-radius: 2px;
-          border: solid 2px rgba(93, 93, 93, .5);
+          border: solid 2px rgba(93, 93, 93, 0.5);
         }
 
         &:hover {
@@ -168,7 +168,7 @@
         height: 0;
         width: 0;
 
-        &:checked+.form__popup-label-checkbox {
+        &:checked + .form__popup-label-checkbox {
           &::before {
             border-color: #4489ff;
             background-color: #4489ff;
@@ -177,7 +177,7 @@
 
           &::after {
             position: absolute;
-            content: "";
+            content: '';
             left: 16px;
             top: 3px;
             width: 4px;
@@ -188,7 +188,7 @@
           }
         }
 
-        &:invalid+.form__popup-label-checkbox {
+        &:invalid + .form__popup-label-checkbox {
           color: #ff6e63;
 
           &::before {
@@ -259,7 +259,6 @@
         &:focus {
           border-bottom: 2px solid #4489ff;
         }
-
 
         &-wrapper {
           @extend .form__popup-input-wrapper;
@@ -386,7 +385,7 @@
       padding-right: 20px;
 
       @include mq-down(sm) {
-        font-size: rem(15)
+        font-size: rem(15);
       }
 
       &:focus {
@@ -402,6 +401,23 @@
         @include mq-down(sm) {
           padding-left: 10px;
           padding-right: 10px;
+        }
+
+        &::after {
+          z-index: 1;
+          position: absolute;
+          top: 0;
+          right: 0;
+          display: block;
+          width: 40px;
+          height: calc(100% - 2px);
+          content: '';
+          background: linear-gradient(
+            to left,
+            rgb(255, 255, 255) 0%,
+            rgb(250, 250, 250) 50%,
+            rgba(246, 246, 246, 0.01) 100%
+          );
         }
       }
     }
@@ -467,6 +483,7 @@
 
     &-chevronSelect {
       position: absolute;
+      z-index: 5;
       top: 40%;
       right: 5px;
       object-fit: contain;
@@ -583,6 +600,23 @@
         margin-right: 20px;
         position: relative;
 
+        &::after {
+          z-index: 1;
+          position: absolute;
+          top: 0;
+          right: 0;
+          display: block;
+          width: 40px;
+          height: calc(100% - 2px);
+          content: '';
+          background: linear-gradient(
+            to left,
+            rgb(255, 255, 255) 0%,
+            rgb(250, 250, 250) 50%,
+            rgba(246, 246, 246, 0.01) 100%
+          );
+        }
+
         @include mq-down(sm) {
           max-width: 100%;
           margin-right: 0;
@@ -613,7 +647,6 @@
 
     &-upload {
       &-photo {
-
         &-wrapper {
           @extend .form__popup-input-wrapper;
           width: 100%;
@@ -628,7 +661,6 @@
           @include mq-down(sm) {
             padding-right: 0 !important;
           }
-
         }
 
         &-container {
@@ -698,7 +730,7 @@
             display: block;
             position: absolute;
             bottom: 0;
-            content: "";
+            content: '';
             width: 100%;
             height: 4px;
             background-color: #4489ff;

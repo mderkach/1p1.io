@@ -8,7 +8,6 @@
       box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.1);
       background-color: #ffffff;
 
-
       &__wrapper {
         width: 100%;
         height: 100%;
@@ -60,7 +59,8 @@
         left: 0;
         width: 100%;
         height: auto;
-        padding: 0 50px 40px;
+        padding: 20px 50px 20px;
+        box-shadow: 0 -2px 4px 0 rgba(0, 0, 0, 0.1);
 
         &.shadow {
           box-shadow: 0 -2px 4px 0 rgba(0, 0, 0, 0.1);
@@ -72,7 +72,7 @@
           height: auto;
         }
 
-        >.popup-edit-reset,
+        > .popup-edit-reset,
         .popup-edit-submit {
           @include mq-down(md) {
             max-width: 120px;
@@ -95,7 +95,7 @@
           margin-right: auto;
         }
 
-        >.card-foundation {
+        > .card-foundation {
           margin: 0 !important;
           max-width: 100% !important;
           border: 2px solid #fff;
@@ -111,17 +111,15 @@
         height: 0;
 
         &:checked {
-          ~.card-foundation {
+          ~ .card-foundation {
             border-color: #4489ff;
           }
 
-          ~.card-foundation--program {
+          ~ .card-foundation--program {
             border-color: #4489ff;
           }
         }
       }
     }
-
-
   }
 }

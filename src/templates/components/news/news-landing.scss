@@ -60,7 +60,6 @@
             margin-left: auto;
             margin-right: auto;
           }
-
         }
 
         @include mq-down(md) {
@@ -72,7 +71,7 @@
 
       &-body {
         @extend .card-body;
-        padding: 40px 10px 40px 50px;
+        padding: 40px 50px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;

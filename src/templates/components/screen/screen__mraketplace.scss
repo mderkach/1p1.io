@@ -2,7 +2,6 @@
   &__marketplace {
     margin-top: 70px;
     background-color: #fafafa;
-    border-top: 1px solid #d9deea;
 
     // @include mq-down(sm) {
     //   padding-top: 50px;
@@ -18,7 +17,10 @@
   &__container {
     padding: 35px 0 60px;
     @include make-container();
-    @include make-container-max-widths($max-widths: $container-max-widths, $breakpoints: $grid-breakpoints);
+    @include make-container-max-widths(
+      $max-widths: $container-max-widths,
+      $breakpoints: $grid-breakpoints
+    );
 
     @include mq-up(xl) {
       max-width: 1200px;
@@ -52,7 +54,6 @@
   }
 
   &__tag {
-
     &-wrapper {
       display: flex;
       flex-direction: row;

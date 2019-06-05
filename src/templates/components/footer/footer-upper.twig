@@ -1,80 +1,98 @@
 <div class="footer-upper">
-    <div class="container">
-      <div class="footer-upper-wrapper">
-        <div class="footer__socials">
-          <h6 class="footer__socials-title">Будьте в курсе главных событий</h6>
-          <p class="footer__socials-descr">Узнавайте первыми о самых интересных лотах и<br> благотворительных
-            инициативах.
-            Следите за<br> использованием своих пожертвований с помощью<br> отчетов благотворительных организаций.</p>
-         {% include "../form/form-footer.twig" %}
-          <div class="footer__socials-icon-wrapper">
-            <a href="#" class="footer__socials-icon">
-              <img src="/assets/img/icons/icon-linkedin.svg" alt="" class="img-responsive">
+  <div class="container">
+    <div class="footer-upper-wrapper">
+      <div class="footer__socials">
+        <h6 class="footer__socials-title">Будьте в курсе главных событий</h6>
+        <p class="footer__socials-descr">Узнавайте первыми о самых интересных лотах и<br>
+          благотворительных инициативах.Следите за<br>
+          использованием своих пожертвований с помощью<br>
+          отчетов благотворительных организаций.</p>
+        {% include "../form/form-footer.twig" %}
+        <div class="footer__socials-icon-wrapper">
+          <a class="footer__socials-icon" href="#">
+            <svg class="img-responsive" height="36" width="36" xmlns="http://www.w3.org/2000/svg">
+              <g class="icon-fill" fill-rule="evenodd" fill="none"><path d="M18 35.5c9.665 0 17.5-7.835 17.5-17.5S27.665.5 18 .5.5 8.335.5 18 8.335 35.5 18 35.5z" stroke="#4489FF"/><path class="icon-unfill" d="M28.102 26.482v-7.027c0-3.765-2.01-5.517-4.69-5.517-2.162 0-3.13 1.19-3.67 2.024v-1.736h-4.075c.054 1.15 0 12.256 0 12.256h4.074v-6.845c0-.365.027-.731.135-.993.294-.732.964-1.49 2.089-1.49 1.475 0 2.064 1.124 2.064 2.771v6.558h4.073zM11.375 12.553c1.42 0 2.306-.942 2.306-2.118-.027-1.202-.885-2.117-2.279-2.117-1.393 0-2.304.914-2.304 2.117 0 1.176.884 2.118 2.252 2.118h.025zM13.412 26.482V14.226H9.34v12.256z" fill="#4489FF"/></g>
+            </svg>
+          </a>
+          <a class="footer__socials-icon" href="#">
+            <svg class="img-responsive" height="36" width="36" xmlns="http://www.w3.org/2000/svg">
+              <g class="icon-fill" fill-rule="nonzero" fill="none"><circle cx="18" cy="18" r="17.5" stroke="#4489FF"/><path class="icon-unfill" d="M28.6 12.55c-.675.375-1.5.6-2.25.675.825-.525 1.425-1.35 1.725-2.325-.75.45-1.575.825-2.55 1.05-.75-.825-1.725-1.35-2.85-1.35-2.175 0-3.975 1.875-3.975 4.275 0 .3 0 .675.075.975-3.3-.15-6.225-1.875-8.175-4.425-.375.6-.525 1.35-.525 2.175 0 1.5.675 2.775 1.725 3.525-.675 0-1.275-.225-1.8-.525v.075c0 2.025 1.35 3.75 3.15 4.2-.3.075-.675.15-1.05.15-.225 0-.525 0-.75-.075.525 1.725 1.95 2.925 3.675 2.925-1.35 1.125-3.075 1.8-4.875 1.8-.3 0-.6 0-.975-.075C10.9 26.8 13 27.55 15.25 27.55c7.275 0 11.25-6.45 11.25-12.075v-.525c.9-.75 1.575-1.5 2.1-2.4z" fill="#4489FF"/></g>
+            </svg>
+          </a>
+          <a class="footer__socials-icon" href="#">
+            <svg class="img-responsive" height="36" width="36" xmlns="http://www.w3.org/2000/svg">
+              <g class="icon-fill" fill-rule="nonzero" fill="none"><circle cx="18" cy="18" r="17.5" stroke="#4489FF"/><path class="icon-unfill" d="M22.425 14.625h-3v-1.95c0-.75.525-.9.825-.9h2.1v-3.3h-2.925c-3.3 0-3.975 2.475-3.975 3.975v2.175h-1.875V18h1.875v9.525h3.975V18h2.7l.3-3.375z" fill="#4489FF"/></g>
+            </svg>
+          </a>
+          <a class="footer__socials-icon" href="#">
+            <svg class="img-responsive" height="36" width="36" xmlns="http://www.w3.org/2000/svg">
+              <g class="icon-fill" fill-rule="nonzero" fill="none"><circle cx="18" cy="18" r="17.5" stroke="#4489FF"/><path class="icon-unfill" d="M28.495 13.88c.153-.507 0-.88-.728-.88h-2.406c-.612 0-.895.322-1.048.677 0 0-1.223 2.969-2.957 4.897-.561.558-.816.736-1.122.736-.153 0-.375-.178-.375-.685V13.88c0-.609-.178-.88-.687-.88h-3.783c-.382 0-.612.283-.612.55 0 .578.867.71.956 2.334v3.527c0 .773-.14.913-.446.913-.816 0-2.8-2.981-3.978-6.393-.23-.663-.462-.931-1.077-.931H7.825c-.687 0-.825.322-.825.677 0 .634.816 3.78 3.8 7.941C12.787 24.46 15.59 26 18.14 26c1.53 0 1.72-.342 1.72-.931V22.92c0-.684.144-.82.629-.82.357 0 .969.177 2.396 1.547C24.517 25.27 24.787 26 25.705 26h2.406c.688 0 1.032-.342.833-1.017-.217-.673-.996-1.65-2.03-2.807-.56-.66-1.402-1.37-1.657-1.725-.357-.456-.255-.66 0-1.065 0 0 2.932-4.11 3.238-5.506" fill="#4489FF"/></g>
+            </svg>
+          </a>
+          <a class="footer__socials-icon" href="#">
+            <svg class="img-responsive" height="36" width="36" xmlns="http://www.w3.org/2000/svg">
+              <g class="icon-fill" fill-rule="nonzero" fill="none"><circle cx="18" cy="18" r="17.5" stroke="#4489FF"/><path class="icon-unfill" d="M20.207 22.428a9.893 9.893 0 0 0 3.07-1.272 1.55 1.55 0 0 0-1.651-2.624 6.713 6.713 0 0 1-7.118 0 1.55 1.55 0 0 0-1.65 2.624 9.893 9.893 0 0 0 3.069 1.272l-2.952 2.955a1.547 1.547 0 0 0 1.093 2.643c.397 0 .792-.152 1.096-.453l2.904-2.905 2.904 2.905a1.547 1.547 0 0 0 2.19 0 1.547 1.547 0 0 0 0-2.19l-2.955-2.955zM18.068 18.116a5.291 5.291 0 0 1-5.285-5.286 5.291 5.291 0 0 1 5.285-5.285 5.292 5.292 0 0 1 5.286 5.288 5.29 5.29 0 0 1-5.286 5.283zm0-7.472c-1.205 0-2.19.981-2.19 2.19a2.19 2.19 0 0 0 4.379 0 2.19 2.19 0 0 0-2.189-2.19z" fill="#4489FF"/></g>
+            </svg>
+          </a>
+          <a class="footer__socials-icon" href="#">
+            <svg class="img-responsive" height="36" width="36" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <path d="M0 0h20v20H0z"></defs>
+                <g class="icon-fill" fill-rule="evenodd" fill="none"><circle cx="18" cy="18" r="17.5" stroke="#4489FF"/><g transform="translate(8 8)">
+                    <mask fill="#fff"><use xlink:href="#a"/></mask><path class="icon-unfill" d="M18.133 10.016h.064c0-.422.01-.844-.002-1.266-.037-1.186-.026-2.378-.14-3.558-.174-1.778-1.244-2.881-3.001-3.214a6.202 6.202 0 0 0-1.058-.112c-1.976-.029-3.952-.06-5.929-.055-.953.001-1.911.03-2.859.13-1.715.179-2.833 1.178-3.189 2.793-.092.42-.144.857-.152 1.287a310.51 310.51 0 0 0-.056 5.928c.002.954.03 1.912.132 2.86.19 1.778 1.241 2.922 3.005 3.2.981.153 1.99.17 2.987.174 2.065.01 4.13.004 6.195-.059 2.57-.078 3.91-1.433 3.995-4.012.045-1.364.008-2.73.008-4.096M0 13.533V6.467c.024-.285.057-.57.07-.855C.225 2.49 2.087.484 5.186.116 5.61.066 6.039.038 6.467 0h7.066c.285.024.568.057.853.07 3.124.153 5.13 2.015 5.497 5.113.05.426.079.856.117 1.284v7.066c-.024.285-.056.57-.07.855-.156 3.126-2.013 5.126-5.114 5.496-.426.05-.855.078-1.283.116H6.467c-.285-.024-.569-.056-.854-.07-3.125-.155-5.131-2.017-5.497-5.113-.05-.426-.078-.856-.116-1.284" fill="#4489FF" mask="url(#b)"/></g><path class="icon-unfill" d="M17.997 21.245a3.255 3.255 0 0 0 3.248-3.234 3.255 3.255 0 0 0-3.226-3.256 3.255 3.255 0 0 0-3.264 3.25 3.255 3.255 0 0 0 3.242 3.24M23 18.023c-.004 2.769-2.247 4.984-5.04 4.977-2.749-.007-4.964-2.25-4.96-5.023.004-2.769 2.247-4.984 5.039-4.977 2.75.007 4.965 2.25 4.961 5.023M22.999 14A1.002 1.002 0 0 1 22 12.99a.997.997 0 0 1 1.018-.99.99.99 0 0 1 .982.994A.997.997 0 0 1 22.999 14" fill="#4489FF"/></g>
+              </svg>
             </a>
-            <a href="#" class="footer__socials-icon">
-              <img src="/assets/img/icons/icon-twitter.svg" alt="" class="img-responsive">
-            </a>
-            <a href="#" class="footer__socials-icon">
-              <img src="/assets/img/icons/icon-facebook.svg" alt="" class="img-responsive">
-            </a>
-            <a href="#" class="footer__socials-icon">
-              <img src="/assets/img/icons/icon-vk.svg" alt="" class="img-responsive">
-            </a>
-            <a href="#" class="footer__socials-icon">
-              <img src="/assets/img/icons/icon-odnoklassniki.svg" alt="" class="img-responsive">
-            </a>
-            <a href="#" class="footer__socials-icon">
-              <img src="/assets/img/icons/icon-instagram.svg" alt="" class="img-responsive">
-            </a>
-            <a href="#" class="footer__socials-icon">
-              <img src="/assets/img/icons/icon-telegram.svg" alt="" class="img-responsive">
+            <a class="footer__socials-icon" href="#">
+              <svg class="img-responsive" height="36" width="36" xmlns="http://www.w3.org/2000/svg">
+                <g class="icon-fill" fill-rule="evenodd" fill="none"><circle cx="18" cy="18" r="17.5" stroke="#4489FF"/><path class="icon-unfill" d="M14.732 23.99c.03-.072.041-.09.043-.108.088-.933.172-1.868.268-2.8a.508.508 0 0 1 .149-.3c.906-.821 1.822-1.632 2.733-2.449 1.301-1.168 2.6-2.338 3.9-3.508.31-.28.623-.557.928-.842.045-.042.093-.147.073-.177-.035-.05-.133-.102-.188-.088-.175.044-.36.09-.51.184-1.708 1.062-3.41 2.134-5.114 3.201-.862.54-1.727 1.078-2.59 1.618-.392.246-.783.496-1.176.746l1.484 4.523m2.852-1.229c-.705.681-1.4 1.348-2.09 2.02-.24.233-.516.33-.85.302-.206-.018-.316-.113-.38-.306-.519-1.603-1.047-3.202-1.565-4.805-.053-.166-.136-.246-.306-.297-1.22-.37-2.437-.75-3.653-1.134a2.13 2.13 0 0 1-.485-.21c-.308-.191-.345-.483-.067-.716.207-.174.455-.315.706-.418.721-.295 1.453-.564 2.18-.842l12.935-4.959c.238-.09.479-.176.714-.274.33-.138.66-.203.962.049.311.26.358.62.285.988-.188.94-.393 1.876-.592 2.814l-1.857 8.705c-.11.517-.21 1.036-.341 1.548-.19.749-.702.963-1.389.604a1.55 1.55 0 0 1-.196-.126l-3.819-2.807-.192-.136" fill="#4489FF"/></g>
+              </svg>
             </a>
           </div>
         </div>
         <div class="footer__about">
-          <a href="#" class="footer__link-item">О проекте</a>
-          <a href="#" class="footer__link-item">Новости</a>
-          <a href="#" class="footer__link-item">Инвесторам</a>
+          <a class="footer__link-item" href="#">О проекте</a>
+          <a class="footer__link-item" href="#">Новости</a>
+          <a class="footer__link-item" href="#">Инвесторам</a>
 
           <div class="footer__about-howItWorks">
             <h6 class="footer__title">Как это работает</h6>
-            <a href="#" class="footer__link-item">Для Покупателей</a>
-            <a href="#" class="footer__link-item">Для Частных продавцов</a>
-            <a href="#" class="footer__link-item">Для Брендов</a>
-            <a href="#" class="footer__link-item">Для Фондов</a>
+            <a class="footer__link-item" href="#">Для Покупателей</a>
+            <a class="footer__link-item" href="#">Для Частных продавцов</a>
+            <a class="footer__link-item" href="#">Для Брендов</a>
+            <a class="footer__link-item" href="#">Для Фондов</a>
           </div>
         </div>
         <div class="footer__advt">
           <h6 class="footer__title">Объявления</h6>
-          <a href="#" class="footer__link-item">Одежда</a>
-          <a href="#" class="footer__link-item">Детям</a>
-          <a href="#" class="footer__link-item">Электроника</a>
-          <a href="#" class="footer__link-item">Бытовая техника</a>
-          <a href="#" class="footer__link-item">Мебель</a>
-          <a href="#" class="footer__link-item">Одежда</a>
-          <a href="#" class="footer__link-item">Детям</a>
-          <a href="#" class="footer__link-item">Электроника</a>
-          <a href="#" class="footer__link-item">Бытовая техника</a>
-          <a href="#" class="footer__link-item">Мебель</a>
+          <a class="footer__link-item" href="#">Одежда</a>
+          <a class="footer__link-item" href="#">Детям</a>
+          <a class="footer__link-item" href="#">Электроника</a>
+          <a class="footer__link-item" href="#">Бытовая техника</a>
+          <a class="footer__link-item" href="#">Мебель</a>
+          <a class="footer__link-item" href="#">Одежда</a>
+          <a class="footer__link-item" href="#">Детям</a>
+          <a class="footer__link-item" href="#">Электроника</a>
+          <a class="footer__link-item" href="#">Бытовая техника</a>
+          <a class="footer__link-item" href="#">Мебель</a>
         </div>
         <div class="footer__new-goods">
           <h6 class="footer__title">Новые вещи</h6>
-          <a href="#" class="footer__link-item">Одежда</a>
-          <a href="#" class="footer__link-item">Детям</a>
-          <a href="#" class="footer__link-item">Электроника</a>
-          <a href="#" class="footer__link-item">Бытовая техника</a>
-          <a href="#" class="footer__link-item">Мебель</a>
-          <a href="#" class="footer__link-item">Одежда</a>
-          <a href="#" class="footer__link-item">Детям</a>
-          <a href="#" class="footer__link-item">Электроника</a>
-          <a href="#" class="footer__link-item">Бытовая техника</a>
-          <a href="#" class="footer__link-item">Мебель</a>
+          <a class="footer__link-item" href="#">Одежда</a>
+          <a class="footer__link-item" href="#">Детям</a>
+          <a class="footer__link-item" href="#">Электроника</a>
+          <a class="footer__link-item" href="#">Бытовая техника</a>
+          <a class="footer__link-item" href="#">Мебель</a>
+          <a class="footer__link-item" href="#">Одежда</a>
+          <a class="footer__link-item" href="#">Детям</a>
+          <a class="footer__link-item" href="#">Электроника</a>
+          <a class="footer__link-item" href="#">Бытовая техника</a>
+          <a class="footer__link-item" href="#">Мебель</a>
         </div>
         <div class="footer__enter">
           <h6 class="footer__title">Вход</h6>
-          <a href="#login" class="footer__link-item popup--toggle" data-modal="login">Войти</a>
-          <a href="#registration" class="footer__link-item popup--toggle" data-modal="registration">Зарегистрировать</a>
-          <a href="#" class="footer__link-item">Восстановить пароль</a>
+          <a class="footer__link-item popup--toggle" data-modal="login" href="#login">Войти</a>
+          <a class="footer__link-item popup--toggle" data-modal="registration" href="#registration">Зарегистрировать</a>
+          <a class="footer__link-item" href="#">Восстановить пароль</a>
         </div>
       </div>
     </div>

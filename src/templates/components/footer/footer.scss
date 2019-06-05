@@ -4,20 +4,20 @@ footer {
 
 .footer {
   &-upper {
-    border-top: 1px solid rgba(217, 228, 234, .5);
+    border-top: 1px solid rgba(217, 228, 234, 0.5);
     padding: 35px 0 45px 0;
 
     &-wrapper {
       @include make-row();
     }
 
-    @include mq-down (lg) {
+    @include mq-down(lg) {
       display: none;
     }
   }
 
   &-lower {
-    border-top: 1px solid rgba(217, 228, 234, .5);
+    border-top: 1px solid rgba(217, 228, 234, 0.5);
     padding: 15px 0 50px 0;
 
     &-wrapper {
@@ -29,7 +29,6 @@ footer {
 
     &__links {
       @include make-col(4);
-      padding-left: 30px;
       display: flex;
       justify-content: space-between;
 
@@ -60,7 +59,7 @@ footer {
   }
 
   &__socials {
-    @include make-col (4);
+    @include make-col(4);
     padding-right: $gap;
 
     &-title {
@@ -83,12 +82,20 @@ footer {
       height: 36px;
       margin-right: 12px;
 
-      img {
-        object-fit: contain;
-      }
-
       &-wrapper {
         display: flex;
+      }
+
+      &:hover {
+        .img-responsive {
+          .icon-fill {
+            fill: #4489ff;
+          }
+
+          .icon-unfill {
+            fill: #fff;
+          }
+        }
       }
     }
   }
@@ -140,11 +147,11 @@ footer {
     &-descr {
       font-size: rem(11);
       font-weight: 500;
-      color: rgba(87, 87, 87, .5);
+      color: rgba(87, 87, 87, 0.5);
       margin-bottom: 0;
     }
 
-    @include mq-down (lg) {
+    @include mq-down(lg) {
       @include make-col(6);
     }
 
