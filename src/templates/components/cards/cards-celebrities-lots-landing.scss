@@ -10,34 +10,52 @@
     &__wrapper {
       @include make-row();
       flex-wrap: wrap;
-      justify-content: space-between;
+      justify-content: flex-start;
 
-      @include mq-down(xl) {
+      @include mq-down(lg) {
         justify-content: center;
       }
     }
 
     &-card {
       @extend .card;
-      @include make-col(3);
-      min-width: 280px;
+      width: 100%;
       max-width: 280px;
       border-radius: 0;
       border: none;
       margin-bottom: 20px;
+      margin-left: $gap;
+      margin-right: $gap;
+
+      &:nth-child(4n) {
+        margin-right: 0;
+      }
+
+      &:nth-child(4n - 3) {
+        margin-left: 0;
+      }
+
+      @include mq-between(lg, xl) {
+        max-width: 220px;
+      }
+
+      @include mq-between(sm, lg) {
+        &:nth-child(4n) {
+          margin-right: unset;
+        }
+
+        &:nth-child(4n - 3) {
+          margin-left: unset;
+        }
+      }
 
       &-body {
         @extend .card-body;
         padding: 15px 15px 10px 20px;
       }
 
-      @include mq-down(xl) {
-        margin-left: $gap;
-        margin-right: $gap;
-      }
-
       @include mq-down(md) {
-        &:nth-child(-n+4) {
+        &:nth-child(-n + 4) {
           display: flex;
         }
 
@@ -49,6 +67,10 @@
       width: 280px;
       height: 280px;
       object-fit: contain;
+
+      @include mq-between(lg, xl) {
+        object-fit: cover;
+      }
     }
 
     &-name {

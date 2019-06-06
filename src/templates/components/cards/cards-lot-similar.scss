@@ -40,6 +40,30 @@
         margin-right: 10px;
       }
 
+      @include mq-between(lg, xl) {
+        &:nth-last-child(1) {
+          display: none;
+        }
+      }
+
+      @include mq-between(md, lg) {
+        &:nth-last-child(2n) {
+          display: none;
+        }
+      }
+
+      @include mq-between(sm, md) {
+        &:nth-child(n + 3) {
+          display: none;
+        }
+      }
+
+      @include mq-down(sm) {
+        &:nth-child(n + 2) {
+          display: none;
+        }
+      }
+
       &-wrapper {
         width: 100%;
         display: flex;
