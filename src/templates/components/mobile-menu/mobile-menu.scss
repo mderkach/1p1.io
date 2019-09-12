@@ -10,6 +10,14 @@
   transition: 1s ease-in-out;
   transform: translateX(-100%);
 
+  @supports (padding: unquote('max(0px)')) and (padding: env(safe-area-inset-bottom)) {
+    padding-bottom: unquote('max(100px, env(safe-area-inset-bottom))');
+
+    @media screen and (max-width: 576px) and (orientation: landscape) {
+      padding-bottom: 0;
+    }
+  }
+
   @media screen and (max-width: 576px) and (orientation: landscape) {
     height: auto;
   }
