@@ -10,7 +10,11 @@
   transition: 1s ease-in-out;
   transform: translateX(-100%);
 
-  @include mq-down(sm) {
+  @media screen and (max-width: 576px) and (orientation: landscape) {
+    height: auto;
+  }
+
+  @media screen and (max-height: 420px) {
     height: auto;
   }
 
@@ -75,7 +79,6 @@
     }
 
     &-lower {
-
       @include mq-down(lg) {
         display: flex;
         flex-direction: row;
