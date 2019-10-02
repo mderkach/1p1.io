@@ -516,6 +516,14 @@
         bottom: 0;
         border-top: 1px solid #d9deea;
         border-bottom: none;
+
+        @supports (padding: unquote('max(0px)')) and (padding: env(safe-area-inset-bottom)) {
+          margin-bottom: unquote('max(100px, env(safe-area-inset-bottom))');
+
+          @media screen and (max-width: 576px) and (orientation: landscape) {
+            margin-bottom: 0;
+          }
+        }
       }
     }
 
